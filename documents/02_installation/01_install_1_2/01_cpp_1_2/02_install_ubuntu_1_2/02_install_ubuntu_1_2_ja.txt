@@ -4,7 +4,7 @@
 
 C++版のOpenRTM-aistは、UbuntuやDebian GNU Linuxにおいて利用可能なdebパッケージが提供されています。
 それぞれのリリースが対応しているOSのディストリビューション・バージョンは、ダウンロードページで確認できます。
-Ubuntu/Debian GNU Linuxへの対応とそのバージョンは、予告なしに停止/変更することがあります。
+Ubuntu/Debian GNU Linuxへの対応とそのバージョンは予告なしに停止されたり、変更されたりすることがあります。
 
 #contents
 
