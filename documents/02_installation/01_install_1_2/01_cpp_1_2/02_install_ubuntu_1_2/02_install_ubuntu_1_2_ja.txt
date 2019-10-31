@@ -276,7 +276,7 @@ openrtm-aist-doc には、日本語と英語のクラスリファレンス、IDL
  /usr/share/doc/openrtm-aist-doc/copyright
 
 ***openrtp
-openrtpでインストールされるファイルは大量のファイルとなるため、ここではリストしません。必要に応じて
+openrtpでは大量のファイルがインストールされるため、ここではリストしません。必要に応じて
  $ dpkg -L openrtp
 と入力して各自での確認をしてください。
 
