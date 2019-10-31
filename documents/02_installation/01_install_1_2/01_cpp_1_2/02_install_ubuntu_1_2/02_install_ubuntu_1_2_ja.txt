@@ -1,9 +1,9 @@
-﻿// Titile: Ubuntu/Debianへのインストール
-#ref(ubuntu_logo2.png,around,right)
+﻿// Title: Ubuntu/Debianへのインストール
+#ref(ubuntu_logo2.png,/ja/node/1182,around,right)
 
 
-C++版のOpenRTM-aistは、UbuntuやDebian GNU Linuxにおいて利用可能なdebパッケージが提供されています。
-それぞれのリリースが対応しているOSのディストリビューション・バージョンは、ダウンロードページで確認できます。
+Python版の OpenRTM-aist は、Ubuntu や Debian GNU Linux で利用可能な deb パッケージが提供されています。
+対応しているディストリビューションのバージョンは、ダウンロードページで確認できます。
 Ubuntu/Debian GNU Linuxへの対応とそのバージョンは、予告なしに停止/変更することがあります。
 
 #contents
@@ -22,7 +22,7 @@ Ubuntu/Debian環境でOpenRTM-aistを使用する場合、RTC BuilderやRTSystem
 
 ** JDK8のインストール
 
-OpenRTP(RTSystem EditorやRTC Builder等)の実行にはJDK8相当のJava環境が必要になります。(デフォルトの環境でJDK8がインストールされている場合もありますが、Ubuntu 18.04ではJDK11がインストールされているため、JDK8のインストールが必要となります。) 以下ではUbuntu 18.04でOpenJDK8をインストールする方法を示します。OpenJDK8にこだわらずライセンス条件や必要サポート条件にあわせて必要なJDK8環境をインストールするようにしてください。
+OpenRTP(RTSystem EditorやRTC Builderなど)の実行にはJDK8相当のJava環境が必要です。(デフォルトの環境でJDK8がインストールされている場合もありますが、Ubuntu 18.04ではJDK11がインストールされているため、JDK8のインストールが必要です。) 以下ではUbuntu 18.04でOpenJDK8をインストールする方法を示します。OpenJDK8にこだわらずライセンス条件や必要サポート条件にあわせて必要なJDK8環境をインストールするようにしてください。
 
 OpenJDK8のインストールは
  $ sudo apt-get install openjdk-8-jdk
@@ -38,25 +38,28 @@ OpenJDK8のインストールは
  
  現在の選択 [*] を保持するには <Enter>、さもなければ選択肢の番号のキーを押してください: 2
  update-alternatives: /usr/bin/java (java) を提供するためにマニュアルモードで /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java を使います
- 
+
 
 ***インストールの確認
-インストールを確認します。
+インストールを確認します。(下記はopenrtpもインストールした1.2.0の例です。)
 
  $ dpkg -l 'openrt*'
  要望=(U)不明/(I)インストール/(R)削除/(P)完全削除/(H)保持
  | 状態=(N)無/(I)インストール済/(C)設定/(U)展開/(F)設定失敗/(H)半インストール/(W)トリガ待ち/(T)トリガ保留
  |/ エラー?=(空欄)無/(R)要再インストール (状態,エラーの大文字=異常)
  ||/ 名前                     バージョン        アーキテクチャ    説明
- +++-========================-=================-======================================================================
+ +++-========================-=================-=================-=====================================================
  ii  openrtm-aist:amd64       1.2.0-0           amd64             OpenRTM-aist, RT-Middleware distributed by AIST
- ii  openrtm-aist-doc         1.2.0-0           all               Documentation for openrtm-aist
- ii  openrtm-aist-example:amd 1.2.0-0           amd64             OpenRTM-aist examples
+ ii  openrtm-aist-dev:amd64   1.2.0-0           amd64             OpenRTM-aist headers for development
+ ii  openrtm-aist-python      1.2.0-0           amd64             OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm-aist-python-doc  1.2.0-0           all               Documentation for openrtm-aist-python
+ ii  openrtm-aist-python-exam 1.2.0-0           amd64             OpenRTM-aist-Python examples
  ii  openrtp:amd64            1.2.0-1           amd64             OpenRTP, Open RT Platform distributed by AIST
 
 
 **パッケージの詳細
 各パッケージの内容は以下の通りです。
+
 ***openrtm-aist
 openrtm-aist にはランタイムライブラリとコマンド群が含まれています。
 
@@ -203,82 +206,62 @@ openrtm-aist-devには、開発に必要なコマンド群とヘッダが含ま�
  中略
  /usr/lib/x86_64-linux-gnu/openrtm-1.2/py_helpver/yat.py
  /usr/lib/x86_64-linux-gnu/pkgconfig/libcoil.pc
+*** openrtm-aist-python
 
-*** openrtm-aist-example
-openrtm-aist-example にはスタンドアロン RTC、ローダブル RTC それぞれのサンプルと、サンプル RTC のソースが含まれています。
+- コマンド
+ /usr/bin/rtcd_python
+ /usr/bin/rtcprof_python
 
--サンプル(スタンドアロンRTC)
- /usr/share/openrtm-1.2/Components/C++/examples/ConsoleOutComp
- /usr/share/openrtm-1.2/Components/C++/examples/ConsoleInComp
- 中略
- /usr/share/openrtm-1.2/Components/C++/examples/consout.conf
- /usr/share/openrtm-1.2/Components/C++/examples/rtc.composite.linux.conf
- /usr/share/openrtm-1.2/Components/C++/examples/rtc.conf
+- OpenRTM-aist 本体の Python モジュール
+ usr/lib/python2.7/dist-packages/OpenRTM-aist/*
 
--サンプル(ソース)
- /usr/share/openrtm-1.2/Components/C++/examples/src/Composite/README.Motor
- /usr/share/openrtm-1.2/Components/C++/examples/src/Composite/Makefile.Sensor
- /usr/share/openrtm-1.2/Components/C++/examples/src/Composite/Motor.cpp
- 中略
- /usr/share/openrtm-1.2/Components/C++/examples/src/Throughput/rtc.conf
- /usr/share/openrtm-1.2/Components/C++/examples/src/Throughput/run.sh
- /usr/share/openrtm-1.2/Componnets/C++/examples/templates/AIO.xml
- /usr/share/openrtm-1.2/Components/C++/examples/templates/ActArray.xml
- 中略
- /usr/share/openrtm-1.2/Components/C++/examples/templates/VelocityControl3D.xml
- 
+- OpenRTM-aist用Python検索パスファイル
+ /usr/lib/python2.7/dist-packages/OpenRTM_aist.ph
 
--サンプル(ローダブルRTC)
- /usr/share/openrtm-1.2/Components/C++/examples/rtc/ConfigSample.a
- /usr/share/openrtm-1.2/Components/C++/examples/rtc/ConfigSample.la
- 中略
- /usr/share/openrtm-1.2/Components/C++/examples/rtc/Throughput.so.X.X.X
- /usr/share/openrtm-1.2/Components/C++/examples/rtc/Cofig.sample.so
- /usr/share/openrtm-1.2/Components/C++/examples/rtc/Cofig.sample.so.X
- 中略
- /usr/share/openrtm-1.2/Components/C++/examples/rtc/Troughput.so.X
+- ユーティリティ
+ /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/__init__.py
+ /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtc-template/*
+ /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtcd/*
+ /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtcprof/*
+ /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtm-naming/*
 
--ライセンス等
- /usr/share/doc/openrtm-aist-example/changelog.Debian.gz
- /usr/share/doc/openrtm-aist-example/changelog.gz
- /usr/share/doc/openrtm-aist-example/copyright
+// /usr/lib/python2.7/dist-packages/OpenRTM_aist_Python-1.2.0.egg-info
 
-***openrtm-aist-doc
-openrtm-aist-doc には、日本語と英語のクラスリファレンス、IDL インターフェース定義リファレンスが含まれています。
+*** openrtm-aist-python-example
 
--クラスリファレンス
- /usr/share/openrtm-1.2/doc/C++/ClassReference/html/Affinity_8h.html
- /usr/share/openrtm-1.2/doc/C++/ClassReference/html/Affinity_8h_dep_incl.map
- 中略
- /usr/share/openrtm-1.1/doc/C++/ClassReference/html/version_8h_source.html
+ /usr/share/openrtm-1.2/components/python/AutoControl/
+ /usr/share/openrtm-1.2/components/python/AutoTest/
+ /usr/share/openrtm-1.2/components/python/Composite/
+ /usr/share/openrtm-1.2/components/python/ConfigSample/
+ /usr/share/openrtm-1.2/components/python/ExtTrigger/
+ /usr/share/openrtm-1.2/components/python/MobileRobotCanvas/
+ /usr/share/openrtm-1.2/components/python/SeqIO/
+ /usr/share/openrtm-1.2/components/python/SimpleIO/
+ /usr/share/openrtm-1.2/components/python/SimpleService/
+ /usr/share/openrtm-1.2/components/python/Slider_and_Motor/
+ /usr/share/openrtm-1.2/components/python/Templates/
+ /usr/share/openrtm-1.2/components/python/Throughput/
+ /usr/share/openrtm-1.2/components/python/TkJoyStick/
+ /usr/share/openrtm-1.2/components/python/TkLRFViewer/
 
--IDL リファレンス
- /usr/share/openrtm-1.2/doc/idl/IDLReference/html/BasicDataType_8idl.html
- /usr/share/openrtm-1.2/doc/idl/IDLReference/html/BasicDataType_8idl_dep_incl.map
- 中略
- /usr/share/openrtm-1.2/doc/idl/IDLReference/html/unionSDOPackage_1_1Numeric.html
+***openrtm-aist-python-doc
 
 -クラスリファレンス(英語)
- /usr/share/openrtm-1.2/doc/C++/ClassReference-en/html/Affinity_8h.html
- /usr/share/openrtm-1.2/doc/C++/ClassReference-en/html/Affinity_8h_dep_incl.map
+ /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/_async_8py.html
+ /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/_buffer_base_8py.html
  中略
- /usr/share/openrtm-1.1/doc/C++/ClassReference-en/html/version_8h_source.html
-
--IDL リファレンス(英語)
- /usr/share/openrtm-1.2/doc/idl/IDLReference-en/html/BasicDataType_8idl.html
- /usr/share/openrtm-1.2/doc/idl/IDLReference-en/html/BasicDataType_8idl_dep_incl.map
+ /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/tabs.css
+ /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/uuid_8py.html
+- クラスリファレンス(日本語)
+ /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/_async_8py.html
+ /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/_buffer_base_8py.html
  中略
- /usr/share/openrtm-1.2/doc/idl/IDLReference-en/html/unionSDOPackage_1_1Numeric.html
-
--ライセンス等
- /usr/share/doc/openrtm-aist-doc/changelog.Debian.gz
- /usr/share/doc/openrtm-aist-doc/changelog.gz
- /usr/share/doc/openrtm-aist-doc/copyright
+ /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/tabs.css
+ /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/uuid_8py.html 
 
 ***openrtp
 openrtpでは大量のファイルがインストールされるため、ここではリストしません。必要に応じて
  $ dpkg -L openrtp
 と入力して各自での確認をしてください。
-
 
 
