@@ -43,7 +43,7 @@ Python用のサーチパスは、以下の方法で自動で設定されるよ�
 &br;
 #br
 
-#ref(Openrtm121-Install001.png,center)
+#ref(Openrtm121-Install001.png,center,50%)
 &br;
 #br
 
@@ -51,7 +51,7 @@ Python用のサーチパスは、以下の方法で自動で設定されるよ�
 &br;
 #br
 
-#ref(Openrtm121-Install002.png,center)
+#ref(Openrtm121-Install002.png,center,50%)
 &br;
 #br
 
@@ -59,7 +59,7 @@ Python用のサーチパスは、以下の方法で自動で設定されるよ�
 &br;
 #br
 
-#ref(Openrtm121-Install003.png,center)
+#ref(Openrtm121-Install003.png,center,50%)
 &br;
 #br
 
@@ -74,7 +74,7 @@ C++版で使用するVisual Studioのバージョンをシステム環境変数�
 &br;
 #br
 
-#ref(Openrtm121-Install004.png,center)
+#ref(Openrtm121-Install004.png,center,50%)
 &br;
 #br
 
@@ -83,7 +83,7 @@ C++版で使用するVisual Studioのバージョンをシステム環境変数�
 &br;
 #br
 
-#ref(Openrtm121-Install005.png,center)
+#ref(Openrtm121-Install005.png,center,50%)
 &br;
 #br
 
@@ -91,10 +91,10 @@ C++版で使用するVisual Studioのバージョンをシステム環境変数�
 &br;
 #br
 
-#ref(Openrtm121-Install006.png,center)
+#ref(Openrtm121-Install006.png,center,50%)
 &br;
 
-#ref(Openrtm121-Install007.png,center)
+#ref(Openrtm121-Install007.png,center,50%)
 &br;
 #br
 
@@ -102,7 +102,7 @@ C++版で使用するVisual Studioのバージョンをシステム環境変数�
 &br;
 #br
 
-#ref(Openrtm121-Install008.png,center)
+#ref(Openrtm121-Install008.png,center,50%)
 &br;
 #br
 
@@ -114,11 +114,11 @@ C++版で使用するVisual Studioのバージョンをシステム環境変数�
 スタートボタンからスタートメニューを表示させ[OpenRTM-aist 1.2.1 x86_64]>[OpenRTP]を右クリックして[ファイルの場所を開く]を選択してください。
 #br
 
-#ref(Startmenu001.png,center)&br;
+#ref(Startmenu001.png,center,50%)&br;
 CENTER:''ファイルの場所を開く''
 &br;
 
-#ref(Startmenu002.png,center)&br;
+#ref(Startmenu002.png,center,50%)&br;
 CENTER:''スタートメニューフォルダー''
 &br;
 このように、スタートメニューのフォルダーが開かれ、メニューに登録されているアプリケーションにアクセスしやすくなります。
