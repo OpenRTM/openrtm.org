@@ -1,14 +1,11 @@
 ﻿// Title: OpenRTM-aistを10分で始めよう！
 #contents
-#br
-
-最新バージョンOpenRTM-aist-1.2.1-RELEASEではC++版、Python版、Java版、OpenRTPがインストールされます。#br
-また、rtshellも同時にインストールされます。
+最新バージョンOpenRTM-aist-1.2.1-RELEASEではC++版、Python版、Java版、OpenRTPがインストールされます。また、rtshellも同時にインストールされます。
 
 **事前準備
 ***Pythonのインストール
-Pythonをインストールしていない場合は、OpenRTM-aistをインストールできません。#br
-OpenRTM-aistをインストールする前に、Pythonをインストールしてください。バージョンは、"2.7"、"3.6"、"3.7"に対応しています。#br
+Pythonをインストールしていない場合は、OpenRTM-aistをインストールできません。&br;
+OpenRTM-aistをインストールする前に、Pythonをインストールしてください。バージョンは、"2.7"、"3.6"、"3.7"に対応しています。&br;
 #br
 Pythonのダウンロードは[[OpenRTM-aist-1.2.１-RELEASE:/ja/node/6570]]をご覧ください。
 
@@ -31,7 +28,7 @@ Python用のサーチパスは、以下の方法で自動で設定されるよ�
 #br
 
 **OpenRTM-aistのインストール
-ここではWindows10で64bit用インストーラーOpenRTM-aist-1.2.1-RELEASE_x86_64.msiを使ったインストール手順を紹介します。#br
+ここではWindows10で64bit用インストーラーOpenRTM-aist-1.2.1-RELEASE_x86_64.msiを使ったインストール手順を紹介します。&br;
 #br
 
 インストーラーのダウンロードは[[OpenRTM-aist-1.2.1-RELEASE:/ja/node/6570]]をご覧ください。
@@ -63,12 +60,12 @@ Python用のサーチパスは、以下の方法で自動で設定されるよ�
 &br;
 #br
 
-+Visual Studioのバージョンを選択します。#br
-C++版で使用するVisual Studioのバージョンをシステム環境変数に設定します。#br
-インストールされている Visual Studioのバージョンを選択して[次へ]をクリックします。#br
++Visual Studioのバージョンを選択します。
+C++版で使用するVisual Studioのバージョンをシステム環境変数に設定します。&br;
+インストールされている Visual Studioのバージョンを選択して[次へ]をクリックします。&br;
 #br
-※Visual Studioのダウンロードは[[OpenRTM-aist-1.2.1-RELEASE:/ja/node/6570]]をご覧ください。#br
-※Visual Studioのバージョンは、インストール終了後にツールのVCVerChangerで変更できます。#br
+※Visual Studioのダウンロードは[[OpenRTM-aist-1.2.1-RELEASE:/ja/node/6570]]をご覧ください。&br;
+※Visual Studioのバージョンは、インストール終了後にツールのVCVerChangerで変更できます。&br;
 [[(VCVerChangerの使い方):/ja/node/6136/]]#br
 ※Python版、Java版では無関係ですのでデフォルトのまま[次へ]をクリックしてください。
 &br;
@@ -112,7 +109,6 @@ C++版で使用するVisual Studioのバージョンをシステム環境変数�
 **サンプルコンポーネントを実行する
 必須ではありませんが、ここからはスタートメニューに登録されたアプリケーションを多数起動します。毎回スタートメニューから順番にたどるのは大変ですので、
 スタートボタンからスタートメニューを表示させ[OpenRTM-aist 1.2.1 x86_64]>[OpenRTP]を右クリックして[ファイルの場所を開く]を選択してください。
-#br
 
 #ref(Startmenu001.png,center,50%)&br;
 CENTER:''ファイルの場所を開く''
@@ -180,7 +176,7 @@ CENTER:''パースペクティブの切り替え''
 #br
 
 
-NameServiceViewにコンポーネントが表示されます。最初は折りたたまれているため表示されていませんが、[>]をクリックし展開すると、ConsoleIn、ConsoleOutコンポーネントが確認できます。
+[NameServiceView]にコンポーネントが表示されます。最初は折りたたまれているため表示されていませんが、[>]をクリックし展開すると、ConsoleIn、ConsoleOutコンポーネントが確認できます。
 #br
 
 #ref(OpenRTP005.png,center)&br;
@@ -324,7 +320,7 @@ CENTER:''コマンドプロンプトの起動''
 
 #br
 念のためRTSystemEditorで確認します。~
-NameServiceViewのコンポーネントをSystem Diagramにドラッグ＆ドロップすると、データポートが接続されたことが確認できます。
+[NameServiceView]のコンポーネントをSystem Diagramにドラッグ＆ドロップすると、データポートが接続されたことが確認できます。
 
 #ref(Console007.png,center)&br;
 CENTER:''データポート接続の確認''
