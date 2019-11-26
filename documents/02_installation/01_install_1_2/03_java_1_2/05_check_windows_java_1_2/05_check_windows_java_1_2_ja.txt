@@ -125,6 +125,3 @@ CENTER: ''アクティブ化されたコンポーネント''
 |MyServiceProviderComp.bat|LEFT:MyService型のサービスを提供する&color(default){コンポーネント};。MyServiceConsumerComp.classに接続して使用する。|
 |MyServiceConsumerComp.bat|LEFT:MyService型のサービスを提供する&color(default){コンポーネント};。MyServiceProviderComp.classに接続して使用する。|
 |ConfigSampleComp.bat|LEFT:Configurationのサンプル。RtcLinkからConfigurationを変更してConfigurationの挙動を理解するためのサンプル。|
-
-
-&br;
