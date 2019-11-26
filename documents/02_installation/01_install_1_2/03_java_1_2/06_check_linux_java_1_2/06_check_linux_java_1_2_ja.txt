@@ -5,7 +5,7 @@
 // -/opt/local/share/openrtm-1.1/examples (Mac OS X に MacPorts でインストールした場合)
 
 
-ソースからビルドした場合は、ソースディレクトリー以下の
+ソースからビルドした場合は、ソースディレクトリ以下の
 
 -OpenRTM-aist-Java/jp.go.aist.rtm.RTC/bin/RTMExamples/<サンプルコンポーネントセット名>
 
