@@ -51,22 +51,23 @@ CENTER:''/etc/yum.repos.d/openrtm.repo''
 openrtm.repoを作成したら、次の手順でインストールを行います。
 途中、いくつかの応答を求められるので、''y''を入力しながら完了させます。
 
- $ sudo yum install omniORB omniORB-servers
- $ sudo yum install OpenRTM-aist OpenRTM-aist-devel OpenRTM-aist-Java OpenRTM-aist-Java-example
-
+ $ sudo yum install gcc-c++ python
+ $ sudo yum install omniORB omniORB-devel omniORB-doc omniORB-servers omniORB-utils
+ $ sudo yum install OpenRTM-aist OpenRTM-aist-devel OpenRTM-aist-Java OpenRTM-aist-Java-doc OpenRTM-aist-Java-example
+ $ sudo yum install OpenRTP
 
 *** 環境変数の設定
 環境変数の設定が必要です。ホームディレクトリにある.bashrcに以下の行を付け加えてください。(64ビット版を使用する場合)
  export RTM_JAVA_ROOT=/usr/lib64/openrtｍ-1.2
 この設定を有効にするためにはインストール作業終了後、再ログインしてください。
 ***JDK8について
-rpmパッケージOpenRTM-aist-Javaは自動的にFedoraの標準リポジトリよりOpenJDK8をインストールし、それを使用するJava環境として設定しますが、ライセンス条件やサポート条件のために他のJDKを使いたい場合は、以下のリンクを参照してください。
+Fedora用のOpenRTM-aist-Javaパッケージのインストールは自動的にFedoraの標準リポジトリよりOpenJDK8をインストールし、それを使用するJava環境として設定しますが、ライセンス条件やサポート条件のために他のJDKを使いたい場合は、以下のリンクを参照してください。
 - [[JDKのインストール>http://openrtm.org/openrtm/ja/node/6911]]
 *** インストールの確認
 
 最後に以下のコマンドでインストールの確認をします。
 
- $ rpm -q OpenRTM-aist
+ # rpm -q OpenRTM-aist
  OpenRTM-aist-1.2.0-0.fcXX.x86_64
 
 
