@@ -48,7 +48,7 @@ omniORB-'''x'''.'''y'''.'''z'''-{win32|x64}-{vc100|vc110|vc120|vc140}-{py27|py36
 
 : vc100| C++環境を使う場合で、Visual Studio 2010の場合
 : vc110| C++環境を使う場合で、Visual Studio 2012の場合
-: vc120|: C++環境を使う場合で、Visual Studio 2013の場合
+: vc120| C++環境を使う場合で、Visual Studio 2013の場合
 : vc140| C++環境を使う場合で、Visual Studio 2015/2017/2019の場合
 
 : py27| Python 2.7を使う場合
