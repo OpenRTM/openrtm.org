@@ -39,7 +39,7 @@ Amazon CorrettoはAmazonの長期サポートを含むOpenJDKのビルドです�
 *** Ubuntu/Debian/Raspbian
 Ubuntu Linux, Debian Linuxなどでは apt コマンドで以下のようにインストールすることができます。
 
- $ sudo aptinstall openjdk-8-jdk
+ $ sudo apt install openjdk-8-jdk
 
 *** Fedora
 Fedora Linuxではyumコマンドで以下のようにインストールすることができます。
