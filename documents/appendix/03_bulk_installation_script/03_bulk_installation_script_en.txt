@@ -34,7 +34,7 @@ The available options are the same, but pkg_install_raspbian.sh does not support
    
   Options:
     -l <argument>  language or tool {c++|python|java|openrtp|rtshell|all}
-       all        install packages of all the supported languages and tools
+        all        install packages of all the supported languages and tools
     -r             install robot component runtime
     -d             install for robot component developer [default]
     -s             install tool packages for building from the source code
