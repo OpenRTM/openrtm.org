@@ -1,19 +1,19 @@
-// Title: ImageSubstraction
+// Title: ImageSubtraction
 
 #contents
 
 Please note that it is not included in Python and Java versions of OpenRTM-aist. On Linux, build and install it according to[[OpenCV Sample Code Build Procedure>//node/6974]]
 
 ***Overview
-By starting ImageSubscription component, the background image is extracted from the input image, the foreground image part is output as a mask image and the background image is output. Used with OpenCVCamera and CameraViewer component. (Note that this component currently does not work properly in a Windows environment, so please use it in Linux (Ubuntu 18.04) environment.)
+By starting ImageSubtraction component, the background image is extracted from the input image, the foreground image part is output as a mask image and the background image is output. Used with OpenCVCamera and CameraViewer component. (Note that this component currently does not work properly in a Windows environment, so please use it in Linux (Ubuntu 18.04) environment.)
 
 *** Start screen
 
-#ref(ImageSubstract_exe.png,30%,center)
-CENTER: ''Execution screen of ImageSubstraction component''
+#ref(ImageSubtract_exe.png,30%,center)
+CENTER: ''Execution screen of ImageSubtraction component''
 
 *** How to use
-ImageSubstraction is a component for extracting the background image from the input image. Here, it is used together with OpenCVCamera for capturing images from USB Camera and CameraViewer component for displaying processed images.
+ImageSubtraction is a component for extracting the background image from the input image. Here, it is used together with OpenCVCamera for capturing images from USB Camera and CameraViewer component for displaying processed images.
 
 - Procedure (The following is the procedure on Ubuntu 18.04.)
 -- Open a new terminal.
@@ -34,21 +34,21 @@ ImageSubstraction is a component for extracting the background image from the in
 -- Start another terminal and start OpenCVCamera component by inputing following commands.
  $ cd ImageProcessing/opencv/bin
  $ ./OpenCVCameraComp
--- Start Terminal again to launch ImageSubstraction component. 
+-- Start Terminal again to launch ImageSubtraction component. 
  $ cd ImageProcessing/opencv/bin
- $ ./ImageSubstractionComp
--- Click [>] in the Name Service view on the RTSystemEditor screen and confirm that the components "CameraView0", "CameraViewer1", "CameraViewer2", "CameraViewe3", "OpenCVCamera", and "ImageSubstraction" are displayed.
+ $ ./ImageSubtractionComp
+-- Click [>] in the Name Service view on the RTSystemEditor screen and confirm that the components "CameraView0", "CameraViewer1", "CameraViewer2", "CameraViewe3", "OpenCVCamera", and "ImageSubtraction" are displayed.
 -- Click [Open New System Editor] button &ref(icon_open_editor_ja.png,150%); at the top of RTSystemEditor to open a new System Editor and display [System Dialgram] newly.
 -- Drag and drop the above five components onto the System Diagram.
 -- Connect the ports of each component as shown below.
 
-#ref(RTSystemEditor_ImageSubstraction.png)
-CENTER: ''Execution example of ImageSubstraction component''
+#ref(RTSystemEditor_ImageSubtraction_en.png)
+CENTER: ''Execution example of ImageSubtraction component''
 
 -- Right-click on any component and select [Activate Systems].
 -- Display the CameraViewer screens by adjusting the positions of the windows like the following.
 #ref(compexec.png)
-CENTER:''ImageSubstraction Outputs''
+CENTER:''ImageSubtraction Outputs''
 
 --When you move the mouse out of the "capture_image" window, the background image is captured at that timing and displayed it on the back_image. Check what happens to the other screens as well.
  
