@@ -1,107 +1,107 @@
-// Title: OpenRTM-aist-Python-1.1.2-RELEASE
+ï»¿// Title: OpenRTM-aist-Python-1.1.2-RELEASE
 #ref(python-logo.png,nolink,right,around)
 #contents
 
-//-&color(red){‚Ü‚¾ƒŠƒŠ[ƒX‚µ‚Ä‚¨‚è‚Ü‚¹‚ñB€”õ’†‚Å‚·B‚à‚¤‚µ‚Î‚ç‚­‚¨‘Ò‚¿‰º‚³‚¢B};
+//-&color(red){ã¾ã ãƒªãƒªãƒ¼ã‚¹ã—ã¦ãŠã‚Šã¾ã›ã‚“ã€‚æº–å‚™ä¸­ã§ã™ã€‚ã‚‚ã†ã—ã°ã‚‰ããŠå¾…ã¡ä¸‹ã•ã„ã€‚};
 
 &br;
-**ƒpƒbƒP[ƒW
-***Windows ƒCƒ“ƒXƒg[ƒ‰[
+**ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸
+***Windows ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ©ãƒ¼
 
-//–{ƒo[ƒWƒ‡ƒ“‚©‚ç Python”Å‚¾‚¯‚Å‚È‚­AC++”ÅAJava”ÅArtshell ‚à“¯‚ÉƒCƒ“ƒXƒg[ƒ‹‰Â”\‚É‚È‚è‚Ü‚µ‚½B‚±‚ê‚ç‚ÌŒÃ‚¢ƒo[ƒWƒ‡ƒ“‚ğƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ä‚¢‚éê‡‚ÍA‚ ‚ç‚©‚¶‚ß‚·‚×‚ÄƒAƒ“ƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢B
-//-&color(red){rtshell ‚Í 4.1.0 ”Å‚ªƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ü‚·B‡‚í‚¹‚Ä rtctree ‚Æ rtsprofile ‚à©“®‚ÅƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ü‚·BrtshellArtctreeArtsprofile ‚ÌŒÃ‚¢ƒo[ƒWƒ‡ƒ“‚ÍŠ®‘S‚Éíœ‚³‚ê‚Ä‚¢‚é‚±‚Æ‚ğŠm”F‚µ‚Ä‚­‚¾‚³‚¢B};
+//æœ¬ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‹ã‚‰ Pythonç‰ˆã ã‘ã§ãªãã€C++ç‰ˆã€Javaç‰ˆã€rtshell ã‚‚åŒæ™‚ã«ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«å¯èƒ½ã«ãªã‚Šã¾ã—ãŸã€‚ã“ã‚Œã‚‰ã®å¤ã„ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¦ã„ã‚‹å ´åˆã¯ã€ã‚ã‚‰ã‹ã˜ã‚ã™ã¹ã¦ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãã ã•ã„ã€‚
+//-&color(red){rtshell ã¯ 4.1.0 ç‰ˆãŒã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¾ã™ã€‚åˆã‚ã›ã¦ rtctree ã¨ rtsprofile ã‚‚è‡ªå‹•ã§ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¾ã™ã€‚rtshellã€rtctreeã€rtsprofile ã®å¤ã„ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¯å®Œå…¨ã«å‰Šé™¤ã•ã‚Œã¦ã„ã‚‹ã“ã¨ã‚’ç¢ºèªã—ã¦ãã ã•ã„ã€‚};
 
 
-//Python”Å‚¾‚¯‚ğƒCƒ“ƒXƒg[ƒ‹‚µ‚½‚¢ê‡‚ÍAƒJƒXƒ^ƒ€ƒZƒbƒgƒAƒbƒv‚Å‘I‘ğ‚µ‚Ä‰º‚³‚¢B‚»‚ÌÛ IDL ƒtƒ@ƒCƒ‹‚à“¯‚ÉƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ü‚·‚Ì‚ÅAƒc[ƒ‹‚Ì OpenRTP ‚à‘I‘ğ‚·‚ê‚ÎŠJ”­‚Í‰Â”\‚Å‚·B
+//Pythonç‰ˆã ã‘ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ãŸã„å ´åˆã¯ã€ã‚«ã‚¹ã‚¿ãƒ ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—ã§é¸æŠã—ã¦ä¸‹ã•ã„ã€‚ãã®éš› IDL ãƒ•ã‚¡ã‚¤ãƒ«ã‚‚åŒæ™‚ã«ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¾ã™ã®ã§ã€ãƒ„ãƒ¼ãƒ«ã® OpenRTP ã‚‚é¸æŠã™ã‚Œã°é–‹ç™ºã¯å¯èƒ½ã§ã™ã€‚
 
-//OpenRTM-aist-1.1.2-RELEASE_***.msi‚ğg—p‚µ‚ÄOpenRTM-aist-Python ‚ğƒCƒ“ƒXƒg[ƒ‹‚·‚éê‡APython ‚Ìƒo[ƒWƒ‡ƒ“‚Í 2.7 ‚ª•K—v‚Å‚·B
-//ƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ä‚¢‚é Python ‚Ìƒo[ƒWƒ‡ƒ“‚ğŒŸo‚µA‚»‚ê‚¼‚ê‚É OpenRTM-aist-Python-1.1.2 ‚Æ omniORBpy ‚ğƒCƒ“ƒXƒg[ƒ‹‚µ‚Ü‚·B•Ê“r omniORBpy ‚ğƒCƒ“ƒXƒg[ƒ‹‚·‚é•K—v‚Í‚ ‚è‚Ü‚¹‚ñB
+//OpenRTM-aist-1.1.2-RELEASE_***.msiã‚’ä½¿ç”¨ã—ã¦OpenRTM-aist-Python ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã™ã‚‹å ´åˆã€Python ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¯ 2.7 ãŒå¿…è¦ã§ã™ã€‚
+//ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¦ã„ã‚‹ Python ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’æ¤œå‡ºã—ã€ãã‚Œãã‚Œã« OpenRTM-aist-Python-1.1.2 ã¨ omniORBpy ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¾ã™ã€‚åˆ¥é€” omniORBpy ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã™ã‚‹å¿…è¦ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚
 
-**** 32bit —p
+**** 32bit ç”¨
 
 |LEFT:200|LEFT|LEFT:100|c
-|Windows —pƒCƒ“ƒXƒg[ƒ‰[&br; (OpenRTM-aist C++APythonAJava”Å&br; ‚¨‚æ‚Ñ OpenRTPArtshell (4.1.0) ŠÜ‚Ş)|[[OpenRTM-aist-1.1.2-RELEASE_x86.msi:http://openrtm.org/pub/Windows/OpenRTM-aist/1.1/OpenRTM-aist-1.1.2-RELEASE_x86.msi]] &br;MD5:59be8603f3fc007c2aed4476052886ce | 2016/05/27 |
+|Windows ç”¨ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ©ãƒ¼&br; (OpenRTM-aist C++ã€Pythonã€Javaç‰ˆ&br; ãŠã‚ˆã³ OpenRTPã€rtshell (4.1.0) å«ã‚€)|[[OpenRTM-aist-1.1.2-RELEASE_x86.msi:http://openrtm.org/pub/Windows/OpenRTM-aist/1.1/OpenRTM-aist-1.1.2-RELEASE_x86.msi]] &br;MD5:59be8603f3fc007c2aed4476052886ce | 2016/05/27 |
 |Python-2.7|[[python-2.7.10.msi:https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi]]|[[python.org:https://www.python.org]]|
 
--&color(red){¦ Python 2.7.10 „§B2.7.11 ‚Í PYTHONPATH “™ŠÂ‹«•Ï”‚Ìİ’è‚ª•K—v‚Èê‡‚ª‚ ‚è‚Ü‚·B};
--&color(red){¦ ŒÃ‚¢ rtshell ‚Í–‘O‚Éíœ‚µ‚Ä‚¨‚¢‚Ä‚­‚¾‚³‚¢B};
+-&color(red){â€» Python 2.7.10 æ¨å¥¨ã€‚2.7.11 ã¯ PYTHONPATH ç­‰ç’°å¢ƒå¤‰æ•°ã®è¨­å®šãŒå¿…è¦ãªå ´åˆãŒã‚ã‚Šã¾ã™ã€‚};
+-&color(red){â€» å¤ã„ rtshell ã¯äº‹å‰ã«å‰Šé™¤ã—ã¦ãŠã„ã¦ãã ã•ã„ã€‚};
 
-**** 64bit —p
+**** 64bit ç”¨
 
 |LEFT:200|LEFT|LEFT:100|c
-|Windows —pƒCƒ“ƒXƒg[ƒ‰[&br; (OpenRTM-aist C++APythonAJava”Å&br; ‚¨‚æ‚Ñ OpenRTPArtshell (4.1.0) ŠÜ‚Ş)|[[OpenRTM-aist-1.1.2-RELEASE_x86_64.msi:http://openrtm.org/pub/Windows/OpenRTM-aist/1.1/OpenRTM-aist-1.1.2-RELEASE_x86_64.msi]] &br;MD5:ee8db7c1682cb21dce963207e0484fb3 | 2016/05/27 |
+|Windows ç”¨ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ©ãƒ¼&br; (OpenRTM-aist C++ã€Pythonã€Javaç‰ˆ&br; ãŠã‚ˆã³ OpenRTPã€rtshell (4.1.0) å«ã‚€)|[[OpenRTM-aist-1.1.2-RELEASE_x86_64.msi:http://openrtm.org/pub/Windows/OpenRTM-aist/1.1/OpenRTM-aist-1.1.2-RELEASE_x86_64.msi]] &br;MD5:ee8db7c1682cb21dce963207e0484fb3 | 2016/05/27 |
 |Python-2.7|[[python-2.7.10.amd64.msi:https://www.python.org/ftp/python/2.7.10/python-2.7.10.amd64.msi]]|[[python.org:https://www.python.org]]|
 
--&color(red){¦ Python 2.7.10 „§B2.7.11‚Í PYTHONPATH “™ŠÂ‹«•Ï”‚Ìİ’è‚ª•K—v‚Èê‡‚ª‚ ‚è‚Ü‚·B};
--&color(red){¦ ŒÃ‚¢ rtshell ‚Í–‘O‚Éíœ‚µ‚Ä‚¨‚¢‚Ä‚­‚¾‚³‚¢B};
+-&color(red){â€» Python 2.7.10 æ¨å¥¨ã€‚2.7.11ã¯ PYTHONPATH ç­‰ç’°å¢ƒå¤‰æ•°ã®è¨­å®šãŒå¿…è¦ãªå ´åˆãŒã‚ã‚Šã¾ã™ã€‚};
+-&color(red){â€» å¤ã„ rtshell ã¯äº‹å‰ã«å‰Šé™¤ã—ã¦ãŠã„ã¦ãã ã•ã„ã€‚};
 
-ƒCƒ“ƒXƒg[ƒ‹‚É‚Â‚¢‚Ä‚ÍA[[OpenRTM-aist‚ğ10•ª‚Ån‚ß‚æ‚¤I:http://openrtm.org/openrtm/ja/node/6026]] ‚Ìƒy[ƒW‚Åè‡‚ğĞ‰î‚µ‚Ä‚¢‚Ü‚·B&br;
+ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã«ã¤ã„ã¦ã¯ã€[[OpenRTM-aistã‚’10åˆ†ã§å§‹ã‚ã‚ˆã†ï¼:http://openrtm.org/openrtm/ja/node/6026]] ã®ãƒšãƒ¼ã‚¸ã§æ‰‹é †ã‚’ç´¹ä»‹ã—ã¦ã„ã¾ã™ã€‚&br;
 
 
-//**** omnipy ‚ª import ‚Å‚«‚È‚¢|‚ÌƒGƒ‰[‚ªo‚éê‡
+//**** omnipy ãŒ import ã§ããªã„æ—¨ã®ã‚¨ãƒ©ãƒ¼ãŒå‡ºã‚‹å ´åˆ
 
-//MSVCR71.dllAMSVCP71.dll ‚ªƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ä‚¢‚È‚¢‚½‚ßAomnipy ‚ª import ‚Å‚«‚È‚¢|‚ÌƒGƒ‰[‚ªo‚éê‡‚ª‚ ‚è‚Ü‚·B
-//‰º‹L‚æ‚èMSVCR71.dllAMSVCP71.dll ‚ğƒ_ƒEƒ“ƒ[ƒh‚µ‚ÄƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢B
+//MSVCR71.dllã€MSVCP71.dll ãŒã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¦ã„ãªã„ãŸã‚ã€omnipy ãŒ import ã§ããªã„æ—¨ã®ã‚¨ãƒ©ãƒ¼ãŒå‡ºã‚‹å ´åˆãŒã‚ã‚Šã¾ã™ã€‚
+//ä¸‹è¨˜ã‚ˆã‚ŠMSVCR71.dllã€MSVCP71.dll ã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã—ã¦ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãã ã•ã„ã€‚
 
 //- http://www.vector.co.jp/soft/win95/util/se435079.html
 
-//ƒ_ƒEƒ“ƒ[ƒhŒã‰ğ“€‚µ‚ÄAMSVCR71.dllAMSVCP71.dll ‚ğ
-//- 32bit Windows ‚Ìê‡ C:\Windows\system32 
-//- 64bit Windows ‚Ìê‡ C:\Windows\SysWow64
-//‚ÉƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢B
+//ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰å¾Œè§£å‡ã—ã¦ã€MSVCR71.dllã€MSVCP71.dll ã‚’
+//- 32bit Windows ã®å ´åˆ C:\Windows\system32 
+//- 64bit Windows ã®å ´åˆ C:\Windows\SysWow64
+//ã«ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãã ã•ã„ã€‚
 
 
 &br;
 
-***Linux ƒpƒbƒP[ƒW
-UbuntuADebianAFedora ‚ÌŠeƒfƒBƒXƒgƒŠƒrƒ…[ƒVƒ‡ƒ“—pƒpƒbƒP[ƒW‚ğ openrtm.org ã‚ÌƒŠƒ|ƒWƒgƒŠƒT[ƒo[‚É‚Ä”z•z‚µ‚Ä‚¢‚Ü‚·B
-Ú×‚ÍAˆÈ‰º‚ÌƒhƒLƒ…ƒƒ“ƒg‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢B~
+***Linux ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸
+Ubuntuã€Debianã€Fedora ã®å„ãƒ‡ã‚£ã‚¹ãƒˆãƒªãƒ“ãƒ¥ãƒ¼ã‚·ãƒ§ãƒ³ç”¨ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’ openrtm.org ä¸Šã®ãƒªãƒã‚¸ãƒˆãƒªã‚µãƒ¼ãƒãƒ¼ã«ã¦é…å¸ƒã—ã¦ã„ã¾ã™ã€‚
+è©³ç´°ã¯ã€ä»¥ä¸‹ã®ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚~
 
--[[Ubuntu/Debian ‚Ö‚ÌƒCƒ“ƒXƒg[ƒ‹:/ja/node/1182]]
--[[Fedora ‚Ö‚ÌƒCƒ“ƒXƒg[ƒ‹:/ja/node/1186]]
+-[[Ubuntu/Debian ã¸ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«:/ja/node/1182]]
+-[[Fedora ã¸ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«:/ja/node/1186]]
 
-// [[ŒÃpkg_install_ubuntu.sh >http://svn.openrtm.org/OpenRTM-aist/tags/RELEASE_1_1_2/OpenRTM-aist/build/pkg_install_ubuntu.sh]] 
-// [[ŒÃpkg_install_debian.sh >http://svn.openrtm.org/OpenRTM-aist/tags/RELEASE_1_1_2/OpenRTM-aist/build/pkg_install_debian.sh]]
-// [[ŒÃpkg_install_fedora.sh >http://svn.openrtm.org/OpenRTM-aist/tags/RELEASE_1_1_1/OpenRTM-aist/build/pkg_install_fedora.sh]] 
+// [[å¤pkg_install_ubuntu.sh >http://svn.openrtm.org/OpenRTM-aist/tags/RELEASE_1_1_2/OpenRTM-aist/build/pkg_install_ubuntu.sh]] 
+// [[å¤pkg_install_debian.sh >http://svn.openrtm.org/OpenRTM-aist/tags/RELEASE_1_1_2/OpenRTM-aist/build/pkg_install_debian.sh]]
+// [[å¤pkg_install_fedora.sh >http://svn.openrtm.org/OpenRTM-aist/tags/RELEASE_1_1_1/OpenRTM-aist/build/pkg_install_fedora.sh]] 
 
-| ƒfƒBƒXƒgƒŠƒrƒ…[ƒVƒ‡ƒ“Eƒo[ƒWƒ‡ƒ“ | ˆêŠ‡ƒCƒ“ƒXƒg[ƒ‹ƒXƒNƒŠƒvƒg |
+| ãƒ‡ã‚£ã‚¹ãƒˆãƒªãƒ“ãƒ¥ãƒ¼ã‚·ãƒ§ãƒ³ãƒ»ãƒãƒ¼ã‚¸ãƒ§ãƒ³ | ä¸€æ‹¬ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã‚¹ã‚¯ãƒªãƒ—ãƒˆ |
 | Ubuntu 14.04 (trusty) i386/amd64/arm64 &br; Ubuntu 16.04 (xenial) i386/amd64/arm64 &br; Ubuntu 16.10 (yakkety) i386/amd64 &br; Ubuntu 17.04 (zesty) i386/amd64 &br; Ubuntu 17.10 (artful) i386/amd64| [[pkg_install_ubuntu.sh >http://svn.openrtm.org/OpenRTM-aist/trunk/OpenRTM-aist/build/pkg_install_ubuntu.sh]] |
 | Debian  7.0  (wheezy) i386/amd64 &br; Debian  8.0  (jessie) i386/amd64 &br; Debian  9.0  (stretch) i386/amd64| [[pkg_install_debian.sh >http://svn.openrtm.org/OpenRTM-aist/trunk/OpenRTM-aist/build/pkg_install_debian.sh]] |
 | Fedora 23 i386/amd64 &br; Fedora 24 i386/amd64 &br; Fedora 25 i386/amd64&br; Fedora 26 i386/amd64| [[pkg_install_fedora.sh >http://svn.openrtm.org/OpenRTM-aist/trunk/OpenRTM-aist/build/pkg_install_fedora.sh]] |
 
-//¦ Fedora—pˆêŠ‡ƒCƒ“ƒXƒg[ƒ‹EƒXƒNƒŠƒvƒg‚ÍOpenRTM-aist 1.2.0”ÅˆÈ~‘Î‰—\’è‚Å‚·B
+//â€» Fedoraç”¨ä¸€æ‹¬ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ãƒ»ã‚¹ã‚¯ãƒªãƒ—ãƒˆã¯OpenRTM-aist 1.2.0ç‰ˆä»¥é™å¯¾å¿œäºˆå®šã§ã™ã€‚
 
-ƒIƒvƒVƒ‡ƒ“‚ğw’è‚·‚é‚±‚Æ‚ÅA–Ú“I‚É‡‚í‚¹‚½ƒpƒbƒP[ƒW‚ğƒCƒ“ƒXƒg[ƒ‹‚·‚é‚±‚Æ‚ª‚Å‚«‚é‚æ‚¤‚É‚È‚è‚Ü‚µ‚½BƒCƒ“ƒXƒg[ƒ‹•û–@‚âƒIƒvƒVƒ‡ƒ“AƒpƒbƒP[ƒW‚Ìí—Ş‚É‚Â‚«‚Ü‚µ‚Ä‚ÍA[[‚±‚¿‚ç:http://openrtm.org/openrtm/ja/node/6345]]‚ğ‚²Šm”F‚­‚¾‚³‚¢B
+ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’æŒ‡å®šã™ã‚‹ã“ã¨ã§ã€ç›®çš„ã«åˆã‚ã›ãŸãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã™ã‚‹ã“ã¨ãŒã§ãã‚‹ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸã€‚ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ–¹æ³•ã‚„ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã€ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã®ç¨®é¡ã«ã¤ãã¾ã—ã¦ã¯ã€[[ã“ã¡ã‚‰:http://openrtm.org/openrtm/ja/node/6345]]ã‚’ã”ç¢ºèªãã ã•ã„ã€‚
 
-//| ƒfƒBƒXƒgƒŠƒrƒ…[ƒVƒ‡ƒ“Eƒo[ƒWƒ‡ƒ“ | ˆêŠ‡ƒCƒ“ƒXƒg[ƒ‹ƒXƒNƒŠƒvƒg |
+//| ãƒ‡ã‚£ã‚¹ãƒˆãƒªãƒ“ãƒ¥ãƒ¼ã‚·ãƒ§ãƒ³ãƒ»ãƒãƒ¼ã‚¸ãƒ§ãƒ³ | ä¸€æ‹¬ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã‚¹ã‚¯ãƒªãƒ—ãƒˆ |
 //| Ubuntu 12.04 (precise) i386/amd64 &br; Ubuntu 14.04 (trusty) i386/amd64/arm64 &br; Ubuntu 15.10 (wily) i386/amd64 &br; Ubuntu 16.04 (xenial) i386/amd64/arm64| [[pkg_install_python_ubuntu.sh >http://svn.openrtm.org/OpenRTM-aist-Python/tags/RELEASE_1_1_2/OpenRTM-aist-Python/installer/install_scripts/pkg_install_python_ubuntu.sh]] |
 //| Debian  7.0  (wheezy) i386/amd64 &br; Debian  8.0  (jessie) i386/amd64| [[pkg_install_python_debian.sh >http://svn.openrtm.org/OpenRTM-aist-Python/tags/RELEASE_1_1_2/OpenRTM-aist-Python/installer/install_scripts/pkg_install_python_debian.sh]] |
 //| Fedora 21 i386/amd64 &br; Fedora 22 i386/amd64 &br; Fedora 23 i386/amd64| [[pkg_install_python_fedora.sh >http://svn.openrtm.org/OpenRTM-aist-Python/tags/RELEASE_1_1_0/OpenRTM-aist-Python/installer/install_scripts/pkg_install_python_fedora.sh]] |
 
-**ƒ\[ƒXƒR[ƒh
+**ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰
 
 |LEFT:200|LEFT|LEFT:100|c
-|Python”Åƒ\[ƒXƒR[ƒh|[[OpenRTM-aist-Python-1.1.2.tar.gz:http://openrtm.org/pub/OpenRTM-aist/python/1.1.2/OpenRTM-aist-Python-1.1.2.tar.gz]] &br;MD5:15e107e73dd5a60bebb675b561b86633 | 2016/05/27 |
-|Python”Åƒ\[ƒXƒR[ƒh(Win32)|[[OpenRTM-aist-Python-1.1.2.zip:http://openrtm.org/pub/OpenRTM-aist/python/1.1.2/OpenRTM-aist-Python-1.1.2.zip]] &br;MD5:0641a1e6f3f21b89ac62e35ffcf8d73d | 2016/05/27 |
+|Pythonç‰ˆã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰|[[OpenRTM-aist-Python-1.1.2.tar.gz:http://openrtm.org/pub/OpenRTM-aist/python/1.1.2/OpenRTM-aist-Python-1.1.2.tar.gz]] &br;MD5:15e107e73dd5a60bebb675b561b86633 | 2016/05/27 |
+|Pythonç‰ˆã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰(Win32)|[[OpenRTM-aist-Python-1.1.2.zip:http://openrtm.org/pub/OpenRTM-aist/python/1.1.2/OpenRTM-aist-Python-1.1.2.zip]] &br;MD5:0641a1e6f3f21b89ac62e35ffcf8d73d | 2016/05/27 |
 
 
 
 &br;
 
-**ƒŠƒŠ[ƒXƒm[ƒg: 1.1.2-RELEASE
+**ãƒªãƒªãƒ¼ã‚¹ãƒãƒ¼ãƒˆ: 1.1.2-RELEASE
 
-RTƒ~ƒhƒ‹ƒEƒGƒAFOpenRTM-aist ‚Ì PythonŒ¾Œê”ÅÅVƒo[ƒWƒ‡ƒ“ 1.1.2-RELEASE ‚ğƒŠƒŠ[ƒX‚¢‚½‚µ‚Ü‚µ‚½B
+RTãƒŸãƒ‰ãƒ«ã‚¦ã‚¨ã‚¢ï¼šOpenRTM-aist ã® Pythonè¨€èªç‰ˆæœ€æ–°ãƒãƒ¼ã‚¸ãƒ§ãƒ³ 1.1.2-RELEASE ã‚’ãƒªãƒªãƒ¼ã‚¹ã„ãŸã—ã¾ã—ãŸã€‚
 
-OpenRTM-aist Official Website ‚©‚çƒ\[ƒXƒR[ƒhAWindows ƒCƒ“ƒXƒg[ƒ‰[ALinux —pƒpƒbƒP[ƒW“™‚ª LGPL ƒ‰ƒCƒZƒ“ƒX‚à‚µ‚­‚ÍY‘Œ¤‚Æ‚ÌŒÂ•ÊŒ_–ñ‚Ì‚¤‚¿ˆê‚Â‚©‚ç‘I‘ğ‚·‚éƒfƒ…ƒAƒ‹ƒ‰ƒCƒZƒ“ƒX•û®‚Å—˜—p‰Â”\‚Å‚·B
+OpenRTM-aist Official Website ã‹ã‚‰ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã€Windows ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ©ãƒ¼ã€Linux ç”¨ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ç­‰ãŒ LGPL ãƒ©ã‚¤ã‚»ãƒ³ã‚¹ã‚‚ã—ãã¯ç”£ç·ç ”ã¨ã®å€‹åˆ¥å¥‘ç´„ã®ã†ã¡ä¸€ã¤ã‹ã‚‰é¸æŠã™ã‚‹ãƒ‡ãƒ¥ã‚¢ãƒ«ãƒ©ã‚¤ã‚»ãƒ³ã‚¹æ–¹å¼ã§åˆ©ç”¨å¯èƒ½ã§ã™ã€‚
 
--- G‘½‚ÈƒoƒOƒtƒBƒbƒNƒX
--- 64bit Windows‚Ö‚Ì‘Î‰
--- 64bit Linux‚Ö‚Ì‘Î‰
--- Windows ƒCƒ“ƒXƒg[ƒ‰[‚Å Python”ÅAC++”ÅAJava”ÅArtshell ‚à“¯‚ÉƒCƒ“ƒXƒg[ƒ‹‰Â”\
--- Windows ƒCƒ“ƒXƒg[ƒ‰[‚Å omniORBpy ‚ğ 4.2.x ‚ÉXV
---“®ìğŒ
---- ƒTƒ|[ƒg‚·‚é Python ƒo[ƒWƒ‡ƒ“F 2.7
---“®ìŠm”FÏ‚İOS
+-- é›‘å¤šãªãƒã‚°ãƒ•ã‚£ãƒƒã‚¯ã‚¹
+-- 64bit Windowsã¸ã®å¯¾å¿œ
+-- 64bit Linuxã¸ã®å¯¾å¿œ
+-- Windows ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ©ãƒ¼ã§ Pythonç‰ˆã€C++ç‰ˆã€Javaç‰ˆã€rtshell ã‚‚åŒæ™‚ã«ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«å¯èƒ½
+-- Windows ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ©ãƒ¼ã§ omniORBpy ã‚’ 4.2.x ã«æ›´æ–°
+--å‹•ä½œæ¡ä»¶
+--- ã‚µãƒãƒ¼ãƒˆã™ã‚‹ Python ãƒãƒ¼ã‚¸ãƒ§ãƒ³ï¼š 2.7
+--å‹•ä½œç¢ºèªæ¸ˆã¿OS
 ---Debian 7.0 i386, x86_64
 ---Debian 8.0 i386, x86_64
 ---Fedora release 21 i386, x86_64
