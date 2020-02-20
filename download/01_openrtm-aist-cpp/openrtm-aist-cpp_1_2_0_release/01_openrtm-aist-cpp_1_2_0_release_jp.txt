@@ -15,7 +15,7 @@
 **** 32bit用
 
 |LEFT:300|LEFT|LEFT:120|c
-|Windows 用インストーラー&br; (OpenRTM-aist、C++、Python、&br;Java版、および OpenRTP、&br;RTShell(4.2.2) 含む)&br;(Visual Studio 2008、2010、&br;2012、2013、2015、2017 共通)|[[OpenRTM-aist-1.2.0-RELEASE_x86.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.0/OpenRTM-aist-1.2.0-RELEASE_x86.msi]] &br;MD5:abef26d7b3fa89f1ed8c7b96ea1a452b | 2019/03/15 |
+|Windows 用インストーラー&br; (OpenRTM-aist、C++、Python、&br;Java版、および OpenRTP、&br;rtshell(4.2.2) 含む)&br;(Visual Studio 2008、2010、&br;2012、2013、2015、2017 共通)|[[OpenRTM-aist-1.2.0-RELEASE_x86.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.0/OpenRTM-aist-1.2.0-RELEASE_x86.msi]] &br;MD5:abef26d7b3fa89f1ed8c7b96ea1a452b | 2019/03/15 |
 |Python-2.7|[[python-2.7.16.msi:https://www.python.org/ftp/python/2.7.16/python-2.7.16.msi]]|[[python.org:https://www.python.org]]|
 |Python-3.6|[[python-3.6.8.exe:https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe]]|[[python.org:https://www.python.org]]|
 |Python-3.7|[[python-3.7.3.exe:https://www.python.org/ftp/python/3.7.3/python-3.7.3.exe]]|[[python.org:https://www.python.org]]|
@@ -23,12 +23,12 @@
 |Doxygen|[[doxygen-1.8.15-setup.exe:http://doxygen.nl/files/doxygen-1.8.15-setup.exe]] |[[doxygen:http://www.doxygen.nl/index.html]]|
 
 -&color(red){※ Python は、"2.7"  "3.6"  "3.7" のいずれかのバージョンをインストールして下さい。};
--&color(red){※ 古い RTShell は事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiでインストールしている場合は対応不要です。};
+-&color(red){※ 古い rtshell は事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiでインストールしている場合は対応不要です。};
 
 **** 64bit用
 
 |LEFT:300|LEFT|LEFT:120|c
-|Windows 用インストーラー&br; (OpenRTM-aist、C++、Python、&br;Java版、および OpenRTP、&br; RTShell (4.2.2) 含む)&br;(Visual Studio 2010、2012、&br; 2013、2015、2017 共通)|[[OpenRTM-aist-1.2.0-RELEASE_x86_64.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.0/OpenRTM-aist-1.2.0-RELEASE_x86_64.msi]] &br;MD5:7a2670eb70a3e53abc819fa722be690a | 2019/03/15 |
+|Windows 用インストーラー&br; (OpenRTM-aist、C++、Python、&br;Java版、および OpenRTP、&br; rtshell (4.2.2) 含む)&br;(Visual Studio 2010、2012、&br; 2013、2015、2017 共通)|[[OpenRTM-aist-1.2.0-RELEASE_x86_64.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.0/OpenRTM-aist-1.2.0-RELEASE_x86_64.msi]] &br;MD5:7a2670eb70a3e53abc819fa722be690a | 2019/03/15 |
 |Python-2.7|[[python-2.7.16.amd64.msi:https://www.python.org/ftp/python/2.7.16/python-2.7.16.amd64.msi]]|[[python.org:https://www.python.org]]|
 |Python-3.6|[[python-3.6.8-amd64.exe:https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe]]|[[python.org:https://www.python.org]]|
 |Python-3.7|[[python-3.7.3-amd64.exe:https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe]]|[[python.org:https://www.python.org]]|
@@ -36,7 +36,7 @@
 |Doxygen|[[doxygen-1.8.15-setup.exe:http://doxygen.nl/files/doxygen-1.8.15-setup.exe]] |[[doxygen:http://www.doxygen.nl/index.html]]|
 
 -&color(red){※ Python は、"2.7"  "3.6"  "3.7" のいずれかのバージョンをインストールして下さい。};
--&color(red){※ 古い RTShell は事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiでインストールしている場合は対応不要です。};
+-&color(red){※ 古い rtshell は事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiでインストールしている場合は対応不要です。};
 
 インストールについては、[[OpenRTM-aistを10分で始めよう！:/ja/node/6521]] のページで手順を紹介しています。&br;
 
@@ -153,7 +153,7 @@ windows_installer_test.bat スクリプトで確認することができます�
 [[windows_installer_test.batの利用方法:/ja/content/rtm-install-check-script]]
 
 
-//- 1.1.2版を「標準」インストールすると、C++版だけでなく、Python版、Java版、RTShell もインストールされますので、
+//- 1.1.2版を「標準」インストールすると、C++版だけでなく、Python版、Java版、rtshell もインストールされますので、
 //これらの古いバージョンをインストールされている場合は、あらかじめ全てアンインストールしてください。
 
 &br;
@@ -289,7 +289,7 @@ OpenRTM-aist Official Website からソースコード、Windows インストー
 -- OpenRTM-aistの32bit版、64bit版の両方をインストールされた環境に対応するためスタートメニューを別々に定義
 -- ネームサービス終了スクリプトを定義する
 -- Windows インストーラーで omniORBを4.2.3に更新
--- Windows インストーラーで RTShellを4.2.0に更新
+-- Windows インストーラーで rtshellを4.2.0に更新
 -- Windows インストーラーで OpenCVを3.4に更新し、IntelTBB で再コンパイル、GStreamer対応
 -- RTSE上でマネジャー経由でOpenCVサンプルRTCを起動できるようにrtc.confを整備する
 

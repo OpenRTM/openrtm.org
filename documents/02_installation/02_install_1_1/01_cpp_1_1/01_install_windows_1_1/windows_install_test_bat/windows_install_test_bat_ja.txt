@@ -13,7 +13,7 @@ OpenRTM-aistをインストールしているWindows環境の設定を調べる�
 
 - Pathの確認
 
-- OpenRTM-aist-PythonとRTShellのインストール確認
+- OpenRTM-aist-Pythonとrtshellのインストール確認
 -- インストールされていれば、treeコマンドによるディレクトリ構造を別ファイルに書き出す
 
 - カスタムインストールリスト確認
@@ -33,7 +33,7 @@ OpenRTM-aistをインストールしているWindows環境の設定を調べる�
 インストールされているディレクトリ構造をtreeコマンドでログファイルに書き出しています。&br;
 Cygwinのtreeコマンドがインストールされている環境ならば、スクリプト冒頭の下記設定を環境に合わせて下さい。%CYGWIN_DIR%\bin\tree.exe が存在しない場合はWindows標準のtreeコマンドを使用します。&br;
 
-Cygwinのtreeコマンドがインストールされていると、OpenRTM-aist-PythonとRTShellのインストールディレクトリ構造のログ　yymmdd-hhmmss_'Python directory'-dir.tree　がコンパクトになります。出力指定で何階層目までディレクトリを降りるかを指定できるからです。
+Cygwinのtreeコマンドがインストールされていると、OpenRTM-aist-Pythonとrtshellのインストールディレクトリ構造のログ　yymmdd-hhmmss_'Python directory'-dir.tree　がコンパクトになります。出力指定で何階層目までディレクトリを降りるかを指定できるからです。
 Windows標準のtreeコマンドは階層指定ができないため、OpenRTM-aist-PythonがインストールされているPythonディレクトリのトップからの構造を全てが対象になってしまいます。そのため、ログにはディレクトリ名だけを出力しています。
 
 
@@ -48,7 +48,7 @@ Windows標準のtreeコマンドは階層指定ができないため、OpenRTM-a
 |yymmdd-hhmmss.log|メインのログファイル|
 |yymmdd-hhmmss_pfile.tree|C:\Program Files\OpenRTM-aistが存在していた場合に出力されます。treeコマンドによるOpenRTM-aistディレクトリ構造を確認できます。&br; OpenRTM-aistの64bit版は既にアンインストールされている場合でも、rtc***.log 等のファイルが存在するためにディレクトリが残っている場合は、このログファイルが出力されることになります。|
 |yymmdd-hhmmss_pfile_x86.tree|C:\Program Files (x86)\OpenRTM-aistが存在していた場合に出力されます。treeコマンドによるOpenRTM-aistディレクトリ構造を確認できます。&br; OpenRTM-aistの32bit版は既にアンインストールされている場合でも、64bit版と同じ理由でこのログファイルが出力される場合があります。|
-|yymmdd-hhmmss_'Python directory'-dir.tree|OpenRTM-aist-Pythonがインストールされている場合に出力されます。treeコマンドによるOpenRTM-aist-PythonとRTShellがインストールされているPythonディレクトリ構造を確認できます。&br;インストール先がC:\Python27だった場合は、ログファイル名がyymmdd-hhmmss_Python27-dir.treeとなります。|
+|yymmdd-hhmmss_'Python directory'-dir.tree|OpenRTM-aist-Pythonがインストールされている場合に出力されます。treeコマンドによるOpenRTM-aist-PythonとrtshellがインストールされているPythonディレクトリ構造を確認できます。&br;インストール先がC:\Python27だった場合は、ログファイル名がyymmdd-hhmmss_Python27-dir.treeとなります。|
 
 ** 出力内容詳細
 
@@ -159,29 +159,29 @@ Windows標準のtreeコマンドは階層指定ができないため、OpenRTM-a
  C:\Program Files (x86)\OpenRTM-aist\1.1\omniORB\4.1.7_vc10\bin\x86_win32\ 
  C:\Program Files (x86)\OpenRTM-aist\1.1\OpenCV2.4.9\x86\vc10\bin\
 
-**** PythonとOpenRTM-aist-PythonとRTShellのインストール確認
+**** PythonとOpenRTM-aist-Pythonとrtshellのインストール確認
 
-- Pythonがインストールされているパスをレジストリから取得し、OpenRTM-aist-PythonとRTShellがインストールされているかどうかを確認できます
+- Pythonがインストールされているパスをレジストリから取得し、OpenRTM-aist-Pythonとrtshellがインストールされているかどうかを確認できます
 - Pythonの複数バージョンをインストールしている環境も対応しています
 - 1.1.2版がインストールされている環境での出力例
 -- PYTHON_DIR\omniidl.exe が存在すればOpenRTM-aist-Pythonはインストールされていると判断
--- PYTHON_DIR\Lib\site-packages\rtshellが存在すればRTShellはインストールされていると判断
+-- PYTHON_DIR\Lib\site-packages\rtshellが存在すればrtshellはインストールされていると判断
 
  *-*-*-*-*-*-* check Python installed directory *-*-*-*-*-*-* 
  C:\Python27\ ----OpenRTM-aist-Python installed.  
- C:\Python27\ ----RTShell installed.  
+ C:\Python27\ ----rtshell installed.  
  C:\Python27_x64\ ----OpenRTM-aist-Python not installed.  
- C:\Python27_x64\ ----RTShell installed.  
+ C:\Python27_x64\ ----rtshell installed.  
  C:\Python35_x64\ ----OpenRTM-aist-Python not installed.  
- C:\Python35_x64\ ----RTShell not installed.  
+ C:\Python35_x64\ ----rtshell not installed.  
  C:\Python35\ ----OpenRTM-aist-Python not installed.  
- C:\Python35\ ----RTShell not installed.  
+ C:\Python35\ ----rtshell not installed.  
 
-**** OpenRTM-aist-PythonとRTShellのインストールディレクトリ確認
+**** OpenRTM-aist-Pythonとrtshellのインストールディレクトリ確認
 
 - OpenRTM-aist-PythonがインストールされているPythonディレクトリ構造を出力します。
 - 1.1.2版がインストールされている環境での出力例
--- 上記の結果で、C:\Python27_x64\にはOpenRTM-aist-Pythonはインストールされていないが、RTShellはインストールされているとありますが、
+-- 上記の結果で、C:\Python27_x64\にはOpenRTM-aist-Pythonはインストールされていないが、rtshellはインストールされているとありますが、
 この環境は対象外と判断しています。
 
  *-*-*-*-*-*-* check OpenRTM-aist-Python installed directory *-*-*-*-*-*-* 

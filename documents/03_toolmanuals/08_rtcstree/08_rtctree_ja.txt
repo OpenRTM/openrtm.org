@@ -170,7 +170,7 @@ rtctreeはPythonの標準スタイルに従います。[[PEP8>http://www.python.
 
 より詳細なドキュメンテーションはDoxygenで記述されたドキュメンテーションを参照してください。
 
-サンプルは[[RTShellのソース>https://github.com/OpenRTM/rtshell]]を参照してください。これらはRTSystemEditorで実現可能なことをrtctreeで行う方法のほぼ全てを示しています。
+サンプルは[[rtshellのソース>https://github.com/OpenRTM/rtshell]]を参照してください。これらはRTSystemEditorで実現可能なことをrtctreeで行う方法のほぼ全てを示しています。
 
 **Changelog 
 

@@ -12,7 +12,7 @@ The msi file is over 900MB in size. Use a high-speed line (50Mbps or more) to do
 
 **** For 64bit
 |LEFT:300|LEFT|LEFT:120|c
-| Windows Installer &br; (including OpenRTM-aist, C ++, Python, &br; Java version and OpenRTP, &br; RTShell (4.2.2)) &br; (Visual Studio 2010, 2012, &br; 2013, 2015, 2017, 2019) | [[OpenRTM-aist-1.2.1-RELEASE_x86_64.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.1/OpenRTM-aist-1.2.1-RELEASE_x86_64.msi]] &br; MD5:be6b346d61768435d812cc032bc7a529 | November 25, 2019 |
+| Windows Installer &br; (including OpenRTM-aist, C ++, Python, &br; Java version and OpenRTP, &br; rtshell (4.2.2)) &br; (Visual Studio 2010, 2012, &br; 2013, 2015, 2017, 2019) | [[OpenRTM-aist-1.2.1-RELEASE_x86_64.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.1/OpenRTM-aist-1.2.1-RELEASE_x86_64.msi]] &br; MD5:be6b346d61768435d812cc032bc7a529 | November 25, 2019 |
 | Python-2.7 | [[python-2.7.16.amd64.msi:https://www.python.org/ftp/python/2.7.16/python-2.7.16.amd64.msi]] | [[python .org:https://www.python.org]] |
 | Python-3.6 | [[python-3.6.8-amd64.exe:https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe]] | [[python .org:https://www.python.org]] |
 | Python-3.7 | [[python-3.7.5-amd64.exe:https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe]] | [[python .org:https://www.python.org]] |
@@ -20,11 +20,11 @@ The msi file is over 900MB in size. Use a high-speed line (50Mbps or more) to do
 | Doxygen | [[doxygen-1.8.16-setup.exe:http://doxygen.nl/files/doxygen-1.8.16-setup.exe]] | [[doxygen:http://www.doxygen.nl/index.html]] |
 
 - &color(red){* Install Python version "3.7", "3.6", or "2.7". };
-//- &color (red){* Please delete the old RTShell beforehand. However, if the OpenRTM-aist 1.1.2 version is installed using the msi file, no action is required. };
+//- &color (red){* Please delete the old rtshell beforehand. However, if the OpenRTM-aist 1.1.2 version is installed using the msi file, no action is required. };
 
 **** For 32bit
 |LEFT:300|LEFT|LEFT:120|c
-|Installer for Windows&br; (OpenRTM-aist、C++、Python、&br;Java version, and OpenRTP、&br;including RTShell(4.2.2))&br;(Visual Studio 2010、2012、&br;2013、2015、2017、2019)|[[OpenRTM-aist-1.2.1-RELEASE_x86.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.1/OpenRTM-aist-1.2.1-RELEASE_x86.msi]] &br;MD5:a9186d409cafc039432a0e1c6e7e02ef | 2019/11/25 |
+|Installer for Windows&br; (OpenRTM-aist、C++、Python、&br;Java version, and OpenRTP、&br;including rtshell(4.2.2))&br;(Visual Studio 2010、2012、&br;2013、2015、2017、2019)|[[OpenRTM-aist-1.2.1-RELEASE_x86.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.1/OpenRTM-aist-1.2.1-RELEASE_x86.msi]] &br;MD5:a9186d409cafc039432a0e1c6e7e02ef | 2019/11/25 |
 |Python-2.7|[[python-2.7.16.msi:https://www.python.org/ftp/python/2.7.16/python-2.7.16.msi]]|[[python.org:https://www.python.org]]|
 |Python-3.6|[[python-3.6.8.exe:https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe]]|[[python.org:https://www.python.org]]|
 |Python-3.7|[[python-3.7.5.exe:https://www.python.org/ftp/python/3.7.5/python-3.7.5.exe]]|[[python.org:https://www.python.org]]|

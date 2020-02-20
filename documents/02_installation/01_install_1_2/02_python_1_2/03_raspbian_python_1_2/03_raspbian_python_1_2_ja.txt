@@ -38,8 +38,8 @@ openrtm.orgが提供するインストール・スクリプト''pkg_install_rasp
 
 一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[[一括インストールスクリプト:http://openrtm.org/openrtm/ja/node/6345]]」のページをご確認ください。
 
-** RTShellのインストール
-RTCをRaspbianにインストールしてそのホスト上からローカルにRTCをコントロールしたい場合にはRTShellが必要です。一括インストールスクリプトを用いてRTShellをインストールしてください。Raspbianではpkg_install_raspbian.shが置いてあるディレクトリで
+** rtshellのインストール
+RTCをRaspbianにインストールしてそのホスト上からローカルにRTCをコントロールしたい場合にはrtshellが必要です。一括インストールスクリプトを用いてrtshellをインストールしてください。Raspbianではpkg_install_raspbian.shが置いてあるディレクトリで
  $ sudo sh ./pkg_install_raspbian.sh -l rtshell --yes
 でインストールできます。
 
@@ -126,7 +126,7 @@ rtshellのインストールも確認します。
  中略
  /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/uuid_8py.html 
 
-*** RTShell
+*** rtshell
 
 - コマンド用スクリプト
  /usr/local/bin/rtact

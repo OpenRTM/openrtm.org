@@ -14,7 +14,7 @@ msiファイルは900MB以上のサイズがあります。ダウンロードを
 **** 64bit用
 
 |LEFT:300|LEFT|LEFT:120|c
-|Windows用インストーラー&br; (OpenRTM-aist、C++、Python、&br;Java版、および OpenRTP、&br; RTShell(4.2.2)含む)&br;(Visual Studio 2010、2012、&br; 2013、2015、2017、2019 共通)|[[OpenRTM-aist-1.2.1-RELEASE_x86_64.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.1/OpenRTM-aist-1.2.1-RELEASE_x86_64.msi]] &br;MD5:be6b346d61768435d812cc032bc7a529 | 2019/11/25 |
+|Windows用インストーラー&br; (OpenRTM-aist、C++、Python、&br;Java版、および OpenRTP、&br; rtshell(4.2.2)含む)&br;(Visual Studio 2010、2012、&br; 2013、2015、2017、2019 共通)|[[OpenRTM-aist-1.2.1-RELEASE_x86_64.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.1/OpenRTM-aist-1.2.1-RELEASE_x86_64.msi]] &br;MD5:be6b346d61768435d812cc032bc7a529 | 2019/11/25 |
 |Python-2.7|[[python-2.7.16.amd64.msi:https://www.python.org/ftp/python/2.7.16/python-2.7.16.amd64.msi]]|[[python.org:https://www.python.org]]|
 |Python-3.6|[[python-3.6.8-amd64.exe:https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe]]|[[python.org:https://www.python.org]]|
 |Python-3.7|[[python-3.7.5-amd64.exe:https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe]]|[[python.org:https://www.python.org]]|
@@ -22,12 +22,12 @@ msiファイルは900MB以上のサイズがあります。ダウンロードを
 |Doxygen|[[doxygen-1.8.16-setup.exe:http://doxygen.nl/files/doxygen-1.8.16-setup.exe]] |[[doxygen:http://www.doxygen.nl/index.html]]|
 
 -&color(red){※Pythonは、"3.7"、"3.6"、"2.7"のいずれかのバージョンをインストールしてください。};
-//-&color(red){※古いRTShellは事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiファイルを用いてインストールしている場合は対応不要です。};
+//-&color(red){※古いrtshellは事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiファイルを用いてインストールしている場合は対応不要です。};
 
 **** 32bit用
 
 |LEFT:300|LEFT|LEFT:120|c
-|Windows用インストーラー&br; (OpenRTM-aist、C++、Python、&br;Java版、およびOpenRTP、&br;RTShell(4.2.2)含む)&br;(Visual Studio 2010、2012、&br;2013、2015、2017、2019共通)|[[OpenRTM-aist-1.2.1-RELEASE_x86.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.1/OpenRTM-aist-1.2.1-RELEASE_x86.msi]] &br;MD5:a9186d409cafc039432a0e1c6e7e02ef | 2019/11/25 |
+|Windows用インストーラー&br; (OpenRTM-aist、C++、Python、&br;Java版、およびOpenRTP、&br;rtshell(4.2.2)含む)&br;(Visual Studio 2010、2012、&br;2013、2015、2017、2019共通)|[[OpenRTM-aist-1.2.1-RELEASE_x86.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.1/OpenRTM-aist-1.2.1-RELEASE_x86.msi]] &br;MD5:a9186d409cafc039432a0e1c6e7e02ef | 2019/11/25 |
 |Python-2.7|[[python-2.7.16.msi:https://www.python.org/ftp/python/2.7.16/python-2.7.16.msi]]|[[python.org:https://www.python.org]]|
 |Python-3.6|[[python-3.6.8.exe:https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe]]|[[python.org:https://www.python.org]]|
 |Python-3.7|[[python-3.7.5.exe:https://www.python.org/ftp/python/3.7.5/python-3.7.5.exe]]|[[python.org:https://www.python.org]]|
@@ -35,7 +35,7 @@ msiファイルは900MB以上のサイズがあります。ダウンロードを
 |Doxygen|[[doxygen-1.8.16-setup.exe:http://doxygen.nl/files/doxygen-1.8.16-setup.exe]] |[[doxygen:http://www.doxygen.nl/index.html]]|
 
 -&color(red){※Pythonは、"3.7"、"3.6"、"2.7"のいずれかのバージョンをインストールしてください。};
-//-&color(red){※古いRTShellは事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiファイルを用いてインストールしている場合は対応不要です。};
+//-&color(red){※古いrtshellは事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiファイルを用いてインストールしている場合は対応不要です。};
 
 
 
@@ -124,7 +124,7 @@ Windows10などの高解像度モードを利用すると、Eclipseのアイコ�
 //[[windows_installer_test.batの利用方法:/ja/content/rtm-install-check-script]]
 //
 
-//- 1.1.2版を「標準」インストールすると、C++版だけでなく、Python版、Java版、RTShell もインストールされますので、
+//- 1.1.2版を「標準」インストールすると、C++版だけでなく、Python版、Java版、rtshell もインストールされますので、
 //これらの古いバージョンをインストールされている場合は、あらかじめ全てアンインストールしてください。
 
 &br;

@@ -230,7 +230,7 @@
       - (rtshell: 07_rtshell_ja.txt)
       - (ドキュメント=> Windowsへのインストール: 01_install_windows_python_1_1_ja.txt)
       - (ダウンロードサイト=> rtctree/rtsprofile: 04_rtctree_rtsprofile_ja.txt)
-      - (ダウンロードサイト=> RTShell: 03_rtshell_ja.txt)
+      - (ダウンロードサイト=> rtshell: 03_rtshell_ja.txt)
     - 2.0系のインストール(開発中): 06_install_2_0_ja.txt
       - C++版 2.0系: 01_Install_CPP_2_0_ja.txt 	
         - Windowsへのインストール: 01_install_windows_cpp_2_0_ja.txt
@@ -794,7 +794,7 @@
       - (Tips: 06_tips_jdk_jp.txt)
       - (更新方法: Update_Method_ja.txt)      -
       - (OpenRTP 1.1.0-RC5: OpenRTP 1.1.0-RC5: openrtp_1_1_0_rc5_ja.txt)
-    - RTShell: 03_rtshell_ja.txt
+    - rtshell: 03_rtshell_ja.txt
       - (追加説明=> rtshell: 07_rtshell_ja.txt)
       - (OpenRTM-aistを10分で始めよう！: lets_start_jp.txt)
       - (一括インストール・スクリプト: 03_bulk_installation_script_ja.txt)
