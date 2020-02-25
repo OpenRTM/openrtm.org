@@ -6,30 +6,30 @@
 After successful installation or build, test the operation with the attached sample.
 The sample is usually at the following location for the 64-bit version.
 
-- C:\Program Files\OpenRTM-aist\1.2.x\Components\C ++\Examples
+- c:\Program Files\OpenRTM-aist\1.2.x\Components\C ++\Examples
 - OpenRTM-aist\examples (when building from source)
 
 Use the following procedure to check that OpenRTM-aist is correctly built/installed using the sample component set SimpleIO.
 
 
 
-** Confirmation using sample (SimpleIO)
+** Operation check using sample (SimpleIO)
 
 This is a sample set consisting of the RT components ConsoleIn and ConsoleOut.
-ConsoleIn is a component that outputs the numerical value input from the console to the OutPort, and ConsoleOutComp is a component that displays the numerical value input from the InPort on the console. These are samples to show the simple I/O (input/output) use.
-It works by connecting the OutPort of ConsoleInComp to the InPort of ConsoleOutComp and activating these two components.
+ConsoleIn is a component that outputs the numerical value input from the console to the OutPort, and ConsoleOutComp is a component that displays the numerical value input from the InPort on the console. These are RTC samples to show a simple I/O (input/output) use.
+It works by connecting the OutPort of ConsoleIn's OutPort to the InPort of ConsoleOut's InPort and activating these two components.
 
 The following explanation assumes that various programs are started from the start menu in an environment where OpenRTM-aist is installed with the msi installer.
 
-*** RTSystemEditor, start name server
-Follow the steps below to start the RTSystemEditor and name server.
+*** Start RTSystemEditor and name server
+Follow the steps below to start the RTSystemEditor and the name server.
 
 -[[OpenRTP startup procedure>//node/6980]]
 
 *** Start sample component
 After starting the name server, start the appropriate sample component.
 
-For Windows 10, type "C++_Examples" in the bottom right corner [Tyepe here to search], find the folder for the examples and open it.
+For Windows 10, type "C++_Examples" in the bottom right corner [Tyepe here to search], find the directory for the examples and open it.
 
 #ref(rtm7_en.png, 60%, center)
 CENTER:''Confirm name server startup''
@@ -44,7 +44,7 @@ Here, double-click "ConsoleIn.bat" and "ConsoleOut.bat" respectively to start tw
 
 When trying to launch the sample component, Windows Defender Firewall may display a Windows Security Alert dialog. Check [Private network (home network, company network, etc.) (R)] and uncheck [Public network (airport, coffee shop, etc.) (not recommended) (U)] and then click [Allow access (A)]. This screen may be different from Windows 10 (build 1903), and may not be displayed depending on the settings. If it is displayed, make the same settings and close the dialog.
 
-Here, double-click "ConsoleIn.bat" and "ConsoleOut.bat" respectively to start two components. A few seconds after startup, two console screens as shown below will open.
+- Double-click "ConsoleIn.bat" and "ConsoleOut.bat" respectively to start two components. A few seconds after startup, two console screens as shown below will open.
 
 ** Screen after starting sample component
 
@@ -57,7 +57,7 @@ CENTER:''ConsoleIn and ConsoleOut components ''
 
 If a component does not start, there are several possible causes.
 
-**** Console screen opens and disappears immediately
+***** Console screen opens and disappears immediately
 
 If the environment variables '' RTM_VC_VERSION '', '' OMNI_ROOT '' and '' RTM_ROOT '' are not set, the RTC will fail to start.
 When installing with the msi installer, restarting the OS may solve the problem.
@@ -71,22 +71,20 @@ Please rewrite rtc.conf with the following contents (minimum setting) and try.
  corba.nameservers: localhost
 
 
-**** Exit with a runtime error
+***** Exit with a runtime error
 
 Runtime errors may occur due to improperly installed or configured libraries, etc. In that case, please try the following method.
 - Try restarting
 - Uninstalling all of OpenRTM-aist and installing it again may improve the situation.
 
-**** Placement on the editor screen in RTSystemEditor
+**** Place the components on the system diagram
 
-Click [>] next to [localhost] in the tree view of the RTSystemEditor, and click [>] next to the &ref(icon_db.png); icon. You may see the two components icons in the above step.
+- Click [>] next to [localhost] in the tree view of the RTSystemEditor, and click [>] next to the &ref(icon_db.png); icon. You may see the two components icons in the above step.
 
 #ref(rtm10.png, 60%, center)
 CENTER:''ConsoleIn and ConsoleOut components ''
 
-Open the System Editor screen (System Diagram) for editing the system. Click the [Open New System Editor] button &ref(icon_open_editor_ja.png, 150%); at the top to open the editor screen in the center pane.
-
-From the name service view on the left, drag and drop the components (two) indicated by the &ref(icon-rtce.png, 200%); icon onto the system diagram view in the center.
+Open the System Editor screen (System Diagram) for editing the system. Click the [Open New System Editor] button &ref(icon_open_editor_ja.png, 150%); at the top to open the system editor (System Diagram) in the center pane. From the name service view on the left, drag and drop the components (two) indicated by the &ref(icon-rtce.png, 200%); icon onto the system diagram view in the center.
 
 #ref(rtm11_en.png, 80%, center)
 CENTER:''Place component in editor ''
@@ -94,12 +92,12 @@ CENTER:''Place component in editor ''
 
 **** Connection and activation
 
-You can see OutPort &ref(rtse_outport_icon.png); where data is output port and is shown on the right side of ConsoleIn0 component; InPort &ref(rtse_inport_icon.png) where data is input and is shown on the left side of ConsoleOut0 component like the following figure.
+You can see an OutPort &ref(rtse_outport_icon.png); where data is output to and is shown on the right side of the ConsoleIn0 component and an InPort &ref(rtse_inport_icon.png); where data is input from and is shown on the left side of the ConsoleOut0 component like the following figure.
 
 #ref(rtm13.png, 80%, center)
 CENTER:''Data port connection ''
 
-Connect the InPort and the OutPort (these are called "data port"). If you drag and drop from OutPort to InPort (or from InPort to OutPort), a dialog as shown below appears. Click the [OK] button with the default settings.
+Connect the InPort and the OutPort (these are called "data port"). If you drag and drop from the OutPort to the InPort (or from the InPort to the OutPort), a dialog as shown below appears. Click the [OK] button with the default settings.
 
 #ref(rtm12_en.png, 80%, center)
 CENTER:''Data port connection dialog ''
