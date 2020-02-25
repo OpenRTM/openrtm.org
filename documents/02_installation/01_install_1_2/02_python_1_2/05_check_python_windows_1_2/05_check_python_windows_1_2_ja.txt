@@ -29,7 +29,7 @@ RTコンポーネント ConsoleIn、ConsoleOutからなるサンプルセット�
 *** サンプルコンポーネントの起動
 ネームサーバー起動後、適当なサンプルコンポーネントを起動します。
 
-Windows 10の場合は右下の「ここに入力して検索」に''Python_Examples''と入力してサンプルがあるディレクトリを開きます。
+Windows 10の場合は右下の[ここに入力して検索]に''Python_Examples''と入力してサンプルのディレクトリを開きます。
 
 #ref(rtm7-2.png,60%,center)
 CENTER:''ネームサーバーの起動を確認''
@@ -76,14 +76,14 @@ C:\Program Files\OpenRTM-aist\1.2.&color(blue){x};\Components\Python\Examples\Si
  変数名(N): OMNIORB_USEHOSTNAME
  変数値(V): 192.168.0.11
 
-**** エディタへの配置
+**** RTSystemEditorでのエディタへの配置
 
 RTSystemEditorのツリー表示の[>]をクリックすると、先ほど起動した2つのコンポーネントが登録されていることがわかります。
 
 #ref(rtm10.png,/ja/node/6614,60%,center)
 CENTER:''ConsoleInコンポーネントとConsoleOutコンポーネント''
 
-システムを編集するエディタ(System Diagram)を開きます。上部のエディタを[開く]ボタン&ref(rtse_open_editor_icon_ja.png, 200%); をクリックすると、中央のペインにエディタ(System Diagram)が開きます。左側のネームサービスビューに &ref(rtse_rtc_icon_n.png, 200%); のアイコンで表示されているコンポーネント(2つ)を中央のエディタ・エリアにドラッグアンドドロップします。
+システムを編集するエディタ(System Diagram)を開きます。上部の[Open New System Editor]ボタン&ref(rtse_open_editor_icon_ja.png, 200%); をクリックすると、中央のペインにエディタ(System Diagram)が開きます。左側のネームサービスビューに &ref(rtse_rtc_icon_n.png, 200%); のアイコンで表示されているコンポーネント(2つ)を中央のエディタ・エリアにドラッグアンドドロップします。
 
 #ref(rtm11.png,/ja/node/6614,80%,center)
 CENTER: ''コンポーネントをSystem Diagramに配置''
@@ -91,7 +91,7 @@ CENTER: ''コンポーネントをSystem Diagramに配置''
 
 **** 接続とアクティブ化
 
-ConsoleIn0コンポーネント・アイコンの右側にはデータが出力されるOutPort &ref(rtse_outport_icon_n.png,150%); 、ConsoleOut0コンポーネント・アイコンの左側にはデータが入力されるInPort &ref(rtse_inport_icon_n.png, 150%); がそれぞれ印されています。
+ConsoleIn0コンポーネント・アイコンの右側にはデータが出力されるOutPort &ref(rtse_outport_icon_n.png,150%);が 、ConsoleOut0コンポーネント・アイコンの左側にはデータが入力されるInPort &ref(rtse_inport_icon_n.png, 150%);がそれぞれ配置されています。
 
 これらInPort/OutPort(まとめてデータポートと呼びます)を接続します。OutPortからInPort(またはInPortからOutPort)へドラッグランドドロップすると、図のようなダイアログが現れますので、デフォルト設定のまま[OK]ボタンをクリックします。
 
@@ -114,7 +114,7 @@ CENTER: ''アクティブ化されたコンポーネント''
 
  Please input number: 
 
-というプロンプトが表示されますので、適当な数値(short intの範囲内:32767以下)を入力しEnterキーを押してください。すると、ConsoleOut側のコンソールに入力した数値が表示され、ConsoleInコンポーネントからConsoleOutコンポーネントへデータが転送されたことがわかります。
+というプロンプト表示に変わりますので、適当な数値(short intの範囲内:32767以下)を入力しEnterキーを押してください。すると、ConsoleOut側のコンソールにも入力した数値が表示され、ConsoleInコンポーネントからConsoleOutコンポーネントへデータが転送されたことがわかります。
 
 以上で、OpenRTPを用いたコンポーネントの基本動作の確認は終了です。
 

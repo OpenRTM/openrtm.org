@@ -13,10 +13,11 @@ Check that OpenRTM-aist is built and installed correctly using the sample compon
 
 ** Operation check using sample (SimpleIO)
 
-This is a sample set consisting of RT components ConsoleIn and ConsoleOut. ConsoleIn is a component that outputs numerical values ​​input from the console to OutPort, and ConsoleOut is a component that displays numerical values ​​input from InPort to the console.
-These are samples to show a simple I/O (input/output) use RTC example. It works by connecting the data ports from ConsoleIn's OutPort to ConsoleOut's InPort and activating these two components.
+This is a sample set consisting of RT components ConsoleIn and ConsoleOut. ConsoleIn is a component that outputs numerical values ​​input from the console to OutPort, and ConsoleOut is a component that displays numerical values ​​input from InPort to the console. 
+These are RTC samples to show a simple I/O (input/output) use. It works by connecting the data ports from ConsoleIn's OutPort to ConsoleOut's InPort and activating these two components.
 
 ** Operation check environment
+
 The following describes how to use OpenRTP when starting various programs from the Start menu in an environment where OpenRTM-aist is installed by default with the msi installer. When using RTShell without using OpenRTP, refer to [[Operation Check (Windows)>//node/7005]] in Installing RTShell. If you build the source, the sample components are located in &Color(blue){<Source directory>};\OpenRTM-aist\examples\SimpleIO. Please execute ConsoleIn / ConsoleOut components from there.
 
 ** Operation Check Procedure
@@ -29,7 +30,7 @@ Follow the steps below to start RTSystemEditor and the name server.
 *** Start sample component
 After starting the name server, start the appropriate sample component.
 
-In the case of Windows 10, enter "Python_Examples" in "Search here by typing here" on the lower right to open the directory of examples.
+In the case of Windows 10, enter "Python_Examples" in [Type here to search」 on the lower right to open the directory of examples.
 
 #ref(rtm7-2_en.png, 60%, center)
 CENTER:''Confirm name server startup''
@@ -37,7 +38,7 @@ CENTER:''Confirm name server startup''
 #ref(rtm8-2_en.png, 80%, center)
 CENTER:''Sample component directory''
 
-- double-click "ConsoleIn.bat" and "ConsoleOut.bat" respectively to start two components. When started, two console screens as shown below will open.
+- Double-click "ConsoleIn.bat" and "ConsoleOut.bat" respectively to start two components. When started, two console screens as shown below will open.
 
 #ref(rtm9-2.png, 60%, center)
 CENTER:''ConsoleIn and ConsoleOut components''
@@ -78,12 +79,12 @@ Set the environment variable OMNIORB_USEHOSTNAME as follows (example below is wh
 
 **** Place the components on the system diagram
 
-If you click [>] in the tree view of the RTSystemEditor, you will see that the two components started earlier are registered.
+- Click [>] next to [localhost] in the tree view of the RTSystemEditor, and click [>] next to the &ref(icon_db.png); icon. You may see the two components icons in the above step.
 
 #ref(rtm10.png,60%, center)
 CENTER:''ConsoleIn and ConsoleOut components ''
 
-Open the system editor (system diagram) for editing the system. Click the [Open] button of the upper editor &ref(rtse_open_editor_icon_ja.png, 200%); to open the system editor (system diagram) in the center pane. Drag and drop the components (two) indicated by the &ref(rtse_rtc_icon_n.png, 200%); icon in the name service view on the left to the system diagram pane in the center.
+Open the system editor (system diagram) for editing the system. Click the [Open New System Editor] button &ref(rtse_open_editor_icon_ja.png, 200%); at the top to open the system editor (system diagram) in the center pane. From the name service view on the left, drag and drop the components (two) indicated by the &ref(icon-rtce.png, 200%); icon onto the system diagram view in the center.
 
 #ref(rtm11_en.png,80%, center)
 CENTER:''Place component on the system diagram''
@@ -92,7 +93,7 @@ CENTER:''Place component on the system diagram''
 **** Connection and activation
 
 You can see an OutPort &ref(rtse_outport_icon.png); where data is output to and is shown on the right side of the ConsoleIn0 component and an InPort &ref(rtse_inport_icon.png); where data is input from and is shown on the left side of the ConsoleOut0 component like the following figure.
-Connect these InPort/OutPort (called "data port"). If you drag and drop from the OutPort to the InPort (or from the InPort to the OutPort), a dialog as shown below appears. Click the [OK] button with the default settings.
+Connect these InPort/OutPort (these are called "data port"). If you drag and drop from the OutPort to the InPort (or from the InPort to the OutPort), a dialog as shown below appears. Click the [OK] button with the default settings.
 
 #ref(rtm13.png, 80%, center)
 CENTER:''Data port connection ''
