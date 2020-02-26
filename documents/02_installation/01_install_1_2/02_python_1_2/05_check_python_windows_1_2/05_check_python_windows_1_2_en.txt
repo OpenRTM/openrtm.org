@@ -1,12 +1,13 @@
 // Title: Operation check (Windows)
+
 #contents
 
 ** Location of sample components
 
 After successful installation or build, test the operation with the attached sample. Samples are usually located at:
 
-- c:\Program Files\OpenRTM-aist\1.2.&Color(blue){x};\Components\Python
-- &Color(blue){<Source directory>};/OpenRTM-aist/examples          (when building from source)
+- c:\Program Files\OpenRTM-aist\1.2.&color(blue){x};\Components\Python
+- &color(blue){<Source directory>};/OpenRTM-aist/examples          (when building from source)
 
 Check that OpenRTM-aist is built and installed correctly using the sample component set SimpleIO.
 
@@ -18,7 +19,7 @@ These are RTC samples to show a simple I/O (input/output) use. It works by conne
 
 ** Operation check environment
 
-The following describes how to use OpenRTP when starting various programs from the Start menu in an environment where OpenRTM-aist is installed by default with the msi installer. When using RTShell without using OpenRTP, refer to [[Operation Check (Windows)>//node/7005]] in Installing RTShell. If you build the source, the sample components are located in &Color(blue){<Source directory>};\OpenRTM-aist\examples\SimpleIO. Please execute ConsoleIn / ConsoleOut components from there.
+The following describes how to use OpenRTP when starting various programs from the Start menu in an environment where OpenRTM-aist is installed by default with the msi installer. When using RTShell without using OpenRTP, refer to [[Operation Check (Windows)>//node/7005]] under "Install rtshell" page. If you build the source, the sample components are located in &color(blue){<Source directory>};\OpenRTM-aist\examples\SimpleIO. Please replace the location of ConsoleIn/ConsoleOut in the explanation below and in the link by it.
 
 ** Operation Check Procedure
 *** Start RTSystemEditor and the name server
@@ -30,7 +31,7 @@ Follow the steps below to start RTSystemEditor and the name server.
 *** Start sample component
 After starting the name server, start the appropriate sample component.
 
-In the case of Windows 10, enter "Python_Examples" in [Type here to search」 on the lower right to open the directory of examples.
+In the case of Windows 10, enter "Python_Examples" in [Type here to search] on the lower right to open the directory of examples.
 
 #ref(rtm7-2_en.png, 60%, center)
 CENTER:''Confirm name server startup''
@@ -64,10 +65,11 @@ omniORBpy is included in the msi installer provided by openrtm.org, but if you c
 
 The file that starts ConsoleIn and ConsoleOut is
 
-c:\Program Files\OpenRTM-aist\1.2.&Color(blue){x};\Components\Python\Examples\SimpleIO\ConsoleIn.py &br;
-c:\Program Files\OpenRTM-aist\1.2.&Color(blue){x};\Components\Python\Examples\SimpleIO\ConsoleOut.py
+c:\Program Files\OpenRTM-aist\1.2.&color(blue){x};\Components\Python\Examples\SimpleIO\ConsoleIn.py &br;
+c:\Program Files\OpenRTM-aist\1.2.&color(blue){x};\Components\Python\Examples\SimpleIO\ConsoleOut.py &br;
+Note that the location is the location of the case that you installed OpenRTM-aist by using 64-bit msi.
 
-(If installed with 64-bit msi) Open the console screen in this directory and start it by executing python ConsoleIn.py, but if you can not start by double-clicking ConsoleIn.py, please check the installed python. If both 32-bit and 64-bit versions of Python are installed, the one installed first will be associated with the py file, so installing Python of the same architecture as the OpenRTM-aist-Python installer may solve it first Maybe.
+Open the console screen in this directory and start it by executing python ConsoleIn.py, but if you can not start by double-clicking ConsoleIn.py, please check the installed python. If both 32-bit and 64-bit versions of Python are installed, the one installed first will be associated with the py file, so installing Python of the same architecture as the OpenRTM-aist-Python installer may solve it first Maybe.
 
 ***** Other
 
