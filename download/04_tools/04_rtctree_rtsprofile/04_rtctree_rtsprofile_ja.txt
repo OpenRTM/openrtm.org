@@ -1,13 +1,13 @@
 ﻿// Title: rtctree/rtsprofile
 **Python ライブラリ
 
-RTCTree ([[マニュアル>/ja/node/852]]) は RTコンポーネントの管理をする Python 用のライブラリです。コンポーネントの activate やポートの接続等、RTSystemEditor をできることを Python のプログラムから行うことができます。
+rtctree ([[マニュアル>/ja/node/852]]) は RTコンポーネントの管理をする Python 用のライブラリです。コンポーネントの activate やポートの接続等、RTSystemEditor をできることを Python のプログラムから行うことができます。
 
-RTSProfile ([[マニュアル>/ja/node/853]]) は Python で RTSProfile 仕様を利用するためのライブラリです。
+rtsprofile ([[マニュアル>/ja/node/853]]) は Python で rtsprofile 仕様を利用するためのライブラリです。
 <!--break-->
 **インストーラー 
 
-&color(red){RTCTree は omniORB-py 4.x 以上が必要となります。Python版 OpenRTM-aist がインストールされていない場合は、[[omniORB のウェブサイト>http://omniorb.sourceforge.net/]]からダウンロードしインストールしてください。};
+&color(red){rtctree は omniORB-py 4.x 以上が必要となります。Python版 OpenRTM-aist がインストールされていない場合は、[[omniORB のウェブサイト>http://omniorb.sourceforge.net/]]からダウンロードしインストールしてください。};
 
 &color(red){最新版をインストールする前に、古いバージョンは完全削除されていることを確認してください。};
 

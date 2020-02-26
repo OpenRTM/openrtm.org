@@ -38,11 +38,11 @@ Debianの場合はsuでroot権限を得た後に
 
 ** JDK8のインストール
 
-OpenRTP(RTSystem EditorやRTC Builderなど)の実行にはJDK8相当のJava環境が必要です。(デフォルトの環境でJDK8がインストールされている場合もありますが、Ubuntu 18.04ではJDK11がインストールされているため、JDK8のインストールが必要です。) 　なお、RTShell/RTCTree/RTSprofileの使用にはJDKは必要ありませんのでOpenRTPを使わない場合にはJDK8をインストールする必要はありません。 JDK8の入手やインストールについては以下を参照してください。
+OpenRTP(RTSystem EditorやRTC Builderなど)の実行にはJDK8相当のJava環境が必要です。(デフォルトの環境でJDK8がインストールされている場合もありますが、Ubuntu 18.04ではJDK11がインストールされているため、JDK8のインストールが必要です。) 　なお、rtshell/rtctree/rtsprofileの使用にはJDKは必要ありませんのでOpenRTPを使わない場合にはJDK8をインストールする必要はありません。 JDK8の入手やインストールについては以下を参照してください。
 - [[JDK8のインストール>/ja/node/6911]]
 
-** RTShellのインストール
-制御コンピュータが小規模のシステムの場合など、CUIでRTCを制御したい場合にはOpenRTPのRTSystemEditor相当の機能をCUIから実行できるようなツールとしてRTShellと呼ばれるツールが提供されています。RTShellのインストールは一括インストールスクリプトを用いて、一括インストールスクリプト・ファイルが置かれているディレクトリで
+** rtshellのインストール
+制御コンピュータが小規模のシステムの場合など、CUIでRTCを制御したい場合にはOpenRTPのRTSystemEditor相当の機能をCUIから実行できるようなツールとしてrtshellと呼ばれるツールが提供されています。rtshellのインストールは一括インストールスクリプトを用いて、一括インストールスクリプト・ファイルが置かれているディレクトリで
 
 Ubuntuの場合は
  $ sudo sh pkg_install_ubuntu.sh -l rtshell --yes

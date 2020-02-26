@@ -75,8 +75,8 @@ openrtm.orgではapt-getから利用可能なパッケージリポジトリを�
 http://www.debian.org/doc/manuals/apt-howto/ch-apt-get.ja.html#s-pin
 を参照してください。
 
-*** RTShellのインストール
-RTShellのインストールは、OpenRTM-Pythonのインストールが必要になります。Python
+*** rtshellのインストール
+rtshellのインストールは、OpenRTM-Pythonのインストールが必要になります。Python
 
 *** インストールの確認
 

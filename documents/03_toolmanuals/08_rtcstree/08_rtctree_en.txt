@@ -282,7 +282,7 @@ Alternatively, use Git to clone the repository. This is better if you wish to co
 
 For further documentation, see the Doxygen-generated API documentation.
 
-For the sample example code, refer the [[RTShell Source code>https://github.com/OpenRTM/rtshell]]. You can find how to use the rtctree library to perform most of the actions possible using RTSystemEditor.
+For the sample example code, refer the [[rtshell Source code>https://github.com/OpenRTM/rtshell]]. You can find how to use the rtctree library to perform most of the actions possible using RTSystemEditor.
 
 **Changelog
 ***3.0

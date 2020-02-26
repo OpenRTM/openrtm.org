@@ -61,7 +61,7 @@ rtsprofile は Python の標準スタイルに従います。[[PEP8>http://www.p
 
 より詳細なドキュメンテーションは Doxygen で記述されたドキュメンテーションを参照してください。
 
-サンプルは[[RTShellのソース>https://github.com/OpenRTM/rtshell]]を参照してください。
+サンプルは[[rtshellのソース>https://github.com/OpenRTM/rtshell]]を参照してください。
 
 &aname(repo);
 **リポジトリ 
