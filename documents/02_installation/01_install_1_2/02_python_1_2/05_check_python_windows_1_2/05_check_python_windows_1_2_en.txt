@@ -92,7 +92,7 @@ Open the system editor (system diagram) for editing the system. Click the [Open 
 CENTER:''Place component on the system diagram''
 
 
-**** Connection and activation
+**** Connection and activate
 
 You can see an OutPort &ref(rtse_outport_icon.png); where data is output to and is shown on the right side of the ConsoleIn0 component and an InPort &ref(rtse_inport_icon.png); where data is input from and is shown on the left side of the ConsoleOut0 component like the following figure.
 Connect these InPort/OutPort (these are called "data port"). If you drag and drop from the OutPort to the InPort (or from the InPort to the OutPort), a dialog as shown below appears. Click the [OK] button with the default settings.
