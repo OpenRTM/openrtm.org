@@ -3,7 +3,7 @@
 
 ** Location of sample components
 
-After successful installation or build, test the operation with the attached sample.
+After successful installation or build, test the operation with the included sample.
 The sample is usually at the following location for the 64-bit version.
 
 - c:\Program Files\OpenRTM-aist\1.2.x\Components\C ++\Examples
