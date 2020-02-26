@@ -796,10 +796,10 @@ However, if you need to change such values periodically, you should use the data
 *** (G)Timing of update
 //***更新のタイミング
 
-The configuration parameters can be updated at any time from tools such as RTSystemEditor and RTShell.
+The configuration parameters can be updated at any time from tools such as RTSystemEditor and rtshell.
 However, actually changed parameters are reflected in actual variables at a certain timing before being referenced in functions used in functions such as onExecute and onActivated.
 The update timing is as follows.
-//コンフィギュレーションパラメーターは RTSystemEditor や RTShell などのツールから、いつでも更新することができます。
+//コンフィギュレーションパラメーターは RTSystemEditor や rtshell などのツールから、いつでも更新することができます。
 //しかし、実際に変更されたパラメーターは onExecute や onActivated などの関数で使用する関数内で参照される前にあるタイミングで実際の変数に反映されます。
 //更新のタイミングは以下の通りです。
 

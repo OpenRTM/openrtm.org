@@ -20,9 +20,9 @@
 //- Pathの確認
 - (G)Path confirmation
 
-//- OpenRTM-aist-PythonとRTShellのインストール確認
+//- OpenRTM-aist-Pythonとrtshellのインストール確認
 //-- インストールされていれば、treeコマンドによるディレクトリ構造を別ファイルに書き出す
-- (G)Confirm installation of OpenRTM-aist-Python and RTShell
+- (G)Confirm installation of OpenRTM-aist-Python and rtshell
 -- (G)If installed, write the directory structure by tree command to another file
 
 //- カスタムインストールリスト確認
@@ -51,9 +51,9 @@
 (G)The installed directory structure is written to the log file using the tree command. & br;
 (G)If the Cygwin tree command is installed in the environment, adjust the following settings at the beginning of the script to the environment. If% CYGWIN_DIR% \ bin \ tree.exe does not exist, use the standard Windows tree command. &br;
 
-//Cygwinのtreeコマンドがインストールされていると、OpenRTM-aist-PythonとRTShellのインストールディレクトリ構造のログ　yymmdd-hhmmss_'Python directory'-dir.tree　がコンパクトになります。出力指定で何階層目までディレクトリを降りるかを指定できるからです。
+//Cygwinのtreeコマンドがインストールされていると、OpenRTM-aist-Pythonとrtshellのインストールディレクトリ構造のログ　yymmdd-hhmmss_'Python directory'-dir.tree　がコンパクトになります。出力指定で何階層目までディレクトリを降りるかを指定できるからです。
 //Windows標準のtreeコマンドは階層指定ができないため、OpenRTM-aist-PythonがインストールされているPythonディレクトリのトップからの構造を全てが対象になってしまいます。そのため、ログにはディレクトリ名だけを出力しています。
-(G)When the Cygwin tree command is installed, the log “yymmdd-hhmmss_'Python directory'-dir.tree” of the installation directory structure of OpenRTM-aist-Python and RTShell becomes compact. This is because you can specify how many levels down the directory in the output specification.
+(G)When the Cygwin tree command is installed, the log “yymmdd-hhmmss_'Python directory'-dir.tree” of the installation directory structure of OpenRTM-aist-Python and rtshell becomes compact. This is because you can specify how many levels down the directory in the output specification.
 (G)Since the standard tree command for Windows cannot specify the hierarchy, all the structures from the top of the Python directory where OpenRTM-aist-Python is installed are targeted. Therefore, only the directory name is output to the log.
 
 
@@ -71,12 +71,12 @@
 //|yymmdd-hhmmss.log|メインのログファイル|
 //|yymmdd-hhmmss_pfile.tree|C:\Program Files\OpenRTM-aistが存在していた場合に出力されます。treeコマンドによるOpenRTM-aistディレクトリ構造を確認できます。&br; OpenRTM-aistの64bit版は既にアンインストールされている場合でも、rtc***.log 等のファイルが存在するためにディレクトリが残っている場合は、このログファイルが出力されることになります。|
 //|yymmdd-hhmmss_pfile_x86.tree|C:\Program Files (x86)\OpenRTM-aistが存在していた場合に出力されます。treeコマンドによるOpenRTM-aistディレクトリ構造を確認できます。&br; OpenRTM-aistの32bit版は既にアンインストールされている場合でも、64bit版と同じ理由でこのログファイルが出力される場合があります。|
-//|yymmdd-hhmmss_'Python directory'-dir.tree|OpenRTM-aist-Pythonがインストールされている場合に出力されます。treeコマンドによるOpenRTM-aist-Pythonと(G)RTShellがインストールされているPythonディレクトリ構造を確認できます。&br;インストール先がC:\Python27だった場合は、ログファイル名がyymmdd-hhmmss_Python27-dir.treeとなります。|
+//|yymmdd-hhmmss_'Python directory'-dir.tree|OpenRTM-aist-Pythonがインストールされている場合に出力されます。treeコマンドによるOpenRTM-aist-Pythonと(G)rtshellがインストールされているPythonディレクトリ構造を確認できます。&br;インストール先がC:\Python27だった場合は、ログファイル名がyymmdd-hhmmss_Python27-dir.treeとなります。|
 | (G)'' Log file name '' | '' Description '' |
 | (G)yymmdd-hhmmss.log | Main log file |
 | (G)yymmdd-hhmmss_pfile.tree | This is output when C: \ Program Files \ OpenRTM-aist exists. You can check the OpenRTM-aist directory structure using the tree command. & br; Even if the 64-bit version of OpenRTM-aist has already been uninstalled, this log file will be output if the directory remains because there are files such as rtc ***. log. The |
 | (G)yymmdd-hhmmss_pfile_x86.tree | This is output when C: \ Program Files (x86) \ OpenRTM-aist exists. You can check the OpenRTM-aist directory structure using the tree command. & br; Even if the 32-bit version of OpenRTM-aist has already been uninstalled, this log file may be output for the same reason as the 64-bit version. |
-| (G) yymmdd-hhmmss_'Python directory'-dir.tree | This is output when OpenRTM-aist-Python is installed. You can check the Python directory structure (G)where OpenRTM-aist-Python and RTShell are installed using the tree command. & br; If the installation destination is C: \ Python27, the log file name will be yymmdd-hhmmss_Python27-dir.tree. |
+| (G) yymmdd-hhmmss_'Python directory'-dir.tree | This is output when OpenRTM-aist-Python is installed. You can check the Python directory structure (G)where OpenRTM-aist-Python and rtshell are installed using the tree command. & br; If the installation destination is C: \ Python27, the log file name will be yymmdd-hhmmss_Python27-dir.tree. |
 
 //** 出力内容詳細
 ** (G)Output details
@@ -213,40 +213,40 @@
  C:\Program Files (x86)\OpenRTM-aist\1.1\omniORB\4.1.7_vc10\bin\x86_win32\ 
  C:\Program Files (x86)\OpenRTM-aist\1.1\OpenCV2.4.9\x86\vc10\bin\
 
-//**** PythonとOpenRTM-aist-PythonとRTShellのインストール確認
-**** (G)Installation confirmation of Python, OpenRTM-aist-Python and RTShell
+//**** PythonとOpenRTM-aist-Pythonとrtshellのインストール確認
+**** (G)Installation confirmation of Python, OpenRTM-aist-Python and rtshell
 
-//- Pythonがインストールされているパスをレジストリから取得し、OpenRTM-aist-PythonとRTShellがインストールされているかどうかを確認できます
+//- Pythonがインストールされているパスをレジストリから取得し、OpenRTM-aist-Pythonとrtshellがインストールされているかどうかを確認できます
 //- Pythonの複数バージョンをインストールしている環境も対応しています
 //- 1.1.2版がインストールされている環境での出力例
 //-- PYTHON_DIR\omniidl.exe が存在すればOpenRTM-aist-Pythonはインストールされていると判断
-//-- PYTHON_DIR\Lib\site-packages\rtshellが存在すればRTShellはインストールされていると判断
-- (G)Get the path where Python is installed from the registry and check if OpenRTM-aist-Python and RTShell are installed
+//-- PYTHON_DIR\Lib\site-packages\rtshellが存在すればrtshellはインストールされていると判断
+- (G)Get the path where Python is installed from the registry and check if OpenRTM-aist-Python and rtshell are installed
 - (G)Environments with multiple versions of Python installed are also supported
 - (G)Output example when 1.1.2 version is installed
 -- (G)If PYTHON_DIR \ omniidl.exe exists, it is determined that OpenRTM-aist-Python is installed
--- (G)If PYTHON_DIR \ Lib \ site-packages \ rtshell exists, RTShell is determined to be installed
+-- (G)If PYTHON_DIR \ Lib \ site-packages \ rtshell exists, rtshell is determined to be installed
 
  *-*-*-*-*-*-* check Python installed directory *-*-*-*-*-*-* 
  C:\Python27\ ----OpenRTM-aist-Python installed.  
- C:\Python27\ ----RTShell installed.  
+ C:\Python27\ ----rtshell installed.  
  C:\Python27_x64\ ----OpenRTM-aist-Python not installed.  
- C:\Python27_x64\ ----RTShell installed.  
+ C:\Python27_x64\ ----rtshell installed.  
  C:\Python35_x64\ ----OpenRTM-aist-Python not installed.  
- C:\Python35_x64\ ----RTShell not installed.  
+ C:\Python35_x64\ ----rtshell not installed.  
  C:\Python35\ ----OpenRTM-aist-Python not installed.  
- C:\Python35\ ----RTShell not installed.  
+ C:\Python35\ ----rtshell not installed.  
 
-//**** OpenRTM-aist-PythonとRTShellのインストールディレクトリ確認
-**** (G)Check the installation directory of OpenRTM-aist-Python and RTShell
+//**** OpenRTM-aist-Pythonとrtshellのインストールディレクトリ確認
+**** (G)Check the installation directory of OpenRTM-aist-Python and rtshell
 
 //- OpenRTM-aist-PythonがインストールされているPythonディレクトリ構造を出力します。
 //- 1.1.2版がインストールされている環境での出力例
-//-- 上記の結果で、C:\Python27_x64\にはOpenRTM-aist-Pythonはインストールされていないが、RTShellはインストールされているとありますが、
+//-- 上記の結果で、C:\Python27_x64\にはOpenRTM-aist-Pythonはインストールされていないが、rtshellはインストールされているとありますが、
 //この環境は対象外と判断しています。
 - (G)Outputs the Python directory structure where OpenRTM-aist-Python is installed.
 - (G)Output example when 1.1.2 version is installed
--- (G)According to the above result, OpenRTM-aist-Python is not installed in C: \ Python27_x64 \, but RTShell is installed.
+-- (G)According to the above result, OpenRTM-aist-Python is not installed in C: \ Python27_x64 \, but rtshell is installed.
 (G)This environment is not covered.
 
  *-*-*-*-*-*-* check OpenRTM-aist-Python installed directory *-*-*-*-*-*-* 

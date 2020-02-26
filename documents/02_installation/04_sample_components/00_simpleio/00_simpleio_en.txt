@@ -5,7 +5,7 @@ This sample is included with C ++, Python and Java versions of OpenRTM-aist.
 
 ***Overview
 Sample of how to use InPort and OutPort. Start the ConsoleIn and ConsoleOut components.
-When the ports are connected, the numbers entered on the ConsoleIn side are displayed on the ConsoleOut side. Ports can be connected by executing RTShell commands in addition to using RTSystemEditor.
+When the ports are connected, the numbers entered on the ConsoleIn side are displayed on the ConsoleOut side. Ports can be connected by executing rtshell commands in addition to using RTSystemEditor.
 
 *** Start screen
 

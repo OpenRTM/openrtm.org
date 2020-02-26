@@ -33,11 +33,11 @@ OpenRTM-aistを開発・実行するために必要なパッケージをもれ�
 
 ** JDK8のインストール
 
-OpenRTP(RTSystem EditorやRTC Builderなど)の実行にはJDK8相当のJava環境が必要です。現時点でFedoraの環境では、一括インストールスクリプトがFedoraのrpmリポジトリよりOpenJDK8をインストールします。他のJDK8をインストールしたい場合は下記のリンクを参照してください。なお、RTShell/RTCTree/RTSprofileの使用にはJDKは必要ありませんのでOpenRTPを使わない場合にはJDK8をインストールする必要はありません。 JDK8の入手やインストールについては以下を参照してください。
+OpenRTP(RTSystem EditorやRTC Builderなど)の実行にはJDK8相当のJava環境が必要です。現時点でFedoraの環境では、一括インストールスクリプトがFedoraのrpmリポジトリよりOpenJDK8をインストールします。他のJDK8をインストールしたい場合は下記のリンクを参照してください。なお、rtshell/rtctree/rtsprofileの使用にはJDKは必要ありませんのでOpenRTPを使わない場合にはJDK8をインストールする必要はありません。 JDK8の入手やインストールについては以下を参照してください。
 - [[JDK8のインストール>/ja/node/6911]]
 
-** RTShellのインストール
-制御コンピュータが小規模のシステムの場合など、CUIでRTCを制御したい場合にはOpenRTPのRTSystemEditor相当の機能をCUIから実行できるようなツールとしてRTShellと呼ばれるツールが提供されています。RTShellのインストールは一括インストールスクリプトを用いて、一括インストールスクリプト・ファイルが置かれているディレクトリで
+** rtshellのインストール
+制御コンピュータが小規模のシステムの場合など、CUIでRTCを制御したい場合にはOpenRTPのRTSystemEditor相当の機能をCUIから実行できるようなツールとしてrtshellと呼ばれるツールが提供されています。rtshellのインストールは一括インストールスクリプトを用いて、一括インストールスクリプト・ファイルが置かれているディレクトリで
 
  $ sudo sh pkg_install_fedora.sh -l rtshell --yes
 
@@ -75,7 +75,7 @@ openrtm.repoを作成したら、次の手順でインストールを行いま�
  $ sudo yum install OpenRTP
  $ sudo yum install OpenRTM-aist
 
-- RTShellのインストール
+- rtshellのインストール
  $ sudo pip3 install rtshell-aist
 
 
@@ -265,7 +265,7 @@ OpenRtpでは大量のファイルがインストールされるため、ここ�
  $ rpm -ql  OpenRTP
 と入力して各自での確認をしてください。
 
-*** RTShell
+*** rtshell
 - コマンド用スクリプト
  /usr/local/bin/rtact
  /usr/local/bin/rtcat
