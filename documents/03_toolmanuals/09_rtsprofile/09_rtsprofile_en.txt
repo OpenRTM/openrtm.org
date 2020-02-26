@@ -92,7 +92,7 @@ Most importantly, the private, internal API functions begin with an underscore (
 
 For further documentation, see the Doxygen-generated API documentation.
 
-For examples of using the library, see the [[RTShell source code>https://github.com/OpenRTM/rtshell]] .
+For examples of using the library, see the [[rtshell source code>https://github.com/OpenRTM/rtshell]] .
 
 **Repository
 

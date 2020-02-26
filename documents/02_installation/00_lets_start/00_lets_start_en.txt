@@ -1,7 +1,7 @@
 ﻿#contents
 #br
 
-The latest version OpenRTM-aist-1.2.１-RELEASE installs C++ version, Python version, Java version. #br
+The latest version OpenRTM-aist-1.2.1-RELEASE installs C++ version, Python version, Java version. #br
 Also, rtshell will be installed at the same time.
 //最新バージョンOpenRTM-aist-1.2.1-RELEASEではC++版、Python版、Java版、OpenRTPがインストールされます。また、rtshellも同時にインストールされます。
 
@@ -98,10 +98,10 @@ Select the version of Visual Studio that is installed and click [Next]. #br
 #br
 
 + Select the setup type. #br
-OpenRTM-aist a runtime library from Visual Studio 20１０ to 2017 of OpenRTM-aist's C++, Java, Python, OpenRTP, RTSystemEditorRCP, RTShell, OpenRTM-aist-C++ versions of OpenRTM-aist. Runtime libraries from 1.0.0 to 1.2.1 will be installed. If you do not seem to have any particular reason for change, click [Standard].
+OpenRTM-aist a runtime library from Visual Studio 20１０ to 2017 of OpenRTM-aist's C++, Java, Python, OpenRTP, RTSystemEditorRCP, rtshell, OpenRTM-aist-C++ versions of OpenRTM-aist. Runtime libraries from 1.0.0 to 1.2.1 will be installed. If you do not seem to have any particular reason for change, click [Standard].
 & br;...
 //+セットアップの種類を選択します。#br
-//[標準] を選択した場合、OpenRTM-aist の C++版、Java版、Python版、OpenRTP、RTSystemEditorRCP、RTShell、OpenRTM-aist-C++版の Visual Studio 2008 から 2017 までのランタイムライブラリ、OpenRTM-aist-1.0.0 から 1.1.2 までのランタイムライブラリがインストールされます。特に変更理由がないようであれば [標準] をクリックします。
+//[標準] を選択した場合、OpenRTM-aist の C++版、Java版、Python版、OpenRTP、RTSystemEditorRCP、rtshell、OpenRTM-aist-C++版の Visual Studio 2008 から 2017 までのランタイムライブラリ、OpenRTM-aist-1.0.0 から 1.1.2 までのランタイムライブラリがインストールされます。特に変更理由がないようであれば [標準] をクリックします。
 &br;
 #br
 

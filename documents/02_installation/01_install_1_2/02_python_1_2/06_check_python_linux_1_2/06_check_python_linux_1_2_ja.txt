@@ -68,7 +68,7 @@ CENTER: ''アクティブ化されたコンポーネント''
 以上で、RTSystemEditorを用いたコンポーネントの基本動作の確認は終了です。
 
 *** コマンドラインからの動作確認
-以下は一括インストールスクリプトを-l pythonオプションで実行するか、[[ソースビルドの手順>/ja/node/6651]]に従ってPython版OpenRTM-aistをインストールし、その後一括インストールスクリプトを-l rtshellオプションで実行しRTShellがインストールされている前提での説明です。
+以下は一括インストールスクリプトを-l pythonオプションで実行するか、[[ソースビルドの手順>/ja/node/6651]]に従ってPython版OpenRTM-aistをインストールし、その後一括インストールスクリプトを-l rtshellオプションで実行しrtshellがインストールされている前提での説明です。
 - 環境変数のRTCTREE_NAMESERVERSが設定されているかどうか確認します。設定されいていない場合は、/etc/profile.dディレクトリに適当な名前の.shファイル、例えばrtctree_env.shを作って、その中に
  export RTCTREE_NAMESERVERS=127.0.0.1
 の行を挿入して、sourceで実行してください。例えば/etc/profile.d/rtctree_env.shを作った場合は

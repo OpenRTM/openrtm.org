@@ -51,9 +51,9 @@ To download the installer please see [[OpenRTM-aist-1.1.2-RELEASE:/en/node/6040]
 
 +The page of the selection of the kind of the setup is displayed. Please click "Typical". 
 &br;
-If you select "Typical", there are the following contents and packages installed. OpenRTM-aist (C++, Java, Python), OpenRTP, RTSystemEditorRCP, RTShell, OpenRTM-aist(C++) Runtime Environment for Visual Studio 2008 ~ 2015, OpenRTM-aist1.0.0 ~ 1.1.1 Runtime Environment
+If you select "Typical", there are the following contents and packages installed. OpenRTM-aist (C++, Java, Python), OpenRTP, RTSystemEditorRCP, rtshell, OpenRTM-aist(C++) Runtime Environment for Visual Studio 2008 ~ 2015, OpenRTM-aist1.0.0 ~ 1.1.1 Runtime Environment
 &br;
-//+セットアップの種類を選択します。標準を選択した場合OpenRTM-aistのC++版、Java版、Python版、OpenRTP、RTSystemEditorRCP、RTShell、OpenRTM-aist-C++版のVisual Studio 2008から2015までのランタイムライブラリ、OpenRTM-aist-1.0.0から1.1.1までのランタイムライブラリがインストールされます。特に理由がないようであれば「標準」をクリックします。
+//+セットアップの種類を選択します。標準を選択した場合OpenRTM-aistのC++版、Java版、Python版、OpenRTP、RTSystemEditorRCP、rtshell、OpenRTM-aist-C++版のVisual Studio 2008から2015までのランタイムライブラリ、OpenRTM-aist-1.0.0から1.1.1までのランタイムライブラリがインストールされます。特に理由がないようであれば「標準」をクリックします。
 &br;
 #br
 
@@ -329,14 +329,14 @@ note: ※ If it takes time to deactivate, please stop entering ConsoleInComp.exe
 
 ** Use to rtshell
 
-RTshell is installed with OpenRTM-aist-1.1.2.
+rtshell is installed with OpenRTM-aist-1.1.2.
 
-RTShell provides commands used to manage individual RT components and managers, as well as complete RT Systems. 
+rtshell provides commands used to manage individual RT components and managers, as well as complete RT Systems. 
 
 note: If you install rtshell for 64bit, 64bit might not work becase of a depend dll missing, Windows update start.
 
 
-*** Operation RTC with RTshell
+*** Operation RTC with rtshell
 
 **** Start sample components
 

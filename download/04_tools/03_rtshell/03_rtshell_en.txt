@@ -1,28 +1,28 @@
-// Title: RTShell Download
-**RTShell (CUI tools)
+// Title: rtshell
+** rtshell (CUI tools)
 
-RTShell provides a set of tools for managing RT-Components and RT-Systems from a command-line shell. It is a replacement for RTSystemEditor designed for low-resource systems (such as robot control computers), and for scripting. Components can be activated, etc, and connections made without using RTSystemEditor or a GUI. RTShell commands can be used from shell scripting languages (such as batch files and Bashscript), allowing complex operations to be automated.
+rtshell provides a set of tools for managing RT-Components and RT-Systems from a command-line shell. It is a replacement for RTSystemEditor designed for low-resource systems (such as robot control computers), and for scripting. Components can be activated, etc, and connections made without using RTSystemEditor or a GUI. rtshell commands can be used from shell scripting languages (such as batch files and Bashscript), allowing complex operations to be automated.
 <!--break-->
 **Installation
 
-&color(red){RTShell requires omniORB-py 4.x or newer. If you have not installed OpenRTM-python, then download omniORB-py from the [[omniORB website>http://omniorb.sourceforge.net]] and install it before using RTShell.};
+&color(red){rtshell requires omniORB-py 4.x or newer. If you have not installed OpenRTM-python, then download omniORB-py from the [[omniORB website>http://omniorb.sourceforge.net]] and install it before using rtshell.};
 
-&color(red){Some commands require the Python version of OpenRTM. It is recommended that you download it from the [[website>/en/node/366]] and install it before using RTShell.};
+&color(red){Some commands require the Python version of OpenRTM. It is recommended that you download it from the [[website>/en/node/366]] and install it before using rtshell.};
 
-&color(red){Before installing the latest version of RTShell, ensure that the previous version has been completely uninstalled.};
+&color(red){Before installing the latest version of rtshell, ensure that the previous version has been completely uninstalled.};
 
-RTShell can be installed using pip, the Python package installer.
+rtshell can be installed using pip, the Python package installer.
 
   pip install rtshell
 
-pip will automatically install the required dependencies that are also available as packages (RTCTree and RTSProfile).
+pip will automatically install the required dependencies that are also available as packages (rtctree and rtsprofile).
 
-The RTShell package page is [[here>https://pypi.python.org/pypi/rtshell/]]
+The rtshell package page is [[here>https://pypi.python.org/pypi/rtshell/]]
 
 **Source code
 
 For OpenRTM-aist versions 1.1.0 and newer.
 
 |LEFT:200|LEFT|LEFT:100|c
-|>|>|CENTER: RTShell|
-|RTShell source code|[[github page>http://github.com/gbiggs/rtshell/]]&br;Click "Download ZIP"|2015.09.17|
+|>|>|CENTER: rtshell|
+|rtshell source code|[[github page>http://github.com/gbiggs/rtshell/]]&br;Click "Download ZIP"|2015.09.17|

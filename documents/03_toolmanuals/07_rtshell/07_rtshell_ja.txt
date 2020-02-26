@@ -3,7 +3,7 @@
 
 **イントロダクション
 
-RTShell は、ネームサーバー上に登録されている RTコンポーネントをシェルから管理することができるツールです。
+rtshell は、ネームサーバー上に登録されている RTコンポーネントをシェルから管理することができるツールです。
 コンポーネントを activate/deactivate/reset したり、ポートの接続を行うことができます。
 RTシステムを管理することもできます。
 
@@ -19,14 +19,14 @@ This software is licensed under the GNU Lesser General Public License version 3
 
 **必要条件
 
-- RTCTree が必要となります。
-- RTSProfile が必要となります。
+- rtctree が必要となります。
+- rtsprofile が必要となります。
 - Python 2.7 が必要となります。
 - rtprint、rtinject および rtlog は OpenRTM-Python-1.0.0 以上が必要となります。
 - omniORB-py 4.x 以上が必要となります。
 - ソースからのインストールの場合は、ドキュメントをコンパイルするために Sphinx が必要となります。
 
-pip によりインストールする場合は、RTCTree と RTSProfile は自動的にインストールされます。
+pip によりインストールする場合は、trctree と rtsprofile は自動的にインストールされます。
 
 
 **インストール
@@ -67,7 +67,7 @@ Windows上では、インストーラープログラムを利用してインス�
 **ドキュメント
 
 ドキュメントはマンページとして提供します（Windows の場合は HTML に提供します）。${prefix}/share/man にインストールされます。
-このパスを $MANPATH という環境変数に追加する必要です。例えば、RTShell は /home/blurgle にインストールされた場合、以下の行を .bashrc に追加してください。:
+このパスを $MANPATH という環境変数に追加する必要です。例えば、rtshell は /home/blurgle にインストールされた場合、以下の行を .bashrc に追加してください。:
 
  export MANPATH=/home/blurgle/share/man:${MANPATH}
 

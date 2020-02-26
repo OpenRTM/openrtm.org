@@ -11,27 +11,27 @@
 **** 32bit用
 
 |LEFT:280|LEFT|LEFT:100|c
-|Windows 用インストーラー&br; (OpenRTM-aist、C++、Python、Java版&br; および OpenRTP、RTShell(4.1.0) 含む)&br;(Visual Studio 2008、2010、2012、2013、2015 共通)|[[OpenRTM-aist-1.1.2-RELEASE_x86.msi:http://openrtm.org/pub/Windows/OpenRTM-aist/1.1/OpenRTM-aist-1.1.2-RELEASE_x86.msi]] &br;MD5:59be8603f3fc007c2aed4476052886ce | 2016/05/27 |
+|Windows 用インストーラー&br; (OpenRTM-aist、C++、Python、Java版&br; および OpenRTP、rtshell(4.1.0) 含む)&br;(Visual Studio 2008、2010、2012、2013、2015 共通)|[[OpenRTM-aist-1.1.2-RELEASE_x86.msi:http://openrtm.org/pub/Windows/OpenRTM-aist/1.1/OpenRTM-aist-1.1.2-RELEASE_x86.msi]] &br;MD5:59be8603f3fc007c2aed4476052886ce | 2016/05/27 |
 |Python-2.7|[[python-2.7.10.msi:https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi]]|[[python.org:https://www.python.org]]|
 |PyYAML|[[PyYAML-3.11.win32-py2.7.exe:http://pyyaml.org/download/pyyaml/PyYAML-3.11.win32-py2.7.exe]]|[[pyyaml.org:http://pyyaml.org/]]|
 |CMake|[[cmake-3.5.2-win32-x86.msi:https://cmake.org/files/v3.5/cmake-3.5.2-win32-x86.msi]] |[[cmake:https://cmake.org/]]|
 |Doxygen|[[doxygen-1.8.11-setup.exe:http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.11-setup.exe]] |[[doxygen:http://www.stack.nl/~dimitri/doxygen/]]|
 
 -&color(red){※ Python 2.7.10 推奨。2.7.11 は PYTHONPATH 等環境変数の設定が必要な場合があります。};
--&color(red){※ 古い RTShell は事前に削除しておいてください。};
+-&color(red){※ 古い rtshell は事前に削除しておいてください。};
 
 **** 64bit用
 
 |LEFT:280|LEFT|LEFT|LEFT:100|c
 |>|>|>|CENTER:''Visual Studio 64bit用''|
-|Windows 用インストーラー&br; (OpenRTM-aist、C++、Python、Java版、&br; および OpenRTP、RTShell (4.1.0) 含む)&br;(Visual Studio 2010、2012、2013、2015 共通)|[[OpenRTM-aist-1.1.2-RELEASE_x86_64.msi:http://openrtm.org/pub/Windows/OpenRTM-aist/1.1/OpenRTM-aist-1.1.2-RELEASE_x86_64.msi]] &br;MD5:ee8db7c1682cb21dce963207e0484fb3 | 2016/05/27 |
+|Windows 用インストーラー&br; (OpenRTM-aist、C++、Python、Java版、&br; および OpenRTP、rtshell (4.1.0) 含む)&br;(Visual Studio 2010、2012、2013、2015 共通)|[[OpenRTM-aist-1.1.2-RELEASE_x86_64.msi:http://openrtm.org/pub/Windows/OpenRTM-aist/1.1/OpenRTM-aist-1.1.2-RELEASE_x86_64.msi]] &br;MD5:ee8db7c1682cb21dce963207e0484fb3 | 2016/05/27 |
 |Python-2.7|[[python-2.7.10.amd64.msi:https://www.python.org/ftp/python/2.7.10/python-2.7.10.amd64.msi]]|[[python.org:https://www.python.org]]|
 |PyYAML |[[PyYAML-3.11.win-amd64-py2.7.exe:http://pyyaml.org/download/pyyaml/PyYAML-3.11.win-amd64-py2.7.exe]]|[[pyyaml.org:http://pyyaml.org/]]|
 |CMake |[[cmake-3.5.2-win32-x86.msi:https://cmake.org/files/v3.5/cmake-3.5.2-win32-x86.msi]] |[[cmake:https://cmake.org/]]|
 |Doxygen|[[doxygen-1.8.11-setup.exe:http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.11-setup.exe]] |[[doxygen:http://www.stack.nl/~dimitri/doxygen/]]|
 
 -&color(red){※ Python 2.7.10 推奨。2.7.11は PYTHONPATH 等環境変数の設定が必要な場合があります。};
--&color(red){※ 古い RTShell は事前に削除しておいてください。};
+-&color(red){※ 古い rtshell は事前に削除しておいてください。};
 
 インストールについては、[[OpenRTM-aistを10分で始めよう！:http://openrtm.org/openrtm/ja/node/6026]] のページで手順を紹介しています。&br;
 
@@ -148,7 +148,7 @@ windows_installer_test.bat スクリプトで確認することができます�
 - http://openrtm.org/openrtm/ja/content/rtm-install-check-script
 
 
-//- 1.1.2版を「標準」インストールすると、C++版だけでなく、Python版、Java版、RTShell もインストールされますので、
+//- 1.1.2版を「標準」インストールすると、C++版だけでなく、Python版、Java版、rtshell もインストールされますので、
 //これらの古いバージョンをインストールされている場合は、あらかじめ全てアンインストールしてください。
 
 &br;
@@ -279,7 +279,7 @@ OpenRTM-aist Official Website からソースコード、Windows インストー
 *** ユーザービリティに関する変更
 -- Windows インストーラーをアーキテクチャ別の２種類にまとめる
 --- １つのインストーラーで複数の Visual Studio バージョンに対応
---- C++版、Python版、Java版、RTShell も同時にインストール可能
+--- C++版、Python版、Java版、rtshell も同時にインストール可能
 -- Windows インストーラーで omniORBを4.2.1に更新
 -- Windows インストーラーで OpenCVを2.4.11に更新し、IntelTBB で再コンパイル
 //-- Windows インストーラーでツールの RTSystemEditorRCP版 と OpenRTP を選択可能にする

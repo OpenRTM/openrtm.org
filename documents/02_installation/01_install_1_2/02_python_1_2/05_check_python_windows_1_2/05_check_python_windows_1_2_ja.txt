@@ -17,6 +17,7 @@ RTコンポーネント ConsoleIn、ConsoleOutからなるサンプルセット�
 これらは、最もSimpleなI/O(入出力)を例示するためのサンプルです。ConsoleInのOutPortからConsoleOutのInPortへ接続を構成し、これらの2つのコンポーネントをアクティブ化(Activate)することで動作します。
 
 ** 動作確認環境
+
 以下では、msiインストーラーでOpenRTM-aistをデフォルトでインストールした環境で、スタートメニューから各種プログラムを起動する場合しOpenRTPを使う方法を説明します。OpenRTPを使わないでrtshellを使う場合は、rtshellのインストールにおける[[動作確認(Windows編)>//node/7007]]を参照してください。なお、ソースビルドした場合は、サンプルコンポネントは、&color(blue){<ソースディレクトリ>};\OpenRTM-aist\examples\SimpleIOにありますので、リンク先や下記の説明でのConsoleIn/ConsoleOutコンポーネントの場所はそこに置き換えてください。
 
 ** 動作確認手順
@@ -117,6 +118,7 @@ CENTER: ''アクティブ化されたコンポーネント''
 というプロンプト表示に変わりますので、適当な数値(short intの範囲内:32767以下)を入力しEnterキーを押してください。すると、ConsoleOut側のコンソールにも入力した数値が表示され、ConsoleInコンポーネントからConsoleOutコンポーネントへデータが転送されたことがわかります。
 
 以上で、OpenRTPを用いたコンポーネントの基本動作の確認は終了です。
+
 
 
 ** 他のサンプル

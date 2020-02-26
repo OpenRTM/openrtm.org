@@ -5,7 +5,7 @@
 
 ***概要
 InPort、OutPortの使用方法のサンプルです．ConsoleInコンポーネントとConsoleOutコンポーネントを起動させます。
-Port間を接続すると、ConsoleIn側で入力した数字が、ConsoleOut側に表示されます．Port間はRTSystemEditorを用いる以外にRTShellコマンドを実行することで接続できます。
+Port間を接続すると、ConsoleIn側で入力した数字が、ConsoleOut側に表示されます．Port間はRTSystemEditorを用いる以外にrtshellコマンドを実行することで接続できます。
 
 ***起動画面
 
