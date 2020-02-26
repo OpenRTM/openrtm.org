@@ -1,4 +1,4 @@
-// Title: Operation check (Windows)
+// Title: Operation Check (On Windows)
 
 #contents
 
@@ -21,7 +21,7 @@ These are RTC samples to show a simple I/O (input/output) use. It works by conne
 
 The following describes how to use OpenRTP when starting various programs from the Start menu in an environment where OpenRTM-aist is installed by default with the msi installer. When using RTShell without using OpenRTP, refer to [[Operation Check (Windows)>//node/7005]] under "Install rtshell" page. If you build the source, the sample components are located in &color(blue){<Source directory>};\OpenRTM-aist\examples\SimpleIO. Please replace the location of ConsoleIn/ConsoleOut in the explanation below and in the link by it.
 
-** Operation Check Procedure
+** Operation check procedure
 *** Start RTSystemEditor and the name server
 Follow the steps below to start RTSystemEditor and the name server.
 
@@ -79,7 +79,7 @@ Set the environment variable OMNIORB_USEHOSTNAME as follows (example below is wh
  Variable name (N): OMNIORB_USEHOSTNAME
  Variable value (V): 192.168.0.11
 
-**** Place the components on the system diagram
+*** Place the components on the system diagram
 
 - Click [>] next to [localhost] in the tree view of the RTSystemEditor, and click [>] next to the &ref(icon_db.png); icon. You may see the two components icons in the above step.
 
@@ -92,7 +92,7 @@ Open the system editor (system diagram) for editing the system. Click the [Open 
 CENTER:''Place component on the system diagram''
 
 
-**** Connect and activate
+*** Connect and activate
 
 You can see an OutPort &ref(rtse_outport_icon.png); where data is output to and is shown on the right side of the ConsoleIn0 component and an InPort &ref(rtse_inport_icon.png); where data is input from and is shown on the left side of the ConsoleOut0 component like the following figure.
 Connect these InPort/OutPort (these are called "data port"). If you drag and drop from the OutPort to the InPort (or from the InPort to the OutPort), a dialog as shown below appears. Click the [OK] button with the default settings.

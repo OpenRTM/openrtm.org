@@ -76,7 +76,7 @@ C:\Program Files\OpenRTM-aist\1.2.&color(blue){x};\Components\Python\Examples\Si
  変数名(N): OMNIORB_USEHOSTNAME
  変数値(V): 192.168.0.11
 
-**** RTSystemEditorでのエディタへの配置
+*** RTSystemEditorでのエディタへの配置
 
 RTSystemEditorのツリー表示の[>]をクリックすると、先ほど起動した2つのコンポーネントが登録されていることがわかります。
 
@@ -89,7 +89,7 @@ CENTER:''ConsoleInコンポーネントとConsoleOutコンポーネント''
 CENTER: ''コンポーネントをSystem Diagramに配置''
 
 
-**** 接続とアクティブ化
+*** 接続とアクティブ化
 
 ConsoleIn0コンポーネント・アイコンの右側にはデータが出力されるOutPort &ref(rtse_outport_icon_n.png,150%);が 、ConsoleOut0コンポーネント・アイコンの左側にはデータが入力されるInPort &ref(rtse_inport_icon_n.png, 150%);がそれぞれ配置されています。
 
