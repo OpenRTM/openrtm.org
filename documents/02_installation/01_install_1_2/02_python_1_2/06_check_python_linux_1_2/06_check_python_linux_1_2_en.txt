@@ -1,0 +1,80 @@
+// Title: Operation Check (On Linux)
+
+#contents(5)
+
+After successful installation or build, test the operation with the attached sample. Samples are usually located at:
+- /usr/share/openrtm-1.2/components/python/&color(blue){<sample component set name>};
+
+If you build from source, under the source directory
+- OpenRTM_aist/examples/&color(blue){<sample component set name>};
+
+Check that OpenRTM-aist is built and installed correctly using the sample component set SimpleIO.
+
+** Sample component set SimpleIO
+
+This is a sample set consisting of RT components ConsoleIn and ConsoleOut. ConsoleIn is a component that outputs numerical values ​​input from the console to OutPort, and ConsoleOut is a component that displays numerical values ​​input from InPort to the console. These are RTC samples to show a simple I/O (input/output) use. It works by connecting the data ports from ConsoleIn's OutPort to ConsoleOut's InPort and activating these two components.
+
+Here, I will explain by assuming that the sample set is under /usr/share/openrtm-1.2/components/python/SimpleIO. Also, it is assumed that a search path has been set for the executable file of Python itself. If you build from the source code, the sample executable file is in &color(blue){<source_dir>};/OpenRTM_aist/examples/SimpleIO/, so replace the sample file location in the further explanation and the explanation in the linked page.
+
+** Operation check using sample component set
+
+*** Operation check using RTSystemEditor
+
+In the following explanation, an operation check using RTSystemEditor (OpenRTP) is explained. Please refer to [[Operation check (On Linux)>//node/ 7006]] under the "Install rtshell" page. for the environment that does not use OpenRTP like the case of Raspbian.
+
+**** Start the name server Follow the procedure below to start RTSystemEditor and the name server.
+
+-[[OpenRTP startup procedure: //node/7035]]
+
+**** Launch ConsoleIn
+
+- Open Terminal and launch ConsoleIn.
+ $ python /usr/share/openrtm-1.2/components/python/SimpleIO/ConsoleIn.py
+
+- If you build and install it yourself,
+ $ python <source_dir>/OpenRTM_aist/examples/SimpleIO/ConsoleIn.py
+
+**** Launch ConsoleOut
+
+- Open another Terminal and launch ConsoleOut.
+ $ python /usr/share/openrtm-1.2/components/python/SimpleIO/ConsoleOut.py
+
+- If you build and install it yourself, similarly
+ $ python <source_dir>/OpenRTM_aist/examples/SimpleIO/ConsoleOut.py
+
+**** Placement in System Diagram
+
+- Click [>] in the tree view of RTSystemEditor, and you can see that the two components started in the above. 
+
+#ref(rtm10.png, center)
+CENTER:''ConsoleIn and ConsoleOut components ''
+
+- Open System Diagram to edit system. Click the [Open New System Editor] button&ref(rtse_open_editor_icon_ja.png, 150%); to open the System Diagram in the center pane. 
+- Drag and drop the components (two) indicated by the icon &ref(rtse_rtc_icon_n.png, 150%); into the center System Diagram. 
+
+
+#ref(rtm11_en.png, center)
+CENTER:''Place components on System Diagram''
+
+**** Connect and activate
+- You can see an OutPort &ref(rtse_outport_icon.png); where data is output to and is shown on the right side of the ConsoleIn0 component and an InPort &ref(rtse_inport_icon.png); where data is input from and is shown on the left side of the ConsoleOut0 component like the following figure.
+
+#ref(rtm13.png, 80%, center) 
+CENTER:''Data port connection''
+
+- Connect these InPort/OutPort (these are called "data port"). If you drag and drop from the OutPort to the InPort (or from the InPort to the OutPort), a dialog as shown below appears. Click the [OK] button with the default settings. OutPort &ref(rtse_outport_icon_n.png, 200%) ;, data is input to the left of ConsoleOut0 component.InPort & ref(rtse_inport_icon_n.png, 200%); 
+
+#ref(rtm12_en.png, 80%, center)
+CENTER:''Data port connection dialog''
+
+- A connection line appears between the two components. Next, click the [All Activate] button & ref(rtm14.png); in the top menu of the editor to activate these components. 
+- When activated, the component turns green. 
+
+#ref(rtm15.png, center) 
+CENTER:''Activated component''
+
+- When the component is activated, on the console of the ConsoleIn component
+ Please input number: 
+The prompt is displayed. Enter an appropriate number (within the range of short int: 32767 or less) and press the Enter key. Then, the entered value is also displayed on the ConsoleOut side, and you can see that the data was transferred from the ConsoleIn component to the ConsoleOut component.
+
+This concludes the confirmation of the basic operation of the OpenRTM-aist-python using RTSystemEditor.
