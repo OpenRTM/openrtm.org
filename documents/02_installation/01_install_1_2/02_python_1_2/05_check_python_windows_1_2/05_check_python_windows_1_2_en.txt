@@ -1,0 +1,136 @@
+// Title: Operation Check (On Windows)
+
+#contents
+
+** Location of sample components
+
+After successful installation or build, test the operation with the attached sample. Samples are usually located at:
+
+- c:\Program Files\OpenRTM-aist\1.2.&color(blue){x};\Components\Python
+- &color(blue){<Source directory>};/OpenRTM-aist/examples          (when building from source)
+
+Check that OpenRTM-aist is built and installed correctly using the sample component set SimpleIO.
+
+
+** Operation check using sample (SimpleIO)
+
+This is a sample set consisting of RT components ConsoleIn and ConsoleOut. ConsoleIn is a component that outputs numerical values ​​input from the console to OutPort, and ConsoleOut is a component that displays numerical values ​​input from InPort to the console. 
+These are RTC samples to show a simple I/O (input/output) use. It works by connecting the data ports from ConsoleIn's OutPort to ConsoleOut's InPort and activating these two components.
+
+** Operation check environment
+
+The following describes how to use OpenRTP when starting various programs from the Start menu in an environment where OpenRTM-aist is installed by default with the msi installer. When using RTShell without using OpenRTP, refer to [[Operation Check (Windows)>//node/7005]] under "Install rtshell" page. If you build the source, the sample components are located in &color(blue){<Source directory>};\OpenRTM-aist\examples\SimpleIO. Please replace the location of ConsoleIn/ConsoleOut in the explanation below and in the link by it.
+
+** Operation check procedure
+*** Start RTSystemEditor and the name server
+Follow the steps below to start RTSystemEditor and the name server.
+
+-[[OpenRTP startup procedure://node/6980]]
+
+
+*** Start sample component
+After starting the name server, start the appropriate sample component.
+
+In the case of Windows 10, enter "Python_Examples" in [Type here to search] on the lower right to open the directory of examples.
+
+#ref(rtm7-2_en.png, 60%, center)
+CENTER:''Confirm name server startup''
+
+#ref(rtm8-2_en.png, 80%, center)
+CENTER:''Sample component directory''
+
+- Double-click "ConsoleIn.bat" and "ConsoleOut.bat" respectively to start two components. When started, two console screens as shown below will open.
+
+#ref(rtm9-2.png, 60%, center)
+CENTER:''ConsoleIn and ConsoleOut components''
+
+**** If the component does not start
+
+If a component does not start, there are several possible causes.
+
+***** Console screen opens and disappears immediately
+
+There are cases where there is a problem with the settings of rtc.conf and it cannot start. Open [rtc.conf for examples] in the above searched directory and check the settings. For example, if settings such as corba.endpoint/corba.endpoints are mismatched with the host address of the currently running PC, CORBA will terminate abnormally.
+
+Please reset it to the following minimum rtc.conf and try again.
+
+ corba.nameservers: localhost
+
+
+***** omniORBpy is not installed.
+
+omniORBpy is included in the msi installer provided by openrtm.org, but if you choose a custom installation, you can install OpenRTM-aist-Python without installing omniORBpy. Also, if you have installed it manually, you may not have omniORBpy installed. Check if omniORBpy is installed.
+
+***** The association of py files is different
+
+The file that starts ConsoleIn and ConsoleOut is
+
+c:\Program Files\OpenRTM-aist\1.2.&color(blue){x};\Components\Python\Examples\SimpleIO\ConsoleIn.py &br;
+c:\Program Files\OpenRTM-aist\1.2.&color(blue){x};\Components\Python\Examples\SimpleIO\ConsoleOut.py &br;
+Note that the location is the location of the case that you installed OpenRTM-aist by using 64-bit msi.
+
+Open the console screen in this directory and start it by executing python ConsoleIn.py, but if you can not start by double-clicking ConsoleIn.py, please check the installed python. If both 32-bit and 64-bit versions of Python are installed, the one installed first will be associated with the py file, so installing Python of the same architecture as the OpenRTM-aist-Python installer may solve it first Maybe.
+
+***** Other
+
+There are cases where the startup does not work properly due to problems with the hostname and address settings. In that case, if you tell omniNames.exe the IP address of the PC you are using, it may work.
+Set the environment variable OMNIORB_USEHOSTNAME as follows (example below is when the IP address of the local host is 192.168.0.11).
+
+ Variable name (N): OMNIORB_USEHOSTNAME
+ Variable value (V): 192.168.0.11
+
+*** Place the components on the system diagram
+
+- Click [>] next to [localhost] in the tree view of the RTSystemEditor, and click [>] next to the &ref(icon_db.png); icon. You may see the two components icons in the above step.
+
+#ref(rtm10.png,60%, center)
+CENTER:''ConsoleIn and ConsoleOut components ''
+
+Open the system editor (system diagram) for editing the system. Click the [Open New System Editor] button &ref(rtse_open_editor_icon_ja.png, 200%); at the top to open the system editor (system diagram) in the center pane. From the name service view on the left, drag and drop the components (two) indicated by the &ref(icon-rtce.png, 200%); icon onto the system diagram view in the center.
+
+#ref(rtm11_en.png,80%, center)
+CENTER:''Place component on the system diagram''
+
+
+*** Connect and activate
+
+You can see an OutPort &ref(rtse_outport_icon.png); where data is output to and is shown on the right side of the ConsoleIn0 component and an InPort &ref(rtse_inport_icon.png); where data is input from and is shown on the left side of the ConsoleOut0 component like the following figure.
+Connect these InPort/OutPort (these are called "data port"). If you drag and drop from the OutPort to the InPort (or from the InPort to the OutPort), a dialog as shown below appears. Click the [OK] button with the default settings.
+
+#ref(rtm13.png, 80%, center)
+CENTER:''Data port connection ''
+
+#ref(rtm12_en.png, 80%, center)
+CENTER:''Data port connection dialog ''
+
+
+A connecting line appears between the two components. Next, click the [All Activate] button &ref(rtm14.png); in the top menu of the RTSystemEditor to activate these components. When activated, the component turns green.
+
+#ref(rtm15.png,  center)
+CENTER: '' Activated component ''
+
+
+
+
+When the component is activated, on the console of the ConsoleIn component
+
+ Please input number:
+
+The prompt is displayed. Enter an appropriate number (within the range of short int: 32767 or less) and press the Enter key. Then, on the ConsoleOut side, the entered numerical value is displayed, and you can see that the data has been transferred from the ConsoleIn component to the ConsoleOut component.
+
+This concludes the confirmation of the basic operation of components using OpenRTP.
+
+
+** Other samples
+
+The installer also comes with some sample components. These components can be activated as well, and you can try by connecting and activating ports with RTSystemEditor. Below are a list and a brief description of the included components.
+
+|LEFT:30|LEFT:80|c
+|ConsoleIn.py| Output the numerical value input from the console from OutPort. Connect to ConsoleOut.py to use|
+|ConsoleOut.py | &color(default){component}; to display the numerical value input to InPort on the console. Connect to ConsoleIn.py to use|
+|SeqIn.py| &color(default){component}; that outputs random numbers (Short, Long, Float, Double and their sequence types). Connect to SeqOut.py to use|
+|SeqOut.py| Displays numerical values ​​(Short, Long, Float, Double and their sequence types) input to InPort. Connect to SeqIn.py to use|
+|MyServiceProvider.py | &color(default){component}; that provides a service of type MyService. Connect to MyServiceConsumer.py to use|
+|MyServiceConsumer.py | &color(default){component}; that uses a service of type MyService. Connect to MyServiceProvider.py to use|
+|ConfigSample.py| Configuration sample. Sample to understand the behavior of Configuration by changing Configuration from RTSystemEditor|
+|TkMobileRobotSimulator.py| A simple simulator for mobile robots. Receives the speed of the robot with InPort and outputs the moved position from OutPort|
