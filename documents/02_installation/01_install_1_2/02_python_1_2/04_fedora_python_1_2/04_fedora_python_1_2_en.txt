@@ -21,7 +21,7 @@ It is very convenient because it installs all the packages required to develop a
 By specifying the option, it is possible to install the package that suits the purpose. To install OpenRTM-aist-Python, download the bulk install script and then type
  $ sudo sh pkg_install_fedora.sh -l python --yes
 
-For details on how to download the bulk installation script, detailed installation methods, and the types of options that can be specified, see the [[Bulk Installation Script>//node/6990]].
+For details on how to download the bulk installation script, detailed installation methods, and the types of options that can be specified, see the [[Bulk Installation Script>/node/6990]].
 
 ** Install OpenRTP
 RTC Builder and RTSystemEditor can be used for general Ubuntu/Debian environment development. To use them, OpenRTP is required. Install OpenRTP using the bulk installation script. In Ubuntu, in the directory where pkg_install_ubuntu.sh is located, type
@@ -32,7 +32,7 @@ At present, in the bulk installation script for Fedora, after installing the env
 
 ** Install JDK8
 To run OpenRTP (RTSystemEditor, RTC Builder, etc.), a Java environment equivalent to JDK8 is required. At present, in the Fedora environment, the bulk installation script installs OpenJDK8 from the Fedora rpm repository. If you want to install another JDK8, please refer to the link below. By the way, JDK is not required to use rtshell/rtctree/rtsprofile, so if you do not use OpenRTP, you do not need to install JDK8. See below for information on obtaining and installing JDK8.
--[[JDK8 Installation>//node/6992]]
+-[[JDK8 Installation>/en/node/6992]]
 
 ** Install rtshell
 If you want to control the RTC with the CUI, such as when the control computer system is small, a tool called rtshell is provided as a tool that allows you to execute functions equivalent to RTSystemEditor of OpenRTP from the CUI. To install rtshell, use a bulk installation script on the terminal and enter the following in the directory where the bulk installation script file is located.
