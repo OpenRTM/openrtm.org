@@ -1,52 +1,40 @@
-// Title: Raspbianへのインストール
-
+//Title: Installation on Raspbian
 
 #contents
 
-Python版OpenRTM-aistはRaspberry Pi用Raspbianl用debパッケージが提供されています。
-Raspbianへの対応およびそのバージョンは、予告なしに変更または停止されることがありますので、あらかじめご了承ください。
+OpenRTM-aist-Python is provided with deb packages for Raspbian for Raspberry Pi. Please note that support for Raspbian and its versions are subject to change or suspension without notice.
 
-** はじめに
-*** 対応バージョン
+** Introduction 
+*** Supported version
+The version of Raspbian for which packages are currently available is
+-Buster
 
-現在パッケージが用意されているRaspbianのバージョンは
-
-- Buster
-
-です。
-
-*** SDカードの準備
-
-以下のページからRasbianのイメージをダウンロードして、SDカードに書き込みます。SDカードの容量は4GB以上はあったほうがよいでしょう。
-SDカードへの書き込み方法については [[RPi Easy SD Card Setup:http://elinux.org/RPi_Easy_SD_Card_Setup]] を参照してください。
+*** SD card preparation
+Download the Rasbian image from the following link and write it to the SD card. The capacity of the SD card should be more than 4GB. For the method to write the image to an SD card, refer to [[RPi Easy SD Card Setup:http://elinux.org/RPi_Easy_SD_Card_Setup]].
 
 - [[Raspberry Pi Downloads:https://www.raspberrypi.org/downloads/]]
 
-Windowsでは、[[Win32 Disk Imager:https://forest.watch.impress.co.jp/docs/review/1067836.html]]などを利用して書き込みます。
-LinuxやMac OSではddを以下のように利用して書き込みます。
+On Windows, you can use [[Win32 Disk Imager:https://forest.watch.impress.co.jp/docs/review/1067836.html]]. On Linux and Mac OS, write using dd as follows.
 
- $ sudo dd if=/dev/<SDカードのデバイスファイル> of=<ダウンロード・解凍したイメージファイル> bs=1m
+ $ sudo dd if=/dev/<SD card device file> of=<Downloaded and decompressed image file> bs=1m
 
+** Install OpenRTM-aist-Python
 
-** OpenRTM-aist-Pythonのインストール
+Download the bulk installation script "pkg_install_raspbian.sh" from the specified URL and execute it with root privileges. This script installs necessary packages sequentially using apt-get.
 
-openrtm.orgが提供するインストール・スクリプト''pkg_install_raspbian.sh''を指定のURLからダウンロードし、root 権限で実行します。このスクリプトでは必要なパッケージを順次apt-getを用いてインストールしていきます。
+By specifying the option, it is possible to install the packages which align with your purpose. Download the bulk installation script and execute it with root privilege. 
+ $ sudo sh pkg_install_raspian.sh -l python --yes.
 
-オプションを指定することで、目的に合わせたパッケージをインストールすることが可能です。一括インストール・スクリプトをダウンロードして
- sudo sh pkg_install_raspian.sh -l python --yes
-でインストールできます。
+For details on downloading the bulk installation script, detailed installation methods, and the options that can be specified, see [[Bulk Installation Script:>//node/6990]].
 
-一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[[一括インストールスクリプト:http://openrtm.org/openrtm/ja/node/6345]]」のページをご確認ください。
-
-** rtshellのインストール
-RTCをRaspbianにインストールしてそのホスト上からローカルにRTCをコントロールしたい場合にはrtshellが必要です。一括インストールスクリプトを用いてrtshellをインストールしてください。Raspbianではpkg_install_raspbian.shが置いてあるディレクトリで
- $ sudo sh ./pkg_install_raspbian.sh -l rtshell --yes
+** Installing rtshell
+rtshell is required if you want to install RTC on Raspbian and control RTC locally from the Raspbian host. To install rtshell using the bulk installation script, at the directory which file pkg_install_raspbian.sh is, type
+ $ sudo sh pkg_install_raspbian.sh -l rtshell --yes
  $ sudo rtshell_post_install
 
-でインストールできます。
+*** Check the installation
 
-***インストールの確認
-インストールを確認します。
+You can check the installation as the following.
 
  $ dpkg -l 'openrt*'
  要望=(U)不明/(I)インストール/(R)削除/(P)完全削除/(H)保持
@@ -58,8 +46,7 @@ RTCをRaspbianにインストールしてそのホスト上からローカルに
  ii  openrtm-aist-python-doc     1.2.1-0      all          Documentation for openrtm-aist-python
  ii  openrtm-aist-python-example 1.2.1-0      armhf        OpenRTM-aist-Python examples
 
-rtshellのインストールも確認します。
-
+For rtshell, 
  $ pip show rtshell-aist
  Name: rtshell-aist
  Version: 4.2.2
@@ -71,32 +58,31 @@ rtshellのインストールも確認します。
  Location: /usr/local/lib/python2.7/dist-packages
  Requires: rtctree-aist, rtsprofile-aist
 
-**パッケージの詳細
-各パッケージの内容は以下の通りです。
+** Package details
+
+Each package contains the followings:
 
 *** openrtm-aist-python
 
-- コマンド
+- Commands
  /usr/bin/rtcd_python
  /usr/bin/rtcprof_python
 
-- OpenRTM-aist 本体の Python モジュール
+- OpenRTM-aist-Python main modules
  usr/lib/python2.7/dist-packages/OpenRTM-aist/*
 
-- OpenRTM-aist用Python検索パスファイル
+- Python search path file for OpenRTM-aist
  /usr/lib/python2.7/dist-packages/OpenRTM_aist.ph
 
-- ユーティリティ
+- Utilities
  /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/__init__.py
  /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtc-template/*
  /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtcd/*
  /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtcprof/*
  /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtm-naming/*
 
-// /usr/lib/python2.7/dist-packages/OpenRTM_aist_Python-1.2.0.egg-info
 
 *** openrtm-aist-python-example
-
  /usr/share/openrtm-1.2/components/python/__init__.py
  /usr/share/openrtm-1.2/components/python/rtcd.conf
  /usr/share/openrtm-1.2/components/python/components.conf
@@ -116,21 +102,21 @@ rtshellのインストールも確認します。
  /usr/share/openrtm-1.2/components/python/TkLRFViewer/*
 
 ***openrtm-aist-python-doc
-
--クラスリファレンス(英語)
+- Class reference (English)
  /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/_async_8py.html
  /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/_buffer_base_8py.html
- 中略
+ ...
  /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/uuid_8py.html
-- クラスリファレンス(日本語)
+
+- Class reference (Japanese)
  /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/_async_8py.html
  /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/_buffer_base_8py.html
- 中略
+ ...
  /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/uuid_8py.html 
 
 *** rtshell
 
-- コマンド用スクリプト
+- Scripts for the commands
  /usr/local/bin/rtact
  /usr/local/bin/rtcat
  /usr/local/bin/rtcheck
@@ -161,12 +147,12 @@ rtshellのインストールも確認します。
  /usr/local/bin/rtvlog
  /usr/local/bin/rtwatch
 
-- コマンド本体
+- Main code for the commands
  /usr/local/lib/python2.7/dist-packages/rtctree/*
  /usr/local/lib/python2.7/dist-packages/rtshell/*
  /usr/local/lib/python2.7/dist-packages/rtsprofile/*
 
-- パッケージ情報
+- Package information
  /usr/local/lib/python2.7/dist-packages/rtctree_aist-4.2.0.egg-info/*
  /usr/local/lib/python2.7/dist-packages/rtshell_aist-4.2.2.dist-info/*
  /usr/local/lib/python2.7/dist-packages/rtsprofile_aist-4.1.2.dist-info/*
