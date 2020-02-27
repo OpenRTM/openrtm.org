@@ -1,0 +1,139 @@
+// Title: Operation Check (On Windows)
+#contents
+
+** Location of sample components
+
+After successful installation or build, test the operation with the included sample.
+The sample is usually at the following location for the 64-bit version.
+
+- c:\Program Files\OpenRTM-aist\1.2.x\Components\C ++\Examples
+- OpenRTM-aist\examples (when building from source)
+
+Use the following procedure to check that OpenRTM-aist is correctly built/installed using the sample component set SimpleIO.
+
+
+
+** Operation check using sample (SimpleIO)
+
+This is a sample set consisting of the RT-Components ConsoleIn and ConsoleOut.
+ConsoleIn is a component that outputs the numerical value input from the console to the OutPort, and ConsoleOutComp is a component that displays the numerical value input from the InPort on the console. These are RTC samples to show a simple I/O (input/output) use.
+It works by connecting the OutPort of ConsoleIn's OutPort to the InPort of ConsoleOut's InPort and activating these two components.
+
+The following explanation assumes that various programs are started from the start menu in an environment where OpenRTM-aist is installed with the msi installer.
+
+*** Start RTSystemEditor and name server
+Follow the steps below to start the RTSystemEditor and the name server.
+
+-[[OpenRTP startup procedure>/node/6980]]
+
+*** Start sample component
+After starting the name server, start the appropriate sample component.
+
+For Windows 10, type "C++_Examples" in the bottom right corner [Tyepe here to search], find the directory for the examples and open it.
+
+#ref(rtm7_en.png, 60%, center)
+CENTER:''Confirm name server startup''
+
+
+#ref(rtm8_en.png, 80%, center)
+CENTER:''Sample component directory''
+
+Here, double-click "ConsoleIn.bat" and "ConsoleOut.bat" respectively to start two components.
+
+** Warning from Windows Defender
+
+When trying to launch the sample component, Windows Defender Firewall may display a Windows Security Alert dialog. Check [Private network (home network, company network, etc.) (R)] and uncheck [Public network (airport, coffee shop, etc.) (not recommended) (U)] and then click [Allow access (A)]. This screen may be different from Windows 10 (build 1903), and may not be displayed depending on the settings. If it is displayed, make the same settings and close the dialog.
+
+- Double-click "ConsoleIn.bat" and "ConsoleOut.bat" respectively to start two components. A few seconds after startup, two console screens as shown below will open.
+
+** Screen after starting sample component
+
+A few seconds after startup, two console screens as shown below will open.
+
+#ref(rtm9.png, 60%, center)
+CENTER:''ConsoleIn and ConsoleOut components ''
+
+**** If the component does not start
+
+If a component does not start, there are several possible causes.
+
+***** Console screen opens and disappears immediately
+
+If the environment variables '' RTM_VC_VERSION '', '' OMNI_ROOT '' and '' RTM_ROOT '' are not set, the RTC will fail to start.
+When installing with the msi installer, restarting the OS may solve the problem.
+
+
+Also, there may be a case where there is a problem with the setting of rtc.conf and it cannot be started. Open [rtc.conf] in VCxx (VC14 when using Visual Studio 2019) under the folder searched using `` C ++ _ Example '' above and check the settings.
+For example, if the settings such as corba.endpoint/corba.endpoints are mismatched with the IP address of the currently running PC host, CORBA will terminate abnormally.
+
+Please rewrite rtc.conf with the following contents (minimum setting) and try.
+
+ corba.nameservers: localhost
+
+
+***** Exit with a runtime error
+
+Runtime errors may occur due to improperly installed or configured libraries, etc. In that case, please try the following method.
+- Try restarting
+- Uninstalling all of OpenRTM-aist and installing it again may improve the situation.
+
+**** Place the components on the system diagram
+
+- Click [>] next to [localhost] in the tree view of the RTSystemEditor, and click [>] next to the &ref(icon_db.png); icon. You may see the two components icons in the above step.
+
+#ref(rtm10.png, 60%, center)
+CENTER:''ConsoleIn and ConsoleOut components ''
+
+Open the System Editor screen (System Diagram) for editing the system. Click the [Open New System Editor] button &ref(icon_open_editor_ja.png, 150%); at the top to open the system editor (System Diagram) in the center pane. From the name service view on the left, drag and drop the components (two) indicated by the &ref(icon-rtce.png, 200%); icon onto the system diagram view in the center.
+
+#ref(rtm11_en.png, 80%, center)
+CENTER:''Place component in editor ''
+
+
+**** Connection and activation
+
+You can see an OutPort &ref(rtse_outport_icon.png); where data is output to and is shown on the right side of the ConsoleIn0 component and an InPort &ref(rtse_inport_icon.png); where data is input from and is shown on the left side of the ConsoleOut0 component like the following figure.
+
+#ref(rtm13.png, 80%, center)
+CENTER:''Data port connection ''
+
+Connect the InPort and the OutPort (these are called "data port"). If you drag and drop from the OutPort to the InPort (or from the InPort to the OutPort), a dialog as shown below appears. Click the [OK] button with the default settings.
+
+#ref(rtm12_en.png, 80%, center)
+CENTER:''Data port connection dialog ''
+
+
+A connecting line appears between the two components. Next, click the [All Activate] button &ref(rtm14.png); in the top menu of the editor to activate these components.
+When activated, the component turns green.
+
+#ref(rtm15.png, center)
+CENTER:''Activated component ''
+
+
+
+
+When the component is activated, the ConsoleIn component will display on the console
+
+ Please input number:
+
+The prompt is displayed. Enter an appropriate number (within the range of short int: 32767 or less) and press the Enter key.
+Then, the entered value is displayed on the ConsoleOut side console screen. You can see that the data has been transferred from the ConsoleIn component to the ConsoleOut component.
+
+This is the end of the basic operation check of the component.
+
+
+** Other samples
+
+The installer also comes with some sample components. These components can also be tested by double-clicking on them, then connecting and activating the ports using RTSystemEditor.
+
+Below are a list and a brief description of the attached component startup batch files.
+
+|LEFT:30|LEFT:80|c
+|ConsoleIn.bat|LEFT: Launch &color(default){ConsoleIn}; component which outputs the numerical value input from console to OutPort. Used by connecting to ConsoleOut.|
+|ConsoleOut.bat|Launch &color(default){ConsoleOut}; component which displays the numerical value entered in InPort on the console. Used by connecting to ConsoleIn.|
+|SeqIn.bat|Invokes &color(default){SequenceIn}; component which outputs random numbers (Short, Long, Float, Double and their sequence types). Used by connecting to SequenceOutComponent.|
+|SeqOut.bat|Invokes &color(default){SequenceOut}; component which displays the numbers (Short, Long, Float, Double and their sequence type) input to InPort. Used by connecting to SequenceInComponent.|
+|MyServiceProviderComp.bat|Launch &color(default){MyServiceProvider}; componennt that provides a service of type MyService. Use by connecting to MyServiceConsumer.|
+|MyServiceConsumerComp.bat|Start the &color(default){MyServiceConsumer}; component that provides a service of type MyService. Use by connecting to MyServiceProvider.|
+|ConfigSample.bat|Launch sample &color(default){ConfigSample}; component. This is a sample to understand the behavior of Configuration by changing Configuration from RtcLink.|
+|Composite.bat|Launch the composite component creation sample &color(default){PeriodicECSharedComponent}; component. It combines three sub-components: Sensor, Controller and Motor. Used with components such as ConsoleIn|

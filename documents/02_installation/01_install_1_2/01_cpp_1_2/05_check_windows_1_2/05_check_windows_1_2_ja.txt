@@ -6,49 +6,46 @@
 インストールまたはビルドが正常に終了したら、付属のサンプルで動作テストをします。
 サンプルは、64bit版の場合、通常は以下の場所にあります。
 
--C:\Program Files\OpenRTM-aist\1.2.1\Components\C++\Examples
+-C:\Program Files\OpenRTM-aist\1.2.x\Components\C++\Examples
 -OpenRTM-aist\examples (ソースからビルドした場合)
 
 以下の手順で、サンプルコンポーネントセットSimpleIOを使用して、OpenRTM-aistが正しくビルド/インストールされているかを確認します。
 
 
-
 ** サンプル (SimpleIO)を使用した確認
 
-RTコンポーネントConsoleInComp、ConsoleOutCompからなるサンプルセットです。
-ConsoleInCompはコンソールから入力された数値をOutPort から出力するコンポーネント、ConsoleOutCompはInPortに入力された数値をコンソールに表示するコンポーネントです。これらは最も Simple なI/O(入出力)を例示するためのサンプルです。
-ConsoleInCompのOutPortからConsoleOutCompのInPortへ接続し、これらの2つのコンポーネントをアクティブ化(Activate)することで動作します。
+RTコンポーネントConsoleIn、ConsoleOutからなるサンプルセットです。
+ConsoleInはコンソールから入力された数値をOutPort から出力するコンポーネント、ConsoleOutはInPortに入力された数値をコンソールに表示するコンポーネントです。これらは簡単なI/O(入出力)を例示するためのサンプルです。
+ConsoleInのOutPortからConsoleOutのInPortへ接続し、これらの2つのコンポーネントをアクティブ化(Activate)することで動作します。
 
 以下は、msiインストーラーでOpenRTM-aistをインストールした環境で、スタートメニューから各種プログラムを起動する前提で説明します。
 
-*** RT System Editor、ネームサーバー起動
-以下の手順に従ってRT System Editor、ネームサーバーを起動してください。
+*** RTSystemEditor、ネームサーバーの起動
+以下の手順に従ってRTSystemEditor、ネームサーバーを起動してください。
 
 - [[OpenRTP起動手順:/ja/node/6653]]
 
 *** サンプルコンポーネントの起動
 ネームサーバー起動後、適当なサンプルコンポーネントを起動します。
 
-Windows 10の場合は右下の[ここに入力して検索]に''C++_Examples''と入力して、サンプルのフォルダーを見つけ、それを開きます。
+Windows 10の場合は右下の[ここに入力して検索]に''C++_Examples''と入力して、サンプルのディレクトリを開きます。
 
 #ref(rtm7.png,60%,center)
 CENTER:''ネームサーバーの起動を確認''
 
 
 #ref(rtm8.png,80%,center)
-CENTER:''サンプルコンポーネントフォルダー''
+CENTER:''サンプルコンポーネントディレクトリ''
 
-ここでは、「ConsoleIn.bat」「ConsoleOut.bat」をそれぞれダブルクリックして2つのコンポーネントを起動します。
+「ConsoleIn.bat」「ConsoleOut.bat」をそれぞれダブルクリックして2つのコンポーネントを起動します。
 
 ** Windows Defenderからの警告
 
-サンプルコンポーネントを起動しようとすると、Windows Defenderのファイアウォールにより[Windows セキュリティの重要な警告]ダイアログが表示されることがあります。[プライベート ネットワーク(ホームネットワークや社内ネットワークなど)(R)]にチェックを入れ[パブリックネットワーク(空港、喫茶店など)(非推奨)(U)]のチェックをはずして[アクセスを許可する(A)]をクリックしてください。この画面はWindows 10(build 1903)以外だと別の画面が表示されることがありますし、設定によっては表示されないこともあります。表示された場合は同様の設定をしてダイアログを閉じてください。
-ここでは、「ConsoleIn.bat」「ConsoleOut.bat」をそれぞれダブルクリックして2つのコンポーネントを起動します。起動後数秒で下図のような2つのコンソール画面が開きます。
+サンプルコンポーネントを起動しようとすると、Windows Defenderのファイアウォールにより[Windows セキュリティの重要な警告]ダイアログが表示されることがあります。[プライベート ネットワーク(ホームネットワークや社内ネットワークなど)(R)]にチェックを入れ[パブリックネットワーク(空港、喫茶店など)(非推奨)(U)]のチェックをはずしてアクセスを許可する(A)]をクリックしてください。このダイアログはWindows 10(build 1903)以外だと別のダイアログが表示されることがありますし、設定によっては表示されないこともあります。表示された場合は同様の設定をしてダイアログを閉じてください。
 
-**　サンプルコンポーネント起動後の画面
+** サンプルコンポーネント起動後の画面
 
 起動後数秒で下図のような2つのコンソール画面が開きます。
-
 
 #ref(rtm9.png,60%,center)
 CENTER:''ConsoleInコンポーネントとConsoleOutコンポーネント''
@@ -77,24 +74,24 @@ msiインストーラーでインストールした場合はOSを再起動する
 -再起動してみる
 -OpenRTM-aistをすべてアンインストールし、再度インストールすることで改善される場合があります。
 
-**** RTSystem Editorでのエディタ画面への配置
+**** RTSystemEditorでのエディタ画面への配置
 
-RT System Editorのツリー表示内の[localhost]‘の横の[>]をクリックし、そして&ref(icon_db.png );アイコンの横の[>]をクリックすると、先ほど起動した2つのコンポーネントが登録されていることがわかります。
+RTSystemEditorのツリー表示内の[localhost]‘の横の[>]をクリックし、そして&ref(icon_db.png );アイコンの横の[>]をクリックすると、先ほど起動した2つのコンポーネントが登録されていることがわかります。
 
 #ref(rtm10.png,60%,center)
 CENTER:''ConsoleInコンポーネントとConsoleOutコンポーネント''
 
-システムを編集するエディタ画面を開きます。上部の[Open New System Editor]ボタン&ref(icon_open_editor_ja.png,150%); をクリックすると、中央のペインにエディタ画面が開きます。
+システムを編集するエディタ(System Diagram)を開きます。上部の[Open New System Editor]ボタン&ref(icon_open_editor_ja.png,150%); をクリックすると、中央のペインにエディタ（System Diagram)画面が開きます。
 
-左側のネームサービスビューから&ref(icon-rtce.png,200%);のアイコンで表示されているコンポーネント(2つ)を中央のエディタ画面にドラッグアンドドロップします。
+左側のネームサービスビューから&ref(icon-rtce.png,200%);のアイコンで表示されているコンポーネント(2つ)を中央のエディタ・エリアにドラッグアンドドロップします。
 
 #ref(rtm11.png,80%,center)
-CENTER: ''コンポーネントをエディタに配置''
+CENTER: ''コンポーネントをSystem Diagramに配置''
 
 
 **** 接続とアクティブ化
 
-ConsoleIn0コンポーネントの右側にはデータが出力されるOutPort &ref(rtse_outport_icon.png, /ja/node/794); が、ConsoleOut0コンポーネントの左側にはデータが入力されるInPort &ref(rtse_inport_icon.png, /ja/node/794); が、それぞれ配置されています。
+ConsoleIn0コンポーネントの右側にはデータが出力されるOutPort &ref(rtse_outport_icon.png, /ja/node/794); が、ConsoleOut0コンポーネントの左側にはデータが入力されるInPort &ref(rtse_inport_icon.png, /ja/node/794);が、それぞれ配置されています。
 
 #ref(rtm13.png,80%,center)
 CENTER: ''データポートの接続''
@@ -105,8 +102,7 @@ CENTER: ''データポートの接続''
 CENTER: ''データポート接続ダイアログ''
 
 
-2つのコンポーネントの間に接続線が現れます。次に、エディタ上部メニューの[All Activate]ボタン &ref(rtm14.png);をクリックし、これらのコンポーネントをアクティブ化します。
-アクティブ化されると、コンポーネントが緑色に変化します。
+2つのコンポーネントの間に接続線が現れます。次に、エディタ上部メニューの[All Activate]ボタン &ref(rtm14.png);をクリックし、これらのコンポーネントをアクティブ化します。アクティブ化されると、コンポーネントが緑色に変化します。
 
 #ref(rtm15.png,center)
 CENTER: ''アクティブ化されたコンポーネント''
@@ -118,8 +114,8 @@ CENTER: ''アクティブ化されたコンポーネント''
 
  Please input number: 
 
-というプロンプト表示に変わりますので、適当な数値(short int の範囲内:32767以下)を入力しEnterキーを押します。
-すると、ConsoleOut側のコンソール画面では、入力した数値が表示されます。ConsoleInコンポーネントからConsoleOutコンポーネントへデータが転送されたことがわかります。
+というプロンプト表示に変わりますので、適当な数値(short int の範囲内:32767以下)を入力しEnterキーを押してください。
+すると、ConsoleOut側のコンソール画面にも入力した数値が表示され、ConsoleInコンポーネントからConsoleOutコンポーネントへデータが転送されたことがわかります。
 
 以上で、コンポーネントの基本動作の確認は終了です。
 
@@ -130,7 +126,7 @@ CENTER: ''アクティブ化されたコンポーネント''
 
 付属しているコンポーネント起動用バッチファイルのリストと簡単な説明を以下に示します。
 
-|LEFT:250|LEFT|c
+|LEFT:30|LEFT:80|c
 |ConsoleIn.bat|LEFT:コンソールから入力された数値をOutPortから出力する&color(default){ConsoleInコンポーネント}; を起動します。ConsoleOutに接続して使用します。|
 |ConsoleOut.bat|InPortに入力された数値をコンソールに表示する&color(default){ConsoleOutコンポーネント};  を起動します。ConsoleInに接続して使用します。|
 |SeqIn.bat|ランダムな数値(Short、Long、Float、Doubleとそのシーケンス型)を出力する&color(default){SequenceInComponentコンポーネント};を起動します。SequenceOutComponentに接続して使用する。|
@@ -141,5 +137,3 @@ CENTER: ''アクティブ化されたコンポーネント''
 |Composite.bat|複合コンポーネント作成サンプル&color(default){PeriodicECSharedComponentコンポーネント}; を起動します。Sensor、Controller、Motorの3つサブ・コンポネントを複合しています。 ConsoleInなどのコンポーネント接続して使ってみると良いでしょう。|
 
 
-
-&br;
