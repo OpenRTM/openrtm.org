@@ -15,7 +15,7 @@ Use the following procedure to check that OpenRTM-aist is correctly built/instal
 
 ** Operation check using sample (SimpleIO)
 
-This is a sample set consisting of the RT components ConsoleIn and ConsoleOut.
+This is a sample set consisting of the RT-Components ConsoleIn and ConsoleOut.
 ConsoleIn is a component that outputs the numerical value input from the console to the OutPort, and ConsoleOutComp is a component that displays the numerical value input from the InPort on the console. These are RTC samples to show a simple I/O (input/output) use.
 It works by connecting the OutPort of ConsoleIn's OutPort to the InPort of ConsoleOut's InPort and activating these two components.
 
@@ -24,7 +24,7 @@ The following explanation assumes that various programs are started from the sta
 *** Start RTSystemEditor and name server
 Follow the steps below to start the RTSystemEditor and the name server.
 
--[[OpenRTP startup procedure>//node/6980]]
+-[[OpenRTP startup procedure>/node/6980]]
 
 *** Start sample component
 After starting the name server, start the appropriate sample component.
