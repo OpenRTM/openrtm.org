@@ -22,7 +22,7 @@ After getting root privileges with su for Debian
  # sh pkg_install_debian.sh -l c ++ --yes
 
 
-For details on how to download the batch installation script, detailed installation methods, and the types of options that can be specified, see the [[Bulk Installation Script>/node/6990]] page .
+For details on how to download the batch installation script, detailed installation methods, and the types of options that can be specified, see the [[Bulk Installation Script>/node/6990]] page.
 
 ** Install OpenRTP
 RTCBuilder and RTSystemEditor are used for general RT system development on Ubuntu/Debian environment. In that case, OpenRTP is required. To install OpenRTP using the bulk installation script in Ubuntu, in the directory where pkg_install_ubuntu.sh is located, type in:
@@ -258,7 +258,7 @@ openrtm-aist-dev contains commands and headers necessary for development.
 
 
 *** openrtm-aist-example
-openrtm-aist-example includes sample stand alone RTCs, sample loadable RTCs,and the source code.
+openrtm-aist-example includes sample stand alone RTCs, sample loadable RTCs, and the source code.
 
 
 - Sample (Stand alone RTC)
