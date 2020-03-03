@@ -1,57 +1,52 @@
-﻿// Title: Fedoraへのインストール
-現在、1.2系のOpenRTM-aistはFedoraの対応が不完全です。よって、本ページの情報はあくまでも参考情報として使用してください。
+// Title: Installation on Fedora
+Now 1.2 series of OpenRTM-aist does not fully support Fedora OS. Then please use the information on this page as non-validated one.
 
-Python版OpenRTM-aistはFedora Linuxで利用可能なRPMパッケージが提供されています。
-対応しているFedora Linuxのバージョンは、ダウンロードページから確認できます。
-Fedora Linuxへの対応およびそのバージョンは、予告なしに変更または停止されることがありますので、あらかじめご了承ください。
+OpenRTM-aist-Python is provided with an RPM package that can be used with Fedora Linux.
+The supported Fedora Linux versions can be found from the download page.
+Please note that support for Fedora Linux and its versions are subject to change or suspension without notice.
 
-Fedora Linuxへのインストールの方法には大きく分けて以下の二種類のインストール方法があります。
-- openrtm.orgが提供する一括インストールスクリプトを使用
-- yumパッケージマネージャを使用
+There are two main types of installation methods for Fedora Linux.
+- Use the bulk installation script provided by openrtm.org
+- Use yum package manager
 
 #contents
 
-** 一括インストール・スクリプト
+** Bulk installation script
 
-openrtm.orgが提供するインストール・スクリプト''pkg_install_fedora.sh''をダウンロードページからダウンロードし、root権限で実行します。
-このスクリプトは、必要なパッケージを順次yumを用いてインストールしていきます。
+Download the installation script "pkg_install_fedora.sh" provided by openrtm.org from the download page and execute it with root privileges.
+This script installs necessary packages sequentially using yum.
 
-OpenRTM-aistを開発・実行するために必要なパッケージをもれなくインストールしてくれるので大変便利です。
+It is very convenient because it installs all the packages required to develop and execute OpenRTM-aist.
 
-オプションを指定することで、目的に合わせたパッケージをインストールすることが可能です。一括インストール・スクリプトをダウンロードして
+By specifying the option, it is possible to install the package that suits the purpose. To install OpenRTM-aist-Python, download the bulk install script and then type
+ $ sudo sh pkg_install_fedora.sh -l python --yes
 
- sudo sh pkg_install_fedora.sh -l python --yes
-でインストールできます。
-一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[[一括インストールスクリプト>/node/6345]]」のページをご確認ください。
+For details on how to download the bulk installation script, detailed installation methods, and the types of options that can be specified, see the [[Bulk Installation Script>/node/6990]].
 
-** OpenRTPのインストール
-一般的なUbuntu/Debian環境での開発にはRTC BuilderやRTSystem Editorを使用しますが、その場合にはOpenRTPが必要ですので、一括インストールスクリプトを用いてOpenRTPをインストールしてください。Ubuntuではpkg_install_ubuntu.shが置いてあるディレクトリで
- $ sudo sh ./pkg_install_fedora.sh -l openrtp --yes
-と入力するとOpenRTPをインストールできます。
+** Install OpenRTP
+RTC Builder and RTSystemEditor can be used for general Ubuntu/Debian environment development. To use them, OpenRTP is required. Install OpenRTP using the bulk installation script. In Ubuntu, in the directory where pkg_install_ubuntu.sh is located, type
+ $ sudo sh pkg_install_fedora.sh -l openrtp --yes
 
-現状Fedora用一括インストールスクリプトでは-l pythonでPython用の環境をインストールした後に、-l openrtpをインストールした場合OpenRTPの実行に必要なファイルが一部インストールされないという問題がありますので上記実行後
+At present, in the bulk installation script for Fedora, after installing the environment for Python with -l python, if you install -l openrtp, there is a problem that some of the files necessary for executing OpenRTP are not installed. To avoid the problem, you need to install OpenRTM-aist package manually. For it, type:
  $ sudo yam install OpenRTM-aist
-としてOpenRTM-aistをインストールしてください。
 
-** JDK8のインストール
+** Install JDK8
+To run OpenRTP (RTSystemEditor, RTC Builder, etc.), a Java environment equivalent to JDK8 is required. At present, in the Fedora environment, the bulk installation script installs OpenJDK8 from the Fedora rpm repository. If you want to install another JDK8, please refer to the link below. By the way, JDK is not required to use rtshell/rtctree/rtsprofile, so if you do not use OpenRTP, you do not need to install JDK8. See below for information on obtaining and installing JDK8.
+-[[JDK8 Installation>/en/node/6992]]
 
-OpenRTP(RTSystem EditorやRTC Builderなど)の実行にはJDK8相当のJava環境が必要です。現時点でFedoraの環境では、一括インストールスクリプトがFedoraのrpmリポジトリよりOpenJDK8をインストールします。他のJDK8をインストールしたい場合は下記のリンクを参照してください。なお、rtshell/rtctree/rtsprofileの使用にはJDKは必要ありませんのでOpenRTPを使わない場合にはJDK8をインストールする必要はありません。 JDK8の入手やインストールについては以下を参照してください。
-- [[JDK8のインストール>/ja/node/6911]]
-
-** rtshellのインストール
-制御用コンピューター・システムが小規模の場合など、CUIでRTCを制御したい場合にはOpenRTPのRTSystemEditor相当の機能をCUIから実行できるようなツールとしてrtshellと呼ばれるツールが提供されています。rtshellのインストールはターミナル上で一括インストールスクリプトを用いて、一括インストールスクリプト・ファイルが置かれているディレクトリで以下のように入力します。
-
+** Install rtshell
+If you want to control the RTC with the CUI, such as when the control computer system is small, a tool called rtshell is provided as a tool that allows you to execute functions equivalent to RTSystemEditor of OpenRTP from the CUI. To install rtshell, use a bulk installation script on the terminal and enter the following in the directory where the bulk installation script file is located.
  $ sudo sh pkg_install_fedora.sh -l rtshell --yes
-// $ sudo rtshell_post_install　現在動作しない
+// $ sudo rtshell_post_install
 
-** yumとpipを使う方法
+** How to use yum and pip
 
-*** /etc/yum.repos.d/openrtm.repoの作成
+*** Create /etc/yum.repos.d/openrtm.repo
 
-openrtm.orgではyumから利用可能なパッケージリポジトリを提供しています。
-ただし、デフォルトのパッケージリポジトリには含まれていませんので、yumの設定を変更する必要があります。
+openrtm.org provides a package repository available from yum.
+However, it is not included in the default package repository, so you need to change the setting of yum.
 
-以下のような設定を記録したファイル''/etc/yum.repos.d/openrtm.repo''を作成しておきます。作成には通常root権限が必要です。
+Create a file ''/etc/yum.repos.d/openrtm.repo'' that contains the following settings. Creation usually requires root privileges.
 
  [openrtm]
  name=Fedora $releasever - $basearch
@@ -60,31 +55,31 @@ openrtm.orgではyumから利用可能なパッケージリポジトリを提供
  enabled=1
  gpgcheck=0
  gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora file:///etc/pki/rpm-gpg/RPM-GPG-KEY
-CENTER:''/etc/yum.repos.d/openrtm.repo''
+CENTER:''/etc/yum.repos.d/openrtm.repo ''
 
-*** yumによるインストール
+*** Installation by using yum
 
-openrtm.repoを作成したら、次の手順でインストールを行います。
-途中、いくつかの応答を求められるので、''y''を入力しながら完了させます。
+After creating openrtm.repo, install it according to the following procedure.
+On the way, you will be asked for some responses, so complete by typing `` y ''.
 
-- OpenRTM-aist-Pythonのインストール
- $ sudo yum install gcc-c++ python
+-Install OpenRTM-aist-Python
+ $ sudo yum install gcc-c ++ python
  $ sudo yum install omniORB omniORB-devel omniORB-doc omniORB-servers omniORB-utils
  $ sudo yum install OpenRTM-aist-Python OpenRTM-aist-Python-doc OpenRTM-aist-Python-example
 
-- OpenRTPのインストール
+-Install OpenRTP
  $ sudo yum install OpenRTP
  $ sudo yum install OpenRTM-aist
 
-- rtshellのインストール
- $ sudo pip3 install rtshell-aist
-//$ sudo rtshell_post_install 現在動作しない
+-Install rtshell
+ $ sudo pip3 install rtshell-aist 
+// $ sudo rtshell_post_install
 
-*** インストールの確認
+*** Confirm installation
 
-以下のコマンドでインストールの確認ができます。
+You can check the installation with the following command.
 
-- OpenRTPもインストールしている場合
+- If you installed OpenRTP too, 
  $ rpm -qa OpenRT*
  OpenRTM-aist-devel-1.2.0-0.fc29.x86_64
  OpenRTM-aist-Python-1.2.0-0.29.x86_64
@@ -93,13 +88,13 @@ openrtm.repoを作成したら、次の手順でインストールを行いま�
  OpenRTM-aist-1.2.0-0.fc29.x86_64
  OpenRTM-aist-Python-doc-1.2.0-0.29.x86_64
 
-- OpenRTPをインストールしていない場合
+- If you did not install OpenRTP
  $ rpm -qa OpenRT*
  OpenRTM-aist-Python-1.2.0-0.29.x86_64
  OpenRTM-aist-Python-example-1.2.0-0.29.x86_64
  OpenRTM-aist-Python-doc-1.2.0-0.29.x86_64
 
-- rtshellのインストールは
+- To check rtshell installation:
  $ pip3 show rtshell-aist
  Name: rtshell-aist
  Version: 4.2.2
@@ -110,24 +105,23 @@ openrtm.repoを作成したら、次の手順でインストールを行いま�
  License: LGPL3
  Location: /usr/local/lib/python3.7/dist-packages
  Requires: rtctree-aist, rtsprofile-aist
-と確認できます。
 
-**パッケージの詳細
-各パッケージの内容は以下の通りです(64bit版Fedoraの場合)
+** Package details
+Each package contains: (In case of 64bit Fedora)
 
 *** OpenRTM-aist-Python
 
-- コマンド
+- Commands
  /usr/bin/rtcd_python
  /usr/bin/rtcprof_python
 
-- OpenRTM-aist 本体の Python モジュール
+- OpenRTM-aist  main python modules
  usr/lib/python3.7/site-packages/OpenRTM-aist/*
 
-- OpenRTM-aist用Python検索パスファイル
+- Python search path file for OpenRTM-aist
  /usr/lib/python3.7/site-packages/OpenRTM_aist.ph
 
-- ユーティリティ
+- Utilities
  /usr/lib/python3.7/site-packages/OpenRTM_aist/utils/__init__.py
  /usr/lib/python3.7/site-packages/OpenRTM_aist/utils/rtc-template/*
  /usr/lib/python3.7/site-packages/OpenRTM_aist/utils/rtcd/*
@@ -135,7 +129,6 @@ openrtm.repoを作成したら、次の手順でインストールを行いま�
  /usr/lib/python3.7/site-packages/OpenRTM_aist/utils/rtm-naming/*
 
 *** openrtm-aist-python-example
-
  /usr/share/openrtm-1.2/components/python/__init__.py
  /usr/share/openrtm-1.2/components/python/rtcd.conf
  /usr/share/openrtm-1.2/components/python/components.conf
@@ -155,68 +148,67 @@ openrtm.repoを作成したら、次の手順でインストールを行いま�
  /usr/share/openrtm-1.2/components/python/TkLRFViewer/*
 
 ***openrtm-aist-python-doc
-
--クラスリファレンス(英語)
+- Class reference (English)
  /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/_async_8py.html
  /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/_buffer_base_8py.html
- 中略
+ ...
  /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/uuid_8py.html
-- クラスリファレンス(日本語)
+- Class reference (Japanese)
  /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/_async_8py.html
  /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/_buffer_base_8py.html
- 中略
+ ...
  /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/uuid_8py.html 
 
 *** OpenRTM-aist
-openrtm-aistにはランタイムライブラリとコマンド群が含まれています。
+openrtm-aist contains runtime libraries and commands.
 
-- サンプル設定ファイル
+- Configuration file sample
  /etc/rtc.conf.sample
 
-- コマンド
+- Commands
  /usr/bin/rtcd
  /usr/bin/rtcprof
  /usr/bin/rtm-config
  /usr/bin/rtm-naming
 
-- ライブラリ
+- Libraries
  /usr/lib64/libRTC-1.2.0.so
  /usr/lib64/libRTC.a
  /usr/lib64/libRTC.la
- 中略
+ ...
  /usr/lib64/librtmManipulator.so.0.0.0
  /usr/lib64/openrtm-1.2/ec/FileNameservice.la
  /usr/lib64/openrtm-1.2/ec/FileNameservice.so
- 中略
+ ...
  /usr/lib64/openrtm-1.2/ssl/SSLTransport.so.0.0.0
 
 
 ***OpenRTM-aist-devel
-openrtm-aist-devには、開発に必要なコマンド群とヘッダが含まれています。
+openrtm-aist-dev contains commands file and heder files which is used for software development.
 
--コマンド
+- Commands
  /usr/bin/coil-config
  /usr/bin/rtc-template
  /usr/bin/rtm-skelwrapper
 
--ヘッダ
+- Header files
  /usr/include/coil-1.2/coil/Affinity.h
  /usr/include/coil-1.2/coil/Allocator.h
- 中略
+ ...
  /usr/include/coil-1.2/coil/stringutil.h
  /usr/include/openrtm-1.2/rtm/BufferBase.h
  /usr/include/openrtm-1.2/rtm/BufferStatus.h
- 中略
+ ...
  /usr/include/openrtm-1.2/rtm/version.txt
  /usr/include/openrtm-1.2/rtm/ext/CameraCommonInterface.hh
  /usr/include/openrtm-1.2/rtm/ext/CameraCommonInterface.idl
- 中略
+ ...
  /usr/include/openrtm-1.2/rtm/ext/ManipulatorCommonInterface_MiddleStub.h
  /usr/include/openrtm-1.2/rtm/ext/ec/artlinux/ArtExecutionContext.h
  /usr/include/openrtm-1.2/rtm/ext/ec/artlinux/rtc.conf.sample
  /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/LogicalTimeTriggeredEC.h
  /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/LogicalTimeTriggeredEC.idl
- 中略
+ ...
  /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/LogicalTimeTriggeredECStub.h
  /usr/include/openrtm-1.2/rtm/ext/ec/rtpreempt/RTPreemptEC.h
  /usr/include/openrtm-1.2/rtm/ext/ec/rtpreempt/rtc.conf.sample
@@ -226,14 +218,14 @@ openrtm-aist-devには、開発に必要なコマンド群とヘッダが含ま�
  /usr/include/openrtm-1.2/rtm/ext/logger/fluentbit_stream/fluentbit.conf
  /usr/include/openrtm-1.2/rtm/ext/sdo/logger/Logger.hh
  /usr/include/openrtm-1.2/rtm/ext/sdo/logger/Logger.idl
- 中略
+ ...
  /usr/include/openrtm-1.2/rtm/ext/sdo/logger/LoggerStub.h
 
--IDL およびスタブ・スケルトン
+-IDL and stab skeleton
 
  /usr/include/openrtm-1.2/rtm/ext/sdo/observer/ComponentObserver.idl
  /usr/include/openrtm-1.2/rtm/ext/sdo/observer/ComponentObserverConsumer.h
- 中略
+ ...
  /usr/include/openrtm-1.2/rtm/ext/sdo/observer/ComponentObserverStub.h
  /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/idl/LogicalTimeTriggeredEC.hh
  /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/idl/LogicalTimeTriggeredEC.idl
@@ -245,29 +237,28 @@ openrtm-aist-devには、開発に必要なコマンド群とヘッダが含ま�
  /usr/include/openrtm-1.2/rtm/ext/sdo/observer/idl/ComponentObserverSK.cc
  /usr/include/openrtm-1.2/rtm/idl/BasicDataType.hh
  /usr/include/openrtm-1.2/rtm/idl/BasicDataType.idl
- 中略
+ ...
  /usr/include/openrtm-1.2/rtm/idl/SharedMemoryStub.h
  /usr/include/openrtm-1.2/rtm/idl/device_interfaces/AIO.idl
  /usr/include/openrtm-1.2/rtm/idl/device_interfaces/ActArray.idl
- 中略
+ ...
  /usr/include/openrtm-1.2/rtm/idl/device_interfaces/Ranger.idl
  
--ライブラリ
+- Libraries
  /usr/lib64/openrtm-1.2/cmake/OpenRTMConfig.cmake
  /usr/lib64/openrtm-1.2/py_helper/README_gen.py
  /usr/lib64/openrtm-1.2/py_helper/cxx_gen.py
- 中略
+ ...
  /usr/lib64/openrtm-1.2/py_helper/yat.py
  /usr/lib64/pkgconfig/libcoil.pc
  /usr/lib64/pkgconfig/openrtm-aist.pc
 
 *** OpenRTP
-OpenRtpでは大量のファイルがインストールされるため、ここではリストしません。必要に応じて
- $ rpm -ql  OpenRTP
-と入力して各自での確認をしてください。
+In openrtp installation, since so many files are installed, the listing is not made. Depend on your needs, use the following command.
+ $ dpkg -L openrtp
 
 *** rtshell
-- コマンド用スクリプト
+- Scripts for the commands
  /usr/local/bin/rtact
  /usr/local/bin/rtcat
  /usr/local/bin/rtcheck
@@ -298,12 +289,12 @@ OpenRtpでは大量のファイルがインストールされるため、ここ�
  /usr/local/bin/rtvlog
  /usr/local/bin/rtwatch
 
-- コマンド本体
+- Main code for the commands
  /usr/local/lib/python3.7/dist-packages/rtctree/*
  /usr/local/lib/python3.7/dist-packages/rtshell/*
  /usr/local/lib/python3.7/dist-packages/rtsprofile/*
 
-- パッケージ情報
+- Package information
  /usr/local/lib/python3.7/dist-packages/rtctree_aist-4.2.0.egg-info/*
  /usr/local/lib/python3.7/dist-packages/rtshell_aist-4.2.2.dist-info/*
  /usr/local/lib/python3.7/dist-packages/rtsprofile_aist-4.1.2.dist-info/*
