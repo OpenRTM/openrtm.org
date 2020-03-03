@@ -1,0 +1,56 @@
+﻿// Title: OpenRTM-aist Case Study on Raspberry Pi
+#ref(Raspberry_Pi_Logo.svg_.png, 50%, margin = 10, around, right)
+
+** Introduction
+Raspberry Pi is a single-board computer with an ARM processor developed by the Raspberry Pi Foundation in the UK.
+
+The Raspberry Pi is very convenient because it runs normal Linux (Debian, Fedora, Arch Linux) and FreeBSD for ARM regardless of the size of the embedded board, and can also compile on the board.
+Currently, for the storage device, the SD card can be used. It is inexpensive and has a large capacity. Also, the main board price is very low, about 3,000 yen.
+Also, since basic I/O is provided and can be connected to various external devices, various applications such as robot control and measurement with sensors are conceivable.
+
+*** Specifications
+
+The appearance of one type of Raspberry Pi is shown below.
+
+#ref(raspberrypi.png, center, 80%)
+CENTER: '' Raspberry Pi ''
+
+The Raspberry Pi has three basic types (Model A, Model B, Model Zero), and there are multiple models for each basic type. Please refer to the following Wikipedia link for details.
+
+- From Wikipedia: http://en.wikipedia.org/wiki/Raspberry_Pi
+
+The specifications of typical models are shown below.
+
+|LEFT:20|LEFT:30|LEFT:30|LEFT:30|c
+|>|>|>| CENTER:''Specification'' |
+||''3 Model B'' |''3 Model B +''|''4 Model B (4G)''|
+| Target Price | $ 35 | $ 35 | $ 55 |
+| SoC | Broadcom BCM2837 | Broadcom BCM2837B0 | Broadcom BCM2711 |
+| CPU | ARM Cortex-A53 1.2GHz | ARM Coretex-A53 1.4GHz | ARM Coretex-A72 1.5GHz |
+| GPU |>| Broadcom VideoCore IV | Broadcom VideoCore VI |
+| Memory (SDRAM) |>| 1GB (GPU sharing) | 4GB (GPU sharing) |
+| USB 2.0 port | 4 (Integrated USB hub) | 4 | 2 |
+| USB 3.0 port |>| CENTER:-| 2 |
+| Video output |>| Composite RCA (PAL & NTSC), HDMI (rev 1.3 & 1.4), MIPI DSI | Composite RCA (PAL/NTSC), micro-HDMI (up to 4kp60) 2.0 x 2, MIPI DSI |
+| Audio output |>| 3.5mm jack, I2S, HDMI | 3.5mm jack, I2S, micro HDMI |
+| Storage |>|>| SD memory card / MMC / SDIO card slot |
+| Network | 10/100 Mbps Ethernet (RJ45) | Gigabit Ethernet over USB 2.0 (maximum throughput 300Mbps) (RJ45) | Gigabit Ethernet (RJ45) |
+| Low-level peripherals |>|>| 8 × GPIO, UART, I2C, SPI and two chip select, + 3.3V, + 5V, ground |
+| Power supply|>| 2.5A (12.5W) | 3A (15W) |
+| Power source|>| 5V/microUSB or GPIO | 5V/USB Type-C or GPIO |
+| Size | 85.0mm x 56.5mm |>| 85.0mm x 56.0mm |
+
+See the above Wiki for more details.
+
+*** Overview of this book
+
+Using the I/O extension platform PiRT-Unit developed by AIST makes it possible to use external I/O relatively easily.
+
+#ref(pirt-unit.png, center)
+CENTER:'' PiRT-Unit ''
+
+OpenRTM-aist (C++, Python, Java) can also be compiled and executed on the board, so even though it is an embedded board, it can be used in almost the same way as a normal Linux PC development process.
+
+This section describes how to build an environment for developing and executing RT components with OpenRTM-aist, know-how for convenient use, how to control mobile robots, and how to use I/O.
+#ref(pirt-unit_app.png, center)
+CENTER:''Application using Raspberry Pi or PiRT-Unit''

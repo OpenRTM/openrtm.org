@@ -1,0 +1,57 @@
+﻿// Title: Raspberry PiでのOpenRTM-aist活用事例
+#ref(Raspberry_Pi_Logo.svg_.png,50%,margin=10,around,right)
+
+** はじめに
+Raspberry Piとは、ラズベリーパイ財団が英国で開発したARMプロセッサを搭載したシングルボードコンピューターです。
+
+Raspberry Piは組込みボードサイズにも関わらず、ARM用の通常のLinux (Debian、Fedora、Arch Linux)やFreeBSDが動作し、ボード上でセルフコンパイルも行えるため大変使いやすいです。
+ディスクも現在は安価で大容量なSDカードを利用でき、本体価格も3000円程度と非常に安価です。
+また、基本的なI/Oが提供されており、外部のいろいろなデバイスとも接続できるため、ロボット制御やセンサーによる計測など、いろいろな応用が考えられます。
+
+*** 仕様
+
+Raspberry Piの外観を以下に示します。
+
+#ref(raspberrypi.png,center,80%)
+CENTER:''Raspberry Pi''
+
+Raspberry Piには３つの基本タイプ(Model A、Model B、Model Zero)があり、また基本タイプごとに複数のモデルがあります。詳細については下記Wikipediaのリンクなどを参照してください。
+
+- Wikipediaより:http://ja.wikipedia.org/wiki/Raspberry_Pi
+
+以下に代表的なモデルの仕様を表示します。
+
+|LEFT:20|LEFT:30|LEFT:30|LEFT:30|c
+|>|>|>|CENTER:''仕様''|
+||''3 Model B''|''3 Model B+''|''4 Model B (4G)''|
+|ターゲット価格|$35|$35|$55|
+|SoC|Broadcom BCM2837|Broadcom BCM2837B0|Broadcom BCM2711|
+|CPU|ARM Cortex-A53 1.2GHz|ARM Coretex-A53 1.4GHz|ARM Coretex-A72 1.5GHz|
+|GPU|>|Broadcom VideoCore IV |Broadcom VideoCore VI|
+|メモリ(SDRAM)|>|1GB(GPU共有)|4GB(GPU共有)|
+|USB 2.0ポート|4(統合USBハブ)|4|2|
+|USB 3.0ポート|>|CENTER:-|2|
+|映像出力|>|コンポジット RCA(PAL&NTSC)、HDMI(rev 1.3 & 1.4)、MIPI DSI|コンポジットRCA(PAL/NTSC)、micro-HDMI(up to 4kp60) 2.0 x 2、MIPI DSI|
+|音声出力|>|3.5 mm ジャック、I2S、HDMI|3.5 mmジャック、I2S、micro HDMI|
+|ストレージ|>|>|SDメモリカード/MMC/SDIOカードスロット|
+|ネットワーク|10/100 Mbpsイーサネット(RJ45)|Gigabit Ethernet over USB 2.0 (maximum throughput 300Mbps) (RJ45)|Gigabit Ethernet (RJ45)|
+|低レベル周辺機器|>|>|8 × GPIO、UART、I2C、SPIと2つのチップセレクト、+3.3V、+5V、接地|
+|電源|>|2.5A(12.5W)|3A(15 W)|
+|電源ソース|>|5V/microUSBまたはGPIO|5V/USB Type-CまたはGPIO|
+|大きさ|85.0mm × 56.5mm|>|85.0mm x 56.0mm|
+
+より詳しくは上記Wikiなどを参照してください。
+
+*** このBookの概要
+
+産総研が開発したI/O拡張基盤PiRT-Unitを利用すれば、比較的簡単にI/Oを利用することが可能です。
+
+#ref(pirt-unit.png,center)
+CENTER: ''PiRT-Unit''
+
+OpenRTM-aist(C++、Python、Java)もボード上でコンパイル・実行可能ですので、組込みボードでありながら、通常のLinux PC上での開発プロセスとほぼ同様の使い方が可能です。
+
+ここではOpenRTM-aistでRTコンポーネントを開発・実行するための環境構築方法、便利に使うためのノウハウ、移動ロボットの制御やI/Oの利用方法などを解説します。
+#ref(pirt-unit_app.png,center)
+CENTER:''Raspberry PiやPiRT-Unitを利用したアプリケーション''
+
