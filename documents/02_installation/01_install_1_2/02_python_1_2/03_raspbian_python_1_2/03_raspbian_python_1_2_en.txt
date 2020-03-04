@@ -10,20 +10,40 @@ The version of Raspbian for which packages are currently available is
 -Buster
 
 *** SD card preparation
-Download the Rasbian image ("Raspbian Buster with desktop and recommended software" is recommended but depend on your use, you can choose other image) from the following link、decompresse (unzip), and write it to the SD card. The capacity of the SD card should be more than 4GB. For the method to write the image to an SD card, refer to [[RPi Easy SD Card Setup:http://elinux.org/RPi_Easy_SD_Card_Setup]].
+**** Download OS Image
+Download the Rasbian image (the image ”Raspbian Buster with desktop and recommended software” is recommended but you can select another image if necessary) from the link below, unzip and write to SD card. The capacity of the SD card should be more than 4GB.
+- [[Raspbian Downloads:https://www.raspberrypi.org/downloads/raspbian/]]
 
-- [[Raspbian Downloads:https://www.raspberrypi.org/downloads/raspbian]]
+**** Write to SD card
+Please refer to [[RPi Easy SD Card Setup:http://elinux.org/RPi_Easy_SD_Card_Setup]] for how to write to SD card.
+The link shows several options. Here's an overview of some of them:
 
-On Windows, you can use [[Win32 Disk Imager:https://forest.watch.impress.co.jp/docs/review/1067836.html]]. On Linux and Mac OS, write using dd as follows.
+***** For Windows
+- Write using [[Win32 Disk Imager:https://sourceforge.net/projects/win32diskimager/]].
 
- $ sudo dd if=/dev/<SD card device file> of=<Downloaded and decompressed image file> bs=1m
+Using Windows is relatively easier than using Linux or Mac OS. Then if you are a beginner,  using Windows is recommended. 
+
+***** For Linux and Mac OS
+- Write using the ''dd'' command as follows.
+
+ $ sudo dd of=/dev/<device file of SD card> if=<image file downloaded and decompressed> bs=4M status=progress
+ $ sudo sync
+
+Writing to an SD card with the above command requires a fairly long time. (Several minutes to ten several minutes). To find the device file name of the SD card, type in:
+ $ df -h
+And find out which device is the SD card from the displayed device size. For example, if you are using a 16GB SD card that currently has Rasbian installed, one device will appear as a 14GB device and that device will appear as /dev/sdf7. Other devices that differ only in the last number, such as /dev/sdf5 and /dev/sdf6, are displayed too. These are the device names used for the SD card. Umount all of these devices as follows:
+ $ umount / dev / sdf5
+ $ umount / dev / sdf6
+ $ umount / dev / sdf7
+
+After that, execute the above ''dd'' command. The device file name in the case is /dev/sdf.
 
 ** Install OpenRTM-aist-Python
 
 Download the bulk installation script "pkg_install_raspbian.sh" from the specified URL and execute it with root privileges. This script installs necessary packages sequentially using apt-get.
 
 By specifying the option, it is possible to install the packages which align with your purpose. Download the bulk installation script and execute it with root privilege. 
- $ sudo sh pkg_install_raspian.sh -l python --yes.
+ $ sudo sh pkg_install_raspbian.sh -l python --yes.
 
 For details on downloading the bulk installation script, detailed installation methods, and the options that can be specified, see [[Bulk Installation Script:>//node/6990]].
 
