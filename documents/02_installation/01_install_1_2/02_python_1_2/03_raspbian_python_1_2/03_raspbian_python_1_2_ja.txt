@@ -6,8 +6,7 @@
 Python版OpenRTM-aistはRaspberry Pi用Raspbianl用debパッケージが提供されています。
 Raspbianへの対応およびそのバージョンは、予告なしに変更または停止されることがありますので、あらかじめご了承ください。
 
-** はじめに
-*** 対応バージョン
+** 対応バージョン
 
 現在パッケージが用意されているRaspbianのバージョンは
 
@@ -15,23 +14,23 @@ Raspbianへの対応およびそのバージョンは、予告なしに変更ま
 
 です。
 
-*** SDカードの準備
+** SDカードの準備
 
-**** OSイメージのダウンロード
+*** OSイメージのダウンロード
 以下のリンクからRasbianのイメージ(「Raspbian Buster with desktop and recommended software」のイメージを推奨しますが、必要に応じて他のイメージを選択してもかまいません)をダウンロードし、解凍し、SDカードに書き込みます。SDカードの容量は4GB以上はあったほうがよいでしょう。
 - [[Raspbian Downloads:https://www.raspberrypi.org/downloads/raspbian/]]
 
-**** SDカードへの書き込み
+*** SDカードへの書き込み
 SDカードへの書き込み方法については [[RPi Easy SD Card Setup:http://elinux.org/RPi_Easy_SD_Card_Setup]] を参照してください。
 
 このリンクではいくつかの方法が説明されています。そのうちのいくつかの概要を示すと:
 
-***** Windowsの場合
+**** Windowsの場合
 - [[Win32 Disk Imager:https://forest.watch.impress.co.jp/docs/review/1067836.html]]などを利用して書き込みます。
 
 Windowsを用いる方法の方がLinuxやMac OSを用いるより簡単なので、初心者にはWindowsを用いる方法を推奨します。
 
-***** LinuxやMac OSの場合
+**** LinuxやMac OSの場合
 - ’’dd’’コマンドを以下のように利用して書き込みます。
 
  $ sudo dd of=/dev/<SDカードのデバイスファイル> if=<ダウンロード・解凍したイメージファイル> bs=4M status=progress
@@ -64,7 +63,7 @@ RTCをRaspbianにインストールしてそのホスト上からローカルに
 
 でインストールできます。
 
-***インストールの確認
+**インストールの確認
 インストールを確認します。
 
  $ dpkg -l 'openrt*'
