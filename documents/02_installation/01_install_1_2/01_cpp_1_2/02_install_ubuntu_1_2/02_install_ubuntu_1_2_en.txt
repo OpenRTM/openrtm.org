@@ -2,7 +2,7 @@
 #ref(ubuntu_logo2.png, around, right)
 
 
-The C ++ version of OpenRTM-aist provides a deb package that can be used on Ubuntu and Debian GNU Linux.
+The C++ version of OpenRTM-aist provides deb packages that can be used on Ubuntu and Debian GNU Linux.
 You can check the distribution version of the OS supported by each release on the download page.
 Please note that supported versions and support for Ubuntu/Debian GNU Linux are subject to change without notice.
 
@@ -16,10 +16,10 @@ By specifying the option, it is possible to install the packages required for yo
 To install OpenRTM-aist C++ version, download the bulk installation script, move to the download destination directory, and type in:
 
 For Ubuntu
- $ sudo sh pkg_install_ubuntu.sh -l c ++ --yes
+ $ sudo sh pkg_install_ubuntu.sh -l c++ --yes
 
 After getting root privileges with su for Debian
- # sh pkg_install_debian.sh -l c ++ --yes
+ # sh pkg_install_debian.sh -l c++ --yes
 
 
 For details on how to download the batch installation script, detailed installation methods, and the types of options that can be specified, see the [[Bulk Installation Script>/node/6990]] page.
