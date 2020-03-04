@@ -1,14 +1,14 @@
 ﻿// Title: Ubuntu/Debianへのインストール
 #ref(ubuntu_logo2.png,/ja/node/1182,around,right)
 
-Python版の OpenRTM-aist は、Ubuntu や Debian GNU Linux で利用可能な deb パッケージが提供されています。
+Python版のOpenRTM-aistは、UbuntuやDebian GNU Linuxで利用可能なdebパッケージが提供されています。
 対応しているディストリビューションのバージョンは、ダウンロードページで確認できます。
 Ubuntu/Debian GNU Linuxへのサポートバージョンや対応の有無は、予告なしに変更されることがありますので、あらかじめご了承ください。
 
 #contents
 
 ** 一括インストールスクリプト
-openrtm.orgが提供するインストール・スクリプト''pkg_install_ubuntu.sh''または''pkg_install_debian.sh''を指定のURLからダウンロードし、root 権限で実行します。このスクリプトでは必要なパッケージを順次apt-getを用いてインストールしていきます。
+openrtm.orgが提供するインストール・スクリプト''pkg_install_ubuntu.sh''または''pkg_install_debian.sh''を指定のURLからダウンロードし、root権限で実行します。このスクリプトでは必要なパッケージを順次apt-getを用いてインストールしていきます。
 
 オプションを指定することで、目的に合わせたパッケージをインストールすることが可能です。
 
@@ -26,7 +26,7 @@ Debianの場合はsuでroot権限を得た後に
 一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[[一括インストールスクリプト:http://openrtm.org/openrtm/ja/node/6345]]」のページをご確認ください。
 
 ** OpenRTPのインストール
-一般的なUbuntu/Debian環境での開発にはRTC BuilderやRTSystem Editorを使用しますが、その場合にはOpenRTPが必要です。一括インストールスクリプトを用いてOpenRTPをインストールしてください。Ubuntuではpkg_install_ubuntu.shが置いてあるディレクトリで
+一般的なUbuntu/Debian環境での開発にはRTCBuilderやRTSystemEditorを使用しますが、その場合にはOpenRTPが必要です。一括インストールスクリプトを用いてOpenRTPをインストールしてください。Ubuntuではpkg_install_ubuntu.shが置いてあるディレクトリで
 
 Ubuntuの場合は
  $ sudo sh ./pkg_install_ubuntu.sh -l openrtp --yes
@@ -38,7 +38,7 @@ Debianの場合はsuでroot権限を得た後に
 
 ** JDK8のインストール
 
-OpenRTP(RTSystem EditorやRTC Builderなど)の実行にはJDK8相当のJava環境が必要です。(デフォルトの環境でJDK8がインストールされている場合もありますが、Ubuntu 18.04ではJDK11がインストールされているため、JDK8のインストールが必要です。) 　なお、rtshell/rtctree/rtsprofileの使用にはJDKは必要ありませんのでOpenRTPを使わない場合にはJDK8をインストールする必要はありません。 JDK8の入手やインストールについては以下を参照してください。
+OpenRTP(RTSystemEditorやRTCBuilderなど)の実行にはJDK8相当のJava環境が必要です。(デフォルトの環境でJDK8がインストールされている場合もありますが、Ubuntu 18.04ではJDK11がインストールされているため、JDK8のインストールが必要です。)　なお、rtshell/rtctree/rtsprofileの使用にはJDKは必要ありませんのでOpenRTPを使わない場合にはJDK8をインストールする必要はありません。JDK8の入手やインストールについては以下を参照してください。
 - [[JDK8のインストール>/ja/node/6911]]
 
 ** rtshellのインストール

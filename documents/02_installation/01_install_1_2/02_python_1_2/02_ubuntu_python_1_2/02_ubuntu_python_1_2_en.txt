@@ -23,7 +23,7 @@ For Debian, after getting root privileges using su command.
 For details on downloading the bulk installation script, detailed installation methods, and the options that can be specified, see [[Bulk Installation Script>//node/6990]].
 
 ** Installation of OpenRTP
-For development in a general Ubuntu/Debian environment, use RTC Builder or RTSystem Editor. In that case, OpenRTP is required.  You can install OpenRTP using the bulk installation script. 
+For development in a general Ubuntu/Debian environment, use RTCBuilder or RTSystemEditor. In that case, OpenRTP is required.  You can install OpenRTP using the bulk installation script. 
 
 For Ubuntu, at the directory where pkg_install_ubuntu.sh is located
 
