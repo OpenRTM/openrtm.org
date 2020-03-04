@@ -19,7 +19,7 @@ These are RTC samples to show a simple I/O (input/output) use. It works by conne
 
 ** Operation check environment
 
-The following describes how to use OpenRTP when starting various programs from the Start menu in an environment where OpenRTM-aist is installed by default with the msi installer. When using RTShell without using OpenRTP, refer to [[Operation Check (Windows)>//node/7005]] under "Install rtshell" page. If you build the source, the sample components are located in &color(blue){<Source directory>};\OpenRTM-aist\examples\SimpleIO. Please replace the location of ConsoleIn/ConsoleOut in the explanation below and in the link by it.
+The following describes how to use OpenRTP when starting various programs from the Start menu in an environment where OpenRTM-aist is installed by default with the MSI installer. When using RTShell without using OpenRTP, refer to [[Operation Check (Windows)>//node/7005]] under "Install rtshell" page. If you build the source, the sample components are located in &color(blue){<Source directory>};\OpenRTM-aist\examples\SimpleIO. Please replace the location of ConsoleIn/ConsoleOut in the explanation below and in the link by it.
 
 ** Operation check procedure
 *** Start RTSystemEditor and the name server
@@ -59,7 +59,7 @@ Please reset it to the following minimum rtc.conf and try again.
 
 ***** omniORBpy is not installed.
 
-omniORBpy is included in the msi installer provided by openrtm.org, but if you choose a custom installation, you can install OpenRTM-aist-Python without installing omniORBpy. Also, if you have installed it manually, you may not have omniORBpy installed. Check if omniORBpy is installed.
+omniORBpy is included in the MSI installer provided by openrtm.org, but if you choose a custom installation, you can install OpenRTM-aist-Python without installing omniORBpy. Also, if you have installed it manually, you may not have omniORBpy installed. Check if omniORBpy is installed.
 
 ***** The association of py files is different
 
@@ -67,7 +67,7 @@ The file that starts ConsoleIn and ConsoleOut is
 
 c:\Program Files\OpenRTM-aist\1.2.&color(blue){x};\Components\Python\Examples\SimpleIO\ConsoleIn.py &br;
 c:\Program Files\OpenRTM-aist\1.2.&color(blue){x};\Components\Python\Examples\SimpleIO\ConsoleOut.py &br;
-Note that the location is the location of the case that you installed OpenRTM-aist by using 64-bit msi.
+Note that the location is the location of the case that you installed OpenRTM-aist by using 64-bit MSI.
 
 Open the console screen in this directory and start it by executing python ConsoleIn.py, but if you can not start by double-clicking ConsoleIn.py, please check the installed python. If both 32-bit and 64-bit versions of Python are installed, the one installed first will be associated with the py file, so installing Python of the same architecture as the OpenRTM-aist-Python installer may solve it first Maybe.
 
