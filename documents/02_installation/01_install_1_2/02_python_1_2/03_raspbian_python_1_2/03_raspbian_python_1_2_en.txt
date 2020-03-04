@@ -2,7 +2,7 @@
 
 #contents
 
-OpenRTM-aist-Python is provided with deb packages for Raspbian for Raspberry Pi. Please note that support for Raspbian and its versions are subject to change or suspension without notice.
+OpenRTM-aist-Python is provided with deb packages for Raspbian for the Raspberry Pi. Please note that support for Raspbian and its versions are subject to change or suspension without notice.
 
 ** Introduction 
 *** Supported version
@@ -10,9 +10,9 @@ The version of Raspbian for which packages are currently available is
 -Buster
 
 *** SD card preparation
-Download the Rasbian image from the following link and write it to the SD card. The capacity of the SD card should be more than 4GB. For the method to write the image to an SD card, refer to [[RPi Easy SD Card Setup:http://elinux.org/RPi_Easy_SD_Card_Setup]].
+Download the Rasbian image ("Raspbian Buster with desktop and recommended software" is recommended but depend on your use, you can choose other image) from the following link、decompresse (unzip), and write it to the SD card. The capacity of the SD card should be more than 4GB. For the method to write the image to an SD card, refer to [[RPi Easy SD Card Setup:http://elinux.org/RPi_Easy_SD_Card_Setup]].
 
-- [[Raspberry Pi Downloads:https://www.raspberrypi.org/downloads/]]
+- [[Raspbian Downloads:https://www.raspberrypi.org/downloads/raspbian]]
 
 On Windows, you can use [[Win32 Disk Imager:https://forest.watch.impress.co.jp/docs/review/1067836.html]]. On Linux and Mac OS, write using dd as follows.
 
@@ -37,15 +37,14 @@ rtshell is required if you want to install RTC on Raspbian and control RTC local
 You can check the installation as the following.
 
  $ dpkg -l 'openrt*'
- 要望=(U)不明/(I)インストール/(R)削除/(P)完全削除/(H)保持
- | 状態=(N)無/(I)インストール済/(C)設定/(U)展開/(F)設定失敗/(H)半インストール/(W)トリガ待ち/(T)トリガ保留
- |/ エラー?=(空欄)無/(R)要再インストール (状態,エラーの大文字=異常)
- ||/ 名前                        バージョン   アーキテクチ 説明
- +++-===========================-============-============-===============================================
- ii  openrtm-aist-python         1.2.1-0      armhf        OpenRTM-aist, RT-Middleware distributed by AIST
- ii  openrtm-aist-python-doc     1.2.1-0      all          Documentation for openrtm-aist-python
- ii  openrtm-aist-python-example 1.2.1-0      armhf        OpenRTM-aist-Python examples
-
+ Desired=Unknown/Install/Remove/Purge/Hold
+ | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+ |/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+ ||/ Name                  Version         Architecture    Description
+ +++-=====================-===============-===============-================================================
+ ii  openrtm-aist-python   1.2.1-0         amd64           OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm-aist-python-d 1.2.1-0         all             Documentation for openrtm-aist-python
+ ii  openrtm-aist-python-e 1.2.1-0         amd64           OpenRTM-aist-Python examples
 For rtshell, 
  $ pip show rtshell-aist
  Name: rtshell-aist

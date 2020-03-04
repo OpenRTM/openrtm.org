@@ -17,10 +17,10 @@ Raspbianへの対応およびそのバージョンは、予告なしに変更ま
 
 *** SDカードの準備
 
-以下のページからRasbianのイメージをダウンロードして、SDカードに書き込みます。SDカードの容量は4GB以上はあったほうがよいでしょう。
+以下のページからRasbianのイメージ(Raspbian Buster with desktop and recommended softwareのイメージを推奨しますが、必要に応じて他のイメージを選択してもかまいません)をダウンロードし、解凍し、SDカードに書き込みます。SDカードの容量は4GB以上はあったほうがよいでしょう。
 SDカードへの書き込み方法については [[RPi Easy SD Card Setup:http://elinux.org/RPi_Easy_SD_Card_Setup]] を参照してください。
 
-- [[Raspberry Pi Downloads:https://www.raspberrypi.org/downloads/]]
+- [[Raspbian Downloads:https://www.raspberrypi.org/downloads/raspbian/]]
 
 Windowsでは、[[Win32 Disk Imager:https://forest.watch.impress.co.jp/docs/review/1067836.html]]などを利用して書き込みます。
 LinuxやMac OSではddを以下のように利用して書き込みます。
