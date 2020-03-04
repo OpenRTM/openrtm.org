@@ -2,9 +2,9 @@
 #contents
 
 ** Install OpenRTM-aist
-The procedure for installing OpenRTM-aist using the msi installer is described on the following page.
+The procedure for installing OpenRTM-aist using the MSI installer is described on the following page.
 
-- [[Installing OpenRTM-aist 1.2 (Windows, using msi installer)>/node/6738]]
+- [[Installing OpenRTM-aist 1.2 (Windows, using MSI installer)>/node/6738]]
 
 
 ** Installation of software required for development
@@ -24,7 +24,7 @@ The installer does the following:
 - Create OpenRTM-aist folder under start menu and set various shortcuts
 - Set environment variables
 
--- Settings when using 64-bit msi
+-- Settings when using 64-bit MSI
  RTM_BASE=C:\Program Files\OpenRTM-aist\ 
  RTM_ROOT=C:\Program Files\OpenRTM-aist\1.2.1\ 
  RTM_VC_VERSION=//This contains the text that specifies the version of VC according to the user specified Visual Studio
@@ -33,12 +33,12 @@ The installer does the following:
  OpenCV_DIR=C:\Program Files\OpenRTM-aist\1.2.1\OpenCV3.4\ 
  OpenRTM_DIR=C:\Program Files\OpenRTM-aist\1.2.1\cmake\ 
 
---- Additional setting to PATH (setting when using 64-bit msi)
+--- Additional setting to PATH (setting when using 64-bit MSI)
  C:\Program Files\OpenRTM-aist\1.2.1\bin\% RTM_VC_VERSION%\ 
  C:\Program Files\OpenRTM-aist\1.2.1\omniORB\4.2.1_% RTM_VC_VERSION%\bin\x86_win32\ 
  C:\Program Files\OpenRTM-aist\1.2.1\OpenCV3.4\% RTM_VC_VERSION%\bin\ 
 
--Setting when using 32bit msi
+-Setting when using 32bit MSI
  RTM_BASE=C:\Program Files (x86)\OpenRTM-aist\ 
  RTM_ROOT=C:\Program Files (x86)\OpenRTM-aist\1.2.1\ 
  RTM_VC_VERSION=// This contains the text that specifies the version of VC according to the user specified Visual Studio

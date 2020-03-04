@@ -2,9 +2,9 @@
 #contents
 
 ** OpenRTM-aistのインストール
-msiインストーラーによるOpenRTM-aistのインストール手順については下記のページに記載。
+MSIインストーラーによるOpenRTM-aistのインストール手順については下記のページに記載。
 
-- [[OpenRTM-aist 1.2系のインストール(Windows、msiインストーラー使用):/ja/node/6652]]
+- [[OpenRTM-aist 1.2系のインストール(Windows、MSIインストーラー使用):/ja/node/6652]]
 
 
 ** 開発に必要なソフトウエアのインストール
@@ -23,7 +23,7 @@ RTCの開発にはCMake、Doxygen、Visual Studioのインストールが必要�
 - インストールディレクトリ(デフォルトはC:\Program Files)下に各種ファイルをコピー
 - スタートメニュー以下にOpenRTM-aistフォルダーを作成し各種ショートカットを設定
 - 環境変数の設定
--- 64bit用msi利用時の設定
+-- 64bit用MSI利用時の設定
 
  RTM_BASE=C:\Program Files\OpenRTM-aist\\
 
@@ -38,7 +38,7 @@ RTCの開発にはCMake、Doxygen、Visual Studioのインストールが必要�
 
  OpenRTM_DIR=C:\Program Files\OpenRTM-aist\1.2.1\cmake\\
 
---- PATHへの追加設定(64bit用msi利用時の設定)
+--- PATHへの追加設定(64bit用MSI利用時の設定)
 
  C:\Program Files\OpenRTM-aist\1.2.1\bin\%RTM_VC_VERSION%\\
 
@@ -46,7 +46,7 @@ RTCの開発にはCMake、Doxygen、Visual Studioのインストールが必要�
 
  C:\Program Files\OpenRTM-aist\1.2.1\OpenCV3.4\%RTM_VC_VERSION%\bin\\
 
--- 32bit用msi利用時の設定
+-- 32bit用MSI利用時の設定
 
  RTM_BASE=C:\Program Files (x86)\OpenRTM-aist\\
 
