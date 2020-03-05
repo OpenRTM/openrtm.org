@@ -36,18 +36,18 @@ Amazon CorrettoはAmazonの長期サポートを含むOpenJDKのビルドです�
 *** リポジトリからのパッケージ入手
 主なLinuxディストリビューションでは、標準パッケージとして、JDK8に相当するOpenJDKパッケージが配布されています。
 
-*** Ubuntu/Debian/Raspbian
+**** Ubuntu/Debian/Raspbian
 Ubuntu Linux, Debian Linuxなどでは apt コマンドで以下のようにインストールすることができます。
 
  $ sudo apt install openjdk-8-jdk
 
-*** Fedora
+**** Fedora
 Fedora Linuxではyumコマンドで以下のようにインストールすることができます。
 
  $ sudo yum -y install java-1.8.0-openjdk
 
 *** リポジトリからのパッケージ入手以外の方法
-上記のサードパーティベンダのURLから入手することもできます。インストール方法についてはそのサイトの情報に従うか、Javaの標準的方法でインストールしてください。
+上記のサードパーティベンダのWebサイトから入手することもできます。インストール方法についてはそのサイトの情報に従うか、Javaの標準的方法でインストールしてください。
 
 *** 既にJDK8以外がインストールされている場合
 なお、JDK8以外のJDKがデフォルト状態でインストールされている可能性がありますので、
