@@ -2,15 +2,36 @@
 
 #contents
 
-To install rtshell, you need to install OpenRTM-aist-Python because rtsll is a Python program. Therefore, to use rtshell, it is required to installOpenRTM-aist-Python and rtshell, and installation of Python execution environment. (The bulk installation script for Linux installs Python in the script, but in the case of Windows the msi install needs to be installed beforehand. The supported Python version is 3.7, 3.6, 2.7.
+To install rtshell, you need to install OpenRTM-aist-Python because rtshell is a Python program. Therefore, to use rtshell, it is required to install OpenRTM-aist-Python and Python execution environment before installing rtshell. (The bulk installation script for Linux installs Python in the script, but in the case of Windows the msi install needs to be installed beforehand. The supported Python version is 3.7, 3.6, 2.7.)
 
 ** Installation on Windows
-*** Install OpenRTM-aist
 Please install OpenRTM-aist by msi installer. Please refer to the following page for the procedure. &br;
 [[OpenRTM-aist 1.2 installation (Windows, using msi installer)>//node/6652]]
 
 ** Installation on Linux environment
-Use [[bulk installation script>//node/6990]] and install rtshell_post_install after installing OpenRTM-asit-Python and rtshell with "-l python" and "-l rtshell" options. For example, for Ubuntu 18.04
- sudo sh ./pkg_install_ubuntu.sh -l python --yes
- sudo sh ./pkg_install_ubuntu.sh -l rtshell --yes
- sudo rtshell_post_install
+Use [[bulk installation script>//node/6990]] to install OpenRTM-aist-Python and rtshell with using "-l python" and "-l rtshell" options and then execute rtshell_post_install. 
+
+*** Ubuntu 18.04 case:
+Move to the directory where the bulk installation script is downloaded and type in:
+ $ sudo sh pkg_install_ubuntu.sh -l python --yes
+ $ sudo sh pkg_install_ubuntu.sh -l rtshell --yes
+ $ sudo rtshell_post_install
+
+Close the terminal once.
+
+*** Raspbian case:
+Move to the directory where the bulk installation script is downloaded and type in:
+ $ sudo sh pkg_install_raspbian.sh -l python --yes
+ $ sudo sh pkg_install_raspbian.sh -l rtshell --yes
+ $ sudo rtshell_post_install
+
+Close the terminal once.
+
+Currently, there is an issue with rtshell_post_install on Raspbian.  The following method can make you avoid the problem.
+Before closing the terminal, execute rtshell_post_install without "sudo" prefix. And answer ''N'' to the first and the 2nd question. Then answer ''Y'' to the 3rd question like following:
+ Link man pages? n
+ Link documentation? n
+ Add shell support to .bashrc? y
+
+
+
