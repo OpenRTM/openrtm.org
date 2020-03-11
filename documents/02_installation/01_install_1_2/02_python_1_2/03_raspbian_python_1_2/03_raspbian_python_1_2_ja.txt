@@ -6,8 +6,7 @@
 Python版OpenRTM-aistはRaspberry Pi用Raspbianl用debパッケージが提供されています。
 Raspbianへの対応およびそのバージョンは、予告なしに変更または停止されることがありますので、あらかじめご了承ください。
 
-** はじめに
-*** 対応バージョン
+** 対応バージョン
 
 現在パッケージが用意されているRaspbianのバージョンは
 
@@ -15,35 +14,56 @@ Raspbianへの対応およびそのバージョンは、予告なしに変更ま
 
 です。
 
-*** SDメモリーカードの準備
+** SDカードの準備
 
-以下のページからRasbianのイメージをダウンロードして、SDメモリーカードに書き込みます。SDメモリーカードの容量は4GB以上はあったほうがよいでしょう。
-SDメモリーカードへの書き込み方法については [[RPi SD Card Setup:http://elinux.org/RPi_Easy_SD_Card_Setup]] を参照してください。
+*** OSイメージのダウンロード
+以下のリンクからRasbianのイメージ(「Raspbian Buster with desktop and recommended software」のイメージを推奨しますが、必要に応じて他のイメージを選択してもかまいません)をダウンロードし、解凍し、SDカードに書き込みます。SDカードの容量は4GB以上はあったほうがよいでしょう。
+- [[Raspbian Downloads:https://www.raspberrypi.org/downloads/raspbian/]]
 
-- [[Raspberry Pi Downloads:https://www.raspberrypi.org/downloads/]]
+*** SDカードへの書き込み
+SDカードへの書き込み方法については [[RPi Easy SD Card Setup:http://elinux.org/RPi_Easy_SD_Card_Setup]] を参照してください。
 
-Windowsでは、[[Win32 Disk Imager:https://forest.watch.impress.co.jp/docs/review/1067836.html]]などを利用して書き込みます。
-LinuxやMac OSではddを以下のように利用して書き込みます。
+このリンクではいくつかの方法が説明されています。そのうちのいくつかの概要を示すと:
 
- $ sudo dd if=/dev/<SDメモリーカードのデバイスファイル> of=<ダウンロード・解凍したイメージファイル> bs=1m
+**** Windowsの場合
+- [[Win32 Disk Imager:https://forest.watch.impress.co.jp/docs/review/1067836.html]]などを利用して書き込みます。
+
+Windowsを用いる方法の方がLinuxやMac OSを用いるより簡単なので、初心者にはWindowsを用いる方法を推奨します。
+
+**** LinuxやMac OSの場合
+- ’’dd’’コマンドを以下のように利用して書き込みます。
+
+ $ sudo dd of=/dev/<SDカードのデバイスファイル> if=<ダウンロード・解凍したイメージファイル> bs=4M status=progress
+ $ sudo sync
+
+上記コマンドによるSDカードへの書き込みはかなり長い時間を必要とします。(数分から10数分)。また、SDカードのデバイスファイル名を見つけるには
+ $ df -h
+と入力し、表示されるデバイスのサイズからどのデバイスがSDカードかを見つけます。例えば、現在Rasbianがインストールされている16GBのSDカードを用いている場合、あるデバイスが14GBのデバイスとして表示され、そのデバイスが/dev/sdf7と表示されます。他にも/dev/sdf5、/dev/sdf6などの後尾の数字だけが違うデバイスが表示されます。これらがSDカードで使われているデバイス名となります。これらのデバイス全て以下のようにumountしてください。
+ $ umount /dev/sdf5
+ $ umount /dev/sdf6
+ $ umount /dev/sdf7
+
+その後、上記の’’dd’’コマンドを実行しますが、この例でのデバイスファイル名は/dev/sdfになります。
 
 
-** OpenRTP-aistのインストール
+** OpenRTM-aist-Pythonのインストール
 
 openrtm.orgが提供するインストール・スクリプト''pkg_install_raspbian.sh''を指定のURLからダウンロードし、root 権限で実行します。このスクリプトでは必要なパッケージを順次apt-getを用いてインストールしていきます。
 
 オプションを指定することで、目的に合わせたパッケージをインストールすることが可能です。一括インストール・スクリプトをダウンロードして
- sudo sh pkg_install_raspian.sh -l python --yes
+ $ sudo sh pkg_install_raspbian.sh -l python --yes
 でインストールできます。
 
 一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[[一括インストールスクリプト:http://openrtm.org/openrtm/ja/node/6345]]」のページをご確認ください。
 
 ** rtshellのインストール
 RTCをRaspbianにインストールしてそのホスト上からローカルにRTCをコントロールしたい場合にはrtshellが必要です。一括インストールスクリプトを用いてrtshellをインストールしてください。Raspbianではpkg_install_raspbian.shが置いてあるディレクトリで
- $ sudo sh ./pkg_install_raspbian.sh -l rtshell --yes
+ $ sudo sh pkg_install_raspbian.sh -l rtshell --yes
+ $ sudo rtshell_post_install
+
 でインストールできます。
 
-***インストールの確認
+**インストールの確認
 インストールを確認します。
 
  $ dpkg -l 'openrt*'

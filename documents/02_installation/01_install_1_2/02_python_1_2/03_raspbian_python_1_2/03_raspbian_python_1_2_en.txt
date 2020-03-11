@@ -1,0 +1,177 @@
+//Title: Installation on Raspbian
+
+#contents
+
+OpenRTM-aist-Python is provided with deb packages for Raspbian for the Raspberry Pi. Please note that support for Raspbian and its versions are subject to change or suspension without notice.
+
+** Supported version
+The version of Raspbian for which packages are currently available is
+-Buster
+
+** SD card preparation
+*** Download OS Image
+Download the Rasbian image (the image ”Raspbian Buster with desktop and recommended software” is recommended but you can select another image if necessary) from the link below, unzip and write to SD card. The capacity of the SD card should be more than 4GB.
+- [[Raspbian Downloads:https://www.raspberrypi.org/downloads/raspbian/]]
+
+*** Write to SD card
+Please refer to [[RPi Easy SD Card Setup:http://elinux.org/RPi_Easy_SD_Card_Setup]] for how to write to SD card.
+The link shows several options. Here's an overview of some of them:
+
+**** For Windows
+- Write using [[Win32 Disk Imager:https://sourceforge.net/projects/win32diskimager/]].
+
+Using Windows is relatively easier than using Linux or Mac OS. Then if you are a beginner,  using Windows is recommended. 
+
+**** For Linux and Mac OS
+- Write using the ''dd'' command as follows.
+
+ $ sudo dd of=/dev/<device file of SD card> if=<image file downloaded and decompressed> bs=4M status=progress
+ $ sudo sync
+
+Writing to an SD card with the above command requires a fairly long time. (Several minutes to ten several minutes). To find the device file name of the SD card, type in:
+ $ df -h
+
+And find out which device is the SD card from the displayed device size. For example, if you are using a 16GB SD card that currently has Rasbian installed, one device will appear as a 14GB device and that device will appear as /dev/sdf7. Other devices that differ only in the last number, such as /dev/sdf5 and /dev/sdf6, are displayed too. These are the device names used for the SD card. Umount all of these devices as follows:
+ $ umount /dev/sdf5
+ $ umount /dev/sdf6
+ $ umount /dev/sdf7
+
+After that, execute the above ''dd'' command. The device file name in the case is /dev/sdf.
+
+** Install OpenRTM-aist-Python
+
+Download the bulk installation script "pkg_install_raspbian.sh" from the specified URL and execute it with root privileges. This script installs necessary packages sequentially using apt-get.
+
+By specifying the option, it is possible to install the packages which align with your purpose. Download the bulk installation script and execute it with root privilege. 
+ $ sudo sh pkg_install_raspbian.sh -l python --yes.
+
+For details on downloading the bulk installation script, detailed installation methods, and the options that can be specified, see [[Bulk Installation Script:>//node/6990]].
+
+** Installing rtshell
+rtshell is required if you want to install RTC on Raspbian and control RTC locally from the Raspbian host. To install rtshell using the bulk installation script, at the directory which file pkg_install_raspbian.sh is, type
+ $ sudo sh pkg_install_raspbian.sh -l rtshell --yes
+ $ sudo rtshell_post_install
+
+** Check the installation
+
+You can check the installation as the following.
+
+ $ dpkg -l 'openrt*'
+ Desired=Unknown/Install/Remove/Purge/Hold
+ | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+ |/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+ ||/ Name                  Version         Architecture    Description
+ +++-=====================-===============-===============-================================================
+ ii  openrtm-aist-python   1.2.1-0         amd64           OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm-aist-python-d 1.2.1-0         all             Documentation for openrtm-aist-python
+ ii  openrtm-aist-python-e 1.2.1-0         amd64           OpenRTM-aist-Python examples
+For rtshell, 
+ $ pip show rtshell-aist
+ Name: rtshell-aist
+ Version: 4.2.2
+ Summary: Shell commands for managing RT Components and RT Systems.
+ Home-page: http://github.com/gbiggs/rtshell
+ Author: Geoffrey Biggs and contributors
+ Author-email: geoffrey.biggs@aist.go.jp
+ License: LGPL3
+ Location: /usr/local/lib/python2.7/dist-packages
+ Requires: rtctree-aist, rtsprofile-aist
+
+** Package details
+
+Each package contains the followings:
+
+*** openrtm-aist-python
+
+- Commands
+ /usr/bin/rtcd_python
+ /usr/bin/rtcprof_python
+
+- OpenRTM-aist-Python main modules
+ usr/lib/python2.7/dist-packages/OpenRTM-aist/*
+
+- Python search path file for OpenRTM-aist
+ /usr/lib/python2.7/dist-packages/OpenRTM_aist.ph
+
+- Utilities
+ /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/__init__.py
+ /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtc-template/*
+ /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtcd/*
+ /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtcprof/*
+ /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtm-naming/*
+
+
+*** openrtm-aist-python-example
+ /usr/share/openrtm-1.2/components/python/__init__.py
+ /usr/share/openrtm-1.2/components/python/rtcd.conf
+ /usr/share/openrtm-1.2/components/python/components.conf
+ /usr/share/openrtm-1.2/components/python/AutoControl/*
+ /usr/share/openrtm-1.2/components/python/AutoTest/*
+ /usr/share/openrtm-1.2/components/python/Composite/*
+ /usr/share/openrtm-1.2/components/python/ConfigSample/*
+ /usr/share/openrtm-1.2/components/python/ExtTrigger/*
+ /usr/share/openrtm-1.2/components/python/MobileRobotCanvas/*
+ /usr/share/openrtm-1.2/components/python/SeqIO/*
+ /usr/share/openrtm-1.2/components/python/SimpleIO/*
+ /usr/share/openrtm-1.2/components/python/SimpleService/*
+ /usr/share/openrtm-1.2/components/python/Slider_and_Motor/*
+ /usr/share/openrtm-1.2/components/python/Templates/*
+ /usr/share/openrtm-1.2/components/python/Throughput/*
+ /usr/share/openrtm-1.2/components/python/TkJoyStick/
+ /usr/share/openrtm-1.2/components/python/TkLRFViewer/*
+
+***openrtm-aist-python-doc
+- Class reference (English)
+ /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/_async_8py.html
+ /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/_buffer_base_8py.html
+ ...
+ /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/uuid_8py.html
+
+- Class reference (Japanese)
+ /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/_async_8py.html
+ /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/_buffer_base_8py.html
+ ...
+ /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/uuid_8py.html 
+
+*** rtshell
+
+- Scripts for the commands
+ /usr/local/bin/rtact
+ /usr/local/bin/rtcat
+ /usr/local/bin/rtcheck
+ /usr/local/bin/rtcomp
+ /usr/local/bin/rtcon
+ /usr/local/bin/rtconf
+ /usr/local/bin/rtcryo
+ /usr/local/bin/rtdeact
+ /usr/local/bin/rtdel
+ /usr/local/bin/rtdis
+ /usr/local/bin/rtdoc
+ /usr/local/bin/rtexit
+ /usr/local/bin/rtfind
+ /usr/local/bin/rtfsm
+ /usr/local/bin/rtinject
+ /usr/local/bin/rtlog
+ /usr/local/bin/rtls
+ /usr/local/bin/rtmgr
+ /usr/local/bin/rtprint
+ /usr/local/bin/rtpwd
+ /usr/local/bin/rtreset
+ /usr/local/bin/rtresurrect
+ /usr/local/bin/rtshell_post_install
+ /usr/local/bin/rtstart
+ /usr/local/bin/rtstodot
+ /usr/local/bin/rtstop
+ /usr/local/bin/rtteardown
+ /usr/local/bin/rtvlog
+ /usr/local/bin/rtwatch
+
+- Main code for the commands
+ /usr/local/lib/python2.7/dist-packages/rtctree/*
+ /usr/local/lib/python2.7/dist-packages/rtshell/*
+ /usr/local/lib/python2.7/dist-packages/rtsprofile/*
+
+- Package information
+ /usr/local/lib/python2.7/dist-packages/rtctree_aist-4.2.0.egg-info/*
+ /usr/local/lib/python2.7/dist-packages/rtshell_aist-4.2.2.dist-info/*
+ /usr/local/lib/python2.7/dist-packages/rtsprofile_aist-4.1.2.dist-info/*
