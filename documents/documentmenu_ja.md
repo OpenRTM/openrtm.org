@@ -416,7 +416,7 @@
       - 各種設定: 09_setting_rtcb_1_0_0_ja.txt
       - その他: 10_other_rtcb_1_0_0_ja.txt
     - rtshell: 07_rtshell_ja.txt
-      - コマンドリファレンス 01_command_reference_ja.txt
+      - rtshellコマンド・リファレンス 01_command_reference_ja.txt
       - rtctreeモジュール: 02_rtctree_ja.txt
       - rtsprofileモジュール: 03_rtsprofile_ja.txt
     - ROSトランスポート(rosport): 10_rostransport_ja.txt
