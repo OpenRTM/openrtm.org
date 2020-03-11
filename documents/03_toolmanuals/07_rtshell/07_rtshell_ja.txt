@@ -3,29 +3,30 @@
 
 **イントロダクション
 
-rtshellは、ネームサーバー上に登録されているRTコンポーネントをシェルから管理できるツールです。
-コンポーネントをactivate/deactivate/resetしたり、ポートの接続を行うことができます。
-RTシステムの管理もできます。
+rtshell は、ネームサーバー上に登録されている RTコンポーネントをシェルから管理することができるツールです。
+コンポーネントを activate/deactivate/reset したり、ポートの接続を行うことができます。
+RTシステムを管理することもできます。
 
-このツールは、リソースの少ないシステム、GUIの利用ができない環境(特にコンポーネントを管理する他のPCとネットワークでつながっていない環境など)や、RTSystemEditorの利用ができない環境、スクリプトでRT Systemを構築する場合などで有効です。コマンドラインの利用に精通している人にも便利なツールです。
+このツールは、リソースの少ないシステム、GUI が利用できない環境(特に、コンポーネントを管理する他のPCとネットワークがつながっていない環境等)、あるいは RTSystemEditor がどうしても利用できない場合等に有効です。
+コマンドラインの利用に精通している人にとっては特に便利なツールです。
 
-//このソフトウエアはNEDO(独立行政法人新エネルギー産業技術総合開発機構)の次世代ロボット知能化技術開発プロジェクトの支援により、独立行政法人産業技術総合研究所によって開発されています。
-//管理番号H23PRO-1214。
+このソフトウエアは NEDO (独立行政法人 新エネルギー・産業技術総合開発機構) の次世代ロボット知能化技術開発プロジェクトの支援により、独立行政法人産業技術総合研究所によって開発されています。
+管理番号H23PRO-1214。
 
-//This software is licensed under the GNU Lesser General Public License version 3
-//(LGPL3). See LICENSE.txt.
-//
+This software is licensed under the GNU Lesser General Public License version 3
+(LGPL3). See LICENSE.txt.
+
 
 **必要条件
 
-- rtctreeが必要です。
-- rtsprofileが必要です。
-- Python 2.7が必要です。
-- rtprint、rtinjectおよびrtlogはOpenRTM-Python-1.0.0以上が必要です。
-- omniORB-py 4.x以上が必要です。
-- ソースからのインストールの場合は、ドキュメントをコンパイルするためにSphinxが必要です。
+- rtctree が必要となります。
+- rtsprofile が必要となります。
+- Python 2.7 が必要となります。
+- rtprint、rtinject および rtlog は OpenRTM-Python-1.0.0 以上が必要となります。
+- omniORB-py 4.x 以上が必要となります。
+- ソースからのインストールの場合は、ドキュメントをコンパイルするために Sphinx が必要となります。
 
-// pipによりインストールする場合は、trctreeとrtsprofileは自動的にインストールされます。
+pip によりインストールする場合は、trctree と rtsprofile は自動的にインストールされます。
 
 
 **インストール
@@ -33,17 +34,17 @@ RTシステムの管理もできます。
 インストール方法については[[rtshellのインストール>/node/7003]]のページを参照してください。
 //インストールはいくつかの方法が利用可能です。
 //
-//- (好ましい方法) pipを利用してPyPiからインストールする。
+//- （好ましい方法）pip を利用して PyPi からインストールする。
 //
-//++ 必要にお応じてpipをインストールします。
-//https://pip.pypa.io/en/latest/installing/を参照してください。
-//++ pipを実行します。
+//++ 必要にお応じて pip をインストールします。
+//https://pip.pypa.io/en/latest/installing/ に参照してください。
+//++ pip を実行します。
 // $ pip install rtshell
-//++ 以下のコマンドを実行し、インストール後のアクションを行います。
+//++ 以下のコマンドを実効し、インストール後のアクションを行います。
 // $ rtshell_post_install
 //++ Windows上では、必要に応じて環境変数を設定します。通常デフォルトで設定されていますが、設定されていない場合は自分で設定する必要があります。
-//PythonスクリプトのディレクトリがPATH環境変数に設定されていることを確認してください。通常、これらはC:\Python27\Scripts\です（PythonがC:\Python27\にインストールされた場合）。
-//++ リポジトリまたはソースアーカイブからダウンロード後、適当なディレクトリで解凍し、インストールする。
+//Python スクリプトのディレクトリーが PATH 環境変数に設定されていることを確認してください。通常、これらは C:\Python27\Scripts\ です（Pythonが C:\Python27\ にインストールされた場合）。
+//++ リポジトリまたはソースアーカイブからダウンロード後、適当なディレクトリーで解凍し、インストールする。
 //++ ソースを展開します。
 // $ cd /home/blurgle/src/
 // $ tar -xvzf rtshell.tar.gz
@@ -52,33 +53,34 @@ RTシステムの管理もできます。
 //++ 以下のコマンドを実行し、インストール後のアクションを行います。
 // $ rtshell_post_install
 //++ Windows上では、必要に応じて環境変数を設定します。通常デフォルトで設定されていますが、設定されていない場合は自分で設定する必要があります。
-//PythonスクリプトのディレクトリがPATH環境変数に設定されていることを確認してください。通常、これらはC:\Python27\Scripts\です（PythonがC:\Python27\にインストールされた場合）。
-//Windows上では、インストーラープログラムを利用してインストール可能です。
+//Python スクリプトのディレクトリーが PATH 環境変数に設定されていることを確認してください。通常、これらは C:\Python27\Scripts\ です（Pythonが C:\Python27\ にインストールされた場合）。
+//Windows上では、インストーラープログラムを利用してインストールすることが可能です。
 //
 
 **リポジトリ
 
-最新版のソースはgithubのリポジトリにあります（URL:http://github.com/gbiggs/rtshell）。
-[Download ZIP]をクリックしてダウンロードできます。下記のように"git clone"コマンドを使うこともできます。(gitが前もってインストールされている必要があります)。
+最新版のソースは github で Git のリポジトリにあります（URL: http://github.com/gbiggs/rtshell ）。
+[Download ZIP]をクリックしてダウンロードをすることができます。下記のように"git clone"コマンドを使うこともできます。(gitが前もってインストールされている必要があります。)パッチを送りたかったら、この方法をおすすめします:
 
   $ git clone git://github.com/OpenRTM/rtshell.git
 
 
 **ドキュメント
 
-ドキュメントはLinuxではmanページとして提供し、/usr/local/share/manにインストールされます。Windowsの場合はHTMLにて提供し、<pythonディレクトリ>\Lib\site-packages\rtshell\data\doc\htmlの下のen、jaディレクトリの下に英語版、日本語版がそれぞれコピーされます。また本Webサイト上にも掲載しています。
+ドキュメントはマンページとして提供します（Windows の場合は HTML に提供され、<pythonディレクトリ>\Lib\site-packages\rtshell\doc\htmlの下のen、jaディレクトリの下に英語版、日本語版がそれぞれコピーされます）。Linuxでは${prefix}/share/man にインストールされます。
+このパスを $MANPATH という環境変数に追加する必要です。例えば、rtshell は /home/blurgle にインストールされた場合、以下の行を .bashrc に追加してください。:
 
-//このパスを$MANPATHという環境変数に追加する必要な場合があります。例えば、rtshellのmanページが/usr/local/share/manにインストールされた場合、以下の行を.bashrcに追加してください。
-// export MANPATH=/usr/local/share/man:${MANPATH}
+ export MANPATH=/home/blurgle/share/man:${MANPATH}
 
-//**テストの実行
-//
-//コマンドのテストはソースディレクトリから実行できます:
-//
-//~/src/rtshell $ ./test/test_cmds.py ~/share/OpenRTM-aist/examples/rtcs/
-//
-//変数はRTCのモジュールを持つディレクトリです。Motor、ControllerおよびSensorのモジュールが必要です。
-//
-//一つのコマンドのテストだけを実行するの場合、そのテストの名を変数に追加してください。:
-//
-// $ ./test/test_cmds.py ~/share/OpenRTM-aist/examples/rtcs/ rtactTests
+
+**テストの実効
+
+コマンドのテストはソースダイレクトリーから実効することができます:
+
+ ~/src/rtshell $ ./test/test_cmds.py ~/share/OpenRTM-aist/examples/rtcs/
+
+変数は RTC のモジュールを持つダイレクトリーです。Motor、Controller および Sensor のモジュールが必要です。
+
+一つのコマンドのテストだけを実効するの場合、そのテストの名を変数に追加してください。:
+
+ $ ./test/test_cmds.py ~/share/OpenRTM-aist/examples/rtcs/ rtactTests
