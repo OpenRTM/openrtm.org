@@ -1,0 +1,54 @@
+// Title: Install Visual Studio Community 2019
+** Get installer
+Get the installer for Visual Studio Community 2019 from the following page
+
+- [[Download Visual Studio:https://visualstudio.microsoft.com/downloads/]]
+
+Click on the [''Free Download''] button below labeled [''Community''] to begin downloading the installer.
+
+#ref(vs_install1_en.png, around, nolink, left)
+#clear
+
+** Run installer
+When the download is completed, open the downloaded file and execute it. Follow the instructions and the following screen will be displayed. Check the box for [''Desktop development with C++''] and click the [''Install''] button.
+
+
+#ref(vs_install2_en.png, around, nolink, left)
+
+#clear
+
+** Confirm installation
+
+#ref(vs_install3_en.png, around, nolink, margin=0 20, left)
+When the installation is completed, a screen prompting you to sign in will be displayed. You can use it for 30 days without signing in.
+Please refer to the following about the Microsoft account.
+
+[[How to create a new Microsoft account:https://support.microsoft.com/en-us/help/4026324/microsoft-account-how-to-create]]
+
+#clear
+
+** Check if C++ compiler is installed
+
+Make sure that the desktop development function by C++ is installed.
+
+There is no problem if you can create a Visual C++ project.
+#clear
+
+First, click [''Create New Project''].
+
+#ref(vs_install4_en.png, around, nolink, left)
+
+#clear 
+
+At this time, if there is an &br;
+[''empty project'' &br;
+start from scratch with C++ for Windows, Provides no starting files.], &br;
+there is no problem in installation.
+
+If it is not installed, click &br;
+[&color(blue){Install more tools and features};] under label ''Not finding what you're looking for? '' to launch the installer and install the C++ desktop development feature.
+
+#clear
+
+#ref(vs_install5_en.png, around, nolink, left)
+ 

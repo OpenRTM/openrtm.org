@@ -1,0 +1,92 @@
+// Title: Install on Windows
+#contents
+
+** Install OpenRTM-aist
+The procedure for installing OpenRTM-aist using the MSI installer is described on the following page.
+
+- [[Installing OpenRTM-aist 1.2 (Windows, using MSI installer)>/node/6738]]
+
+
+** Installation of software required for development
+RTC development requires installation of CMake, Doxygen, and Visual Studio.
+
+- [[CMake (3.11 or more recommended):https://cmake.org/download/]]
+During the installation, you will be asked what to do with system PATH as [Install Options], it is recommended that you select Add CMake to the system PATH for all users. (Our validation is done with this setting)
+- [[Doxygen:http://www.doxygen.nl/download.html]]
+Download and execute the Windows version binary executable file from the web page.
+-[[Visual Studio>/node/7036]]
+Install it by downloading from the link, or obtain and install Visual Studio 2010/2012/2013/2015/2017/2019 separately.
+
+** What the installer does
+The installer does the following:
+
+- Copy various files under the installation directory (C:\Program Files by default)
+- Create OpenRTM-aist folder under start menu and set various shortcuts
+- Set environment variables
+
+-- Settings when using 64-bit MSI
+ RTM_BASE=C:\Program Files\OpenRTM-aist\ 
+ RTM_ROOT=C:\Program Files\OpenRTM-aist\1.2.1\ 
+ RTM_VC_VERSION=//This contains the text that specifies the version of VC according to the user specified Visual Studio
+ RTM_JAVA_ROOT=C:\Program Files\OpenRTM-aist\1.2.1\ 
+ OMNI_ROOT=C:\Program Files\OpenRTM-aist\1.2.1\omniORB\4.2.3_% RTM_VC_VERSION%\ 
+ OpenCV_DIR=C:\Program Files\OpenRTM-aist\1.2.1\OpenCV3.4\ 
+ OpenRTM_DIR=C:\Program Files\OpenRTM-aist\1.2.1\cmake\ 
+
+--- Additional setting to PATH (setting when using 64-bit MSI)
+ C:\Program Files\OpenRTM-aist\1.2.1\bin\% RTM_VC_VERSION%\ 
+ C:\Program Files\OpenRTM-aist\1.2.1\omniORB\4.2.1_% RTM_VC_VERSION%\bin\x86_win32\ 
+ C:\Program Files\OpenRTM-aist\1.2.1\OpenCV3.4\% RTM_VC_VERSION%\bin\ 
+
+-Setting when using 32bit MSI
+ RTM_BASE=C:\Program Files (x86)\OpenRTM-aist\ 
+ RTM_ROOT=C:\Program Files (x86)\OpenRTM-aist\1.2.1\ 
+ RTM_VC_VERSION=// This contains the text that specifies the version of VC according to the user specified Visual Studio
+ RTM_JAVA_ROOT=C:\Program Files (x86)\OpenRTM-aist\1.2.1\ 
+ OMNI_ROOT=C:\Program Files\OpenRTM-aist\1.2.1\omniORB\4.2.3_% RTM_VC_VERSION%\ 
+ OpenCV_DIR=C:\Program Files\OpenRTM-aist\1.2.1\OpenCV3.4\ 
+ OpenRTM_DIR=C:\Program Files\OpenRTM-aist\1.2.1\cmake\ 
+
+--- Additional setting to PATH
+ C:\Program Files (x86)\OpenRTM-aist\1.2.1\bin\% RTM_VC_VERSION%\ 
+ C:\Program Files (x86)\OpenRTM-aist\1.2.1\omniORB\4.2.3_% RTM_VC_VERSION%\bin\x86_win32\ 
+ C:\Program Files (x86)\OpenRTM-aist\1.2.1\OpenCV3.4\x86\% RTM_VC_VERSION%\bin\ 
+
+//
+// Provides a script to check the installation environment settings. The following page explains how to use the script and what you can check.
+//
+//-http://openrtm.org/openrtm/ja/content/rtm-install-check-script
+//
+** Files to be installed
+The files are installed in the following structure.
+ <install_dir>
+   + OpenRTM-aist
+      + 1.x.x  :Old version run time
+      + 1.2.1
+         + bin: dll、lib and commands
+         + cmake: OpenRTMConfig.cmake
+         + coil: coil header files
+         + Components
+            + C++
+               + Examples: C++ sample components
+               + OpenCV: OpenCV C++ sample components
+            + Java: Java sample components
+            + Python: Python sample components
+         + etc: rtc.conf sample file
+         + jar: jar files
+         + jre: OpenJDK JRE
+         + omniORB
+         + OpenCV3.4
+         + rtm: OpenRTM-aist header files
+            + ext: files for extension modules
+            + idl: OpenRTM-aist IDL files
+         + util
+            + ExcelControlpy: Python base RTCs for Microsoft Office
+            + OpenRTP: RTCBuilder and RTSystemEditor
+            + PowerPointControlpy: RTCs for Microsoft Office PowerPoint
+            + python_dist: common library files for python base tools
+            + RTCDT: A tool to support to develop Python base RTC. 
+            + rtc-template: An old tool to provide slimier function as RTCBuilder
+            + RTSystemEditor: Files for standalone RTSystemEditor (RCP)
+            + VCVerChanger: A tool to specify the version of using Visual Studio
+            + WordContrlpy: Python base RTCs for Microsoft Office Word
