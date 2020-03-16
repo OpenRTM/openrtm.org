@@ -1,130 +1,125 @@
-﻿// Titile: Raspbianへのインストール
-#ref(Raspberry_Pi_Logo.svg_.png,50%,margin=10,around,right)
+// Titile: Install on Raspbian
+
+#ref(Raspberry_Pi_Logo.svg_.png, 50%, margin = 10, around, right)
 
 #contents
 
-C++版OpenRTM-aistはRaspberry Pi用Raspbianl用debパッケージが提供されています。
-Raspbianへの対応およびそのバージョンは、予告なしに変更または停止されることがありますので、あらかじめご了承ください。
+OpenRTM-aist for C ++ is provided with deb packages for Raspbianl for Raspberry Pi.
+Please note that support for Raspbian and its versions are subject to change or suspension without notice.
 
-** 対応バージョン
+** Supported version
+The version of Raspbian for which packages are currently available is
+-Buster
 
-現在パッケージが用意されているRaspbianのバージョンは
-
-- Buster
-
-です。
-
-** SDカードの準備
-
-*** OSイメージのダウンロード
-以下のリンクからRasbianのイメージ(「Raspbian Buster with desktop and recommended software」のイメージを推奨しますが、必要に応じて他のイメージを選択してもかまいません)をダウンロードし、解凍し、SDカードに書き込みます。SDカードの容量は4GB以上はあったほうがよいでしょう。
+** SD card preparation
+*** Download OS Image
+Download the Rasbian image (the image ”Raspbian Buster with desktop and recommended software” is recommended but you can select another image if necessary) from the link below, unzip and write to SD card. The capacity of the SD card should be more than 4GB.
 - [[Raspbian Downloads:https://www.raspberrypi.org/downloads/raspbian/]]
 
-*** SDカードへの書き込み
-SDカードへの書き込み方法については [[RPi Easy SD Card Setup:http://elinux.org/RPi_Easy_SD_Card_Setup]] を参照してください。
+*** Write to SD card
+Please refer to [[RPi Easy SD Card Setup:http://elinux.org/RPi_Easy_SD_Card_Setup]] for how to write to SD card.
+The link shows several options. Here's an overview of some of them:
 
-このリンクではいくつかの方法が説明されています。そのうちのいくつかの概要を示すと:
+**** For Windows
+- Write using [[Win32 Disk Imager:https://sourceforge.net/projects/win32diskimager/]].
 
-**** Windowsの場合
-- [[Win32 Disk Imager:https://forest.watch.impress.co.jp/docs/review/1067836.html]]などを利用して書き込みます。
+Using Windows is relatively easier than using Linux or Mac OS. Then if you are a beginner,  using Windows is recommended. 
 
-Windowsを用いる方法の方がLinuxやMac OSを用いるより簡単なので、初心者にはWindowsを用いる方法を推奨します。
+**** For Linux and Mac OS
+- Write using the ''dd'' command as follows.
 
-**** LinuxやMac OSの場合
-- ''dd''コマンドを以下のように利用して書き込みます。
-
- $ sudo dd of=/dev/<SDカードのデバイスファイル> if=<ダウンロード・解凍したイメージファイル> bs=4M status=progress
+ $ sudo dd of=/dev/<device file of SD card> if=<image file downloaded and decompressed> bs=4M status=progress
  $ sudo sync
 
-上記コマンドによるSDカードへの書き込みはかなり長い時間を必要とします。(数分から10数分)。また、SDカードのデバイスファイル名を見つけるには
+Writing to an SD card with the above command requires a fairly long time. (Several minutes to ten several minutes). To find the device file name of the SD card, type in:
  $ df -h
-と入力し、表示されるデバイスのサイズからどのデバイスがSDカードかを見つけます。例えば、現在Rasbianがインストールされている16GBのSDカードを用いている場合、あるデバイスが14GBのデバイスとして表示され、そのデバイスが/dev/sdf7と表示されます。他にも/dev/sdf5、/dev/sdf6などの後尾の数字だけが違うデバイスが表示されます。これらがSDカードで使われているデバイス名です。これらのデバイス全て以下のようにumountしてください。
+
+And find out which device is the SD card from the displayed device size. For example, if you are using a 16GB SD card that currently has Rasbian installed, one device will appear as a 14GB device and that device will appear as /dev/sdf7. Other devices that differ only in the last number, such as /dev/sdf5 and /dev/sdf6, are displayed too. These are the device names used for the SD card. Umount all of these devices as follows:
  $ umount /dev/sdf5
  $ umount /dev/sdf6
  $ umount /dev/sdf7
 
-その後、上記の''dd''コマンドを実行しますが、この例でのデバイスファイル名は/dev/sdfになります。
+After that, execute the above ''dd'' command. The device file name in the case is /dev/sdf.
+
+** Install OpenRTM-aist (C++)
+
+There are two installation methods.
+- Use the bulk installation script provided by openrtm.org
+- Use apt-get or synaptic package manager
+
+*** How to use the bulk installation script
+
+Download the installation script "pkg_install_raspbian.sh" provided by openrtm.org from the download page and execute it with root privileges. This script installs necessary packages sequentially with apt-get.
+
+It is very convenient because it installs all the packages required to develop and execute OpenRTM-aist. Recommended for those who install OpenRTM-aist for the first time.
+
+After downloading the bulk installation script, with root privilege go to the downloaded directory and type in:
+ $ sudo sh pkg_install_raspbian.sh -l c ++ --yes
+
+For details on how to download the batch installation script, detailed installation methods, and the types of options that can be specified, refer to the [[Bulk installation script>/node/6990]] page.
 
 
-** OpenRTM-aist (C++)インストール
+*** How to use apt-get
 
-OpenRTM-aist (C++)のインストールの方法には大きく分けて以下の2種類のインストール方法があります。
+**** Edit source.list
 
--openrtm.orgが提供する一括インストールスクリプトを使用
--apt-getやsynapticパッケージマネージャを使用
+openrtm.org provides a package repository that can be used from apt-get. However, it is not included in the default package repository, so you need to change the settings of apt-get. To do so, edit /etc/apt/sources.list and add the following line:
 
-好みの方法でインストールしてください。
+ deb http://www.openrtm.org/pub/Linux/raspbian/ buster main
 
-*** 一括インストールスクリプトを使う方法
+**** Installation with apt-get
 
-openrtm.orgが提供するインストールスクリプト''pkg_install_raspbian.sh''をダウンロードページからダウンロードし、root権限で実行します。このスクリプトは、必要なパッケージを順次apt-getでインストールしていきます。
+Follow the steps below to install. On the way, you will be asked for some responses, so please complete while typing ''y''.
 
-OpenRTM-aistを開発・実行するために必要なパッケージをもれなくインストールしてくれるので大変便利です。初めてOpenRTM-aistをインストールしてみる方に推奨します。
+ $ apt-get update
+ $ apt-get install gcc g ++ make uuid-dev
+ $ apt-get install libomniorb4-1 libomniorb4-dev omniidl omniorb-nameserver
+ $ apt-get install openrtm-aist openrtm-aist-doc openrtm-aist-dev openrtm-aist-example
 
-一括インストール・スクリプトをダウンロードした後、ダウンロードしたディレクトリに移動して
-  $ sudo sh pkg_install_raspbian.sh -l c++ --yes
+If you want to keep the installed version of OpenRTM-aist as a specific version, edit ''/etc/apt/preferences'' and add the following line. (In this example, the version is fixed to 1.1 series.)
 
-でインストールできます。
+ Package: OpenRTM-aist
+ Pin: version 1.1. *
 
-一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[[一括インストールスクリプト:/ja/node/6345]]」のページをご確認ください。
-
-***apt-getを使う方法
-
-****source.listの編集
-
-openrtm.orgではapt-getから利用可能なパッケージリポジトリを提供しています。ただし、デフォルトのパッケージリポジトリには含まれていませんので、apt-getの設定を変更する必要があります。そのためには/etc/apt/sources.listを編集して以下の行を追加します。
-
-  deb http://www.openrtm.org/pub/Linux/raspbian/ buster main
-
-****apt-getによるインストール
-
-次の手順でインストールを行います。途中、いくつかの応答を求められるので、''y''を入力しながら完了させてください。
-
- # apt-get update
- # apt-get install gcc g++ make uuid-dev
- # apt-get install libomniorb4-1 libomniorb4-dev omniidl omniorb-nameserver
- # apt-get install openrtm-aist openrtm-aist-doc openrtm-aist-dev openrtm-aist-example
-
-なお、インストール済みのOpenRTM-aistを特定バージョンのまま保持したい場合には、''/etc/apt/preferences''を編集して以下の行を追加します。（この例では1.1系列にバージョンを固定します。）
-
- Package: OpenRTM-aist
- Pin: version 1.1.*
-
-詳しくは
+For more information
 http://www.debian.org/doc/manuals/apt-howto/ch-apt-get.ja.html#s-pin
-を参照してください。
+Please refer to.
 
-** rtshellのインストール
-rtshellはPythonのプログラムのため、OpenRTM-Pythonのインストールが必要です。OpenRTM-aist(Python版)のインストールでの[[Raspbianへのインストール>/node/6924]]のページの手順を実行してください。
+** Install rtshell
+Since rtshell is a set of python programs, then you need to install OpenRTM-ais-Python to use rtshell. Then please follow the instruction [[Install on Raspbian>/node/6955]] page under "Install OpenRTM-aist (Python Version) 1.2". 
 
-** インストールの確認
+** Confirm installation
 
-インストールを確認します。
+To check the installation:
 
- pi@raspberrypi ~ $ dpkg -l 'openrt*'
- 要望=(U)不明/(I)インストール/(R)削除/(P)完全削除/(H)保持
- | 状態=(N)無/(I)インストール済/(C)設定/(U)展開/(F)設定失敗/(H)半インストール/(W)トリガ待ち/(T)トリガ保留
- |/ エラー?=(空欄)無/(R)要再インストール (状態,エラーの大文字=異常) 
- ||/ 名前                       バージョン   アーキテクチ 説明
- +++-==========================-============-============-===============================================
- ii  openrtm-aist:armhf         1.2.1-0      armhf        OpenRTM-aist, RT-Middleware distributed by AIST
- ii  openrtm-aist-dev:armhf     1.2.1-0      armhf        OpenRTM-aist headers for development
- ii  openrtm-aist-doc           1.2.1-0      all          Documentation for openrtm-aist
- ii  openrtm-aist-example:armhf 1.2.1-0      armhf        OpenRTM-aist examples
- ii  openrtm-aist-idl:armhf     1.2.1-0      armhf        OpenRTM-aist idls for development
+ $ dpkg -l 'openrt *'
+ Desired=Unknown/Install/Remove/Purge/Hold
+ | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+ |/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+ ||/ Name                      Version           Architecture      Description
+ +++-=========================-=================-=================-=========================================
+ ii  openrtm-aist:amd64        1.2.1-0           amd64             OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm-aist-dev:amd64    1.2.1-0           amd64             OpenRTM-aist headers for development
+ ii  openrtm-aist-doc          1.2.1-0           all               Documentation for openrtm-aist
+ ii  openrtm-aist-example:amd6 1.2.1-0           amd64             OpenRTM-aist examples
+ ii  openrtm-aist-idl:amd64    1.2.1-0           amd64             OpenRTM-aist idls for development
+ ii  openrtp:amd64             1.2.1-0           amd64             OpenRTP, Open RT Platform distributed by AIST
 
-** パッケージの詳細
-各パッケージの内容は以下の通りです。
+
+
+** The package details
+Each package contains the following.
+
 ***openrtm-aist
-openrtm-aistにはランタイムライブラリとコマンド群が含まれています。
+openrtm-aist includes commands and run-time libraries.
 
--コマンド
+- Commands
  /usr/bin/rtcd
  /usr/bin/rtcprof
  /usr/bin/rtm-config
  /usr/bin/rtm-naming
 
--ライセンスなど
+- Lincense etc.
  /usr/share/doc/openrtm-aist/changelog.gz
  /usr/share/doc/openrtm-aist/README.Debian
  /usr/share/doc/openrtm-aist/README
@@ -132,20 +127,20 @@ openrtm-aistにはランタイムライブラリとコマンド群が含まれ�
  /usr/share/doc/openrtm-aist/copyright
  /usr/share/doc/openrtm-aist/changelog.Debian.gz
 
--設定ファイルサンプル
+- Configuration sample files
  /usr/etc/rtc.conf.sample
  /usr/lib/arm-linux-gnueabihf/pkgconfig/openrtm-aist.pc
  /usr/etc/fluent-bit/fluent-bit.conf
  /usr/etc/fluent-bit/parsers.conf
 
--ライブラリ
+- Libraries
  /usr/lib/arm-linux-gnueabihf/libRTC-1.2.1.so
  /usr/lib/arm-linux-gnueabihf/libRTC.a
- 中略
+ ...
  /usr/lib/arm-linux-gnueabihf/librtmManipulator.so.0.0.0
  /usr/lib/arm-linux-gnueabihf/openrtm-1.2/ec/FileNameservice.la
  /usr/lib/arm-linux-gnueabihf/openrtm-1.2/ec/FileNameservice.so
- 中略
+ ...
  /usr/lib/arm-linux-gnueabihf/openrtm-1.2/ec/RTPreemptEC.so.0.0.0
  /usr/lib/arm-linux-gnueabihf/openrtm-1.2/logger/FluentBit.la
  /usr/lib/arm-linux-gnueabihf/openrtm-1.2/logger/FluentBit.so
@@ -153,26 +148,26 @@ openrtm-aistにはランタイムライブラリとコマンド群が含まれ�
  /usr/lib/arm-linux-gnueabihf/openrtm-1.2/logger/FluentBit.so.0.0.0
  /usr/lib/arm-linux-gnueabihf/openrtm-1.2/sdo/LoggerConsumer.a
  /usr/lib/arm-linux-gnueabihf/openrtm-1.2/sdo/LoggerConsumer.la
- 中略
+ ...
  /usr/lib/arm-linux-gnueabihf/openrtm-1.2/sdo/LoggerConsumer.so.0.0.0
  /usr/lib/libfluent-bit.so
 
-- ヘッダ
+- Header files
  /usr/include/fluent-bit/flb_api.h
  /usr/include/fluent-bit/flb_bits.h
- 中略
+ ...
  /usr/include/fluent-bit/flb_worker.h
  /usr/include/fluent-bit.h
 
 ***openrtm-aist-dev
-openrtm-aist-devには、開発に必要なコマンド群とヘッダが含まれています。
+openrtm-aist-dev includes commands and header files that are required for RT system development.
 
--コマンド
+- Commands
  /usr/bin/coil-config
  /usr/bin/rtc-template
  /usr/bin/rtm-skelwrapper
 
--ライセンスなど
+- Lincense etc.
  /usr/share/doc/README
  /usr/share/doc/README.Debian
  /usr/share/doc/README.jp
@@ -180,24 +175,24 @@ openrtm-aist-devには、開発に必要なコマンド群とヘッダが含ま�
  /usr/share/doc/openrtm-aist-dev/changelog.gz
  /usr/share/doc/openrtm-aist-dev/copyright
 
--ヘッダ
+- Header files
  /usr/include/coil-1.2/coil/Affinity.h
  /usr/include/coil-1.2/coil/Allocator.h
- 中略
+ ...
  /usr/include/coil-1.2/coil/stringutil.h
  /usr/include/openrtm-1.2/rtm/BufferBase.h
  /usr/include/openrtm-1.2/rtm/BufferStatus.h
- 中略
+ ...
  /usr/include/openrtm-1.2/rtm/config_rtc.h
  /usr/include/openrtm-1.2/rtm/ext/CameraCommonInterface.hh
  /usr/include/openrtm-1.2/rtm/ext/CameraCommonInterfaceDynSK.cc
- 中略
+ ...
  /usr/include/openrtm-1.2/rtm/ext/ManipulatorCommonInterface_MiddleStub.h
  /usr/include/openrtm-1.2/rtm/ext/ec/artlinux/ArtExecutionContext.h
  /usr/include/openrtm-1.2/rtm/ext/ec/artlinux/rtc.conf.sample
  /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/LogicalTimeTriggeredEC.h
  /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/LogicalTimeTriggeredEC.idl
- 中略
+ ...
  /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/LogicalTimeTriggeredECStub.h
  /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/idl/LogicalTimeTriggeredEC.hh
  /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/idl/LogicalTimeTriggeredEC.idl
@@ -211,11 +206,11 @@ openrtm-aist-devには、開発に必要なコマンド群とヘッダが含ま�
  /usr/include/openrtm-1.2/rtm/ext/logger/fluentbit_stream/fluentbit.conf
  /usr/include/openrtm-1.2/rtm/ext/sdo/logger/Logger.hh
  /usr/include/openrtm-1.2/rtm/ext/sdo/logger/Logger.idl
- 中略
+ ...
  /usr/include/openrtm-1.2/rtm/ext/sdo/logger/LoggerStub.h
  /usr/include/openrtm-1.2/rtm/ext/sdo/observer/ComponentObserver.idl
  /usr/include/openrtm-1.2/rtm/ext/sdo/observer/ComponentObserverConsumer.h
- 中略
+ ...
  /usr/include/openrtm-1.2/rtm/ext/sdo/observer/ComponentObserverStub.h
  /usr/include/openrtm-1.2/rtm/ext/sdo/observer/idl/ComponentObserver.hh
  /usr/include/openrtm-1.2/rtm/ext/sdo/observer/idl/ComponentObserver.idl
@@ -223,122 +218,121 @@ openrtm-aist-devには、開発に必要なコマンド群とヘッダが含ま�
  /usr/include/openrtm-1.2/rtm/ext/sdo/observer/idl/ComponentObserverSK.cc
  /usr/include/openrtm-1.2/rtm/idl/BasicDataType.hh
  /usr/include/openrtm-1.2/rtm/idl/BasicDataTypeDynSK.cc
- 中略
+ ...
  /usr/include/openrtm-1.2/rtm/idl/SharedMemoryStub.h
  /usr/include/openrtm-1.2/rtm/version.h
  /usr/include/openrtm-1.2/rtm/version.txt
 
--ライブラリ・その他
+- Libraries and others
  /usr/lib/arm-linux-gnueabihf/openrtm-1.2/cmake/OpenRTMConfig.cmake
  /usr/lib/arm-linux-gnueabihf/openrtm-1.2/py_helper/README_gen.py
  /usr/lib/arm-linux-gnueabihf/openrtm-1.2/py_helpver/cxx_gen.py
- 中略
+ ...
  /usr/lib/arm-linux-gnueabihf/openrtm-1.2/py_helpver/yat.py
  /usr/lib/arm-linux-gnueabihf/pkgconfig/libcoil.pc
 
 *** openrtm-aist-idl
-- スクリプトファイル
+- Script file
  /etc/profile.d/openrtm-aist-idl.sh
 
-- ライセンスなど
+- Lincense etc.
  /usr/share/doc/openrtm-aist-idl/changelog.Debian.gz
  /usr/share/doc/openrtm-aist-idl/changelog.gz
  /usr/share/doc/openrtm-aist-idl/copyright
 
-- idlファイル
+- idl files
  /usr/include/openrtm-1.2/rtm/idl/BasicDataType.idl
  /usr/include/openrtm-1.2/rtm/idl/CameraCommonInterface.idl
- 中略
+ ...
  /usr/include/openrtm-1.2/rtm/idl/SharedMemory.idl
  /usr/share/openrtm-1.2/idl/BasicDataType.idl
  /usr/share/openrtm-1.2/idl/CameraCommonInterface.idl
  /usr/share/openrtm-1.2/idl/DataPort.idl
- 中略
+ ...
  /usr/share/openrtm-1.2/idl/SharedMemory.idl
 
 *** openrtm-aist-example
-openrtm-aist-exampleにはスタンドアロンRTC、ローダブルRTCそれぞれのサンプルと、サンプルRTCのソースが含まれています。
+openrtm-aist-example includes sample stand-alone RTCs, sample loadable RTCs, and the source code. 
 
--サンプル(スタンドアロンRTC)
+- Sample (stand-alone RTC)
  /usr/share/openrtm-1.2/components/c++/examples/ConsoleOutComp
  /usr/share/openrtm-1.2/components/c++/examples/ConsoleInComp
- 中略
+ ...
  /usr/share/openrtm-1.2/components/c++/examples/consout.conf
  /usr/share/openrtm-1.2/components/c++/examples/rtc.composite.linux.conf
  /usr/share/openrtm-1.2/components/c++/examples/rtc.conf
 
--サンプル(ソース)
+- Sample (source code)
  /usr/share/openrtm-1.2/components/c++/examples/src/Composite/README.Motor
  /usr/share/openrtm-1.2/components/c++/examples/src/Composite/Makefile.Sensor
  /usr/share/openrtm-1.2/components/c++/examples/src/Composite/Motor.cpp
- 中略
+ ...
  /usr/share/openrtm-1.2/components/c++/examples/src/Throughput/rtc.conf
  /usr/share/openrtm-1.2/Components/c++/examples/src/Throughput/run.sh
  /usr/share/openrtm-1.2/Componnets/c++/examples/templates/AIO.xml
  /usr/share/openrtm-1.2/Components/c++/examples/templates/ActArray.xml
- 中略
+ ...
  /usr/share/openrtm-1.2/Components/c++/examples/templates/VelocityControl3D.xml
  
-
--サンプル(ローダブルRTC)
+- Sample (loadable RTC)
  /usr/share/openrtm-1.2/components/c++/examples/rtc/ConfigSample.a
  /usr/share/openrtm-1.2/components/c++/examples/rtc/ConfigSample.la
- 中略
+ ...
  /usr/share/openrtm-1.2/components/c++/examples/rtc/Throughput.so.X.X.X
  /usr/share/openrtm-1.2/components/c++/examples/rtc/Cofig.sample.so
  /usr/share/openrtm-1.2/components/c++/examples/rtc/Cofig.sample.so.X
- 中略
+ ...
  /usr/share/openrtm-1.2/components/c++/examples/rtc/Troughput.so.X
 
--ライセンスなど
+- Lincense etc.
  /usr/share/doc/openrtm-aist-example/changelog.Debian.gz
  /usr/share/doc/openrtm-aist-example/changelog.gz
  /usr/share/doc/openrtm-aist-example/copyright
 
 ***openrtm-aist-idl
-- idlファイルなど
+- idl file etc.
  /etc/profile.d/openrtm-aist-idl.sh
  /usr/include/openrtm-1.2/rtm/idl/BasicDataType.idl
  /usr/include/openrtm-1.2/rtm/idl/CameraCommonInterface.idl
- 中略
+ ...
  /usr/include/openrtm-1.2/rtm/idl/SharedMemory.idl
  /usr/share/openrtm-1.2/idl/BasicDataType.idl
  /usr/share/openrtm-1.2/idl/CameraCommonInterface.idl
- 中略
+ ...
  /usr/share/openrtm-1.2/idl/SharedMemory.idl
 
-- ライセンスなど
+- License etc.
  /usr/share/doc/openrtm-aist-idl/changelog.Debian.gz
  /usr/share/doc/openrtm-aist-idl/changelog.gz
  /usr/share/doc/openrtm-aist-idl/copyright
 
 ***openrtm-aist-doc
-openrtm-aist-docには、日本語と英語のクラスリファレンス、IDLインターフェース定義リファレンスが含まれています。
+openrtm-aist-doc include the Japanese/English class reference and IDL interface definition reference.
 
--クラスリファレンス
+- Class Reference (Japanese)
  /usr/share/openrtm-1.2/doc/c++/ClassReference/html/Affinity_8h.html
  /usr/share/openrtm-1.2/doc/c++/ClassReference/html/Affinity_8h__dep__incl.dot
- 中略
+ ...
  /usr/share/openrtm-1.2/doc/c++/ClassReference/html/version_8h_source.html
 
--IDLリファレンス
+- IDL Reference (Japanes)
  /usr/share/openrtm-1.2/doc/idl/IDLReference/html/BasicDataType_8idl.html
  /usr/share/openrtm-1.2/doc/idl/IDLReference/html/BasicDataType_8idl__dep__incl.dot
- 中略
+ ...
  /usr/share/openrtm-1.2/doc/idl/IDLReference/html/unionSDOPackage_1_1Numeric.html
 
--クラスリファレンス(英語)
+- Class Reference (English)
  /usr/share/openrtm-1.2/doc/c++/ClassReference-en/html/Affinity_8h.html
  /usr/share/openrtm-1.2/doc/c++/ClassReference-en/html/Affinity_8h__dep__incl.dot
- 中略
+ ...
  /usr/share/openrtm-1.2/doc/c++/ClassReference-en/html/version_8h_source.html
 
--IDLリファレンス(英語)
+-IDL Reference (English)
  /usr/share/openrtm-1.2/doc/idl/IDLReference-en/html/BasicDataType_8idl.html
  /usr/share/openrtm-1.2/doc/idl/IDLReference-en/html/BasicDataType_8idl__dep__incl.dot
- 中略
+ ...
  /usr/share/openrtm-1.2/doc/idl/IDLReference-en/html/unionSDOPackage_1_1Numeric.html
--ライセンスなど
+- Lincesne etc.
  /usr/share/doc/openrtm-aist-doc/changelog.Debian.gz
  /usr/share/doc/openrtm-aist-doc/changelog.gz
  /usr/share/doc/openrtm-aist-doc/copyright
