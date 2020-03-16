@@ -47,13 +47,13 @@ CENTER:''Confirm name server start''
 
 **** omniORB was not installed.
 
-The msi installer from openrtm.org includes omniORB. However, if you install OpenRTM-aist manually, OmniORB might not be installed. In this case, please check if OmniORB was installed.
+The MSI installer from openrtm.org includes omniORB. However, if you install OpenRTM-aist manually, OmniORB might not be installed. In this case, please check if OmniORB was installed.
 
 **** Environmental variable OMNI_ROOT was not set
 
 [Start Naming Service] trigger the batch file "rtm-naming.bat" on %RTM_ROOT%\bin and start the name server executable (omniNames.exe). At that time, the program is using an environmental variable OMNI_NAMES. If you used the installer software, the environmental variable is automatically set. However, in case of what the variable is not valid and you install OpenRTM-aist without using the installer software, the variable may not be set.
 
-Please check if the environmental variable OMNI_ROOT is also set.  The variable can be shown or modified by the following steps.
+Please check if the system environmental variable OMNI_ROOT is also set.  The variable can be shown or modified by the following steps.
 - Type "system environment variable" in to [Type here to search] text box at the bottom of the screen.  
 - Click "Edit System Environmental variable"
 - Click [Environmental Variable ...] button.
