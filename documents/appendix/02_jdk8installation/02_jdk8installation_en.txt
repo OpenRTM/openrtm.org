@@ -1,3 +1,5 @@
+// Tiltle: Install JDK8
+
 #contents(5)
 
 Communication middleware called CORBA is required to execute OpenRTM-aist-Java. In Java, CORBA functionality was originally included as a standard function, but since Java 9 it is treated as deprecated (the deprecated function that will be removed in the future) and will be completely removed in Java 11 and later. Therefore, to use OpenRTM-aist-Java, it is necessary to use the Java 8 development environment package JDK8.
@@ -37,16 +39,16 @@ Amazon Corretto is a build of OpenJDK that includes Amazon's long-term support. 
 *** Get the package from the repository
 OpenJDK packages equivalent to JDK8 are distributed as standard packages in major Linux distributions.
 
-*** Ubuntu / Debian / Raspbian
+**** Ubuntu / Debian / Raspbian
 On Ubuntu Linux, Debian Linux, etc., you can install using the apt command as follows.
  $ sudo apt install openjdk-8-jdk
 
-*** Fedora
+**** Fedora
 In Fedora Linux, you can install with yum command as follows.
  $ sudo yum -y install java-1.8.0-openjdk
 
 *** Other than obtaining the package from the repository
-It can also be obtained from the URL of the above third party vendor. Follow the information on the site for the installation method, or install using the standard Java method.
+It can also be obtained from the Web site of the above third party vendor. Follow the information on the site for the installation method, or install using the standard Java method.
 
 *** When other than JDK8 is already installed
 Note that a JDK other than JDK8 may be installed in the default state.
