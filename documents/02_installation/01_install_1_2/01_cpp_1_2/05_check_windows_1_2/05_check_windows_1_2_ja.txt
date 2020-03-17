@@ -18,7 +18,7 @@ RTコンポーネントConsoleIn、ConsoleOutからなるサンプルセット�
 ConsoleInはコンソールから入力された数値をOutPort から出力するコンポーネント、ConsoleOutはInPortに入力された数値をコンソールに表示するコンポーネントです。これらは簡単なI/O(入出力)を例示するためのサンプルです。
 ConsoleInのOutPortからConsoleOutのInPortへ接続し、これらの2つのコンポーネントをアクティブ化(Activate)することで動作します。
 
-以下は、msiインストーラーでOpenRTM-aistをインストールした環境で、スタートメニューから各種プログラムを起動する前提で説明します。
+以下は、MSIインストーラーでOpenRTM-aistをインストールした環境で、スタートメニューから各種プログラムを起動する前提で説明します。
 
 *** RTSystemEditor、ネームサーバーの起動
 以下の手順に従ってRTSystemEditor、ネームサーバーを起動してください。
@@ -57,7 +57,7 @@ CENTER:''ConsoleInコンポーネントとConsoleOutコンポーネント''
 ***** コンソール画面が開いてすぐに消える
 
 環境変数''RTM_VC_VERSION''、''OMNI_ROOT''、''RTM_ROOT''が設定されていないとRTCの起動に失敗します。
-msiインストーラーでインストールした場合はOSを再起動すると解決する場合があります。
+MSIインストーラーでインストールした場合はOSを再起動すると解決する場合があります。
 
 
 また、rtc.confの設定に問題があり、起動できないケースがあります。上記の''C++_Example''を用いて検索したフォルダー下のVCxx(Visual Studio 2019使用時はVC14)にある[rtc.conf]を開いて設定を確認してください。

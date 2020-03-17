@@ -36,4 +36,5 @@ msiインストーラーによるOpenRTM-aistをインストールしてくだ�
  Link documentation? n
  Add shell support to .bashrc? y
 
+
 実行を完了したら、一度ターミナルを閉じてください。

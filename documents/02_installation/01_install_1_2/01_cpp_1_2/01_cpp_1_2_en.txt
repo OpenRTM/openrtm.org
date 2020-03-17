@@ -1,0 +1,2 @@
+// Title: Install OpenRTM-aist (C++ Version) 1.2
+The C ++ language version of OpenRTM-aist comes with installation packages and installers. It can be easily installed on many operating systems and distributions. You can also download the source code and build it for your environment. This section describes how to install and check the operation of the C ++ language version of OpenRTM-aist in each environment.

@@ -33,5 +33,3 @@ Before closing the terminal, execute rtshell_post_install without "sudo" prefix.
  Link documentation? n
  Add shell support to .bashrc? y
 
-
-

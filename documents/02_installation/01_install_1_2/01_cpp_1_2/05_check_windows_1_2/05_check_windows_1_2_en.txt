@@ -19,7 +19,7 @@ This is a sample set consisting of the RT-Components ConsoleIn and ConsoleOut.
 ConsoleIn is a component that outputs the numerical value input from the console to the OutPort, and ConsoleOutComp is a component that displays the numerical value input from the InPort on the console. These are RTC samples to show a simple I/O (input/output) use.
 It works by connecting the OutPort of ConsoleIn's OutPort to the InPort of ConsoleOut's InPort and activating these two components.
 
-The following explanation assumes that various programs are started from the start menu in an environment where OpenRTM-aist is installed with the msi installer.
+The following explanation assumes that various programs are started from the start menu in an environment where OpenRTM-aist is installed with the MSI installer.
 
 *** Start RTSystemEditor and name server
 Follow the steps below to start the RTSystemEditor and the name server.
@@ -60,7 +60,7 @@ If a component does not start, there are several possible causes.
 ***** Console screen opens and disappears immediately
 
 If the environment variables '' RTM_VC_VERSION '', '' OMNI_ROOT '' and '' RTM_ROOT '' are not set, the RTC will fail to start.
-When installing with the msi installer, restarting the OS may solve the problem.
+When installing with the MSI installer, restarting the OS may solve the problem.
 
 
 Also, there may be a case where there is a problem with the setting of rtc.conf and it cannot be started. Open [rtc.conf] in VCxx (VC14 when using Visual Studio 2019) under the folder searched using `` C ++ _ Example '' above and check the settings.
