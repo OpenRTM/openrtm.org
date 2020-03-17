@@ -135,7 +135,7 @@
           - (一括インストール・スクリプト:bulk_installation_script_ubuntu_1_1_ja.txt)
           - (動作確認 (Linux編): 07_test_linux_1_1_ja.txt)
         - Fedoraへのインストール: 03_install_fedora_python_1_1_ja.txt
-          - 一括インストール・スクリプト:bulk_installation_script_ubuntu_1_1_ja.txt)
+          - (一括インストール・スクリプト:bulk_installation_script_ubuntu_1_1_ja.txt)
           - (動作確認 (Linux編): 07_test_linux_1_1_ja.txt)
         - Vine Linuxへのインストール: 04_install_vine_python_1_1_ja.txt
           - (パッケージインストールスクリプト: リンク切れ
