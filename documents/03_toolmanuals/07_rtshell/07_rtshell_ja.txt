@@ -31,42 +31,43 @@ pip によりインストールする場合は、trctree と rtsprofile は自�
 
 **インストール
 
-インストールはいくつかの方法が利用可能です。
-
-- （好ましい方法）pip を利用して PyPi からインストールする。
-
-++ 必要にお応じて pip をインストールします。
-https://pip.pypa.io/en/latest/installing/ に参照してください。
-++ pip を実行します。
- $ pip install rtshell
-++ 以下のコマンドを実効し、インストール後のアクションを行います。
- $ rtshell_post_install
-++ Windows上では、必要に応じて環境変数を設定します。通常デフォルトで設定されていますが、設定されていない場合は自分で設定する必要があります。
-Python スクリプトのディレクトリーが PATH 環境変数に設定されていることを確認してください。通常、これらは C:\Python27\Scripts\ です（Pythonが C:\Python27\ にインストールされた場合）。
-++ リポジトリまたはソースアーカイブからダウンロード後、適当なディレクトリーで解凍し、インストールする。
-++ ソースを展開します。
- $ cd /home/blurgle/src/
- $ tar -xvzf rtshell.tar.gz
-++ setup.pyを実行します。
- $ python setup.py install
-++ 以下のコマンドを実行し、インストール後のアクションを行います。
- $ rtshell_post_install
-++ Windows上では、必要に応じて環境変数を設定します。通常デフォルトで設定されていますが、設定されていない場合は自分で設定する必要があります。
-Python スクリプトのディレクトリーが PATH 環境変数に設定されていることを確認してください。通常、これらは C:\Python27\Scripts\ です（Pythonが C:\Python27\ にインストールされた場合）。
-Windows上では、インストーラープログラムを利用してインストールすることが可能です。
-
+インストール方法については[[rtshellのインストール>/node/7003]]のページを参照してください。
+//インストールはいくつかの方法が利用可能です。
+//
+//- （好ましい方法）pip を利用して PyPi からインストールする。
+//
+//++ 必要にお応じて pip をインストールします。
+//https://pip.pypa.io/en/latest/installing/ に参照してください。
+//++ pip を実行します。
+// $ pip install rtshell
+//++ 以下のコマンドを実効し、インストール後のアクションを行います。
+// $ rtshell_post_install
+//++ Windows上では、必要に応じて環境変数を設定します。通常デフォルトで設定されていますが、設定されていない場合は自分で設定する必要があります。
+//Python スクリプトのディレクトリーが PATH 環境変数に設定されていることを確認してください。通常、これらは C:\Python27\Scripts\ です（Pythonが C:\Python27\ にインストールされた場合）。
+//++ リポジトリまたはソースアーカイブからダウンロード後、適当なディレクトリーで解凍し、インストールする。
+//++ ソースを展開します。
+// $ cd /home/blurgle/src/
+// $ tar -xvzf rtshell.tar.gz
+//++ setup.pyを実行します。
+//$ python setup.py install
+//++ 以下のコマンドを実行し、インストール後のアクションを行います。
+// $ rtshell_post_install
+//++ Windows上では、必要に応じて環境変数を設定します。通常デフォルトで設定されていますが、設定されていない場合は自分で設定する必要があります。
+//Python スクリプトのディレクトリーが PATH 環境変数に設定されていることを確認してください。通常、これらは C:\Python27\Scripts\ です（Pythonが C:\Python27\ にインストールされた場合）。
+//Windows上では、インストーラープログラムを利用してインストールすることが可能です。
+//
 
 **リポジトリ
 
 最新版のソースは github で Git のリポジトリにあります（URL: http://github.com/gbiggs/rtshell ）。
-「Download source」をクリックしてダウンロードをすることができます。「git clone」を使うこともできます。パッチを送りたかったら、この方法をおすすめします:
+[Download ZIP]をクリックしてダウンロードをすることができます。下記のように"git clone"コマンドを使うこともできます。(gitが前もってインストールされている必要があります。)パッチを送りたかったら、この方法をおすすめします:
 
-  $ git clone git://github.com/gbiggs/rtshell.git
+  $ git clone git://github.com/OpenRTM/rtshell.git
 
 
 **ドキュメント
 
-ドキュメントはマンページとして提供します（Windows の場合は HTML に提供します）。${prefix}/share/man にインストールされます。
+ドキュメントはマンページとして提供します（Windows の場合は HTML に提供され、<pythonディレクトリ>\Lib\site-packages\rtshell\doc\htmlの下のen、jaディレクトリの下に英語版、日本語版がそれぞれコピーされます）。Linuxでは${prefix}/share/man にインストールされます。
 このパスを $MANPATH という環境変数に追加する必要です。例えば、rtshell は /home/blurgle にインストールされた場合、以下の行を .bashrc に追加してください。:
 
  export MANPATH=/home/blurgle/share/man:${MANPATH}

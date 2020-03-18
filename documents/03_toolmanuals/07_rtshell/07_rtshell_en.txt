@@ -8,7 +8,7 @@ managers, as well as complete RT Systems. It can be used with the
 OpenRTM-aist middleware or middlewares that use a compatible CORBA-based
 introspection system.
 
-Many of the commands allow components and managers running on
+Many of the commands allow components and managers to run on
 nameservers to be treated like a file system. Directories can be
 entered, components can be cat'd and activated/deactivated/reset,
 connections made and removed, and so on.
@@ -22,19 +22,13 @@ components on low-resource systems, systems where a GUI is not available
 (particularly where no network connection is available to manage
 components from another computer), as well as those who face other
 difficulties using RTSystemEditor.  Being familiar with using a
-command-line is a benefit when using these commands of rtshell.
+command-line is a benefit when using these commands of rtshell. Also, it is used to control the RT system by script like some shell script.
 
-This software is developed at the National Institute of Advanced
-Industrial Science and Technology. Approval number
-H23PRO-1214. The development was financially supported by
-the New Energy and Industrial Technology Development Organisation
-Project for Strategic Development of Advanced Robotics Elemental
-Technologies.
+//This software is developed at the National Institute of Advanced Industrial Science and Technology. Approval number H23PRO-1214. The development was financially supported by the New Energy and Industrial Technology Development Organisation Project for Strategic Development of Advanced Robotics Elemental Technologies.
 
-This software is licensed under the GNU Lesser General Public License version 3
-(LGPL3). See LICENSE.txt.
+This software is licensed under the GNU Lesser General Public License version 3 (LGPL3). See LICENSE.txt.
 
-**Requirements
+** Requirements
 - rtctree is required.
 - rtsprofile is required.
 - Python 2.7 is required.
@@ -42,7 +36,7 @@ This software is licensed under the GNU Lesser General Public License version 3
 - omniORB-py 4.x or higher is required.
 - For installation from source, Sphinx is required to compile the document.
 
-When installing by pip, rtctree and rtsprofile are automatically installed.
+// When installing by pip, rtctree and rtsprofile are automatically installed.
 
 //omniORB-py 4.x is required.
 
@@ -65,42 +59,23 @@ When installing by pip, rtctree and rtsprofile are automatically installed.
 //installed manually.
 
 
-**Installation
-
-There are several methods of installation available:
-
-- (Preferred method) Use pip to install the PyPi package.
-
-++ Install pip if it is not already installed. See https://pip.pypa.io/en/latest/installing/
-++ Execute the following command to install rtshell:
- $ pip install rtshell
-++ Execute the post-installation setup:
- $ rtshell_post_install
-++ On Windows, you will need to ensure that your Python scripts directory is in the PATH variable. Typically, this will be something like C:\Python27\Scripts\ (assuming Python 2.7 installed in C:\Python27\).
-++ After downloading from the repository or source archive, decompress and install it in the appropriate directory.
-++ Expand the source.
- $ cd /home/blurgle/src/
- $ tar -xvzf rtshell.tar.gz
-++ Run setup.py.
- $ python setup.py install
-++ Execute the following command and perform the post-installation action.
- $ rtshell_post_install
-++ On Windows, set environment variables as necessary. Normally it is set by default, but if it is not set you need to set it yourself.
-Please make sure the directory of Python script is set to PATH environment variable. Normally these are C:\Python 27\Scripts\(if Python was installed in C:\Python 27\).
-On Windows, it is possible to install using an installer program.
-
+** Installation
+Please refer to the [[Install rtshell>/node/7002]] page for the installation method.
 
 **Repository
 
-The latest source is stored in a Git repository at github, available at http://github.com/gbiggs/rtshell. 
-You can download it as a zip file or tarball by clicking the "Download Source" link on that page. Alternatively, use Git to clone the repository. This is better if you wish to contribute patches:
+The latest source is stored in a Git repository at github, available at http://github.com/OpenRTM/rtshell. 
+You can download from the link "Download ZIP" on that page. Alternatively, use Git to clone the repository. 
+//This is better if you wish to contribute patches:
 
- $ git clone git://github.com/gbiggs/rtshell.git
+ $ git clone git://github.com/OpenRTM/rtshell.git
 
 
 **Documentation
-The document is provided as a manpage (in Windows, it is provided in HTML). It will be installed in ${prefix}/share/man.
-It is necessary to add this path to the environment variable $ MANPATH. For example, if rtshell was installed in /home/blurgle, add the following line to .bashrc :
+
+
+The documentation is provided as a man page on Linux and is installed in ''/usr/local/share/man''. In the case of Windows, it is provided by HTML format files and the English and Japanese versions are copied under the ''en'' and ''ja'' directories under ''＜python directory＞\Lib\site-packages\rtshell\data\doc\html ''respectively. It is also posted on this website.
+
 
 //Documentation is available in the form of man pages (on Windows, these are available as HTML files). 
 //These will be installed under 
@@ -108,19 +83,19 @@ It is necessary to add this path to the environment variable $ MANPATH. For exam
 //$MANPATH environment variable to be able to use them. For example,
 //if you installed rtshell into /home/blag, add the following line to your .bashrc:
 
- export MANPATH=/home/blag/share/man:${MANPATH}
+// export MANPATH=/home/blag/share/man:${MANPATH}
 
 
-**Running the tests
+//**Running the tests
 
-The command tests can be run from the source directory using a command like the following:
+///The command tests can be run from the source directory using a command like the following:
 
- ~/src/rtshell $ ./test/test_cmds.py ~/share/OpenRTM-aist/examples/rtcs/
+// ~/src/rtshell $ ./test/test_cmds.py ~/share/OpenRTM-aist/examples/rtcs/
 
-The argument to the test_cmds.py command is a directory containing RTC shared libraries that can be loaded into a manager. It must contain the libraries for Motor, Controller and Sensor.
-
-An individual command's tests can be run by specifying those tests after the command. For example:
-
- $ ./test/test_cmds.py ~/share/OpenRTM-aist/examples/rtcs/ rtactTests
-
-This will run only the tests for the rtact command.
+//The argument to the test_cmds.py command is a directory containing RTC shared libraries that can be loaded into a manager. It must contain the libraries //for Motor, Controller and Sensor.
+//
+//An individual command's tests can be run by specifying those tests after the command. For example:
+//
+// $ ./test/test_cmds.py ~/share/OpenRTM-aist/examples/rtcs/ rtactTests
+//
+//This will run only the tests for the rtact command.

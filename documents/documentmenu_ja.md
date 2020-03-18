@@ -228,9 +228,11 @@
         - (RTSystemEditor=> RTSystemEditor-1.2.0:01_rtsystemeditor-1_2_0_ja.txt)
     - rtshell のインストール: install_rtshell_ja.txt
       - (rtshell: 07_rtshell_ja.txt)
-      - (ドキュメント=> Windowsへのインストール: 01_install_windows_python_1_1_ja.txt)
-      - (ダウンロードサイト=> rtctree/rtsprofile: 04_rtctree_rtsprofile_ja.txt)
-      - (ダウンロードサイト=> rtshell: 03_rtshell_ja.txt)
+      - インストール方法: 01_howto_install_ja.txt
+        - (OpenRTM-aist 1.2系のインストール(Windows、msiインストーラー使用): 01_openrtm-aist_1_2_windows_msi_ja.txt)
+        - (一括インストールスクリプト:bulk_installation_script_ubuntu_1_1_ja.txt)
+      - 動作確認(Windows編): 02_check_windows_ja.txt
+      - 動作確認(Linux編): 02_check_linux_ja.txt
     - 2.0系のインストール(開発中): 06_install_2_0_ja.txt
       - C++版 2.0系: 01_Install_CPP_2_0_ja.txt 	
         - Windowsへのインストール: 01_install_windows_cpp_2_0_ja.txt
@@ -414,8 +416,9 @@
       - 各種設定: 09_setting_rtcb_1_0_0_ja.txt
       - その他: 10_other_rtcb_1_0_0_ja.txt
     - rtshell: 07_rtshell_ja.txt
-    - rtctreeモジュール: 08_rtctree_ja.txt
-    - rtsprofileモジュール: 09_rtsprofile_ja.txt
+      - rtshellコマンド・リファレンス 01_command_reference_ja.txt
+      - rtctreeモジュール: 02_rtctree_ja.txt
+      - rtsprofileモジュール: 03_rtsprofile_ja.txt
     - ROSトランスポート(rosport): 10_rostransport_ja.txt
   - OpenRTM-aistデベロッパーズガイド: 04_developersguide_ja.txt
     - RTCプログラミング入門: 01_basic_rtc_programming_ja.txt
@@ -649,6 +652,11 @@
     - その他 FAQ: 09_faq_other_6430_ja.txt
     - 過去のに掲載した FAQ: 10_faq_old_6431_ja.txt
   - 過去文書
+　　- rtshellのインストール
+      - (rtshell: 07_rtshell_ja.txt)
+      - (ドキュメント=> Windowsへのインストール:01_install_windows_python_1_1_ja.txt)
+      - (ダウンロードサイト=> rtctree/rtsprofile:04_rtctree_rtsprofile_ja.txt)
+      - (ダウンロードサイト=> rtshell:03_rtshell_ja.txt)
     - NXTRTC: nxrtc_ja.txt
       - (RTコンポーネント作成(LEGO Mindstorm編)=> LEGO Mindstorm NXT RTコンポーネント: rtc_development_lego_mindstorm_ja.txt)
       - (RTSystemEditor=> RTSystemEditor-1.2.0:01_rtsystemeditor-1_2_0_ja.txt)
