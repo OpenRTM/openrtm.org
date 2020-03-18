@@ -23,10 +23,10 @@ Click the Open Perspective button in OpenRTP.
 #ref(rtm3_en.png,/ja/node/6614,60%,center)
 CENTER:''Click "Open Perspective"''
 
-Select the "RT System Editor" on the "Open Perspective" list box and click the "Open" button.
+Select the "RTSystemEditor" on the "Open Perspective" list box and click the "Open" button.
 
 #ref(rtm4_en.png,/ja/node/6614,60%,center)
-CENTER:''RT System Editorの起動''
+CENTER:''RTSystemEditorの起動''
 
 ** Start Name server
 At first, start the name server to see the components.
@@ -59,9 +59,6 @@ Please check if the system environmental variable OMNI_ROOT is also set.  The va
 - Click [Environmental Variable ...] button.
 
 *** Others
-If the user name is using 2 bytes code, you may see a failure to start omniNames.exe due to inappropriate log output folder name setting. In the case, the environmental variable TEMP   can be failed to execute
-*** その他
-
 If the user name contains 2-byte characters, omniNames.exe may fail to start because the log output folder cannot be set properly.
 In this case, setting the environment variable TEMP to a location that does not include double-byte characters may improve the situation.
 Create an appropriate temporary directory (C: \ temp in the following case), set it to point to the environment variable TEMP, and start the name server.
@@ -73,8 +70,6 @@ Create an appropriate temporary directory (C: \ temp in the following case), set
 Also, in rare cases, there are cases where the startup does not work properly due to a problem with the hostname or address settings.
 In that case, if you tell omniNames.exe the IP address of the PC you are using, it may work well.
 Set the environment variable OMNIORB_USEHOSTNAME as follows (example below is when the IP address of the local host is 192.168.0.11).
- 
-
  set cosnames="omninames"
  set orb="omniORB"
  set port=%1

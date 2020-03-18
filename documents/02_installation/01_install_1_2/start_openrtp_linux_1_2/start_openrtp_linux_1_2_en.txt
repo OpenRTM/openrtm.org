@@ -1,0 +1,64 @@
+// Title: OpenRTP startup procedure (1.2 series, Linux)
+#contents
+
+
+** Launch OpenRTP
+Start RTSystemEditor, a tool for operating the RTC and building the RT system.
+Since RTSystemEditor is included in a tool called OpenRTP, you need to start OpenRTP first.
+
+- Start OpenRTP with the following command.
+ $ openrtp
+
+*** Start RTSystemEditor (RTSE)
+- Click the Open Perspective button in OpenRTP.
+
+#ref(rtm3_en.png,,60%, center)
+CENTER:''Click to open perspective''
+
+- Select [RTSystemEditor] from the window and click the [Open] button.
+
+#ref(rtm4_en.png, 60%, center)
+CENTER:''Start RTSystemEditor''
+
+** Start name server
+- Start a name server to register the component references.
+
+#ref(rtm5_en.png,60%, center)
+CENTER:''Start the name server''
+
+- If the name server starts successfully, "localhost" is displayed in the name service view.
+
+#ref(rtm6_en.png, center)
+CENTER:''Confirm name server startup''
+
+** When using RTC remotely
+In cases of a small system like Raspbian, OpenRTP itself is not supported. In such a case, you may use OpenRTP which is run on another host. For this, there is two way. One way is remotely connecting the name service run on the Raspbian system from OpenRTP which is run on another host. The other way is registering RTC to the remote naming service which is run on the other host. In this case, OpenRTP also is running on the host (name service is running on the host). The procedures are shown below.
+
+*** How to register a name server service running in a remote environment
+- From the command line of the host machine where the RTC is running, enter the following command to start the name service.  
+ $ rtm-naming
+
+- Start the RTC you want to run.
+- Switch to the machine which you want to run OpenRTP then ether the following command to start OpenRTP
+ $ openrtp
+
+- Click [Open perspective] button and Select [RTSystemEditor] as the same way as using RTSystemEditor and RTC in a machine. Then click 
+- Click [Add Name Server] button.
+#ref(rtm6-2_en.png, center)
+CENTER: "Add nameserver"
+- You will be asked for the name server address. Specify the address. If you use a port number other than the default, specify the port number in the input box as <address>: <port number>.
+
+#ref(rtm6-3_en.png, center)
+CENTER:''Name server addressing ''
+
+*** How to register the RTC on the remote machine with the name service running OpenRTP
+- Change the directory where the RTC file is located and edit rtc.conf. For example:
+ sudo gedit rtc.conf
+
+- Then replace the following line:
+ corba.nameservers: localhost
+
+with the line:
+ corba.nameservers: <address of host running OpenRTP>
+
+This makes the RTC register to the remote name service. And you can see the RTC on the OpenRTP name service view.
