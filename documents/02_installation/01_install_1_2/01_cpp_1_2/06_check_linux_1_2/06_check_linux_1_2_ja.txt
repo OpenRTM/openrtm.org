@@ -62,7 +62,7 @@ ConsoleInCompのOutPortからConsoleOutCompのInPortへ接続を構成し、こ�
 
 **** エディタ画面への配置
 
-RT System Editorのツリー表示の[loca host]の横の[>]をクリックし、そして&ref(icon_db.png );アイコンの横の[>]をクリックすると、先ほど起動した2つのコンポーネントが登録されていることがわかります
+RTSystemEditorのツリー表示の[localhost]の横の[>]をクリックし、そして&ref(icon_db.png );アイコンの横の[>]をクリックすると、先ほど起動した2つのコンポーネントが登録されていることがわかります
 
 #ref(rtm10.png,/ja/node/6614,60%,center)
 CENTER:''ConsoleInコンポーネントとConsoleOutコンポーネント''
