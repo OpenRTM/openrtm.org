@@ -63,7 +63,7 @@ omniORB 4.2.3を64bitのPython 3.7の環境で使用する場合、omniORB-4.2.3
 
 なお、omniORBpyのバージョンを'''x.y'''、Pythonのバージョンを'''X.Y'''として記述しています。
 
- + omniORBpy-'''x'''.'''y'''
+ + omniORBpy-x.y
   + bin
     + x86_win32 -> exe、dllともにC:\PythonX.Y直下へ
   + doc -> 削除してもよい
