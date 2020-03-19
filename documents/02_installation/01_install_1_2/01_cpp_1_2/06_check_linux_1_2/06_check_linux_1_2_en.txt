@@ -1,0 +1,85 @@
+// Titile: Operation Check (On Linux)
+After successful installation, test the operation with the attached sample. Samples are usually located at:
+- /usr/share/openrtm-1.2/components/c++/examples
+//- /opt/local/share/openrtm-1.1/examples (when installed with MacPorts on Mac OS X)
+
+
+If you build from source,
+- <source_dir>/OpenRTM-aist/examples/<sample component set name>
+
+Using a sample component set SimpleIO, you can check if the install/build is made correctly. If you built OpenRTM-aist from the source code, the executable file of the components should be placed under the directory of this component set name, but if you installed it by using the bulk installation script, SimpleIO components are placed with the other components in the "example" directory. In the case of the script based installation, understand that SimpleIO set means two components ConsoleInComp and ConsoleOutComp.
+
+#contents
+
+
+** Sample component set SimpleIO
+
+This is a sample set consisting of the RT components ConsoleInComp and ConsoleOutComp.
+ConsoleInComp is a component that outputs numerical values ​​input from the console through OutPort, and ConsoleOutComp is a component that displays numerical values ​​input into InPort on the console.
+These are samples to illustrate the simplest I/O (input/output).
+It works by configuring a connection from ConsoleInComp's OutPort to ConsoleOutComp's InPort and activating these two components.
+
+For the sake of simplicity, the examples are described below as being under /usr/share/openrtm-1.2/components/c++/examples.
+
+
+** Testing with samples
+
+*** RTSystemEditor, start name server
+Follow the steps below to start the RTSystemEditor and name server.
+- [[OpenRTP startup procedure:/node/7035]]
+
+*** Launch ConsoleInComp
+
+- Start Terminal and start ConsoleInComp.
+ $ /usr/share/openrtm-1.2/components/c++/examples/ConsoleInComp
+
+If you build and install it yourself,
+ $ <source_dir>/OpenRTM-aist/examples/SimpleIO/ConsoleInComp
+
+
+*** Launching ConsoleOutComp
+
+- Start another terminal and start ConsoleOutComp.
+ $ /usr/share/openrtm-1.2/components/c++/examples/ConsoleOutComp
+
+If you build/install yourself,
+ $ <source_dir>/OpenRTM-aist/examples/SimpleIO/ConsoleOutComp
+
+
+**** Placement on the editor screen
+- Click [>] next to [local host] in the tree view of the RTSystemEditor, and click [>] next to the icon &ref(icon_db.png);, and the two components started earlier will be registered. You can see
+
+#ref(rtm10l.png,60%, center)
+CENTER:''ConsoleIn and ConsoleOut components''
+
+- Open the editor for editing the system. Click the [Open New System Editor] button &ref(icon_open_editor.png,150%); at the top to display the editor screen in the center pane.
+- Drag and drop the 2 components indicated by the &ref(icon-rtce.png, 200%); icon in the name service view on the left to the editor screen in the center.
+
+#ref(rtm11l_en.png,80%, center)
+CENTER:''Place component in editor''
+
+
+**** Connection and activation
+- There are OutPort &ref(rtse_outport_icon.png); where data is output to the right of ConsoleIn0 component and InPort & ref(rtse_inport_icon.png); where data is input to the left of ConsoleOut0 component. Connect these InPort/OutPort (collectively called data ports).
+
+#ref(rtm13l.png,80%, center)
+CENTER:''Data port connection''
+
+- If you drag and drop from OutPort to InPort (or from InPort to OutPort), a dialog as shown below appears. Click the [OK] button with the default settings.
+
+#ref(rtm12l_en.png,center)
+CENTER:''Data port connection dialog''
+
+- A connecting line appears between the two components. Next, click the [All Activate] button &ref(rtm14.png); in the top menu of the editor to activate these components.
+When activated, the component turns green.
+
+#ref(rtm15l.png,center)
+CENTER:''Activated component ''
+
+- When the components are activated, on the ConsoleIn component side console, the following prompt should be displayed:
+ Please input number:
+
+- Enter an appropriate number (within the range of short int: 32767 or less) and press the Enter key.
+- Then, on the ConsoleOut side, the entered numerical value is displayed, and you can see that the data has been transferred from the ConsoleIn component to the ConsoleOut component.
+
+This is the end of the basic operation check of the component.
