@@ -7,23 +7,23 @@ The procedure for installing OpenRTM-aist using the MSI installer is described o
 -[[Installing OpenRTM-aist 1.2 (Windows, using MSI installer):/node/6738]]
 
 
-** Installation of software required for development
-RTC development requires installation of CMake, Doxygen, and Visual Studio.
+** Installation of software required for the development
+RTC development requires to install CMake, Doxygen, and Visual Studio.
 
 -[[CMake (3.11 or more recommended):https://cmake.org/download/]]
-During the installation, you will be asked what you want make to the system PATH as [Install Options], it is recommended that you select Add the CMake path to the system PATH for all users. (Our test is done with it.)
+During the installation, you will be asked what you want to set to the system PATH as [Install Options], it is recommended that you select Add the CMake path to the system PATH for all users. (Our test is done with it.)
 -[[Doxygen:http://www.doxygen.nl/download.html]]
 
 Download and execute the Windows version binary executable file from the web page.
 -[[Visual Studio:/node/7036]]
 
-Install the download version through the above link,  or obtain and install Visual Studio 2010/2012/2013/2015/2017/2019 separately. Visual Studio is not directly necessary for Python-based RTC development itself, but it is necessary if you want to create an MSIi distribution package with the OpenRTM-aist environment for distributing the developed RTC.
+Install the download version through the above link,  or obtain and install Visual Studio 2010/2012/2013/2015/2017/2019 separately. Visual Studio is not directly necessary for Python-based RTC development itself, but it is necessary if you want to create an MSI distribution package with the OpenRTM-aist environment for distributing the developed RTC.
 
 ** What the installer does
 The installer does the following:
 
 - Copy various files under the installation directory (default is C: \ Program Files)
-- Create OpenRTM-aist folder under start menu and set various shortcuts
+- Create OpenRTM-aist folder under the start menu and set various shortcuts
 - Set environment variables
 -- Environmental variable setting when using 64-bit MSI
  RTM_BASE=C:\Program Files\OpenRTM-aist\\
@@ -74,9 +74,8 @@ The installer does the following:
 //
 
 ** Files to be installed
-The files are installed in the following structure. & br;
-// Execute the above installation environment setting check [[script: / ja / node / 6092]] to save the directory structure under OpenRTM-aist using the tree command in a log file, so you can check the details You.
-
+The files are installed in the following structure:
+// Execute the above installation environment setting check [[script: /node/6092]] to save the directory structure under OpenRTM-aist using the tree command in a log file, so you can check the details You.
  <install_dir>
    + OpenRTM-aist
       + 1.x.x: Runtime of old version
