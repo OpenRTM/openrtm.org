@@ -1,0 +1,173 @@
+// Title: Build from the source code (On Windows)
+If you want to modify OpenRTM-aist itself and use it on Windows, you can build the OpenRTM-aist Windows source package yourself. This section describes how to get the source code from the download page or repository and build OpenRTM-aist in a Windows environment. 
+
+Building OpenRTM-aist in a Windows environment requires various knowledge of software development in a Windows environment, such as building a built environment and creating an installer. The following description assumes that you have the basic knowledge for such program development and batch file creation on the Windows environment.
+
+#contents
+
+// ------------------------------------------------ ------------
+** Windows source code
+
+The OpenRTM-aist (C++ version) source package for Windows is distributed separately from the source package for Linux. The basic contents of the source code are the same but the files that depend on the built environment are different (for example, the Visual Studio project file in the Windows environment exists only in the Windows source package).
+
+*** Generate source package
+
+The source code package for Windows is
+It can be obtained from the link below but if you want to get the latest source code under development, you need to get it from GitHub's OpenRTM/OpenRTM-aist project, as shown in the figure on Linux,
+
+-Source code distribution package for Linux/Unix
+-Source code distribution package for Windows
+
+Is to be made.
+
+#ref(src-conversion_en.png,70%, center)
+CENTER:''Generate OpenRTM-aist source package''
+
+
+// ------------------------------------------------ ------------
+** Built environment
+
+The environment and libraries required for the build are as follows.
+
+-Visual C ++/Visual Studio
+-omniORB
+
+**** Visual C ++/Visual Studio
+To build the binaries for Windows, Visual Studio (C ++) development environment is required.
+Supported Visual Studios are Visual Studio 2010, 2012, 2013, 2015, 2017 and 2019. (Currently, build support for 2019 is not yet available.)
+
+Visual Studio Community is a free integrated development environment provided by Microsoft and supports software development using various languages ​​such as C ++, C #, F #, Java, and Python.
+The Community version has almost the same features as the paid Professional version but is only available to individual developers, university officials, non-profit workers, open-source developers, and commercial companies with 5 or fewer developers. See Microsoft documentation for details on license terms.
+
+You can get Visual Studio 2019 below.
+
+-[[Visual Studio installation procedure>/node/7036]]
+
+When installing Visual Studio 2017, select "Desktop development with C ++" and then select "Windows 8.1 SDK and UCRT SDK" in "Installation details" to install.
+
+*** omniORB
+
+OpenRTM-aist build requires the library of omniORB 4.2.3 (as of May 17, 2019).
+A pre-built binary package provided by openrtm.org is available at the link below.
+Download the one that is appropriate for your environment and extract it to an appropriate location (C:\workspace\omniORB in the following description).
+
+- [[binary package provided by openrtm.org:http://openrtm.org/pub/omniORB/win32/]]
+
+
+**** Environment variable: OMNI_ROOT
+The directory below the directory set in OMNI_ROOT must have the following structure.
+
+ <OMNI_ROOT>
+  + bin
+  | + scripts
+  | + x86_win32
+  + idl
+  | + COS
+  + include
+  | + COS
+  | + omniORB4
+  | | + internal
+  | + omnithread
+  | + omniVms
+  + lib
+  | + python
+  | | + omniidl
+  | | + omniidl_be
+  | | + cxx
+  | | + dynskel
+  | | + header
+  | | + impl
+  | | + skel
+  | + x86_win32
+  + include
+  | + COS
+  | + omniORB4
+  | + omnithread
+  | + omniVms
+
+
+*** OpenSSL
+
+OpenSSL 1.1.0 (as of May 17, 2019) library is required to build OpenRTM-aist.
+A pre-built binary package provided by openrtm.org is available at the link below.
+Download the one that is appropriate for your environment and extract it to an appropriate location (C:\workspace\OpenSSL in the following description).
+
+- [[binary package provided by openrtm.org:https://openrtm.org/pub/OpenSSL/]]
+
+**** Environment variable: SSL_ROOT
+The directory below SSL_ROOT must have the following structure.
+
+ <SSL_ROOT>
+  + bin
+  | + scripts
+  | + x86_win32
+  + lib
+  | + engines-1_1
+  + include
+  | + openssl
+
+*** Python
+Python 2.7, 3.6, or 3.7 is required because some Python scripts are used during the build. (Currently, 2.7 is required, 3.7 causes an error)
+Obtain the latest version from the following site and install it.
+
+-[[Python Official Website:https://www.python.org/]]
+
+When you launch the installer, you will be presented with choices during the installation process. Choose the default items to install. (Other than the default selection is possible, but in that case, please choose with sufficient understanding.)
+
+** Get source package
+
+First, download the source code OpenRTM-aist-1.2.X-win32.zip and extract it to an appropriate directory.
+
+-[[OpenRTM-aist 1.2.1:https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v1.2.1]]
+
+
+** Modify batch file
+
+When you execute build.bat, the build starts. Before that, change the environment variables "OMNI_ROOT" and "SSL_ROOT" in the batch file according to your environment.
+
+ set OMNI_ROOT=C:\workspace\omniORB-4.2.3-win64-vc141
+ set SSL_ROOT=C:\workspace\OpenSSL\build
+
+Also set the following environment variables in the patch file so that they are set according to the environment.
+
+ set VC_VERSION=141
+ set ARCH=x86_64
+ set PYTHON_DIR=C:\python27
+ set OMNI_VERSION=4.2.3
+ set OMNITHREAD_VERSION=4.1
+
+The above settings are for the 64-bit version of OpenRTM-aist and are examples when Visual Studio 2017, Python 2.7 and OmniORB 4.2.3 are used.
+Here, VC_VERSION specifies the corresponding Visual C ++ version. (Please refer to the following.)
+
+| Visual Studio 2010 | 10 |
+| Visual Studio 2012 | 11 |
+| Visual Studio 2013 | 12 |
+| Visual Studio 2015 | 14 |
+| Visual Studio 2017 | 141 |
+| Visual Studio 2019 | 142 |
+(the number 14x might be changed to some value when Visual Studio 2019 is supported.)
+
+For ARCH, specify x86 when creating a 32-bit binary, and specify x86_64 when creating a 64-bit binary.
+Specify the path where Python is installed in PYTHON_DIR.
+
+Set the corresponding version of omniORB and omniThread in OMNI_VERSION and OMNITHREAD_VERSION. The version of OmniThread can be confirmed by right-clicking the file of omnithreadXXXX.dll in Explorer, selecting Properties, and clicking the Details tab. The first digit to the right of the period must be the number before the next period. (For example, if 4.1.24.1.0 is displayed, change it to 4.1.)
+
+If you use Visual Studio other than Community version, you need to execute vcvarsall.bat in advance.
+
+When writing code for 64-bit Intel or AMD processors in Visual Studio 2017
+
+ call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x64
+
+Please execute it.
+
+** Build
+After the above preparations are completed, build. Run build.bat to automatically start the build.
+
+** Install
+If everything builds correctly, do the following to complete the installation:
+
+- ''Set environment variable RTM_ROOT'': Set the directory where the OpenRTM-aist files created after the build are placed in the environment variable RTM_ROOT.
+- ''Pass the path to the DLL'': Copy the DLL to the path, or add% RTM_ROOT% \ bin to the PATH environment variable.
+
+
+This completes the installation of OpenRTM-aist.

@@ -13,7 +13,7 @@ Windows用のOpenRTM-aist(C++版)ソースパッケージはLinux 用のソー�
 ***ソースパッケージの生成
 
 Windows用ソースコードのパッケージは
-下記に示すリンクより入手できますが、最新の開発中のソースコードを入手する場合はGitHubのOpenRTM/OpenRTM-aist開発より入手する必要があり、図に示すようにLinux上で、
+下記に示すリンクより入手できますが、最新の開発中のソースコードを入手する場合はGitHubのOpenRTM/OpenRTM-aist projectより入手する必要があり、図に示すようにLinux上で、
 
 -Linux/Unix用ソースコード配布パッケージ
 -Windows用ソースコード配布パッケージ
@@ -36,7 +36,7 @@ CENTER:''OpenRTM-aist のソースパッケージの生成''
 Windows 用のバイナリをビルドするためには、Visual Studio(C++)開発環境が必要です。
 現在対応している Visual Studio は Visual Studio 2010、2012、2013、2015、2017、2019 です。(現状では2019のビルド対応はまだできていません。)
 
-Visual Studio CommunityはMicrosoftが無償で提供する統合開発環境で、C++、C#、F#、Java、Python等いろいろな言語を用いたソフトウエア開発に対応しています。
+Visual Studio CommunityはMicrosoftが無償で提供する統合開発環境で、C++、C#、F#、Java、Pythonなどいろいろな言語を用いたソフトウエア開発に対応しています。
 Community版は有償のProfessional版とほぼ同等の機能ですが、個人開発者、大学関係者、非営利団体従事者、オープンソース開発者、および、開発者5名以下の営利企業でしか使用できません。ライセンス条件の詳細についてはマイクロソフト社のドキュメントを参照してください。
 
 以下よりVisual Studio 2019は入手できます。
