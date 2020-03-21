@@ -20,7 +20,7 @@
 
 RTコンポーネントConsoleInComp、ConsoleOutCompからなるサンプルセットです。
 ConsoleInCompはコンソールから入力された数値をOutPortから出力するコンポーネント、ConsoleOutCompはInPortに入力された数値をコンソールに表示するコンポーネントです。
-これらは、最もSimpleなI/O(入出力)を例示するためのサンプルです。
+これらは、基本的なI/O(入出力)を例示するためのサンプルです。
 ConsoleInCompのOutPortからConsoleOutCompのInPortへ接続を構成し、これらの2つのコンポーネントをアクティブ化(Activate)することで動作します。
 
 以降、簡単のためサンプルは/usr/share/openrtm-1.2/components/c++/examples以下にあるものとして説明を記述します。
@@ -28,10 +28,10 @@ ConsoleInCompのOutPortからConsoleOutCompのInPortへ接続を構成し、こ�
 
 ** サンプルを使用したテスト
 
-*** RT System Editor、ネームサーバー起動
-以下の手順に従ってRT System Editor、ネームサーバーを起動してください。
+*** RTSystemEditor、ネームサーバー起動
+以下の手順に従ってRTSystemEditor、ネームサーバーを起動してください。
 
-- [[OpenRTP起動手順:/ja/node/6654]]
+- [[OpenRTP起動手順:/node/6654]]
 
 
 *** ConsoleInCompの起動
@@ -62,12 +62,12 @@ ConsoleInCompのOutPortからConsoleOutCompのInPortへ接続を構成し、こ�
 
 **** エディタ画面への配置
 
-RT System Editorのツリー表示の[local host]の横の[>]をクリックし、そして&ref(icon_db.png );アイコンの横の[>]をクリックすると、先ほど起動した2つのコンポーネントが登録されていることがわかります
+RTSystemEditorのツリー表示の[localhost]の横の[>]をクリックし、そして&ref(icon_db.png );アイコンの横の[>]をクリックすると、先ほど起動した2つのコンポーネントが登録されていることがわかります
 
 #ref(rtm10.png,/ja/node/6614,60%,center)
 CENTER:''ConsoleInコンポーネントとConsoleOutコンポーネント''
 
-システムを編集するエディタを開きます。上部の[Open New System Editor]ボタン&ref(icon_open_editor_ja.png, 150%); をクリックすると、中央のペインにエディタ画面が表示されます。
+システムを編集するエディタを開きます。上部の[Open New System Editor]ボタン&ref(icon_open_editor.png, 150%); をクリックすると、中央のペインにエディタ画面が表示されます。
 
 左側のネームサービスビューに &ref(icon-rtce.png, 200%); のアイコンで表示されているコンポーネント(2つ)を中央のエディタ画面にドラッグアンドドロップします。
 
@@ -77,7 +77,7 @@ CENTER: ''コンポーネントをエディタに配置''
 
 **** 接続とアクティブ化
 
-ConsoleIn0コンポーネントの右側にはデータが出力されるOutPort &ref(rtse_outport_icon.png, /ja/node/794); 、ConsoleOut0コンポーネントの左側にはデータが入力されるInPort &ref(rtse_inport_icon.png, /ja/node/794); がそれぞれ配置されています。
+ConsoleIn0コンポーネントの右側にはデータが出力されるOutPort &ref(rtse_outport_icon.png,/node/794); 、ConsoleOut0コンポーネントの左側にはデータが入力されるInPort &ref(rtse_inport_icon.png,/node/794); がそれぞれ配置されています。
 
 これらInPort/OutPort(まとめてデータポートと呼びます)を接続します。
 
