@@ -1,0 +1,45 @@
+// Title: Build from source (Linux)
+#contents
+
+If you want to install from the source package on Linux, you need to build OpenRTM-aist-Python yourself. The following explains the build procedure on Ubuntu 18.04.
+
+** Supported OS and distribution
+OpenRTM-aist-Python has been confirmed to work on the following OS and Linux distributions.
+-Ubuntu
+-Debian (Supporting versions of OPenRTM-aist are limited)
+-Fedora (Supporting versions of OpenRTM-aist are limited )
+
+You may be able to build OpenRTM-aist python on a Linux/UNIX environment other than the above if it is a normal Linux/UNIX environment.
+
+** Dependent library
+The following development environment and libraries are required to install OpenRTM-aist-Python-1.2.1.
+- python: required to use build tools
+- omniORBpy: Required for OpenRTM-aist build (IDL compilation)
+
+Please install according to the documentation of each software. If these packages are installed under standard directories (/ usr, /usr/lib/, etc.), the subsequent OpenRTM-aist-Python build will be relatively easy.
+
+On Ubuntu and Debian, you can install the software by the following command.
+ $ sudo apt-get install python-omniorb-omg omniidl-python omniorb-nameserver
+
+** Download source
+Download the OpenRTM-aist-Python source.
+- https://github.com/OpenRTM/OpenRTM-aist-Python/releases/tag/v1.2.1
+
+** Extracting source code
+- Unzip the source code package OpenRTM-aist-Python-1.2.1.tar.gz into an appropriate directory.
+ $ tar xvzf OpenRTM-aist-Python-X.X.X.tar.gz
+ $ cd OpenRTM-aist-Python-X.X.X
+
+** Build
+OpenRTM-aist-Python uses the distutils module to build packages.
+Build the package in the same way as other packages using distutils.
+ $ python setup.py build [options]
+
+Available options in [options] can be found by:
+ $ python setup.py --help
+
+** Install
+After the build is completed successfully, install the Python modules and utility commands by the following command:
+ $ sudo python setup.py install
+
+This completes the build and installation from the source code.
