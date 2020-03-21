@@ -1,0 +1,100 @@
+// Title: Build from the source code (On Windows)
+#contents
+
+If you want to install from source package on Windows, you need to build OpenRTM-aist-Python yourself.
+
+** Build environment
+The following tools are required:
+- Python
+- omniORBpy
+- Doxgen
+
+Install it as described in the following.
+
+*** Python
+Requires Python 2.7 (or 3.6, 3.7). Please get the latest one from the following site and install it.
+
+-[[Python Official Website:https://www.python.org/]]
+
+In the following explanation, the following settings are required when installing Python. (Others are the default settings of the installer.)
+
+- Set the installation destination to C: \ Python'''X.Y'''.
+-- '''X.Y''' is 2.7, 3.6 or 3.7, eg C:\Python2.7
+- In Python3.7, select [Customize Installation] during installation.
+- The above directory must be included in the command search path (The path for python directory is added to the environment variable PATH).
+-- In 3.7, if you check [Add Python to environmental variable] during installation, the installer will set PATH.
+-- In the other cases, you need to set it manually.
+
+*** omniORBpy
+
+OpenRTM-aist-Python build requires an omniORBpy library. omniORBpy can obtain the necessary files from the links below.
+
+-[[OpenRTM.org site:https://openrtm.org/pub/omniORB/win32/]]
+
+You can also get the source from the official website.
+-[[omniORB official:http://omniorb.sourceforge.net/]]
+-[[sourceforge download page:http://sourceforge.net/projects/omniorb/files/omniORBpy/]]
+
+We recommend that you use the latest version of the openrtm.org site file (currently 4.2.3) unless you have a specific reason to do so. There are multiple files, but the meanings of the file names are as follows. Select the file to be used according to the description.
+
+The format of the file name is as follows.
+
+omniORB-'''X.Y.Z'''-{win32|x64}-{vc100|vc110|vc120|vc140}-{py27|py36|py37}. zip
+
+here,
+:'''X.Y.Z''': | omniORB version, e.g. 4.2.3
+
+:win32 | if 32-bit Python is used.
+:x64 | if 64-bit Python is used.
+
+: vc100 |If C ++ environment is used and the tool is Visual Studio 2010
+: vc110 |If C ++ environment is used and the tool is Visual Studio 2012
+: vc120 |If C ++ environment is used and the tool is Visual Studio 2013
+: vc140 |If C ++ environment is used and the tool is Visual Studio 2015/2017/2019
+
+: py27 | If Python 2.7 is used.
+: py36 | If Python 3.6 is used.
+: py37 | If Python 3.7 is used.
+
+If you use omniORB 4.2.3 in 64bit Python 3.7 environment, download omniORB-4.2.3-x64-vc140-py37.zip.
+
+**** How to install omniORB files
+
+When the downloaded ZIP file is expanded, the following directory tree is expanded. Copy the files under each directory to the Python directory according to the instructions below.
+
+In the following, I used '''x.y.''' for the version of the using omniORBpy and '''X.Y''' for the version of the using Python.
+ + omniORBpy-x.y
+  + bin
+     + x86_win32-> Both exe and dll directly under C:\PythonX.Y
+  + doc-> may be deleted
+  + examples-> may be deleted
+  + idl-> may be deleted, but may be deleted under C:\PythonX.Y\Lib\site-packages\omniORB\idl
+  + lib
+    + python-> The following directories and files as a whole C:\PythonX.Y\Lib\site-packages
+    + x86_win32-> .pyd directly under C:\PythonX.Y\Lib\site-packages
+
+*** Doxygen
+
+-[[Doxygen:http://www.doxygen.nl/download.html]]
+
+Download and execute the Windows version binary executable file from the web page.
+
+// ------------------------------------------------ ------------
+** Get source package
+
+First, download the source code file OpenRTM-aist-Python-1.2.x.zip from the link below and extract it to an appropriate directory.
+
+-[[OpenRTM-aist-Python-1.2.1:https://github.com/OpenRTM/OpenRTM-aist-Python/releases/tag/v1.2.1/]]
+
+** Build
+
+Start the command prompt, move to the directory where the source code was extracted earlier, and build with the following command.
+
+ > python setup.py build
+
+** Install
+If everything is Ok for the builds, complete the installation with the following command:
+
+ > python setup.py install
+
+This completes the installation of OpenRTM-aist.
