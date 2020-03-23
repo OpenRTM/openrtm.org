@@ -1,6 +1,6 @@
 // Title: Build from the source code (On Linux)
 
-If you want to use OpenRTM-aist by changing or rebuilding the source of OpenRTM-aist in a UNIX environment or a cross-development environment where no package is available, you can build from the source. This section describes how to get the source from the download page or repository and build OpenRTM-aist on Linux.
+If you want to use OpenRTM-aist by changing or rebuilding the source of OpenRTM-aist on a UNIX environment or a cross-development environment where no package is available, you can build from the source. This section describes how to get the source from the download page or repository and build OpenRTM-aist on Linux.
 
 
 #contents
@@ -182,7 +182,7 @@ Make sure there is a shell script autogen under the build directory and execute 
  
 ***configure & build
 
-By executing autogen, there is "configre" in the OpenRTM-aist directory. From this point, the build is done by "configure & make" along with a standard build procedure from the source code. 
+By executing autogen, there is "configure" in the OpenRTM-aist directory. From this point, the build is done by "configure & make" along with a standard build procedure from the source code. 
 
  $ ls -l configure
  -rwxr-xr-x  1 n-ando  n-ando  812893 Jul  6 05:56 configure*
