@@ -1,8 +1,8 @@
-﻿// Title: Installing OpenRTM-aist 1.2 (Windows、using msi Installer)
+﻿// Title: Installing OpenRTM-aist 1.2 (Windows、using MSI Installer)
 #ref(windows_logo.png,80%,around,nolink,left)
 
-openrtm.org is providing msi (Microsoft Windows Installer) package of OpenRTM-aist 1.2.x
-By using msi package, you can install the required software packages like omniORB (depending library) and tools like RTSystemEditor at the same time.
+openrtm.org is providing MSI (Microsoft Windows Installer) package of OpenRTM-aist 1.2.x
+By using MSI package, you can install the required software packages like omniORB (depending library) and tools like RTSystemEditor at the same time.
 
 #clear
 #contents

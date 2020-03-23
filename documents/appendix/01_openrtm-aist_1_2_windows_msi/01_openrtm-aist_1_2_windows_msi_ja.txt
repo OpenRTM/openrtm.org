@@ -1,8 +1,8 @@
-﻿// Title: OpenRTM-aist1.2系のインストール(Windows、msiインストーラー使用)
+﻿// Title: OpenRTM-aist1.2系のインストール(Windows、MSIインストーラー使用)
 #ref(windows_logo.png,80%,around,nolink,left)
 
-openrtm.orgではWindows用のmsi(Microsoft Windowsインストーラー)パッケージを提供しています。
-msiパッケージを利用することで、依存ライブラリであるomniORBや、RTSystemEditorといったツールも同時にインストールできます。
+openrtm.orgではWindows用のMSI(Microsoft Windowsインストーラー)パッケージを提供しています。
+MSIパッケージを利用することで、依存ライブラリであるomniORBや、RTSystemEditorといったツールも同時にインストールできます。
 
 #clear
 #contents
