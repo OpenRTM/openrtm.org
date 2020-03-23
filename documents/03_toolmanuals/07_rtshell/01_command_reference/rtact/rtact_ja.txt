@@ -4,7 +4,7 @@
  rtact [OPTION ...] PATH [PATH...]
 
 ** 概要
-Inactive状態のRTコンポーネントをactive化ます。
+非アクティブ状態のRTコンポーネントをアクティブ化します。
 
 ** オプション
  -e EC_ID、--exec_context=EC_ID
@@ -55,11 +55,11 @@ RTコンポーネントのポートを示す場合、パスの後にコロン（
 デバッグ情報とエラーはstderrに出力されます。
 
 ** 例
--すべてのowned ECとparticipanting EC上のConsoleOut0.rtcをactive化する。
+-すべてのowned ECとparticipanting EC上のConsoleOut0.rtcをアクティブ化する。
  $ rtact /localhost/local.host_cxt/ConsoleOut0.rtc
 
-- すべてのowned ECとparticipanting EC上のConsoleOut0.rtcとConsoleIn0.rtcをactive化する。
+- すべてのowned ECとparticipanting EC上のConsoleOut0.rtcとConsoleIn0.rtcをアクティブ化する。
  $ rtact ConsoleOut0.rtc ConsoleIn0.rtc
 
-- Motor0.rtcをIDが2のEC上でのみactive化する。
+- Motor0.rtcをIDが2のEC上でのみアクティブ化する。
  $ rtact -e 2 /localhost/local.host_cxt/Motor0.rtc
