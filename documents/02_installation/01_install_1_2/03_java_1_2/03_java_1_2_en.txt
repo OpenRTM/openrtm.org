@@ -1,0 +1,2 @@
+// Title: Install OpenRTM-aist (Java Version) 1.2
+Explains how to install OpenRTM-aist(Java Version) 1.2. 
