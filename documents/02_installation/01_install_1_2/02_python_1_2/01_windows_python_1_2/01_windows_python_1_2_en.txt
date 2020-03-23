@@ -1,0 +1,109 @@
+// Title: Install on Windows
+#contents
+
+** Install OpenRTM-aist
+The procedure for installing OpenRTM-aist using the MSI installer is described on the following page.
+
+-[[Installing OpenRTM-aist 1.2 (Windows, using MSI installer):/node/6738]]
+
+
+** Installation of software required for the development
+RTC development requires to install CMake, Doxygen, and Visual Studio.
+
+-[[CMake (3.11 or more recommended):https://cmake.org/download/]]
+During the installation, you will be asked what you want to set to the system PATH as [Install Options], it is recommended that you select Add the CMake path to the system PATH for all users. (Our test is done with it.)
+-[[Doxygen:http://www.doxygen.nl/download.html]]
+
+Download and execute the Windows version binary executable file from the web page.
+-[[Visual Studio:/node/7036]]
+
+Install the download version through the above link,  or obtain and install Visual Studio 2010/2012/2013/2015/2017/2019 separately. Visual Studio is not directly necessary for Python-based RTC development itself, but it is necessary if you want to create an MSI distribution package with the OpenRTM-aist environment for distributing the developed RTC.
+
+** What the installer does
+The installer does the following:
+
+- Copy various files under the installation directory (default is C: \ Program Files)
+- Create OpenRTM-aist folder under the start menu and set various shortcuts
+- Set environment variables
+-- Environmental variable setting when using 64-bit MSI
+ RTM_BASE=C:\Program Files\OpenRTM-aist\\
+
+ RTM_ROOT=C:\Program Files\OpenRTM-aist\1.2.1\\
+
+ RTM_VC_VERSION=//Here, the text based on your choice of Visual C++/Studio version like "VC14" or so.
+ RTM_JAVA_ROOT=C:\Program Files\OpenRTM-aist\1.2.1\\
+
+ OMNI_ROOT=C:\Program Files\OpenRTM-aist\1.2.1\omniORB\4.2.3_%RTM_VC_VERSION%\\
+
+ OpenCV_DIR=C:\Program Files\OpenRTM-aist\1.2.1\OpenCV3.4\\
+
+ OpenRTM_DIR=C:\Program Files\OpenRTM-aist\1.2.1\cmake\\
+
+-- Additional setting to PATH when using 64-bit MSI
+ C:\Program Files\OpenRTM-aist\1.2.1\bin\%RTM_VC_VERSION%\\
+
+ C:\Program Files\OpenRTM-aist\1.2.1\omniORB\4.2.1_%RTM_VC_VERSION%\bin\x86_win32\\
+
+ C:\Program Files\OpenRTM-aist\1.2.1\OpenCV3.4\%RTM_VC_VERSION%\bin\\
+
+-- Environmental variable setting when using 32-bit MSI (For Windows 10 64-bit, "Program Files (x86)" is replaced with "Program Files" for 32-bit)
+ RTM_BASE=C:\Program Files (x86)\OpenRTM-aist\\
+
+ RTM_ROOT=C:\Program Files (x86)\OpenRTM-aist\1.2.1\\
+
+ RTM_VC_VERSION= //Here, the text based on your choice of Visual C++/Studio version like "VC14" or so.
+ RTM_JAVA_ROOT=C:\Program Files (x86)\OpenRTM-aist\1.2.1\\
+
+ OMNI_ROOT=C:\Program Files\OpenRTM-aist\1.2.1\omniORB\4.2.3_%RTM_VC_VERSION%\\
+
+ OpenCV_DIR=C:\Program Files\OpenRTM-aist\1.2.1\OpenCV3.4\\
+
+ OpenRTM_DIR=C:\Program Files\OpenRTM-aist\1.2.1\cmake\\
+
+-- Additional seeting to PATH when using 32-bit MSI (For Windows 10 64-bit, "Program Files (x86)" is replaced with "Program Files" for 32-bit)
+ C:\Program Files (x86)\OpenRTM-aist\1.2.1\bin\%RTM_VC_VERSION%\\
+
+ C:\Program Files(x86)\OpenRTM-aist\1.2.1\omniORB\4.2.3_%RTM_VC_VERSION%\bin\x86_win32\\
+
+ C:\Program Files(x86)\OpenRTM-aist\1.2.1\OpenCV3.4\x86\%RTM_VC_VERSION%\bin\\
+
+//
+// Provides a script to check the installation environment settings. The following page explains how to use the script and what you can check.
+//
+//-http://openrtm.org/openrtm/ja/content/rtm-install-check-script
+//
+
+** Files to be installed
+The files are installed in the following structure:
+// Execute the above installation environment setting check [[script: /node/6092]] to save the directory structure under OpenRTM-aist using the tree command in a log file, so you can check the details You.
+ <install_dir>
+   + OpenRTM-aist
+      + 1.x.x: Runtime of old version
+      + 1.2.1
+         + bin: dll, lib various commands
+         + cmake: OpenRTMConfig.cmake
+         + coil: coil header file
+         + Components
+            + C ++
+               + Examples: C ++ sample components
+               + OpenCV: OpenCV C ++ sample component
+            + Java: Java sample component
+            + Python: Python sample component
+         + etc: rtc.conf sample
+         + jar: jar file
+         + jre: OpenJDK JRE
+         + omniORB
+         + OpenCV3.4
+         + rtm: OpenRTM-aist header file
+            + ext: extension module file
+            + idl: OpenRTM-aistIDL file
+         + util
+            + ExcelControlpy: Python based RTC for Microsoft Office
+            + OpenRTP: RTCBuilder and RTSystemEditor tools
+            + PowerPointControlpy: RTC for Microsoft Office PowerPoint
+            + python_dist: Common library for python-based tools
+            + RTCDT: A tool to support the development of Python-based RTC
+            + rtc-template: An old tool that provides similar functions to RTCBuilder
+            + RTSystemEditor: RTSystem Editor only file
+            + VCVerChanger: Tool to specify the version of Visual Studio used
+            + WordContrlpy: Python based RTC for Microsoft Office Word
