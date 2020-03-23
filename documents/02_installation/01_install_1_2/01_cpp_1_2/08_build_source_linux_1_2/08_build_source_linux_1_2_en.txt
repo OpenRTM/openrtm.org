@@ -1,0 +1,206 @@
+// Title: Build from the source code (On Linux)
+
+If you want to use OpenRTM-aist by changing or rebuilding the source of OpenRTM-aist on a UNIX environment or a cross-development environment where no package is available, you can build from the source. This section describes how to get the source from the download page or repository and build OpenRTM-aist on Linux.
+
+
+#contents
+
+** Build from the distribution source
+
+OpenRTM-aist (C++ version) provides a build environment using autotools, so it can be built in various environments.
+
+*** Supported OS and distribution
+OpenRTM-aist has been confirmed to build it on the following Linux distributions:
+
+- Fedora (Limited versions only)
+- Debian (Limited versions only)
+- Ubuntu
+- Raspbian
+
+On the other general Linux environments, you may be able to built OpenRTM-aist. (However, it is not confirmed)
+
+*** Required tools and libraries
+
+The following development tools and the libraries are required to build OpenRTM-aist-1.2.x from the source.
+
+- gcc/g++ version3 or later: Required for compilation
+- omniORB-4.x or higher: Required for building OpenRTM-aist
+- uuid library: libuuid (since Linux environment does not provide uuid generation function by default)
+- python: required to use build tools
+- boost: may be required when compiling extension modules
+- openssl: Required to use the secure communication function by OpenSSL
+
+
+Please install according to the documentation of each library. If these are installed under standard directories (/usr, /usr/local, etc.), the subsequent compilation of OpenRTM-aist can be performed relatively easily.
+
+For certain distributions such as Ubuntu and Fedora, there is a script "pkg_install_<OS name>.sh"  that installs dependent libraries and OpenRTM packages that install necessary tools. The link below describes how to get it and command-line options.
+
+By executing this script with the -c option, you can install the core (OpenRTM-aist itself) development tools. Run it or make you install the necessary tools separately.
+
+-[[Bulk installation script>/node/6990]]
+
+*** Download the source
+
+Download the OpenRTM-aist source.
+The source code can be downloaded by adding the version number tag to the URL https://github.com/OpenRTM/OpenRTM-aist/releases: 
+
+The version 1.2.1 source code can be found at:
+- https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v1.2.1
+
+*** Source code development
+
+First, unpack the source code OpenRTM-aist-X.X.X.tar.gz into an appropriate directory.
+ $ wget https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v1.2.1/OpenRTM-aist-1.2.1.tar.gz
+ $ tar xvzf OpenRTM-aist-1.2.1.tar.gz
+ $ cd OpenRTM-aist-1.2.1
+
+*** Build
+
+OpenRTM-aist uses autoconf and automake to build packages. The source code packages that can be downloaded using the above methods are those that have been configured using those tools in advance.
+ $ ./configure --prefix=/usr --enable-fluentd=no --enable-observer=yes --enable-ssl=yes [options]
+
+You may not need to specify [options], but if you want to make special settings, the options available in [options] are shown by: 
+ $ ./configure --help
+
+*** make
+
+- Make sure that the configure has completed successfully. Make it when done normally.
+ $ make
+
+- After the build is completed successfully, install the header files, libraries, and utility commands.
+ $ sudo make install
+
+This completes the build and installation from the source code.
+
+** Build using the source code on GitHub repository
+OpenRTM-aist makes the github repository used for development publicly available. You can also build using the source code cloned from the repository.
+
+*** Required tools
+The source code checked out of the repository does not contain a configure script or Makefile.in. To generate these, you need to install the following tools in advance:
+- automake
+- libtool
+- autoconf
+
+To install these necessary tools and libraries such as OmniORB, you can use the [[Bulk installation script>/node/6990]] described above on Ubuntu and others. We recommend that you run this script in advance.
+
+On Ubuntu, execute the package installation script pkg_install_ubuntu.sh recommended above as follows, to develop OpenRTM-aist itself (including build from the source) (including automake) It can be installed together.
+
+ $ sudo sh pkg_install_ubuntu.sh -l c ++ -c
+
+*** Source clone from GitHub repository
+Clone the source from the repository. If "git" is not installed, install it in advance. Then, type-in:
+ $ git clone -b svn/RELENG_1_2 https://github.com/OpenRTM/OpenRTM-aist
+ Cloning into 'OpenRTM-aist' ...
+ remote: Enumerating objects: 24, done.
+ remote: Counting objects: 100% (24/24), done.
+ remote: Compressing objects: 100% (24/24), done.
+ remote: Total 42092 (delta 14), reused 2 (delta 0), pack-reused 42068
+ Receiving objects: 100% (42092/42092), 10.41 MiB | 8.36 MiB/s, done.
+ Resolving deltas: 100% (31578/31578), done.
+
+*** Run autogen
+After cloning, a directory called OpenRTM-aist should have been created. Enter that directory.
+
+ $ ls
+ OpenRTM-aist
+ $ cd OpenRTM-aist
+ $ ls
+ $ ls 
+ OpenRTM-aist
+ $ cd OpenRTM-aist
+ $ ls
+ AUTHORS         Makefile.am     acinclude.m4    examples/       win32/
+ COPYING.LIB     NEWS            build/          include/
+ COPYRIGHT*      README          configure.ac    openrtm.m4
+ ChangeLog       README.jp       docs/           src/
+ INSTALL.jp      TUTORIAL.jp     etc/            utils/
+
+Make sure there is a shell script autogen under the build directory and execute this script. Execution can take up to several minutes.
+ 
+ $ ls build/autogen
+ build/autogen
+ $ sh build/autogen
+ 
+ Setting up the environment to generate configure script.
+ 
+ ------------------------------------------------------------
+  Searching Autotools
+ ------------------------------------------------------------
+ autoconf   was found in /usr/local/bin/autoconf.
+ autoheader was found in /usr/local/bin/autoheader.
+ autom4te   was found in /usr/local/bin/autom4te.
+ autoreconf was found in /usr/local/bin/autoreconf.
+ autoupdate was found in /usr/local/bin/autoupdates.
+ automake   was found in /usr/local/bin/automake-1.9.
+ aclocal    was found in /usr/local/bin/aclocal-1.9.
+ libtool    was found in /usr/local/bin/libtool.
+ libtoolize was found in /usr/local/bin/libtoolize.
+ 
+ 
+ ------------------------------------------------------------
+  Searching libtool.m4
+ ------------------------------------------------------------
+ file was found: /usr/local/share/aclocal/libtool.m4
+ 
+  Copying libtool.m4 from /usr/local/share/aclocal/libtool.m4
+ 
+ ------------------------------------------------------------
+  Doing autoreconf
+ ------------------------------------------------------------
+ autoreconf: Entering directory `.'
+ autoreconf: configure.ac: not using Gettext
+ autoreconf: running: /usr/bin/aclocal --force  
+ autoreconf: configure.ac: tracing
+ autoreconf: configure.ac: adding subdirectory src/lib/coil to autoreconf 
+ autoreconf: Entering directory `src/lib/coil'
+ autoreconf: running: /usr/bin/libtoolize --copy --force
+ libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, '.'.
+ libtoolize: copying file './ltmain.sh'
+ libtoolize: You should add the contents of the following files to 'aclocal.m4':
+ libtoolize:   '/usr/share/aclocal/libtool.m4'
+ libtoolize: Consider adding 'AC_CONFIG_MACRO_DIRS([m4])' to configure.ac,
+ libtoolize: and rerunning libtoolize and aclocal.
+ libtoolize: Consider adding '-I m4' to ACLOCAL_AMFLAGS in Makefile.am. 
+ autoreconf: running: /usr/bin/autoconf --force
+ autoreconf: running: /usr/bin/autoheader --force
+ autoreconf: running: /usr/bin/automake --add-missing --copy --force-missing
+ configure.ac:64: installing './compile'
+ configure.ac:63: installing './config.guess'
+ configure.ac:63: installing './config.sub'
+ configure.ac:23: installing './install-sh'
+ configure.ac:23: installing './missing'
+ Makefile.am: installing './INSTALL'
+ ace/coil/Makefile.am: installing './depcomp'
+ tests/AsyncInvoker/Makefile.am:29: warning: source file '../TestRunner.cpp' is in a subdirectory,
+ tests/AsyncInvoker/Makefile.am:29: but option 'subdir-objects' is disabled
+ .
+ .
+ .
+ src/lib/rtm/tests/SystemLogger/Makefile.am:45: but option 'subdir-objects' is disabled
+ autoreconf: Leaving directory `.'
+ done
+ 
+***configure & build
+
+By executing autogen, there is "configure" in the OpenRTM-aist directory. From this point, the build is done by "configure & make" along with a standard build procedure from the source code. 
+
+ $ ls -l configure
+ -rwxr-xr-x  1 n-ando  n-ando  812893 Jul  6 05:56 configure*
+ $  ./configure --prefix=/usr --enable-fluentd=no --enable-observer=yes --enable-ssl=yes
+ $ make
+
+***make dist
+By "make dist", you can create source package like which is distributed at openrtm.org. "make dist" also produces a source code package for Windows. Please note that "make dist" requires additional tools - doxgen, latex, and qkc, etc.
+
+ $ make dist
+ it takes several minutes
+ $ ls -l OpenRTM-aist*
+ -rw-r--r--  1 n-ando  n-ando  9266837 Apr  7 09:53 OpenRTM-aist-1.2.1-win32.zip
+ -rw-r--r--  1 n-ando  n-ando  4831099 Apr  7 09:53 OpenRTM-aist-1.2.1.tar.bz2
+ -rw-r--r--  1 n-ando  n-ando  7258796 Apr  7 09:53 OpenRTM-aist-1.2.1.tar.gz
+ $
+
+The generated source packages are followings:
+-OpenRTM-aist-1.2.1-win32.zip: The source code for Windows
+-OpenRTM-aist-1.2.1.tar.gz: The general-purpose source code (gzip compression)
+-OpenRTM-aist-1.2.1.tar.bz2: The general-purpose source code (bzip compression)
