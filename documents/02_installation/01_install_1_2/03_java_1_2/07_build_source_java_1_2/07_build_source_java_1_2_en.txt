@@ -1,0 +1,90 @@
+// Title: Build from the source code
+#contents
+
+If you want to change the source of OpenRTM-aist-Java, you can compile it from the source code.
+
+**Building the distribution source code
+
+OpenRTM-aist (Java version) provides a build environment using Eclipse.
+
+
+***dependent library
+
+The following development environment and libraries are required to build OpenRTM-aist.
+
+-Eclipse SDK 3.3.x or higher#br
+　Where to get Eclipse#br
+　[[Eclipse Foundation>https://www.eclipse.org/]]#br
+　Japanese version (Japanese Page) #br
+　[[MergeDoc Project>https://mergedoc.osdn.jp/]]#br
+
+-JDK8#br
+　[[JDK8 installation>/node/6992]]
+
+Please follow the documentation for each library and install it.
+
+***Download the Source code
+
+Download the source code for OpenRTM-aist-Java.
+
+
+-[[OpenRTM-aist-Java-1.2.1:https://github.com/OpenRTM/OpenRTM-aist-Java/releases/tag/v1.2.1]]
+
+
+***Expanding the source code
+
+First, extract the source code to an appropriate directory.
+- In the case of Linux
+ $ tar xvzf OpenRTM-aist-Java-X.X.X.tar.gz
+- For Windows, use a tool that can extract tgz.
+
+*** Build.
+**** Importing a project
+Here's how to build it. (The figure shows the Windows version of Eclipse 3.4.2.)
+Start Eclipse and import the project into your workspace.
+Select [File]>[Import].
+#ref(rtm16_en.png,60%,center)
+CENTER: ''[File]>[Import]''
+The Import Select window will open. Now, select [General] > [Existing Project into Workspace] and click the [Next>] button.
+#ref(rtm17_en.png,60%,center)
+CENTER: ''Import 'Select' window''
+The Import Project window will open. Select the directory that has been expanded to [Select root directory] and click [Finish].
+#ref(rtm18_en.png,60%,center)
+CENTER: ''[Import Project] window'''
+You can now import the project into your workspace.
+
+**** JDE settings
+Configure the JDK to be used for the build.
+First, go to [Window]>[Preferences] to open the settings screen.
+
+#ref(rtm19_en.png,60%,center)
+CENTER: ''[Window]>[Preferences]''
+
+Select [Java] > [Installed JREs] from the tree on the left and press the add button.
+
+#ref(rtm20_en.png,60%,center)
+CENTER: ''Installed JREs''
+
+Select "Standard VM" and click "Next>".
+
+#ref(rtm21_en.png,60%,center)
+CENTER: ''Add a JRE.''
+
+Specify the path of the jre directory under the JDK installed directory into [JRE home] input box, specify JRE name into [JRE name] input box, and click [Finish].
+
+#ref(rtm22_en.png,60%,center)
+CENTER: ''JRE settings''
+
+Turn on the checkbox of the JDK set in [installed JRE] list and click [Apply and close].
+
+#ref(rtm23_en.png,60%,center)[
+CENTER: ''Configure the JDK.''
+
+From the package explorer, right-click on "build.xml" and select [Run As]>[2 Ant Build...] from the package explorer, right-click [run]>[2 Ant build...].
+#ref(rtm25_en.png,60%,center)
+CENTER: ''[Run As]>[2 Ant Build...] ''
+The configuration edit window appears. Now, select ''jar'', ''idlCompile'', ''idlCompileEtc'', ''clean'', and ''compile_win'' and click the [Run] button.
+#ref(rtm26_en.png,60%,center)
+CENTER: ''Configuration Edit Window''
+
+Then the build begins. If the message ''BUILD SUCCESSFUL'' or ''Build Success'' is displayed in the console window, it is completed.
