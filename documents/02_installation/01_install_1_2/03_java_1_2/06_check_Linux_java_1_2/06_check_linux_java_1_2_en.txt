@@ -1,0 +1,90 @@
+// Title: Operation Check (On Linux)
+After the installation is successfully completed, test the operation with the included samples. Samples can usually be found at
+- /usr/share/openrtm-1.2/components/java/
+// -/opt/local/share/openrtm-1.1/examples (if installed on Mac OS X with MacPorts)
+
+If built from the source, you can find it at:
+- OpenRTM-aist-Java/jp.go.aist.rtm.RTC/bin/RTMExamples/<sample component set name>
+
+Check if OpenRTM-aist is built and installed correctly using the sample component set SimpleIO.
+
+#contents(5)
+
+**Sample component set SimpleIO
+This sample set consists of RT components ConsoleIn and ConsoleOut.
+ConsoleIn is a component that outputs numbers input from the console to OutPort, and ConsoleOut is a component that displays the numbers input from InPort to the console.
+These are simple examples to show a way to handle I/O (input and output).
+It works by configuring a connection from the OutPort of ConsoleIn to the InPort of ConsoleOut and activating the two components.
+
+In the following explanation, I assume that the samples are located in /usr/share/openrtm-1.2/components/java/SimpleIO.
+
+** Testing with samples
+**** name server startup
+Follow the steps below to start RTSystemEditor and name servers.
+- [[OpenRTP OpenRTP startup procedure (1.2 Series, Windows)>/node/6980]]
+
+
+**** Launching ConsoleIn
+Launch a terminal and launch ConsoleIn by typing-in:
+ $ sh /usr/share/openrtm-1.2/components/java/ConsoleIn.sh
+
+If you build and install it by yourself, you need to set the environment variable CLASSPATH first.
+ Export CLASSPATH=. :${RTM_JAVA_ROOT}/jar/OpenRTM-aist-1.2.0.jar: {\fnDroid} 
+ ${RTM_JAVA_ROOT}/jar/OpenRTM-aist-1.2.0.jar: ${RTM_JAVA_ROOT}/jar/commons-cli-1.1.jar 
+ ${RTM_JAVA_ROOT}/jar/jna-4.2.2.jar:${RTM_JAVA_ROOT}/jar/jna-platform-4.2.2.jar: \frx346} 
+ ${RTM_JAVA_ROOT}/bin
+
+And then start the RTC by typing-in like:
+ $ java RTMExamples.SimpleIO.ConsoleInComp
+
+**** Launching ConsoleOut
+
+Start another terminal and launch ConsoleOut by typing-in:
+ $ sh /usr/share/openrtm-1.2/components/java/ConsoleOut.sh
+
+If you built and installed the program yourself, start the RTC by typing-in like:
+ $ java RTMExamples.SimpleIO.ConsoleOutComp
+
+
+**** Putting them into the editor
+Click [>] in the tree view of the RTSystemEditor to see that the two components you just launched are registered.
+
+#ref(rtm10l.png,/en/node/6614,60%,center)
+CENTER:''ConsoleIn component and ConsoleOut component.''
+
+Open an editor to edit the system. Click [Open New System Editor] button&ref(rtse_open_editor_icon.png, 150%); in the top to open the editor in the middle pane.
+
+Drag and drop the components (two) shown by the &ref(icon-rtce.png, 200%); icon into the name service view on the left to the editor in the center.
+
+#ref(rtm11l_en.png,80%,center)
+CENTER: ''Put the component in the editor''
+
+
+**** Connections and Activation
+
+The right side of the ConsoleIn0 component has OutPort &ref(rtse_outport_icon_n.png, 150%); where data is output, and InPort &ref(rtse_inport_icon_n.png, 150%); where data is input, and the left side of the ConsoleOut0 component has InPort &ref(rtse_inport_icon_n.png, 150%); respectively.
+
+These InPort/OutPort (collectively called data ports) are connected.
+When drag and drop from OutPort to InPort (or InPort to OutPort) is made, a dialog like the one shown in the figure appears, so click the [OK] button with the default settings.
+
+#ref(rtm13.png,80%,center)
+CENTER: ''Connecting data ports.''
+
+#ref(rtm12l_en.png,80%,center)
+CENTER: ''Data Port Connection Dialog''
+
+
+A connecting line appears between the two components. Next, click the [Activate Systems] button &ref(rtm14.png); on the top menu of the editor to activate these components.
+When activated, the component changes to green.
+
+#ref(rtm15.png,center)
+CENTER: ''Activated components''
+
+
+Once the component is activated, the ConsoleIn console prompt:
+ Please input number: 
+
+Enter an appropriate number (within the range of short int: 32767 or less) and press the Enter key.
+Then, on the ConsoleOut side, the entered values are displayed. It indicates that the data has been transferred from the ConsoleIn component to the ConsoleOut component.
+
+This completes the confirmation of the basic behavior of the component.
