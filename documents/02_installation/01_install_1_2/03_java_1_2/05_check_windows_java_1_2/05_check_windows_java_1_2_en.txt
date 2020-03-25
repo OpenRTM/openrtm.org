@@ -15,7 +15,7 @@ Check that OpenRTM-aist is built and installed correctly using the sample compon
 
 ** Test with samples (SimpleIO)
 
-This sample set consists of RT components ConsoleIn and ConsoleOut.
+This sample set consists of RT-components ConsoleIn and ConsoleOut.
 ConsoleIn is a component that outputs numbers input from the console to the OutPort, and ConsoleOut is a component that displays the numbers input from the InPort on the console.
 These are just simple examples to use the I/O (input and output).
 It works by making a connection from the OutPort of ConsoleIn to the InPort of ConsoleOut and activating (Activating) the two components.
