@@ -1,0 +1,87 @@
+// Title: Install to Windows
+#contents
+
+** Install OpenRTM-aist
+The procedure for installing OpenRTM-aist using the MSI installer is described on the following page.
+-[[Installing OpenRTM-aist1.2 (Windows, using MSI installer)>/node/6738]]
+Download the .msi file. The file name terminated by "x86_64.msi" for the 64-bit version, and "x86.msi" for the 32-bit version. After downloading, double-click the .msi file to start the installation program. If you select [Standard] during installation, all configurations supported by this .msi file will be installed. If you want to install only a part of the configuration, select [Custom]. (Because for the other configurations than [Standard], our validation was not enough, it is recommended to install with [Standard].)
+
+** Install JDK8
+OpenRTM-aist-Java-1.2.x requires a JDK8-equivalent JDK (OpenRTM-aist will not work properly with JDK11). It should be installed in advance. See below for information on obtaining and installing JDK8.
+-[[Install JDK8>/node/6992]]
+
+*** JDK installation confirmation
+Open a command prompt,type-in:
+ C:\> java -version
+Installation is Ok if the installed Java version is displayed. For example, it is displayed as follows.
+ openjdk version "1.8.0_232"
+ OpenJDK Runtime Environment (build 1.8.0_232-b09)
+ OpenJDK 64-Bit Server VM (build 25.232-b09, mixed mode)
+
+** What the installer does
+The installer does the following:
+- Copy various files under the installation directory (default is C:\Program Files)
+- Create OpenRTM-aist folder under start menu and set various shortcuts
+- Set environment variables
+-- In 64-bit MSI file case
+ RTM_BASE=C:\Program Files\OpenRTM-aist\\
+ RTM_IDL_DIR=C:\Program Files\OpenrRTM-aist\1.2.1\rtm\idl\\
+ RTM_JAVA_ROOT=C:\Program Files\OpenRTM-aist\1.2.1\\
+ RTM_ROOT=C:\Program Files\OpenRTM-aist\1.2.1\\
+ RTM_VC_VERSION=vc14
+ OMNI_ROOT=C:\Program Files\OpenRTM-aist\1.2.1\omniORB\4.2.1_% RTM_VC_VERSION%\\
+ OpenCV_DIR=C:\Program Files\OpenRTM-aist\1.2.1\OpenCV3.4\\
+ OpenRTM_DIR=C:\Program Files\OpenRTM-aist\1.2.1\cmake\\
+
+-- In 32-bit MSI case
+ RTM_BASE=C:\Program Files (x86)\OpenRTM-aist\\
+ RTM_IDL_DIR=C:\Program Files (x86)\OpenrRTM-aist\1.2.1\rtm\idl\\
+ RTM_JAVA_ROOT=C:\Program Files (x86)\OpenRTM-aist\1.2.1\\
+ RTM_ROOT=C:\Program Files (x86)\OpenRTM-aist\1.2.1\\
+ RTM_VC_VERSION=vc14
+ OMNI_ROOT=C:\Program Files\OpenRTM-aist\1.2.1\omniORB\4.2.3_% RTM_VC_VERSION%\\
+ OpenCV_DIR=C:\Program Files\OpenRTM-aist\1.2.1\OpenCV3.4\\
+ OpenRTM_DIR=C:\Program FilessOpenRTM-aist\1.2.1\cmake\\
+-- Added paths in 64-bit MSI file case
+ C:\Program Files\OpenRTM-aist\1.2.1\bin\% RTM_VC_VERSION%\\
+ C:\Program Files\OpenRTM-aist\1.2.1\omniORB\4.2.3_% RTM_VC_VERSION%\bin\x86_win32\\
+ C:\Program Files\OpenRTM-aist\1.2.1\OpenCV3.4\x64\% RTM_VC_VERSION%\bin\\
+
+-- Added paths in 32-bit MSI file case
+ C:\Program Files (x86)\OpenRTM-aist\1.2.1\bin\% RTM_VC_VERSION%\\
+ C:\Program Files (x86)\OpenRTM-aist\1.2.1\omniORB\4.2.3_% RTM_VC_VERSION%\bin\x86_win32\\
+ C:\Program Files (x86)\OpenRTM-aist\1.2.1\OpenCV3.4\x86\% RTM_VC_VERSION%\bin\\
+
+** Files to be installed
+The files are installed in the following structure.
+ <install_dir>
+   + OpenRTM-aist
+      + 1.x.x: old version runtime
+      + 1.2.1
+         + bin: dll, lib various commands
+         + cmake: OpenRTMConfig.cmake
+         + coil: coil header file
+         + Components
+            + C ++
+               + Examples: C ++ sample components
+               + OpenCV: OpenCV C ++ sample component
+            + Java: Java sample component
+            + Python: Python sample component
+         + etc: rtc.conf sample
+         + jar: jar file
+         + jre: OpenJDK JRE
+         + omniORB
+         + OpenCV3.4
+         + rtm: OpenRTM-aist header file
+            + ext: extension module file
+            + idl: OpenRTM-aistIDL file
+         + util
+            + ExcelControlpy: Python based RTC for Microsoft Office
+            + OpenRTP: RTCBuilder and RTSystemEditor tools
+            + PowerPointControlpy: RTC for Microsoft Office PowerPoint
+            + python_dist: Common library for python-based tools
+            + RTCDT: A tool to support the development of Python-based RTC
+            + rtc-template: An old tool that provides similar functions to RTCBuilder
+            + RTSystemEditor: RTSystem Editor only file
+            + VCVerChanger: Tool to specify the version of Visual Studio used
+            + WordContrlpy: Python based RTC for Microsoft Office Word
