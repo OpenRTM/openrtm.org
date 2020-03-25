@@ -6,8 +6,8 @@
 インストールまたはビルドが正常に終了したら、付属のサンプルで動作テストをします。
 サンプルは、通常は以下の場所にあります。
 
--C:\Program Files\OpenRTM-aist\1.2.1\Components\Java
--OpenRTM-aist\jp.go.aist.rtm.RTC\bin\RTMExamples(ソースからビルドした場合)
+- C:\Program Files\OpenRTM-aist\1.2.1\Components\Java
+- OpenRTM-aist\jp.go.aist.rtm.RTC\bin\RTMExamples(ソースからビルドした場合)
 
 サンプルコンポーネントセットSimpleIOを使って、OpenRTM-aistが正しくビルド・インストールされているかを確認します。
 
@@ -69,7 +69,7 @@ RT System Editorのツリー表示の[>]をクリックすると、先ほど起�
 #ref(rtm10.png,/ja/node/6614,60%,center)
 CENTER:''ConsoleInコンポーネントとConsoleOutコンポーネント''
 
-システムを編集するエディタを開きます。上部のエディタを[開く]ボタン&ref(rtse_open_editor_icon_ja.png, 150%); をクリックすると、中央のペインにエディタが開きます。
+システムを編集するエディタを開きます。上部のエディタを[Open New System Editor]ボタン&ref(rtse_open_editor_icon_ja.png, 150%); をクリックすると、中央のペインにエディタが開きます。
 
 左側のネームサービスビューに &ref(icon-rtce.png,200%); のアイコンで表示されているコンポーネント(2つ)を中央のエディタにドラッグアンドドロップします。
 
@@ -91,7 +91,7 @@ CENTER: ''データポートの接続''
 CENTER: ''データポート接続ダイアログ''
 
 
-2つのコンポーネントの間に接続線が現れます。次に、エディタ上部メニューの[All Activate]ボタン &ref(rtm14.png); をクリックし、これらのコンポーネントをアクティブ化します。
+2つのコンポーネントの間に接続線が現れます。次に、エディタ上部メニューの[Activate Systems]ボタン &ref(rtm14.png); をクリックし、これらのコンポーネントをアクティブ化します。
 アクティブ化されると、コンポーネントが緑色に変化します。
 
 #ref(rtm15.png,/ja/node/6614,center)
@@ -118,15 +118,15 @@ CENTER: ''アクティブ化されたコンポーネント''
 付属しているコンポーネント起動用のバッチファイルのリストとそれにより起動されるコンポーネントの簡単な説明を以下に示します。
 
 |LEFT:270|LEFT|c
-|ConsoleInComp.bat|LEFT:コンソールから入力された数値をOutPortから出力する。ConsoleOutComp.classに接続して使用する。|
-|ConsoleOutComp.bat|LEFT:InPortに入力された数値をコンソールに表示する&color(default){コンポーネント};。ConsoleInComp.classに接続して使用する。|
-|SeqInComp.bat|LEFT:ランダムな数値(Short、Long、Float、Doubleとそのシーケンス型)を出力する&color(default){コンポーネント};。SequenceOutComp.classに接続して使用する。|
-|SeqOutComp.bat|LEFT:InPortに入力される数値(Short、Long、Float、Doubleとそのシーケンス型)を表示。SequenceInComp.classに接続して使用する。|
-|MyServiceProviderComp.bat|LEFT:MyService型のサービスを提供する&color(default){コンポーネント};。MyServiceConsumerComp.classに接続して使用する。|
-|MyServiceConsumerComp.bat|LEFT:MyService型のサービスを提供する&color(default){コンポーネント};。MyServiceProviderComp.classに接続して使用する。|
-|ConfigSampleComp.bat|LEFT:Configurationのサンプル。RtcLinkからConfigurationを変更してConfigurationの挙動を理解するためのサンプル。|
-|ExtConsoleIn.bat|LEFT:外部からのトリガで制御されるコンソール入力された数値をOutportから出力する。ExtTrigger/ConsoleOutComp.classに接続して使用する。|
-|ExtConsoleOut.bat|LEFT:外部からのトリガで制御されるInportに入力された数値をコンソールに出力する。ExtTrigger/ConsoleInComp.classに接続して使用する。|
-|ExtConnector.bat|ExtTrigger/ConsoleInComp.classとExtTrigger/ConsoleOutComp.classへの外部トリガー送るプログラムを起動する。|
-|GUIIn.bat|スライダーの位置をOutportから出力するGUIのサンプルを起動する。ConsoleOutComp.classと接続することもできる。|
-|Composite.bat|複合コンポーネントのサンプルを起動する。3つのコンポーネントを内包した複合コンポーネントが起動される。｜
+|ConsoleInComp.bat|LEFT:コンソールから入力された数値をOutPortから出力するコンポーネントを起動します。ConsoleOutComp.classに接続して使用します。|
+|ConsoleOutComp.bat|LEFT:InPortに入力された数値をコンソールに表示するコンポーネントを起動します。ConsoleInComp.classに接続して使用します。
+|SeqInComp.bat|LEFT:ランダムな数値(Short、Long、Float、Doubleとそのシーケンス型)を出力するコンポーネントを起動します。SequenceOutComp.classに接続して使用します。|
+|SeqOutComp.bat|LEFT:InPortに入力される数値(Short、Long、Float、Doubleとそのシーケンス型)を表示するコンポーネントを起動します。SequenceInComp.classに接続して使用します。|
+|MyServiceProviderComp.bat|LEFT:MyService型のサービスを提供するコンポーネントを起動します。MyServiceConsumerComp.classに接続して使用します。|
+|MyServiceConsumerComp.bat|LEFT:MyService型のサービスを提供するコンポーネントを起動します。MyServiceProviderComp.classに接続して使用します。|
+|ConfigSampleComp.bat|LEFT:Configurationのサンプルを起動します。RtcLinkからConfigurationを変更してConfigurationの挙動を理解するためのサンプルです。|
+|ExtConsoleIn.bat|LEFT:外部からのトリガで制御されるコンソール入力された数値をOutportから出力するコンポーネントを起動します。ExtTrigger/ConsoleOutComp.classに接続して使用します。|
+|ExtConsoleOut.bat|LEFT:外部からのトリガで制御されるInportに入力された数値をコンソールに出力するコンポーネントを起動します。ExtTrigger/ConsoleInComp.classに接続して使用します。|
+|ExtConnector.bat|ExtTrigger/ConsoleInComp.classとExtTrigger/ConsoleOutComp.classへの外部トリガー送るプログラムを起動します。|
+|GUIIn.bat|スライダーの位置をOutportから出力するGUIのサンプルを起動します。ConsoleOutComp.classと接続することもできます。|
+|Composite.bat|複合コンポーネントのサンプルを起動します。3つのコンポーネントを内包した複合コンポーネントが起動されます。｜
