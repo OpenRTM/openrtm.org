@@ -22,10 +22,10 @@ ConsoleInのOutPortからConsoleOutのInPortへ接続を構成し、これらの
 
 以下は、msiインストーラーでOpenRTM-aistをインストールした環境で、スタートメニューから各種プログラムを起動する前提での説明です。
 
-*** RT System Editor、ネームサーバー起動
-以下の手順に従ってRT System Editor、ネームサーバーを起動してください。
+*** RTSystemEditor、ネームサーバー起動
+以下の手順に従ってRTSystemEditor、ネームサーバーを起動してください。
 
-- [[OpenRTP起動手順:/ja/node/6653]]
+- [[OpenRTP起動手順:/node/6653]]
 
 *** サンプルコンポーネントの起動
 ネームサーバー起動後、適当なサンプルコンポーネントを起動します。
@@ -64,37 +64,37 @@ msiインストーラーでインストールした場合はOSを再起動する
 
 **** エディタへの配置
 
-RT System Editorのツリー表示の[>]をクリックすると、先ほど起動した2つのコンポーネントが登録されていることがわかります。
+RTSystemEditorのツリー表示の[>]をクリックすると、先ほど起動した2つのコンポーネントが登録されていることがわかります。
 
-#ref(rtm10.png,/ja/node/6614,60%,center)
+#ref(rtm10.png,60%,center)
 CENTER:''ConsoleInコンポーネントとConsoleOutコンポーネント''
 
 システムを編集するエディタを開きます。上部のエディタを[Open New System Editor]ボタン&ref(rtse_open_editor_icon_ja.png, 150%); をクリックすると、中央のペインにエディタが開きます。
 
 左側のネームサービスビューに &ref(icon-rtce.png,200%); のアイコンで表示されているコンポーネント(2つ)を中央のエディタにドラッグアンドドロップします。
 
-#ref(rtm11.png,/ja/node/6614,80%,center)
+#ref(rtm11.png,center)
 CENTER: ''コンポーネントをエディタに配置''
 
 
 **** 接続とアクティブ化
 
-ConsoleIn0コンポーネントの右側にはデータが出力されるOutPort &ref(rtse_outport_icon_n.png, /ja/node/794,150%); 、ConsoleOut0コンポーネントの左側にはデータが入力されるInPort &ref(rtse_inport_icon_n.png, /ja/node/794,150%); がそれぞれついています。
+ConsoleIn0コンポーネントの右側にはデータが出力されるOutPort &ref(rtse_outport_icon_n.png,150%); 、ConsoleOut0コンポーネントの左側にはデータが入力されるInPort &ref(rtse_inport_icon_n.png,150%); がそれぞれついています。
 
 これらInPort/OutPort(まとめてデータポートと呼びます)を接続します。
 OutPortからInPort(またはInPortからOutPort)へドラッグランドドロップすると、図のようなダイアログが現れますので、デフォルト設定のまま[OK]ボタンをクリックします。
 
-#ref(rtm13.png,/ja/node/6614,80%,center)
+#ref(rtm13.png,80%,center)
 CENTER: ''データポートの接続''
 
-#ref(rtm12.png,/ja/node/6614,80%,center)
+#ref(rtm12.png,80%,center)
 CENTER: ''データポート接続ダイアログ''
 
 
 2つのコンポーネントの間に接続線が現れます。次に、エディタ上部メニューの[Activate Systems]ボタン &ref(rtm14.png); をクリックし、これらのコンポーネントをアクティブ化します。
 アクティブ化されると、コンポーネントが緑色に変化します。
 
-#ref(rtm15.png,/ja/node/6614,center)
+#ref(rtm15.png, center)
 CENTER: ''アクティブ化されたコンポーネント''
 
 

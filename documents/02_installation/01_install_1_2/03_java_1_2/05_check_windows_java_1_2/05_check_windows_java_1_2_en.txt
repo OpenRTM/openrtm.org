@@ -22,8 +22,8 @@ It works by making a connection from the OutPort of ConsoleIn to the InPort of C
 
 The following explanation assumes that you have installed OpenRTM-aist with the MSI installer and start various programs from the Start menu.
 
-*** RT System Editor, name server activation
-Follow the steps below to start the RT System Editor and name servers.
+*** RTSystemEditor, name server activation
+Follow the steps below to start the RTSystemEditor and name servers.
 
 - [[OpenRTP activation instructions:/en/node/6980]]
 
@@ -64,7 +64,7 @@ Please try setting it to the minimum rtc.conf like the following.
 
 **** Putting it in the editor
 
-If you click [>] in the tree view of the RT System Editor, you will see that the two components you just launched are registered.
+If you click [>] in the tree view of the RTSystemEditor, you will see that the two components you just launched are registered.
 
 #ref(rtm10.png,/en/node/6614,60%,center)
 CENTER:''ConsoleIn component and ConsoleOut component.''
@@ -73,28 +73,28 @@ Open an editor to edit the system. Click [Open New System Editor] button&ref(rts
 
 Drag and drop the two components shown by the &ref(icon-rtce.png,200%); icon into the name service view on the left to the editor in the center.
 
-#ref(rtm11.png,/en/node/6614,80%,center)
+#ref(rtm11_en.png,/en/node/6614,80%,center)
 CENTER: ''Put the component in the editor''
 
 
 **** Connections and Activation
 
-The right side of the ConsoleIn0 component has OutPort &ref(rtse_outport_icon_n.png, /node/794,150%); where data is output, and the left side of the ConsoleOut0 component has InPort &ref(rtse_inport_icon_n.png, /node/794,150%); where data is input.
+The right side of the ConsoleIn0 component has OutPort &ref(rtse_outport_icon_n.png,150%); where data is output, and the left side of the ConsoleOut0 component has InPort &ref(rtse_inport_icon_n.png,150%); where data is input.
 
 These InPort/OutPort (called data port) are connected.
 When you drag and drop from OutPort to InPort (or InPort to OutPort), a dialog like the one shown in the following figure appears, so click the [OK] button with the default settings.
 
-#ref(rtm13.png,/en/node/6614,80%,center)
+#ref(rtm13.png,80%,center)
 CENTER: ''Connecting data ports.''
 
-#ref(rtm12.png,/en/node/6614,80%,center)
+#ref(rtm12_en.png,center)
 CENTER: ''Data Port Connection Dialog''
 
 
 A connecting line appears between the two components. Next, click the [Activate Systems] button &ref(rtm14.png); on the top menu of the editor to activate these components.
 When activated, the component changes to green.
 
-#ref(rtm15.png,/en/node/6614,center)
+#ref(rtm15.png,center)
 CENTER: ''Activated components''
 
 
@@ -102,7 +102,7 @@ CENTER: ''Activated components''
 
 When the components are activated, the ConsoleIn component console will prompt with:
 
- "Please input number: 
+ Please input number: 
 
 Enter an appropriate number (within the range of short int: 32767 or less) and press the Enter key.
 Then, on the ConsoleOut side, the entered values are displayed. It indicates that the data has been transferred from the ConsoleIn component to the ConsoleOut component.
