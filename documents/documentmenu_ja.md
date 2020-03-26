@@ -13,7 +13,7 @@
     - 1.2系のインストール=> OpenRTM-aist 1.2系のインストール: 01_install_1_2_ja.txt
       - C++版 1.2系=> OpenRTM-aist (C++版) 1.2系のインストール: 01_cpp_1_2_ja.txt
         - Windowsへのインストール: 01_install_windows_1_2_ja.txt
-          (- OpenRTM-aist 1.2系のインストール(Windows、msiインストーラー使用): 01_openrtm-aist_1_2_windows_msi_ja.txt)
+          (- OpenRTM-aist 1.2系のインストール(Windows、MSIインストーラー使用): 01_openrtm-aist_1_2_windows_msi_ja.txt)
           - Visual Studio=> Visual Studioのインストール: visual_studio_1_2_ja.txt
             - Visula_Studio_2019 Community 2019のインストール: visual_studio_2019_ja.txt
         - Ubunt/Debianへのインストール: 02_install_ubuntu_1_2_ja.txt
@@ -26,16 +26,16 @@
           - (一括インストール・スクリプト: 03_bulk_installation_script_ja.txt)
           - (JDK8のインストール; 02_jdk8installation_ja.txt)
         - 動作確認 (Windows編): 05_check_windows_1_2_ja.txt
-          - OpenRTP起動手順: OpenRTPの起動手順(1.2系、Windows): start_openrtp_proc_windows_1_2_ja.txt
+          (- OpenRTP起動手順: OpenRTPの起動手順(1.2系、Windows): start_openrtp_proc_windows_1_2_ja.txt)
         - 動作確認 (Linux編): 06_check_linux_1_2_ja.txt
-          - OpenRTP起動手順=> OpenRTPの起動手順(1.2系、Linux): start_openrtp_proc_linux_1_2_ja.txt
+          (- OpenRTP起動手順=> OpenRTPの起動手順(1.2系、Linux): start_openrtp_proc_linux_1_2_ja.txt)
         - ソースからのビルド (Windows編)): 07_build_source_windows_1_2_ja.txt
           - (Visual Studioのインストール手順=> Visual Studioのインストール: visual_studio_1_2_ja.txt)
         - ソースからのビルド (Linux編): 08_build_source_linux_1_2_ja.txt
           - (一括インストール・スクリプト: 03_bulk_installation_script_ja.txt)
       - Python版 1.2系のインストール=> OpenRTM-aist (Python版) 1.2系のインストール: 02_python_1_2_ja.txt
         - Windowsへのインストール: 01_windows_python_1_2_ja.txt
-           - (OpenRTM-aist 1.2系のインストール(Windows、msiインストーラー使用): 01_openrtm-aist_1_2_windows_msi_ja.txt)
+           - (OpenRTM-aist 1.2系のインストール(Windows、MSIインストーラー使用): 01_openrtm-aist_1_2_windows_msi_ja.txt)
         - Ubuntu/Debianへのインストール: 02_ubuntu_python_1_2_ja.txt
           - (一括インストール・スクリプト: 03_bulk_installation_script_ja.txt)
           - (JDK8のインストール; 02_jdk8installation_ja.txt)
@@ -53,7 +53,7 @@
         - ソースからのビルド (Linux編): 08_build_source_python_linux_1_2_ja.txt
       - Java版 1.2系: OpenRTM-aist (Java版) 1.2系のインストール: java_1_2_ja.tx
         - Windowsへのインストール: 01_windows_java_1_2_ja.txt
-          - (OpenRTM-aist 1.2系のインストール(Windows、msiインストーラー使用): 01_openrtm-aist_1_2_windows_msi_ja.txt)
+          - (OpenRTM-aist 1.2系のインストール(Windows、MSIインストーラー使用): 01_openrtm-aist_1_2_windows_msi_ja.txt)
         - Ubuntu/Debianへのインストール: 02_ubuntu_java_1_2_ja.txt
           - (JDK8のインストール; 02_jdk8installation_ja.txt)
           - (一括インストール・スクリプト: 03_bulk_installation_script_ja.txt)
@@ -70,7 +70,7 @@
         - ソースからのビルド: 07_build_source_java_1_2_ja.txt
       - OpenRTPのインストール1.2系: 04_openrtp_1_2_ja.txt
         - インストーラによるインストール: 01_installer_install_ja.txt
-          - (OpenRTM-aist 1.2系のインストール(Windows、msiインストーラー使用): 01_openrtm-aist_1_2_windows_msi_ja.txt)
+          - (OpenRTM-aist 1.2系のインストール(Windows、MSIインストーラー使用): 01_openrtm-aist_1_2_windows_msi_ja.txt)
           - (一括インストール・スクリプト: 03_bulk_installation_script_ja.txt)
           - (JDK8のインストール; 02_jdk8installation_ja.txt)
         - Eclipse について: 02_eaclipse_ja.txt
@@ -79,6 +79,8 @@
         - RTCBuilderのインストール: 03_rtc_builder_ja.txt
         - RTSystemEditorのインストール: 04_rtsystemeditor_ja.txt
         - RTSystemEditor、RTCBuilder のデバッグ: 05_rtsystemeditor_rtcbuilder_debug_ja.txt
+      - OpenRTP起動手順: OpenRTPの起動手順(1.2系、Windows): start_openrtp_proc_windows_1_2_ja.txt
+      - OpenRTP起動手順=> OpenRTPの起動手順(1.2系、Linux): start_openrtp_proc_linux_1_2_ja.txt
     - 1.1系のインストール=> OpenRTM-aist 1.1系のインストール: 02_install_1_1_ja.txt // このページはディレクトリやBook的にここに存在するが、ここにはこのページをアクセスするリンクはないです。
       - C++版 1.1系=> OpenRTM-aist(C++版)1.1系のインストール; 01_cpp_1_1_ja.txt
         - Windowsへのインストール: 01_install_windows_1_1_ja.txt
@@ -229,7 +231,7 @@
     - rtshell のインストール: install_rtshell_ja.txt
       - (rtshell: 07_rtshell_ja.txt)
       - インストール方法: 01_howto_install_ja.txt
-        - (OpenRTM-aist 1.2系のインストール(Windows、msiインストーラー使用): 01_openrtm-aist_1_2_windows_msi_ja.txt)
+        - (OpenRTM-aist 1.2系のインストール(Windows、MSIインストーラー使用): 01_openrtm-aist_1_2_windows_msi_ja.txt)
         - (一括インストールスクリプト:bulk_installation_script_ubuntu_1_1_ja.txt)
       - 動作確認(Windows編): 02_check_windows_ja.txt
       - 動作確認(Linux編): 02_check_linux_ja.txt
@@ -666,7 +668,7 @@
       - 玄箱PROへのインストール: kuroboxpro_ja.txt
       - Armadillo240へのインストール: armadilo240_ja.txt
 　- 参照ドキュメント: appendix_ja.txt
-    - OpenRTM-aist 1.2系のインストール(Windows、msiインストーラー使用): 01_openrtm-aist_1_2_windows_msi_ja.txt
+    - OpenRTM-aist 1.2系のインストール(Windows、MSIインストーラー使用): 01_openrtm-aist_1_2_windows_msi_ja.txt
     - JDK8のインストール; 02_jdk8installation_ja.txt
     - 一括インストール・スクリプト: 03_bulk_installation_script_ja.txt
 - ダウンロード: download_frontpage_ja.txt
