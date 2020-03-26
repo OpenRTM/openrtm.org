@@ -1,0 +1,132 @@
+// Title: Operation Check (On Windows)
+#contents
+
+** Location of the sample component
+
+After the installation or build is done successfully, test it in action with the included sample components.
+Sample components can usually be found at
+
+- C:\Program Files\OpenRTM-aist\1.2.1\Components\Java
+- OpenRTM-aist\jp.go.aist.rtm.RTC\bin\RTMExamples (when built from source)
+
+Check that OpenRTM-aist is built and installed correctly using the sample component set SimpleIO.
+
+
+
+** Test with samples (SimpleIO)
+
+This sample set consists of RT-components ConsoleIn and ConsoleOut.
+ConsoleIn is a component that outputs numbers input from the console to the OutPort, and ConsoleOut is a component that displays the numbers input from the InPort on the console.
+These are just simple examples to use the I/O (input and output).
+It works by making a connection from the OutPort of ConsoleIn to the InPort of ConsoleOut and activating (Activating) the two components.
+
+The following explanation assumes that you have installed OpenRTM-aist with the MSI installer and start various programs from the Start menu.
+
+*** RTSystemEditor, name server activation
+Follow the steps below to start the RTSystemEditor and name servers.
+
+- [[OpenRTP activation instructions:/en/node/6980]]
+
+*** Launching the sample components
+After the name server start, start the appropriate sample components.
+
+For Windows 10, open the sample folder by typing ''Java_Examples'' in the [Type here to search] field at the bottom right.
+
+#ref(rtm27_en.png,60%,center)
+CENTER: ''Name server confirmed to start''
+
+#ref(rtm28_en.png,80%,center)
+CENTER:''Sample Component Folders'''
+
+In this example, double-click on "ConsoleIn.bat" and "ConsoleOut.bat" to launch the two components.
+When it starts, two console screens will open, as shown below.
+
+#ref(rtm29.png,60%,center)
+CENTER:''ConsoleIn component and ConsoleOut component.''
+
+**** If the component does not start
+
+If the component does not start, there are several possible causes.
+
+***** Console screen opens and then disappears
+
+The problem may occur if the environment variables ''RTM_ROOT'' and ''RTM_JAVA_ROOT'' are not set correctly.
+If you installed it with the msi installer, rebooting the OS may solve the problem.
+
+
+Also, there is a problem with the setting of rtc.conf and it cannot be started in some cases. Please open [rtc.conf for examples] in the start menu folder above and check the settings.
+For example, if a setting such as corba.endpoint/corba.endpoints has a mismatch with the host address of the currently running PC, CORBA will terminate abnormally.
+
+Please try setting it to the minimum rtc.conf like the following.
+
+ corba.nameservers: localhost
+
+
+**** Putting it in the editor
+
+If you click [>] in the tree view of the RTSystemEditor, you will see that the two components you just launched are registered.
+
+#ref(rtm10.png,/en/node/6614,60%,center)
+CENTER:''ConsoleIn component and ConsoleOut component.''
+
+Open an editor to edit the system. Click [Open New System Editor] button&ref(rtse_open_editor_icon.png, 150%); in the top to open the editor in the middle pane.
+
+Drag and drop the two components shown by the &ref(icon-rtce.png,200%); icon into the name service view on the left to the editor in the center.
+
+#ref(rtm11_en.png,/en/node/6614,80%,center)
+CENTER: ''Put the component in the editor''
+
+
+**** Connections and Activation
+
+The right side of the ConsoleIn0 component has OutPort &ref(rtse_outport_icon_n.png,150%); where data is output, and the left side of the ConsoleOut0 component has InPort &ref(rtse_inport_icon_n.png,150%); where data is input.
+
+These InPort/OutPort (called data port) are connected.
+When you drag and drop from OutPort to InPort (or InPort to OutPort), a dialog like the one shown in the following figure appears, so click the [OK] button with the default settings.
+
+#ref(rtm13.png,80%,center)
+CENTER: ''Connecting data ports.''
+
+#ref(rtm12_en.png,center)
+CENTER: ''Data Port Connection Dialog''
+
+
+A connecting line appears between the two components. Next, click the [Activate Systems] button &ref(rtm14.png); on the top menu of the editor to activate these components.
+When activated, the component changes to green.
+
+#ref(rtm15.png,center)
+CENTER: ''Activated components''
+
+
+
+
+When the components are activated, the ConsoleIn component console will prompt with:
+
+ Please input number: 
+
+Enter an appropriate number (within the range of short int: 32767 or less) and press the Enter key.
+Then, on the ConsoleOut side, the entered values are displayed. It indicates that the data has been transferred from the ConsoleIn component to the ConsoleOut component.
+
+This completes the confirmation of the basic operation of the component.
+
+
+** Other samples
+
+The installer comes with a few other sample components as well.
+You can try these components by launching them in the same way, connecting and activating the ports in RTSystemEditor.
+
+The following is a list of the attached batch files for component start-up and a brief description of the components that are invoked by them.
+
+|LEFT:270|LEFT|c
+|ConsoleInComp.bat|LEFT:Starts a component that outputs numbers input from the console to OutPort and is used by connecting with ConsoleOutComp.class.|
+|ConsoleOutComp.bat|LEFT:Starts a component that displays the numbers entered in InPort to the console and is used by connecting with ConsoleInComp.class. |
+|SeqInComp.bat|LEFT:Starts a component that outputs random numbers (Short, Long, Float, Double and its sequence type) and is used in conjunction with SequenceOutComp.class. |
+|SeqOutComp.bat|LEFT:Starts a component that shows the numbers (Short, Long, Float, Double and its sequence type) entered into InPort and is used in conjunction with SequenceInComp.class. |
+|MyServiceProviderComp.bat|LEFT:Starts a component that provides services of type MyService and is used in connection with MyServiceConsumerComp.class. |
+|MyServiceConsumerComp.bat|LEFT:Starts a component that provides services of type MyService and is used in connection with MyServiceProviderComp.class. |
+|ConfigurationSampleComp.bat|LEFT:Start a configuration sample component to understand the behavior of the configuration function by changing the Configuration from RtcLink. |
+|ExtConsoleIn.bat|LEFT:Starts the component to transfer input numerical value from the console to OutPort with being controlled by an external trigger. It is used by connecting to ExtTrigger/ConsoleOutComp.class.|
+|ExtConsoleOut.bat|LEFT:Starts the component to show the data from InPort to the console with being controlled by an external trigger. It is used by connecting to ExtTrigger/ConsoleInComp.class.|
+|ExtConnector.bat|LEFT:Starts a program to send external triggers to ExtTrigger/ConsoleInComp.class and ExtTrigger/ConsoleOutComp.class. |
+|GUIIn.bat|Start the GUI sample that outputs the position of the slider from Outport. |
+|Composite.bat|Start a composite component that contains three components.｜
