@@ -1,41 +1,41 @@
-﻿// Title: Fedoraへのインストール
-Java版OpenRTM-aistはFedora Linuxで利用可能なRPMパッケージが提供されています。
-対応しているFedora Linuxのバージョンは、ダウンロードページから確認できます。
-Fedora Linuxへの対応およびそのバージョンは、予告なしに変更または停止されることがありますので、あらかじめ了承ください。
+// Title: Install on Fedora
+OpenRTM-aist for Java provides an RPM package that is available for Fedora Linux.
+You can check the supported versions of Fedora Linux on the download page.
+Please note that the support for Fedora Linux and its version is subject to change or stop without notice.
 
-Fedora Linuxへのインストールの方法には大きく分けて以下の二種類のインストール方法があります。
--openrtm.orgが提供する一括インストールスクリプトを使用
--yumパッケージマネージャを使用
+There are two main installation methods to install Fedora Linux, as follows.
+-Using the bulk installation script provided by openrtm.org
+-using the yum package manager
 
 #contents
 
-** 一括インストール・スクリプト
+**Bulk installation script
 
-openrtm.orgが提供するインストール・スクリプト''pkg_install_fedora.sh''をダウンロードページからダウンロードし、root権限で実行します。
-このスクリプトは、必要なパッケージを順次yumを用いてインストールしていきます。
+Download the installation script ''pkg_install_fedora.sh'' provided by openrtm.org from the download page and run it with root privileges.
+This script will install the necessary packages one by one using yum.
 
-OpenRTM-aistを開発・実行するために必要なパッケージをもれなくインストールしてくれるので大変便利です。
-オプションを指定することで、目的に合わせたパッケージをインストールできるようになったので、
-初めてOpenRTM-aistをインストールしてみる方にもソースをコンパイルしてみる方にも推奨します。
+It is very convenient because it installs all the packages needed to develop and run OpenRTM-aist.
+option, so you can now install packages that are tailored to your needs.
+It is recommended whether you are installing OpenRTM-aist for the first time or trying to compile the source.
 
-一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[[一括インストールスクリプト:http://openrtm.org/openrtm/ja/node/6345]]」のページをご確認ください。
+Please check the page of "[[Bulk installation script:http:/node/6990]]" for the download of the batch installation script, detailed installation instructions, and the types of options that can be specified.
 
-現状一括インストールスクリプトを-l javaオプションで使った場合、必要なOpenRTM-aistパッケージがインストールされないという問題が報告されています。以下の手順によりインストールしてください。
+A problem has been reported that the required OpenRTM-aist package is not installed when the bulk install script is used with the -l java option. Please follow the steps below to install the software.
  sudo yum install OpenRTM-aist OpenRTM-aist-devel
 
-** OpenRTPのインストール
-一般的なUbuntu/Debian環境での開発にはRTC BuilderやRTSystem Editorを使用しますが、その場合にはOpenRTPが必要ですので、一括インストールスクリプトを用いてOpenRTPをインストールしてください。pkg_install_fedora.shが置いてあるディレクトリで
- $ sudo sh ./pkg_install_fedora.sh -l openrtp --yes
-と入力するとOpenRTPをインストールできます。
+** Install OpenRTP
+In the directory where pkg_install_fedora.sh is located, you need to install OpenRTP by using the bulk installation script
+ $ sudo sh pkg_install_fedora.sh -l openrtp --yes
+You can install OpenRTP by typing
 
-** yumを使う方法
+** How to use yum
 
-*** /etc/yum.repos.d/openrtm.repoの作成
+*** Create /etc/yum.repos.d/openrtm.repo
 
-openrtm.orgではyumから利用可能なパッケージリポジトリを提供しています。
-ただし、デフォルトのパッケージリポジトリには含まれていませんので、yumの設定を変更する必要があります。
+openrtm.org provides a package repository that is available from yum.
+However, it is not included in the default package repository, so you will need to change the YUM settings.
 
-以下のような設定を記録したファイル''/etc/yum.repos.d/openrtm.repo''を作成しておきます。作成には通常root権限が必要です。
+Create the file ''/etc/yum.repos.d/openrtm.repo'' which records the following settings. You usually need root privileges to create them.
 
  [openrtm]
  name=Fedora $releasever - $basearch
@@ -46,53 +46,54 @@ openrtm.orgではyumから利用可能なパッケージリポジトリを提供
  gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora file:///etc/pki/rpm-gpg/RPM-GPG-KEY
 CENTER:''/etc/yum.repos.d/openrtm.repo''
 
-*** yumによるインストール
+Install with *** yum
 
-openrtm.repoを作成したら、次の手順でインストールを行います。
-途中、いくつかの応答を求められるので、''y''を入力しながら完了させます。
+Once you have created openrtm.repo, follow the steps below to install it.
+You will be asked for several responses along the way, so complete them by typing ''y''.
 
  $ sudo yum install gcc-c++ python
- $ sudo yum install omniORB omniORB-devel omniORB-doc omniORB-servers omniORB-utils
+ $ sudo yum install omniORB omniORB omniORB-devel omniORB-doc omniORB-servers omniORB-utils
  $ sudo yum install OpenRTM-aist OpenRTM-aist-devel OpenRTM-aist-Java OpenRTM-aist-Java-doc OpenRTM-aist-Java-example
  $ sudo yum install OpenRTP
 
-*** 環境変数の設定
-環境変数の設定が必要です。ホームディレクトリにある.bashrcに以下の行を付け加えてください。(64ビット版を使用する場合)
- export RTM_JAVA_ROOT=/usr/lib64/openrtｍ-1.2
-この設定を有効にするためにはインストール作業終了後、再ログインしてください。
-***JDK8について
-Fedora用のOpenRTM-aist-Javaパッケージのインストールは自動的にFedoraの標準リポジトリよりOpenJDK8をインストールし、それを使用するJava環境として設定しますが、ライセンス条件やサポート条件のために他のJDKを使いたい場合は、以下のリンクを参照してください。
-- [[JDKのインストール>http://openrtm.org/openrtm/ja/node/6911]]
-*** インストールの確認
+*** Setting environment variables
+You need to set environment variables. Add the following line to the .bashrc file in your home directory (when using the 64 bit version)
+ export RTM_JAVA_ROOT=/usr/lib64/openrtm-1.2
+To enable this setting, please log in again after the installation is complete.
+About ***JDK8
+The installation of the OpenRTM-aist-Java package for Fedora automatically installs OpenJDK8 from Fedora's standard repositories and sets it up as a Java environment to use, but if you want to use other JDKs for licensing and support terms, see the link below.
+- [[JDK installation>http://openrtm.org/openrtm/ja/node/6992]]
+*** Confirmation of installation
 
-最後に以下のコマンドでインストールの確認をします。
+Finally, confirm the installation with the following command
 
  # rpm -q OpenRTM-aist
  OpenRTM-aist-1.2.0-0.fcXX.x86_64
 
 
-** パッケージの詳細
-各パッケージの内容は以下の通りです。
-*** openrtm-aist
-openrtm-aistにはランタイムライブラリとコマンド群が含まれています。
+** Package details
+Each package contains the followings.
 
-- コマンド
+***openrtm-aist
+openrtm-aist includes run-time libraries and commands
+
+- Commands
  /usr/bin/rtcd
  /usr/bin/rtcprof
  /usr/bin/rtm-config
  /usr/bin/rtm-naming
 
-- 設定ファイルサンプル
+- Sample configuration file
  /etc/rtc.conf.sample
 
-- ライブラリ
+- Libraries
  /usr/lib64/libRTC-1.2.0.so
  /usr/lib64/libRTC.a
- 中略
+ ...
  /usr/lib64/librtmManipulator.so.0.0.0
  /usr/lib64/openrtm-1.2/ec/FileNameservice.la
  /usr/lib64/openrtm-1.2/ec/FileNameservice.so
- 中略
+ ...
  /usr/lib64/openrtm-1.2/ec/RTPreemptEC.so.0.0.0
  /usr/lib64/openrtm-1.2/sdo/LoggerConsumer.a
  /usr/lib64/openrtm-1.2/sdo/LoggerConsumer.la
@@ -104,32 +105,32 @@ openrtm-aistにはランタイムライブラリとコマンド群が含まれ�
  /usr/lib64/openrtm-1.2/ssl/SSLTransport.so.0
  /usr/lib64/openrtm-1.2/ssl/SSLTransport.so.0.0.0
 
-*** OpenRTM-aist-devel
-openrtm-aist-devには、開発に必要なコマンド群とヘッダが含まれています。
+***OpenRTM-aist-devel
+openrtm-aist-dev includes commands and header files for RT system development.
 
-- コマンド
+- Commands
  /usr/bin/coil-config
  /usr/bin/rtc-template
  /usr/bin/rtm-skelwrapper
 
-- ヘッダなど
+- Header files, etc.
   /usr/include/coil-1.2/coil/Affinity.h
   /usr/include/coil-1.2/coil/Allocator.h
-  中略
+  ...
   /usr/include/coil-1.2/coil/stringutil.h
   /usr/include/openrtm-1.2/rtm/BufferBase.h
   /usr/include/openrtm-1.2/rtm/BufferStatus.h
-  中略
+  ...
   /usr/include/openrtm-1.2/rtm/config_rtc.h
   /usr/include/openrtm-1.2/rtm/ext/CameraCommonInterface.hh
   /usr/include/openrtm-1.2/rtm/ext/CameraCommonInterface.idl
-  中略
+  ...
   /usr/include/openrtm-1.2/rtm/ext/ManipulatorCommonInterface_MiddleStub.h
   /usr/include/openrtm-1.2/rtm/ext/ec/artlinux/ArtExecutionContext.h
   /usr/include/openrtm-1.2/rtm/ext/ec/artlinux/rtc.conf.sample
   /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/LogicalTimeTriggeredEC.h
   /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/LogicalTimeTriggeredEC.idl
-  中略
+  ...
   /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/LogicalTimeTriggeredECStub.h
   /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/idl/LogicalTimeTriggeredEC.hh
   /usr/include/openrtm-1.2/rtm/ext/ec/logical_time/idl/LogicalTimeTriggeredEC.idl
@@ -143,11 +144,11 @@ openrtm-aist-devには、開発に必要なコマンド群とヘッダが含ま�
   /usr/include/openrtm-1.2/rtm/ext/logger/fluentbit_stream/fluentbit.conf
   /usr/include/openrtm-1.2/rtm/ext/sdo/logger/Logger.hh
   /usr/include/openrtm-1.2/rtm/ext/sdo/logger/Logger.idl
-  中略
+  ...
   /usr/include/openrtm-1.2/rtm/ext/sdo/logger/LoggerStub.h
   /usr/include/openrtm-1.2/rtm/ext/sdo/observer/ComponentObserver.idl
   /usr/include/openrtm-1.2/rtm/ext/sdo/observer/ComponentObserverConsumer.h
-  中略
+  ...
   /usr/include/openrtm-1.2/rtm/ext/sdo/observer/ComponentObserverStub.h
   /usr/include/openrtm-1.2/rtm/ext/sdo/observer/idl/ComponentObserver.hh
   /usr/include/openrtm-1.2/rtm/ext/sdo/observer/idl/ComponentObserver.idl
@@ -155,26 +156,25 @@ openrtm-aist-devには、開発に必要なコマンド群とヘッダが含ま�
   /usr/include/openrtm-1.2/rtm/ext/sdo/observer/idl/ComponentObserverSK.cc
   /usr/include/openrtm-1.2/rtm/idl/BasicDataType.hh
   /usr/include/openrtm-1.2/rtm/idl/BasicDataType.idl
-  中略
+  ...
   /usr/include/openrtm-1.2/rtm/idl/device_interfaces/Ranger.idl
   /usr/include/openrtm-1.2/rtm/version.h
   /usr/include/openrtm-1.2/rtm/version.txt
 
-- ライブラリ・その他
-
+- Libraries and others
   /usr/lib/x86_64-linux-gnu/openrtm-1.2/cmake/OpenRTMConfig.cmake
   /usr/lib/x86_64-linux-gnu/openrtm-1.2/py_helper/README_gen.py
   /usr/lib/x86-64-linux-gnu/openrtm-1.2/py_helpver/cxx_gen.py
-  中略
+  ...
   /usr/lib/x86_64-linux-gnu/openrtm-1.2/py_helpver/yat.py
   /usr/lib/x86_64-linux-gnu/pkgconfig/libcoil.pc
 
 *** OpenRTM-aist-Java
-- コマンド
+- Commands
  /usr/bin/rtcd_java
  /usr/bin/rtcprof_java
 
-- jarファイル
+- jar files
  /usr/lib/x86_64-linux-gnu/openrtm-1.2/jar/License.txt
  /usr/lib/x86_64-linux-gnu/openrtm-1.2/jar/LogicalTimeTriggeredEC.jar
  /usr/lib/x86_64-linux-gnu/openrtm-1.2/jar/NameserviceFile.jar
@@ -186,7 +186,7 @@ openrtm-aist-devには、開発に必要なコマンド群とヘッダが含ま�
  /usr/lib/x86_64-linux-gnu/openrtm-1.2/jar/rtcprof.jar
 
 *** OpenRTM-aist-Java-example
-Java版サンプルRTC、Classファイル、ソースファイル、起動スクリプト
+Java version sample RTC, the class files, the source files, and the startup script
  /usr/share/openrtm-1.2/components/java/* 
  /usr/share/openrtm-1.2/components/java/RTMExamples/AutoTest/*
  /usr/share/openrtm-1.2/components/java/RTMExamples/Composite/*
@@ -205,8 +205,8 @@ Java版サンプルRTC、Classファイル、ソースファイル、起動ス�
  /usr/share/openrtm-1.2/components/java/RTMExamples/Throughput/*
  /usr/share/openrtm-1.2/components/java/RTMExamples/TopicTest/*
 
-*** OpenRTM-aist-Java-doc
-openrtm-aist-java-doc には、日本語と英語のクラスリファレンスが含まれています。
+***OpenRTM-aist-Java-doc
+openrtm-aist-java-doc includes Japanese/English class references
  /usr/share/openrtm-1.2/doc/java/JavaDoc/OpenRTM/*
  /usr/share/openrtm-1.2/doc/java/JavaDoc/OpenRTM/class-use/*
  /usr/share/openrtm-1.2/doc/java/JavaDoc/RTC/*
@@ -268,7 +268,7 @@ openrtm-aist-java-doc には、日本語と英語のクラスリファレンス�
  /usr/share/openrtm-1.2/doc/java/JavaDocEn/jp/go/aist/rtm/class-use/*
  /usr/share/openrtm-1.2/doc/java/JavaDocEn/*
 
-*** openrtp
-openrtpでは大量のファイルがインストールされるため、ここではリストしません。必要に応じて
+***openrtp
+Since openrtp installs a lot of files, I won't list them here. if necessary
  $ rpm -ql OpenRTP
-と入力して各自での確認をしてください。
+to confirm for yourself.
