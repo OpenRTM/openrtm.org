@@ -18,8 +18,12 @@ RTコンポーネントConsoleIn、ConsoleOutからなるサンプルセット�
 
 *** ネームサーバーの起動
 - ネームサーバーを起動します。以下のコマンドで起動ができます。
- $ sudo python /user/lib/{python2.7|python3.6|python3.7}/dist-packages/OpenRTM_aist/utils/rtm-naming/rtm-naming.py
-ここで{Python2.7|python3.6|python3.7}は、Python版のOpenRTM-aistをインストールした時のLinux環境でインストールしてあったPythonのバージョンによって変わり、Python 2.7がインストールされていた場合は"Python2.7"です。(Ubuntu18.04のデフォルトはPython2.7です。)
+ $ rtm-naming
+OpenRTM-aist(C++)をインストールしていない環境では、下記スクリプトで起動できるように用意しています。
+ $ python /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtm-naming/rtm-naming.py
+       or
+ $ python3 /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtm-naming/rtm-naming.py
+ここで{Python2.7|python3}は、Python版のOpenRTM-aistをインストールした時のLinux環境でインストールしてあったPythonのバージョンによって変わり、Python 2.7がインストールされていた場合は"Python2.7"です。(Ubuntu18.04のデフォルトはPython2.7です。)
 
 以下のような画面が表示されます。
 

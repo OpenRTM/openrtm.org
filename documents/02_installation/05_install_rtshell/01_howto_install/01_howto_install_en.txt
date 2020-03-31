@@ -2,27 +2,25 @@
 
 #contents
 
-To install rtshell, you need to install OpenRTM-aist-Python because rtshell is a Python program. Therefore, to use rtshell, it is required to install OpenRTM-aist-Python and Python execution environment before installing rtshell. (The bulk installation script for Linux installs Python in the script, but in the case of Windows the msi install needs to be installed beforehand. The supported Python version is 3.7, 3.6, 2.7.)
+To install rtshell, you need to install OpenRTM-aist-Python because rtshell is a Python program. Therefore, to use rtshell, it is required to install OpenRTM-aist-Python and Python execution environment before installing rtshell. (The bulk installation script for Linux installs Python in the script, but in the case of Windows the msi install needs to be installed beforehand. The supported Python version is 3.7, 3.6, 3.5, 2.7.)
 
 ** Installation on Windows
 Please install OpenRTM-aist by msi installer. Please refer to the following page for the procedure. &br;
 [[OpenRTM-aist 1.2 installation (Windows, using msi installer)>//node/6652]]
 
 ** Installation on Linux environment
-Use [[bulk installation script>//node/6990]] to install OpenRTM-aist-Python and rtshell with using "-l python" and "-l rtshell" options and then execute rtshell_post_install. 
+Use [[bulk installation script>//node/6990]] to install rtshell with using "-l c++", "-l python" and "-l rtshell" options and then execute rtshell_post_install.
 
 *** Ubuntu 18.04 case:
 Move to the directory where the bulk installation script is downloaded and type in:
- $ sudo sh pkg_install_ubuntu.sh -l python --yes
- $ sudo sh pkg_install_ubuntu.sh -l rtshell --yes
+ $ sudo sh pkg_install_ubuntu.sh -l c++ -l python -l rtshell --yes
  $ sudo rtshell_post_install
 
 Close the terminal once.
 
 *** Raspbian case:
 Move to the directory where the bulk installation script is downloaded and type in:
- $ sudo sh pkg_install_raspbian.sh -l python --yes
- $ sudo sh pkg_install_raspbian.sh -l rtshell --yes
+ $ sudo sh pkg_install_raspbian.sh -l c++ -l python -l rtshell --yes
  $ sudo rtshell_post_install
 
 Close the terminal once.
