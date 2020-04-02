@@ -12,8 +12,8 @@ Please install OpenRTM-aist by msi installer. Please refer to the following page
 
 Check if the rtcwd command can be executed on the command line.
  > rtcwd
- 'rtcwd' is an internal or external command,
- Not recognized as an operable program or batch file.
+ 'rtcwd' is not recognized as an internal or external command,
+ operable program or batch file.
 
 If you see this message, run rtshell_post_install.
  > rtshell_post_install -n
