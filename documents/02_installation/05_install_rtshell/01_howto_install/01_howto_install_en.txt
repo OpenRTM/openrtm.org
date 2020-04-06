@@ -8,6 +8,21 @@ To install rtshell, you need to install OpenRTM-aist-Python because rtshell is a
 Please install OpenRTM-aist by msi installer. Please refer to the following page for the procedure. &br;
 [[OpenRTM-aist 1.2 installation (Windows, using msi installer)>//node/6652]]
 
+*** Check rtcwd command
+
+Check if the rtcwd command can be executed on the command line.
+ > rtcwd
+ 'rtcwd' is not recognized as an internal or external command,
+ operable program or batch file.
+
+If you see this message, run rtshell_post_install.
+ > rtshell_post_install -n
+If Python is installed under Program Files, execute the command prompt as an administrator.
+
+ > rtcwd
+ rtcwd: Invalid CORBA naming service: localhost
+This message is not a problem because [[Start Name Server:/en/node/7005#toc2]] described in Operation check (Windows) is not executed.
+
 ** Installation on Linux environment
 Use [[bulk installation script>//node/6990]] to install rtshell with using "-l c++", "-l python" and "-l rtshell" options and then execute rtshell_post_install.
 
