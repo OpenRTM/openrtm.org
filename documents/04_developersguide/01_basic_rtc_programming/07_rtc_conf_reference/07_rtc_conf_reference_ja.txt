@@ -1,36 +1,76 @@
 ﻿// Title: rtc.conf設定項目一覧
+ // Title: rtc.conf設定項目一覧
 #contents(3)
 
-//------------------------------------------------------------=============
+
+//============================================================
 ** 一般的な設定
+//============================================================
 
 *** config.version
-コンフィギュレーションファイルのバージョン。
+内部で自動的に設定されるコンフィギュレーションファイルのバージョン。通常、OpenRTM-aistのバージョンと同じ。
+rtc.conf内で指定する必要はなく、読みだすことでOpenRTM-aistが想定するrtc.confのバージョンがわかる。
+
+- 指定: Read-only、任意(指定しても影響なし)
+- デフォルト値: 現在のOpenRTM-aistのconfigバージョン
 - 例:
- config.version: 1.0
+ config.version: 2.0
+
+*** openrtm.name
+内部で自動的に設定されるっバージョン番号付きOpenRTM-aistのフルネーム。
+rtc.conf内で指定する必要はなく、読みだすことでバージョン番号付きのOpenRTM-aist名称がわかる。
+
+- 指定：Read-only、指定しても影響なし
+- デフォルト値：現在のバージョン付きOpenRTM-aist名
+- 例:
+ openrtm.name: OpenRTM-aist-2.0.0
 
 *** openrtm.version
-OpenRTM-aist のバージョン。
-- 例:
- openrtm.version: 1.0.0
+内部で自動的に設定されるOpenRTM-aist のバージョン。
+rtc.conf内で指定する必要はなく、読みだすことでOpenRTM-aistのバージョンがわかる。
 
-//------------------------------------------------------------
-** manager に関する設定
+- 指定：Read-only、指定しても影響なし
+- デフォルト値：現在のOpenRTM-aistのバージョン
+- 例:
+ openrtm.version: 2.0.0
+
+//============================================================
+** manager の基本設定
+//============================================================
 
 *** manger.name
 
-managerの名前。マネージャがネームサーバで登録される際には、ここで設定し
-た名前で登録される。
+'''manager.name''' はマネージャーのマスター・スレーブのグルーイングに使われる文字列化されたCORBAオブジェクト名に利用される。
+'''manager.name'''が'''manager'''設定された場合、マスターマネージャは以下の文字列化されたオブジェクト参照で指定される。
 
-- 指定: ネームサーバ等に登録可能な任意の名前
+ corbaloc::<hostname>:2810/manager 
+
+スレーブマネージャは以下の文字列で指定することができる。
+
+ corbaloc::<hostname>:<port_number>/manager 
+
+- 指定: Read/Write, マネージャ名を特定する任意の名前
 - デフォルト値: manager
 - 例:
  manager.name: manager
 
-*** maanger_naming_formats
+*** manger.instance_name
 
-マネージャをネームサーバに登録する際のフォーマットを指定する。以下の
-''%''で始まる指定子を利用することができる。
+この '''manager.instance_name''' は、ネーミングサービス登録時のマネージャーの名前に使用される。
+通常、マスターマネージャーの参照は、'''manager|mgr'''という名前のネームサーバーに登録される。
+このオプションが「foobar」に設定されている場合、登録されたマスターマネージャー名は '''foobar|mgr''' になります。
+
+- 指定: Read/Write, ネームサーバ等に登録可能な任意の名前
+- デフォルト値: manager
+- 例:
+ manager.name: manager
+
+
+*** manger.naming_formats
+
+マネージャをネームサーバに登録する際のフォーマットを指定する。名前と名前の間のデリミタは '''/'''、名前とKindの間のデリミタは '''.''' で指定する。
+ 
+以下の''%''で始まる指定子を利用することができる。
 
 | 指定子 | 意味               |
 | %n | マネージャ名           |
@@ -38,10 +78,10 @@ managerの名前。マネージャがネームサーバで登録される際に�
 | %M | マネージャ名           |
 | %p | マネージャのプロセスID |
 
-- 指定: /<name>.<kind>/<name>.<kind>/...
+- 指定: Read/Write, <name>.<kind>/<name>.<kind>/...
 - デフォルト値: %h.host_cxt/%n.mgr
 - 例:
- manager.name: %h.host_cxt/%n.mgr
+ manager.naming_formats: %h.host_cxt/%n.mgr
 
 *** manager.is_master
 
@@ -68,16 +108,16 @@ managerの名前。マネージャがネームサーバで登録される際に�
 
 *** corba.master_manager
 
-マスターマネージャのアドレスとポート番号。マスターマネージャは、
-corbaloc 形式のURL指定でアクセス可能であるが、その際に使用するポート番
-号を指定する。また、スレーブマネージャは、ここで指定されたマスターマネー
-ジャを自身のマスターマネージャとして解釈、起動時にマスターマネージャに
-アクセスしネゴシエーションを行う。
+このオプションは、スレーブマネージャーが使用するマスターマネージャーのアドレスとポート番号を指定する。 スレーブマネージャーは、ここで指定されたマスターマネージャーを自身のマスターマネージャーとして想定し、起動時にマスターマネージャーにアクセスし、ネゴシエーションを実行します。 マスターマネージャーによって直接起動されないスレーブマネージャーとスタンドアロンコンポーネントは、このオプションで指定されたマスターマネージャーによって管理される。
 
 - 指定: <host_name>:<port>
 - デフォルト: localhost:2810
 - 例:
  corba.master_manager: localhost:2810
+
+//============================================================
+** managerのライフサイクルに関するオプション
+//============================================================
 
 *** manager.shutdown_on_nortcs:
 
@@ -118,54 +158,70 @@ YESに設定されている場合、このオプションで設定された周�
 - 例:
  manager.auto_shutdown_duration: 10.0
 
+*** manager.termination_waittime
 
-*** manager.cpu_affinity
+このオプションは、マネージャに対する終了要求後から、実際の終了スレッドが実行を始めるまでの時間を指定する。
+通常は変更する必要はない。ただし、CORBAの終了処理が正常に終了する前に他の終了処理が実行され例外などが出る場合は、この時間を調整することで解決することがある。
 
-このオプションは、マネージャのプロセスを特定のCPUにバインドする。
-オプション引数は、カンマで区切られた1つ以上のCPU IDでなければならない。
-CPU IDは0から始まり、最大値はCPUコア数-1となる。
-もし不正なCPU IDが指定された場合、このプロセスはすべてのCPUを利用するよう設定される。
 
-- 指定: バインドするCPU IDをカンマ区切りで指定
-- デフォルト: なし
-- 例:
- manager.cpu_affinity: 0,1
-
+//============================================================
+** サポート言語設定
+//============================================================
 
 *** manager.supported_languages
 
-マスターマネージャは、リモートアプリケーションなどからの要求に応じて、
-スレーブマネージャおよびRTCを起動する。スレーブマネージャは、C++言語版
-だけでなく、Java版、Python版などの可能性もある。このオプションでは、マ
-スターマネージャがサポートする言語を設定する。
+マスターマネージャは、リモートアプリケーションなどからの要求に応じて、スレーブマネージャおよびRTCを起動する。スレーブマネージャは、C++言語版だけでなく、Java版、Python版などの可能性もある。このオプションでは、マスターマネージャがサポートする言語を設定する。
+ここで指定される言語名称は、以下の "manager.modules.<language>.manager_cmd" 等のオプション指定に利用される。
+例えば、仮にこのオプションに "Lua" が指定されると、
+
+-  manager.modules.Lua.manager_cmd
+-  manager.modules.Lua.profile_cmd
+-  manager.modules.Lua.suffixes
+-  manager.modules.Lua.load_paths
+
+といったオプションが有効となり、これらのオプションパラメータも正しく指定されると、マスターからLua言語のスレーブマネージャとLua版のRTCを起動することができるようになる。
+(現状 Lua 版はこれらの機能をサポートしていない。)
 
 - 指定: C++, Java, Python 等の言語をカンマ区切りで指定
 - デフォルト: C++, Java, Python
 - 例:
  manager.supported_languages: C++, Python, Java
 
+
 *** manager.modules.<lang>.suffixes
 
 言語ごとのRTCモジュールの拡張子。
+このオプションはローダブルモジュールRTCの拡張子を指定する。
 
-- 指定: 共有オブジェクトの拡張子名
+ manager.modules.<lang>.suffixes
+
+の<lang>の部分は、manager.supported_languages で指定されたものである必要がある。
+'''.'''(ドット）は不要である。C++, Python/Python3およびJava言語それぞれに適切な拡張子が指定されるので、通常は設定不要である。
+
+- 指定: ローダブルモジュールの拡張子名
 - デフォルト:
--- Windows: dll
--- Linux等: so
--- Mac OS X: dylib
+-- C++: Windows: dll, Linux等: so, Mac OS X: dylib
+-- Python/Python3: py
+-- Java: class
 -例
  manager.modules.C++.suffixes: dll
- manager.modules.C++.suffixes: so
- manager.modules.C++.suffixes: dylib
+ manager.modules.Python.suffixes: so
+ manager.modules.Java.suffixes: class
+
 
 *** manager.modules.<lang>.manager_cmd
 
 言語ごとのマネージャプログラム名。
+このオプションは、言語ごとのマネージャ実行ファイル名を指定する。
+マスターマネージャに対してRTCの生成を依頼すると、スレーブマネージャを実行しそのプロセス上でRTCのインスタンス化が行われる。
+C++版RTCはC++版のマネージャ (rtcd)、Python版RTCはPython版のマネージャ (rtcd_python) が利用される。
+指定される実行ファイル名にはコマンドサーチパスが通っている必要がある。
 
 - 指定: マネージャのコマンド名
 - デフォルト:
 -- C++: rtcd
 -- Python: rtcd_python
+-- Python3: rtcd_python3
 -- Java: rtc_java
 -例
  manager.modules.C++.manager_cmd: rtcd
@@ -197,6 +253,168 @@ CPU IDは0から始まり、最大値はCPUコア数-1となる。
 -- Java: ./
 -例
  manager.modules.C++.profile_cmd: ./, /usr/share/OpenRTM-aist/components/cxx
+
+//============================================================
+** モジュール管理に関する設定
+//============================================================
+
+*** manager.modules.load_path
+
+マネージャはこのオプションで指定されたサーチパスリストからモジュールを
+探索する。パスはカンマ区切りで列挙する。パスのデリミタは、UNIXでは
+''/''、Windows ''\\''である。
+
+- 指定: /dir_name0/dir_name1/..., /dir_name0/dir_name1/...
+- デフォルト値: ./
+- 例:
+ manager.modules.load_path: C:/Program Files/OpenRTM-aist,  \
+                            C:\\Program Files\\OpenRTM-aist
+ manager.modules.load_path: /usr/lib, /usr/local/lib,       \
+                            /usr/local/lib/OpenRTM-aist/libs
+
+*** manager.modules.preload:
+
+マネージャは起動時に予めローダブルモジュールをロードすることができる。
+このオプションで指定されたローダブルモジュール
+を、''manager.modules.load_path'' で指定されたサーチパスから探し出す。
+もし、''manager.modules.abs_path_allowed'' で YES が指定されていれば、
+ローダブルモジュールを絶対パスで指定することもできる。
+
+モジュール初期化関数名は通常、モジュールファイル名から '''<module_base_name>Init'' のような名前で推定される。 モジュールファイル名がConsoleIn.soの場合、初期化関数名は「ConsleInInit」に設定される。 初期化関数名を指定したい場合は、「Hoge.so（ConsoleInInit）」のように、モジュールファイル名の後の括弧内の初期化関数名を指定できる。 「.so」、「。dll」、「。dylib」などのファイル拡張子は削除できる。 ファイル拡張子のないモジュールファイル名を指定した場合、プロパティ変数「manager.modules.C ++。suffixes」で指定した拡張子が付与される。
+
+- 指定: <module_name>(.<extention>) (init_func_name), ...
+- デフォルト値: 空
+- 例:
+ manager.modules.preload: ConsoleIn.dll, ConsoleOut.dll
+ manager.modules.preload: ConsoleIn.so, ConsoleOut.so
+ 
+ manager.modules.abs_path_allowed: YES
+ manager.modules.preload: /usr/lib/OpenRTM-aist/ConsoleIn.so
+
+*** manager.modules.abs_path_allowed
+
+モジュールの絶対パス指定許可フラグ。もしこのオプションがYESの場合、モジュールの絶対パス指定が許可される。
+このオプションが "YES"の場合、モジュールの絶対パス指定が許可される。 セキュリティ上の理由から、絶対パスでロードするモジュールを指定することは、デフォルトでは許可されていない。 ロードするモジュールは、指定したディレクトリにデプロイする必要がある。 開発およびデバッグ段階でロードされたモジュールを絶対パスで指定する場合は、このオプションを使用することができる。
+
+- 指定: ''YES'' or ''NO''
+- デフォルト値: NO
+- 例:
+manager.modules.abs_path_allowed: YES
+
+
+*** manager.modules.search_auto
+
+このオプションはRTCのローダブルモジュールの自動検索を行うかどうかを指定する。
+このオプションがYESに設定されている場合、RTC生成がマネージャに対して要求された時に、モジュールサーチパスから自動的に対象となるRTCのローダブルモジュール (DLL, so等) を探しロードし、コンポーネントの生成をする。
+NOの場合、生成対象のRTCはあらかじめロードしておかなければならない。
+
+- 指定: Read/Write, YES/NO
+- デフォルト: YES
+- 例:
+ manager.modules.search_auto: YES
+
+
+*** manager.preload.modules:
+
+このオプションはCORBAの初期化前にロードするモジュールを指定する。
+ある種の機能を実装したローダブルモジュールは、CORBAの初期化前にロードする必要があり、そのようなモジュールはこのオプションで指定する。
+モジュールの指定方法は、manager.modules.preload と同じである。
+
+- 指定: <module_name>(.<extention>) (init_func_name), ...
+- デフォルト値: 空
+- 例:
+manager.preload.modules: SSLTransport.dll
+manager.preload.modules: SSLTransport.py
+manager.preload.modules: SSLTransport
+manager.preload.modules: C:\\Python27\\Lib\\site-packages\\OpenRTM_aist\\ext\\SSLTransport
+
+// #
+// # The following options are not implemented yet. 
+// #
+// # manager.modules.config_ext:
+// # manager.modules.config_path:
+// # manager.modules.detect_loadable:
+// # manager.modules.init_func_suffix:
+// # manager.modules.init_func_prefix:
+// # manager.modules.download_allowed:
+// # manager.modules.download_dir:
+// # manager.modules.download_cleanup:
+// #
+
+
+//============================================================
+** 一般的機能
+//============================================================
+*** manager.cpu_affinity
+
+このオプションは、マネージャのプロセスを特定のCPUにバインドする。
+オプション引数は、カンマで区切られた1つ以上のCPU IDでなければならない。
+CPU IDは0から始まり、最大値はCPUコア数-1となる。
+もし不正なCPU IDが指定された場合、このプロセスはすべてのCPUを利用するよう設定される。
+
+- 指定: バインドするCPU IDをカンマ区切りで指定
+- デフォルト: なし
+- 例:
+ manager.cpu_affinity: 0,1
+
+*** manager.components.naming_policy
+
+このオプションはコンポーネントに対する名前付け(番号付け)ポリシーを指定する。
+RTCは通常、インスタンスが生成されるとコンポーネント型名 (type_name)に番号を付加した以下のような名前が順に付けられる。
+
+ <type_name><number>
+ ex. ConsoleOut0, ConsoleOut1, ConsoleOut2, ...
+
+デフォルトでは、同一プロセス内の同一型のコンポーネントで順に0から番号が付与されるため、別のプロセスや別のノード(コンピュータ)上で生成されたRTCも同一の名前となる場合がある。
+ネームサーバ上にそれらのRTCが登録される場合、同一パス・同一名称のRTCの場合は、互いにオブジェクト参照を上書きしあうので、正しい希望のRTCにアクセスできなくなるため、ノード毎に一意の番号を付ける "node_unique"、　ネームサーバ上で一位の番号を付ける "ns_unique" という2つのポリシーが用意されている。
+
+指定可能なオプションはデフォルトでは以下の3つである。
+
+- process_unique: プロセス内で一意の名前を付ける
+- node_unique: ノード内で一意の名前を付ける
+- ns_unique: ネームサービス上で一意の名前を付ける
+
+なお、ポリシーは独自に拡張することもできる。
+
+- 指定: Read/Write, {process_unique, node_unique, ns_unique}
+- デフォルト: process_unique
+- 例:
+ manager.components.naming_policy: ns_unique
+
+
+
+*** manager.components.precreate
+
+このオプションはマネージャのスタート時に起動するコンポーネント名 (モジュール名) を指定する。ここで指定されるコンポーネントのファクトリは manager.module.preload または、マネージャに静的にリンクするなどして、登録されている必要がある。
+
+- 指定: <module_name>, <module_name>, ...
+- デフォルト値: 空
+- 例:
+ manager.components.precreate: ConsoleIn, ConsoleOut, SeqIn, SeqOut
+
+*** manager.components.preconnect
+
+# Advance connection creation
+#
+# This option specifies connections to be created in advance before
+# starting the manager's event-loop. The target components and ports
+# must be created previously by manager.components.precreate optinos.
+# A port is specified as XXX format, and a connection is specified by
+# a delimiter XX between ports such as ConsoleIn.out:ConsoleOut.in. A
+# connector profile is specified in the following parentheses "()" by
+# "key=falue" format with "&" delimiter.
+
+このオプションは、マネージャのイベントループを開始する前に作成するコネクタを指定する。 
+ターゲットコンポーネントとポートは、"manager.components.precreate" オプションによって事前に作成されている必要がある。 
+ポートは '''<comp0>.<port0>?port=<comp1>.<port1>&<option_key>=<option_value>&...''' のような形式で指定される。
+もし、データフローやインターフェースタイプが指定されない場合は、dataflow_type=push, interface_type=corba_cdr が自動で指定される。
+
+- 指定: <comp0>.<port0>?port=<comp1>.<port1>&<option_key>=<option_value>&...
+- デフォルト値: 空
+- 例：
+ manager.components.preconnect: ConsoleIn.out?port=ConsoleOut.in&dataflow_type=push&interface_type=corba_cdr, SeqIn.octet?port=SeqOut.octet&dataflow_type=push&interface_type=direct
+manager.components.preconnect: 
+
 
 
 //------------------------------------------------------------
@@ -429,72 +647,6 @@ naming.update.enable が YES の場合、ネームサーバの確認および再
 - 例:
  naming.update.rebind: NO
 
-//============================================================
-// Module management
-//============================================================
-** モジュールロードに関する設定
-
-*** manager.modules.load_path
-
-マネージャはこのオプションで指定されたサーチパスリストからモジュールを
-探索する。パスはカンマ区切りで列挙する。パスのデリミタは、UNIXでは
-''/''、Windows ''\\''である。
-
-- 指定: /dir_name0/dir_name1/..., /dir_name0/dir_name1/...
-- デフォルト値: ./
-- 例:
- manager.modules.load_path: C:/Program Files/OpenRTM-aist,  \
-                            C:\\Program Files\\OpenRTM-aist
- manager.modules.load_path: /usr/lib, /usr/local/lib,       \
-                            /usr/local/lib/OpenRTM-aist/libs
-
-*** manager.modules.preload:
-
-マネージャは起動時に予めローダブルモジュールをロードすることができる。
-このオプションで指定されたローダブルモジュール
-を、''manager.modules.load_path'' で指定されたサーチパスから探し出す。
-もし、''manager.modules.abs_path_allowed'' で YES が指定されていれば、
-ローダブルモジュールを絶対パスで指定することもできる。
-
-- 指定: <module_name>.dll, <module_name>.dll, ...
-- デフォルト値: 空
-- 例:
- manager.modules.preload: ConsoleIn.dll, ConsoleOut.dll
- manager.modules.preload: ConsoleIn.so, ConsoleOut.so
- 
- manager.modules.abs_path_allowed: YES
- manager.modules.preload: /usr/lib/OpenRTM-aist/ConsoleIn.so
-
-*** manager.modules.abs_path_allowed
-
-モジュールの絶対パス指定許可フラグ。もしこのオプションがYESの場合、モジュールの接待パス指定が許可される。
-
-- 指定: ''YES'' or ''NO''
-- デフォルト値: YES
-- 例:
-manager.modules.abs_path_allowed: YES
-
-// #
-// # The following options are not implemented yet. 
-// #
-// # manager.modules.config_ext:
-// # manager.modules.config_path:
-// # manager.modules.detect_loadable:
-// # manager.modules.init_func_suffix:
-// # manager.modules.init_func_prefix:
-// # manager.modules.download_allowed:
-// # manager.modules.download_dir:
-// # manager.modules.download_cleanup:
-// #
-
-*** manager.components.precreate
-
-このオプションはマネージャのスタート時に起動するコンポーネント名 (モジュール名) を指定する。ここで指定されるコンポーネントのファクトリは manager.module.preload または、マネージャに静的にリンクするなどして、登録されている必要がある。
-
-- 指定: <module_name>, <module_name>, ...
-- デフォルト値: 空
-- 例:
- manager.components.precreate: ConsoleIn, ConsoleOut, SeqIn, SeqOut
 
 
 //============================================================
@@ -651,3 +803,4 @@ manager.modules.abs_path_allowed: YES
 - デフォルト値: 1000
 - 例:
  exec_cxt.periodic.rate: 100
+ 
