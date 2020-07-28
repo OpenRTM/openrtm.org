@@ -1,0 +1,270 @@
+// Title: component.conf Reference
+#contents(3)
+
+This document describes the configuration file of each component options.
+This filename can be given any name, but for convenience, it will be named "component.conf".
+The "component.conf" is specified in the rtc.conf file by the option with the category name of the component and the component name or instance name as the key as follows.
+
+ <component category>.<component name>.config_file: <any filemname>.conf
+ or
+ <component category>.<component instance name>.config_file: <any filemname>.conf
+ 
+The "ConsoleIn" component included in the sample is used as an example to show how to specify it.
+
+ example.ConsoleIn.config_file: consolein.conf <- ConsoleIn global settings
+ example.ConsoleIn0.config_file: consolein0.conf <- Setting for instance number 0 of ConsoleIn
+ example.ConsoleIn1.config_file: consolein1.conf <- Setting for instance number 1 of ConsoleIn
+ example.ConsoleIn2.config_file: consolein2.conf <- Setting for instance number 2 of ConsoleIn
+
+//============================================================
+** Basic profiles
+//============================================================
+
+The following basic profiles could be overwritten from component.conf
+
+- implementation_id:
+- type_name:
+- description:
+- version:
+- vendor:
+- category:
+- activity_type:
+- max_instance:
+- language:
+- lang_type:
+
+//============================================================
+** Execution Context options
+//============================================================
+//------------------------------------------------------------
+*** exec_cxt.periodic.type
+
+Specifying the Periodic type ExecutionContext.
+This option specifies the type of EC to be used. The following type available.
+
+- PeriodicExecutionContext: Default. It is embedded in the OpenRTM lib.
+- ExtTrigExecutionContext: External triggered EC. It is embedded in the OpenRTM lib.
+- SynchExtTriggerEC: Synchronous external triggered EC. It is embedded in the OpenRTM lib. Usually, it is used with OpenHRP3.
+- RTPreemptEC: Real-time EC for Linux RT preempt patched kernel.
+
+Other ECs.
+- SimulatorExecutionContext: Parallel external triggered EC. It is embedded in the OpenRTMPlugin for Choreonoid, and, automatically used in it.
+- ArtExecutionContext: Real-time EC for ARTLinux. It will be obsolete. (http://sourceforge.net/projects/art-linux/)
+
+- Setting: (PeriodicExecutionContext|ExTrigExecutionContext|SynchExtTriggerEC|RTPreemptEC)
+- Default: PeriodicExecutionContext
+- Example:
+ exec_cxt.periodic.type: PeriodicExecutionContext
+
+//------------------------------------------------------------
+*** exec_cxt.periodic.rate
+
+The execution cycle of ExecutionContext.
+
+This option specifies the system wide EC's period. If RTC does not specifies EC's periodic rate, this periodic rate will be used.
+
+- Setting: Read/Write, period [Hz]
+- Default: 1000 [Hz]
+- Example:
+ exec_cxt.periodic.rate: 1000
+
+//------------------------------------------------------------
+*** exec_cxt.sync_transition
+*** exec_cxt.sync_activation
+*** exec_cxt.sync_deactivation
+*** exec_cxt.sync_reset
+
+State transition mode settings (YES/NO). 
+Activating, deactivating, and resetting of RTC makes state transition.  Some execution contexts execute main logic in different threads.  If these flags set to YES, activation, deactivation, and resetting will be performed synchronously.  In other words, if these flags are YES, activation/deactivation/resetting-operations must be returned after state transition completed.
+
+ "synchronous_transition" will set synchronous transition flags to all other synchronous transition flags (synchronous_activation/deactivation/resetting.
+
+- Setting: YES/NO
+- Default: YES
+- Example:
+ exec_cxt.sync_transition: YES
+ exec_cxt.sync_activation: YES
+ exec_cxt.sync_deactivation: YES
+ exec_cxt.sync_reset: YES
+
+//------------------------------------------------------------
+*** exec_cxt.transition_timeout
+*** exec_cxt.activation_timeout
+*** exec_cxt.deactivation_timeout
+*** exec_cxt.reset_timeout
+
+Timeout of synchronous state transition [s]
+
+When synchronous transition flags are set to YES, the following timeout settings are valid. If "transition_timeout" is set, the value will be set to all other timeouts of activation/deactivation and resetting
+
+- Setting: Timeouts [s]
+- Default: 0.5 [s]
+- Example:
+ exec_cxt.transition_timeout: 0.5
+ exec_cxt.activation_timeout: 0.5
+ exec_cxt.deactivation_timeout: 0.5
+ exec_cxt.reset_timeout: 0.5
+
+//------------------------------------------------------------
+***
+Manager process's CPU affinity setting
+
+This option makes the EC bound to a specific CPU(s).  Options must be one or more comma-separated numbers to identify CPU ID. CPU ID is started from 0, and the maximum number is the number of CPU core -1.  If an invalid CPU ID is specified, all the CPU will be used for the EC.
+
+
+- Setting: Read/Write, duration [s]
+- Default: 0.5
+- Example:
+ exec_cxt.cpu_affinity: 0
+
+//------------------------------------------------------------
+***
+Specifying Execution Contexts
+
+
+# execution_contexts: None or <EC0>,<EC1>,...
+# <EC?>: ECtype(ECname)
+#
+RTC can be attached with zero or more Execution Contexts. "execution_contexts" option specifies RTC-specific attached ECs and its name. If the option is not specified, the internal global options or rtc.conf options related to EC will be used. If None is specified, no EC will be created.
+The EC types that can be specified are the same as those that can be specified with "exec_cxt.type".
+You can also specify the name of the EC as well as its name.
+The name is used as an optional key that specifies the EC cycle etc.
+
+- Setting: None or <EC0>,<EC1>,...
+-- <EC?>: ECtype(ECname)
+- Default: None
+- Example:
+ execution_contexts: PeriodicExecutionContext(pec1000Hz), \
+                     PeriodicExecutionContext(pec500Hz)
+
+//------------------------------------------------------------
+*** ec.<EC name>.rate
+*** ec.<EC name>.synch_transition
+*** ec.<EC name>.transition_timeout
+
+EC specific configurations/
+Each EC can have its own configuration. Individual configuration can be specified by using EC type name or EC instance name. Attached ECs would be specified in execution_context option like <EC type name>(<EC instance name>), ...  EC specific options can be specified as follows.
+
+- Setting: ec.<EC type name>.<option> or ec.<EC instance name>.<option>
+- Default: なし
+- Example:
+ ec.PeriodicExecutionContext.sync_transition: NO
+ ec.pec1000Hz.rate: 1000
+ ec.pec1000Hz.synch_transition: YES
+ ec.pec1000Hz.transition_timeout: 0.5
+ ec.pec500Hz.rate: 500
+ ec.pec500Hz.synch_activation: YES
+ ec.pec500Hz.synch_deactivation: NO
+ ec.pec500Hz.synch_reset: YES
+ ec.pec500Hz.activation_timeout: 0.5
+ ec.pec500Hz.reset_timeout: 0.5
+
+// End of Execution context settings
+//============================================================
+
+//============================================================
+** Port configurations
+//============================================================
+*** InPort options
+
+- Format
+ port.inport.<port_name>.* -> options are given to the argument of InPortBase.init()
+ port.inport.dataport.*    -> options are given to the argument of InPortBase.init()
+
+- Example
+ port.inport.dataport.provider_types: corba_cdr, direct, shm_memory
+ port.inport.dataport.consumer_types: corba_cdr, direct, shm_memory
+ port.inport.dataport.connection_limit: 1
+
+
+*** OutPort options
+
+- Format
+ port.outport.<port_name>.* -> options are given to the argument of OutPortBase.init()
+ port.outport.<port_name>.* -> options are given to the argument of OutPortBase.init()
+
+- Example
+ port.inport.dataport.provider_types: corba_cdr, direct, shm_memory
+ port.inport.dataport.consumer_types: corba_cdr, direct, shm_memory
+ port.inport.dataport.connection_limit: 1
+
+
+*** Service Port options
+
+- Format
+ port.corbaport.<port_name>.* -> options are given to the argument of CorbaPortBase.init()
+ port.corba.* -> options are given to the argument of CorbaPortBase.init()
+
+//  End of Port configurations
+//============================================================
+
+//============================================================
+** Configuration sets GUI settings for RTSystemEditor
+
+Configuration parameters can be operated by GUI widgets on RTSystemEditor's configuration-set dialog. Normally, when designing RTC with RTCBuilder, you can specify what kind of the GUI widget is assigned to each parameter, but you can also specify GUI widget assignment from component.conf.
+
+- Example
+ conf.[configuration_set_name].[parameter_name]:
+ conf.__widget__.[parameter_name]: GUI control type for RTSystemEditor
+ conf.__constraint__.[parameter_name]: Constraints for the value
+
+*** Available GUI control options [__widget__]
+
+**** Format
+ conf.__widget__.[widget_name]: [widget_type].[widget_option]
+
+**** Detailed format
+- [widget_name]: widgetの名称=Configuration Setパラメータ名
+-- text:          text box [default].
+-- slider.<step>: Horizontal slider. <step> is step for the slider. A range constraints option is required. 
+-- spin:          Spin button. A range constraitns option is required.
+-- radio:         Radio button. An enumeration constraint is required.
+-- checkbox:      Checkbox control. An enumeration constraints is required. The parameter has to be able to accept a comma separated list.
+-- orderd_list:   Orderd list control.  An enumeration constraint is required. The parameter has to be able to accept a comma separated list. In this control, Enumerated elements can appear one or more times in the given list.
+
+**** Examples
+ conf.__widget__.int_param0: slider.10
+ conf.__widget__.int_param1: spin
+ conf.__widget__.double_param0: slider.10
+ conf.__widget__.double_param1: text
+ conf.__widget__.str_param0: radio
+ conf.__widget__.vector_param0: checkbox
+ conf.__widget__.vector_param1: orderd_list
+
+------------------------------------------------------------
+*** GUI control constraint options [__constraints__]
+
+**** Format
+ conf.__constraints__.[parameter_name]:
+
+**** Detailed format
+- none:         blank
+ direct value: 100 (constant value)
+- range:        <, >, <=, >= and variable "x" can be used.
+- enumeration:  (enum0, enum1, ...)
+- array:        <constraints0>, <constraints1>, ... for only array value
+- hash:         {key0: value0, key1:, value0, ...}
+
+**** Examples of constraints
+Available constraint formats (substitute variable name: "x"):
+
+- No constraint              : (blank)
+- Direct                     : 100 (read only)
+- 100 or over                : x >= 100
+- 100 or less                : x <= 100
+- Over 100                   : x > 100
+- Less 100                   : x < 100
+- 100 or over and 200 or less: 100 <= x <= 200
+- Over 100 and less 200      : 100 < x < 200
+- Enumeration                : (9600, 19200, 115200)
+- Array                      : x < 1, x < 10, x > 100
+- Hash                       : {key0: 100<x<200, key1: x>=100}
+
+- examples:
+ conf.__constraints__.int_param0: 0<=x<=150
+ conf.__constraints__.int_param1: 0<=x<=1000
+ conf.__constraints__.double_param0: 0<=x<=100
+ conf.__constraints__.double_param1:
+ conf.__constraints__.str_param0: (default,mode0,mode1)
+ conf.__constraints__.vector_param0: (dog,monky,pheasant,cat)
+ conf.__constraints__.vector_param1: (pita,gora,switch)
