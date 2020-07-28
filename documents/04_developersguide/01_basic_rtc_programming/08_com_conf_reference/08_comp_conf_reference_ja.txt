@@ -43,7 +43,7 @@ RTCのBasic Profile (RTCBuilderの基本タブで設定する項目) の以下�
 *** exec_cxt.periodic.type
 
 Periodic型ExecutionContextの指定。
-使用するECの型を指定します。以下の方が利用できます。
+使用するECの型を指定します。以下の型が利用できます。
 
 - PeriodicExecutionContext: デフォルト。OpenRTMライブラリに埋め込み。
 - ExtTrigExecutionContext:   外部トリガEC。OpenRTMライブラリに埋め込み。
