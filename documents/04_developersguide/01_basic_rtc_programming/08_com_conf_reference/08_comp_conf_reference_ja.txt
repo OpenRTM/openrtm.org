@@ -125,14 +125,7 @@ ECのCPU affinity (割当)の設定。
 //------------------------------------------------------------
 *** execution_contexts
 
-実行コンテキストの指定.
-
-
-# Default: No default
-#
-# execution_contexts: None or <EC0>,<EC1>,...
-# <EC?>: ECtype(ECname)
-#
+実行コンテキストの指定。
 RTCは、0個以上の実行コンテキストにアタッチできます。 
 "execution_contexts" オプションは、RTC固有にアタッチするECとその名前を指定します。
 オプションが指定されていない場合、ECに関連する内部グローバルオプションまたはrtc.confオプションが使用されます。 
