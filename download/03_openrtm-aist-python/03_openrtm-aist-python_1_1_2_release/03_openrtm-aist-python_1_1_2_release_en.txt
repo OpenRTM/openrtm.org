@@ -1,4 +1,4 @@
-﻿// Title: OpenRTM-aist-Python-1.1.2-RELEASE
+// Title: OpenRTM-aist-Python-1.1.2-RELEASE
 #ref(python-logo.png,nolink,right,around)
 #contents
 

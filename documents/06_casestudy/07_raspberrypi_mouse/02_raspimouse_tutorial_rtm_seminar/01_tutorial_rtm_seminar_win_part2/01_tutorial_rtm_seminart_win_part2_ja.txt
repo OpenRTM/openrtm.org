@@ -1,4 +1,4 @@
-﻿// Title: チュートリアル(RTM講習会、Windows、第2部)
+// Title: チュートリアル(RTM講習会、Windows、第2部)
 #contents
 
 ** はじめに
@@ -15,7 +15,7 @@
 
 まずは資料をダウンロードしてください。
 
-- [[RTM_Tutorial.zip:https://github.com/OpenRTM/RTM_Tutorial/archive/master.zip]
+- [[RTM_Tutorial.zip:https://github.com/OpenRTM/RTM_Tutorial/releases/download/online_0.1/RTM_Tutorial.zip]]
 
 ZIPファイルは [[Lhaplus:http://forest.watch.impress.co.jp/library/software/lhaplus/]] 等で展開してください。
 
@@ -25,7 +25,7 @@ ZIPファイルは [[Lhaplus:http://forest.watch.impress.co.jp/library/software/
 
 *** シミュレーター
 
-- [[RaspberryPiMouseSimulator コンポーネント:http://www.openrtm.org/openrtm/ja/content/simulator_rtc_raspbian_raspimouse]]
+- [[RaspberryPiMouseSimulator コンポーネント:/ja/node/6198]]
 
 シミュレーターは [[Open Dynamics Engine(ODE):http://www.ode.org/]] という物理演算エンジンと ODE 付属の描画ライブラリ(drawstuff)を使用して開発しています。
 OpenGL が動作すれば動くので、大抵の環境で動作するはずです。
@@ -81,12 +81,12 @@ GUI(スライダー)によりシミュレーター上のロボットの操作を
 *** 開発環境の確認
 以下の環境を想定しています。
 
-- OS: Windows 8.1(7、10も可)
-- [[OpenRTM-aist: 1.2.1-RC:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.0/OpenRTM-aist-1.2.1-RC190514_x86_64.msi]]
-- [[Visual Studio: 2017:>https://www.visualstudio.com/ja-jp/downloads/download-visual-studio-vs.aspx]](2013、2015、2019でも可)
-- [[CMake:https://github.com/Kitware/CMake/releases/download/v3.14.1/cmake-3.14.1-win64-x64.msi]]：3.5以上推奨
-- [[Python 2.7:https://www.python.org/ftp/python/2.7.16/python-2.7.16.amd64.msi]]
-- [[Doxygen:ftp://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.14-setup.exe]]
+- OS: Windows 10(7，8.1も可)
+- [[OpenRTM-aist: 1.2.1-Release:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.1/OpenRTM-aist-1.2.1-RELEASE_x86_64.msi]]
+- [[Visual Studio 2019:/ja/node/6650]](2013、2015、2017でも可)
+- [[CMake:https://github.com/Kitware/CMake/releases/download/v3.15.4/cmake-3.15.4-win64-x64.msi]]：3.5以上推奨
+- [[Python 3.7:https://www.python.org/ftp/python/3.7.4/python-3.7.4-amd64.exe]]
+- [[Doxygen:http://doxygen.nl/files/doxygen-1.8.18-setup.exe]]
 
 
 
@@ -197,16 +197,19 @@ RobotController コンポーネントではこの値が一定以上の時に自�
 RobotController コンポーネントの雛型の生成は、RTCBuilder を用いて行います。
 
 **** RTCBuilder の起動
-Eclipse では、各種作業を行うフォルダーを「ワークスペース」(Work Space)とよび、原則としてすべての生成物はこのフォルダーの下に保存されます。
-ワークスペースはアクセスできるフォルダーであれば、どこに作っても構いませんが、このチュートリアルでは以下のワークスペースを仮定します。
+OpenRTP では、各種作業を行うフォルダーを「ワークスペース」(Work Space)とよび、原則としてすべての生成物はこのフォルダーの下に保存されます。
 
-- C:\workspace
+まずは OpenRTP を起動します。
 
-まずは Eclipse を起動します。
-Windows 8.1の場合は「スタート」>「アプリビュー(右下矢印)」>「OpenRTM-aist 1.2.0」>「OpenRTP」をクリックすると起動できます。
+デスクトップのショートカットをダブルクリックして起動してください。
+
+#br
+
+#ref(openrtp.png,/ja/node/6550,60%,nolink,center)
+#br
 
 
-最初にワークスペースの場所を尋ねられますので、上記のワークスペースを指定してください。
+最初にワークスペースの場所を尋ねられますので、適当なフォルダを指定してください。
 
 
 #ref(robomech2018_1.jpg,/ja/node/6550,60%,nolink,center)
@@ -217,7 +220,7 @@ Windows 8.1の場合は「スタート」>「アプリビュー(右下矢印)」
 
 
 #ref(robomech2018_2_2.jpg,/ja/node/6550,60%,nolink,center)
-CENTER:''Eclipse の初期起動時の画面''
+CENTER:''OpenRTP の初期起動時の画面''
 
 Welcomeページはいまは必要ないので左上の「×」ボタンをクリックして閉じてください。
 
@@ -272,18 +275,18 @@ RTC.xml が生成された時点で、このプロジェクトに関連付けら
 まず、いちばん左の「基本」タブを選択し、基本情報を入力します。先ほど決めた RobotController コンポーネントの仕様(名前)の他に、概要やバージョン等を入力してください。
 ラベルが赤字の項目は必須項目です。その他はデフォルトで構いません。
 
--モジュール名: RobotController
--モジュール概要: 任意(Robot Controller component)
+-コンポーネント名: RobotController
+-概要: 任意(Robot Controller component)
 -バージョン: 任意(1.0.0)
 -ベンダ名: 任意
--モジュールカテゴリ: 任意(Controller)
+-カテゴリ: 任意(Controller)
 
 
 
 
 #br
 
-#ref(Basic_1.png,/ja/node/6310,nolink,50%,center)
+#ref(rtcb10.png, /ja/node/6550,nolink,50%,center)
 CENTER:''基本情報の入力''
 #br
 
@@ -398,7 +401,7 @@ CMake を利用することにより CMakeLists.txt からVisual Studio のプ�
 
 **** CMake(cmake-gui) の操作
 CMake を利用してビルド環境の Configure を行います。
-まずは CMake(cmake-gui) を起動してください。「スタート」>「アプリビュー(右下矢印)」>「CMake 3.11.2」>「CMake (cmake-gui)」をクリックすると起動できます。
+まずは CMake(cmake-gui) を起動してください。Windows 10の場合は左下の「ここに入力して検索」にCMakeと入力して検索してください。
 
 #ref(CMakeGUI0_1.png,/ja/node/6310,nolink,80%,center)
 CENTER:''CMake GUI の起動とディレクトリーの指定''
@@ -423,11 +426,11 @@ CENTER:''CMake GUI の起動とディレクトリーの指定''
 | ''Where to build the binaries'' | C:\workspace\RobotController\build |
 
 指定したら、下の [Configure] ボタンをクリックします。すると下図のようなダイアログが表示されますので、生成したいプロジェクトの種類を指定します。
-今回は Visual Studio 15 2017 とします。Visual Studio 2013や Visual Studio 2019を利用している方はそれぞれ変更してください。
+今回は Visual Studio 16 2019 とします。Visual Studio 2013や Visual Studio 2019を利用している方はそれぞれ変更してください。
 またプラットフォームにはx64を設定します。32bit版をインストールしている場合はWin32を選択してください。
 
 
-#ref(cmake_vs.png,/ja/node/6310,nolink,80%,center)
+#ref(cmake_2019.png,/ja/node/6550,nolink,80%,center)
 CENTER:''生成するプロジェクトの種類の指定''
 
 ダイアログで [Finish] ボタンをクリックすると Configure が始まります。
@@ -573,6 +576,13 @@ CENTER:''ビルドの実行''
 作成した RobotController をシミュレーターコンポーネントと接続して動作確認を行います。
 
 
+*** RTSystemEditorの起動
+OpenRTPのパースペクティブを開くのウインドウからRT System Editorを選択して起動します。
+
+#br
+
+#ref(rtse2000.png,/ja/node/6550,50%, center)
+#br
 
 *** NameService の起動
 
@@ -583,7 +593,7 @@ RT System Editorのネームサービス起動ボタンを押すと起動しま�
 
 #ref(robomech2018_6.jpg,/ja/node/6550,100%,nolink,center)
 
-&color(red){※ 「Start Naming Service」をクリックしても omniNames が起動されない場合は、フルコンピュータ名が14文字以内に設定されているかを確認してください。
+&color(red){※ 「Start Naming Service」をクリックしても omniNames が起動されない場合は、フルコンピュータ名が14文字以内に設定されているかを確認してください。};
 
 
 
@@ -596,7 +606,7 @@ RobotController\build\src\Debug(もしくは、Release)フォルダーの RobotC
 
 *** シミュレーターコンポーネントの起動
 
-このコンポーネントは先ほどダウンロードしたファイル(RTM_Tutorial_2018.zip)を展開したフォルダーの EXE/RaspberryPiMouseSimulatorComp.exe を実行すると起動します。
+このコンポーネントは先ほどダウンロードしたファイル(RTM_Tutorial.zip)を展開したフォルダーの EXE/RaspberryPiMouseSimulatorComp.exe を実行すると起動します。
 
 
 
@@ -613,7 +623,7 @@ CENTER:''コンポーネントの接続''
 
 *** コンポーネントのActivate
 
-RTSystemEditor の上部にあります [All Activate] というアイコンをクリックし、全てのコンポーネントをアクティブ化します。
+RTSystemEditor の上部にあります [Activate Systems] というアイコンをクリックし、全てのコンポーネントをアクティブ化します。
 正常にアクティベートされた場合、下図のように黄緑色でコンポーネントが表示されます。
 
 #br

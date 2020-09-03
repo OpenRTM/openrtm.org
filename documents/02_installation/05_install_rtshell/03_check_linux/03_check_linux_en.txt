@@ -24,10 +24,9 @@ The samples are under /usr/share/openrtm-1.2/components/python/SimpleIO, and the
  $ python /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtm-naming/rtm-naming.py
        or
  $ python3 /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtm-naming/rtm-naming.py
- 
-Here, {Python2.7|python3} changes depending on the version of Python that was installed in the Linux environment.
-If Python 2.7 was installed with OpenRTM-aist-Python, it is "Python2.7".  &br;
-(The default for Ubuntu 18.04 is Python 2.7. However the version of Python is now "End of Support", then it might be changed.)
+
+Here, {Python2.7|python3} changes depending on the version of Python that was installed in the Linux environment.  If Python 2.7 was installed with OpenRTM-aist-Python, it is "Python2.7".  &br;
+(The default for Ubuntu 18.04 is Python 2.7. However the version of Python is now "End of Support", then it might be changed.) 
 
 The following screen will be displayed.
 #ref(startnameservice002.png, center)

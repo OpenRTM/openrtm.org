@@ -1,9 +1,9 @@
-﻿// Title: OpenRTM-aist (Python)
+// Title: OpenRTM-aist (Python)
 #ref(python-logo.png,right,around,url=/en/node/366)
 
 Libraries for RTC development in Python language. Source code, a Windows installer and packages for various Linux distributions are available.
 
-
+-[[1.2.2-RELESE:/en/download/openrtm-aist-python/openrtm-aist-python_1_2_2_release]]
 -[[1.1.0-RC1:/en/node/4527]]
 -[[1.0.0-RELEASE:/en/node/949]]
 <!--break-->

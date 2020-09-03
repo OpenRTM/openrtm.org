@@ -2,7 +2,8 @@
 #ref(cpp_logo.png,right,around,url=/en/node/365)
 
 Component framework and libraries for RTC development by C++. It supports Linux, Windows, Mac OS X and FreeBSD. Source code, Windows msi installer, packages for various Linux distributions and MacPorts are available.
-
+-[[1.2.2-RELEASE:/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_2_release]]
+- [[1.2.1-RELEASE:/en/node/6935]]
 - [[1.1.2-RELEASE:/en/node/6040]]
 - [[1.1.1-RELEASE:/en/node/5814]]
 - [[1.1.0-RELEASE:/en/node/5019]]

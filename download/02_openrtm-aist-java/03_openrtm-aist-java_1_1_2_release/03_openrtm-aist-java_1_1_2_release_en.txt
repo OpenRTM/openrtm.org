@@ -1,4 +1,4 @@
-﻿// Title: OpenRTM-aist-Java-1.1.2-RELEASE
+// Title: OpenRTM-aist-Java-1.1.2-RELEASE
 #ref(java_logo.png,right,nolink,around)
 
 #contents

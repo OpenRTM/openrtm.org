@@ -17,11 +17,12 @@ msiインストーラーによるOpenRTM-aistをインストールしてくだ�
 
 このメッセージが表示された場合は、rtshell_post_installを実行してください。
  > rtshell_post_install -n
-PythonをProgram Files下にインストールされている場合は、管理者でコマンドプロンプトを実行してください。
+PythonをProgram Files下にインストールされている場合は、管理者でコマンドプロンプトを起動してください。
 
  > rtcwd
  rtcwd: Invalid CORBA naming service: localhost
 このメセージは、動作確認(Windows編)で説明しています[[Name Serverの起動:/ja/node/7007#toc2]]を実行していないためですので問題ありません。
+
 
 ** Linux環境へのインストール
 [[一括インストールスクリプト>//node/6345]]を用いて、"-l c++"と"-l python"と"-l rtshell"オプションでrtshellをインストールをした後にrtshell_post_installを実行してください。
@@ -49,5 +50,6 @@ PythonをProgram Files下にインストールされている場合は、管理�
  Link documentation? n
  Add shell support to .bashrc? y
 
-
 実行を完了したら、一度ターミナルを閉じてください。
+
+

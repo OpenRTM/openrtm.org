@@ -1,4 +1,3 @@
-﻿// Title: チュートリアル(RTM講習会、Ubuntu、第2部)
 #contents
 
 ** はじめに
@@ -15,7 +14,7 @@
 
 まずは資料をダウンロードしてください。
 
- git clone https://github.com/OpenRTM/RTM_Tutorial
+- [[RTM_Tutorial.zip:https://github.com/OpenRTM/RTM_Tutorial/releases/download/online_0.1/RTM_Tutorial.zip]]
 
 インターネットに接続できない環境で講習会を実施している場合がありますので、その場合は配布のUSBメモリーに入れてあります。
 
@@ -24,7 +23,7 @@
 
 *** シミュレーター
 
-- [[RaspberryPiMouseSimulatorコンポーネント:http://www.openrtm.org/openrtm/ja/content/simulator_rtc_raspbian_raspimouse]]
+- [[RaspberryPiMouseSimulatorコンポーネント:/ja/node/6198]]
 
 シミュレーターは [[Open Dynamics Engine(ODE):http://www.ode.org/]] という物理演算エンジンと ODE 付属の描画ライブラリ(drawstuff)を使用して開発しています。
 OpenGL が動作すれば動くので、大抵の環境で動作するはずです。
@@ -81,46 +80,20 @@ GUI(スライダー)によりシミュレーター上のロボットの操作を
 Linux (ここでは Ubuntu 18.04 を仮定) 上に開発環境を構築します。
 
 
-**** 依存ライブラリのインストール
- sudo apt-get install gcc g++
- sudo apt-get install libomniorb4-dev omniidl omniorb-nameserver
- sudo apt-get install python-omniorb-omg omniidl-python
- sudo apt-get install cmake
- sudo apt-get install doxygen
- sudo apt-get install openjdk-8-jdk
-
- #Ubuntu 18.04の場合はjava8に切り替え
- sudo update-alternatives --config java
-
 **** OpenRTM-aistのインストール
-// インストールスクリプトでインストールします。
+ $ wget https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_ubuntu.sh
+ $ pkg_install_ubuntu.sh -l all --yes
 
-// $ wget http://svn.openrtm.org/OpenRTM-aist/trunk/OpenRTM-aist/build/pkg_install_ubuntu.sh
-// $ sudo sh pkg_install_ubuntu.sh
+**** JDKのインストール
 
-ubuntu 18.04 (64bit) の場合
+ # Ubuntu 18.04、18.10の場合
+ $ sudo apt-get install openjdk-8-jdk
+ # Ubuntu 16.04の場合
+ $ sudo apt-get install default-jdk
 
- #C++版のインストール
- wget https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.0/OpenRTM-aist_1.2.0_ubuntu18.04_amd64_package.tar.gz
- tar xf OpenRTM-aist_1.2.0_ubuntu18.04_amd64_package.tar.gz
- cd OpenRTM-aist_1.2.0_ubuntu18.04_amd64_package
- sudo sh install-openrtm-deb-packages.sh
- cd ..
+Ubuntu 18.04、18.10の場合は以下のコマンドでjava8に切り替えます。
 
- #Python版のインストール
- wget https://github.com/OpenRTM/OpenRTM-aist-Python/releases/download/v1.2.0/OpenRTM-aist-Python_1.2.0_ubuntu18.04_amd64_package.tar.gz
- tar xf OpenRTM-aist-Python_1.2.0_ubuntu18.04_amd64_package.tar.gz
- cd OpenRTM-aist-Python_1.2.0_ubuntu18.04_amd64_package
- sudo sh install-openrtm-deb-packages.sh
- cd ..
-
-
- #RTSystemEditor/RTCBuilderのインストール
- wget https://github.com/OpenRTM/OpenRTP-aist/releases/download/v1.2.0/OpenRTP-aist_1.2.0_ubuntu18.04_amd64_package.tar.gz
- tar xf OpenRTP-aist_1.2.0_ubuntu18.04_amd64_package.tar.gz
- cd OpenRTP-aist_1.2.0_ubuntu18.04_amd64_package
- sudo sh install-openrtm-deb-packages.sh
- cd ..
+ $ sudo update-alternatives --config java
 
 // **** OpenRTP のインストール
 
@@ -136,7 +109,7 @@ ubuntu 18.04 (64bit) の場合
 // $ ./eclipse
 // $ ./openrtp
 
-&color(red){eclipse起動後、RTSystemEditor でネームサーバに接続できない場合があります。その場合、/etc/hosts の localhost の行に自ホスト名を追記してください。};
+&color(red){openrtp起動後、RTSystemEditor でネームサーバに接続できない場合があります。その場合、/etc/hosts の localhost の行に自ホスト名を追記してください。};
 
  $ hostname
  ubuntu1804 ← ホスト名は ubuntu1804
@@ -146,9 +119,10 @@ ubuntu 18.04 (64bit) の場合
  を以下のように変更
  127.0.0.1       localhost ubuntu1804
 
-**** CMake のインストール
 
- $ sudo apt-get install cmake cmake-gui
+**** gitのインストール
+
+ $ sudo apt-get install git
 
 **** cmake-guiのインストール
 
@@ -167,7 +141,7 @@ Code::Blocks は C/C++ に対応した統合開発環境です。
  $ sudo apt-get update
  $ sudo apt-get install codeblocks
 
-**** Premakeのインストール
+**** Premake、GLUTのインストール
 ODEのビルドに必要です。
 
  $ sudo apt-get install premake4 freeglut3-dev
@@ -176,7 +150,7 @@ ODEのビルドに必要です。
 シミュレーターコンポーネントについては手動でビルドを行います。
 以下のコマンドを入力してください。
 
- $ wget https://raw.githubusercontent.com/OpenRTM/RTM_Tutorial_ROBOMECH2019/master/script/install_raspimouse_simulator.sh
+ $ wget https://raw.githubusercontent.com/OpenRTM/RTM_Tutorial/master/script/install_raspimouse_simulator.sh
  $ sudo sh install_raspimouse_simulator.sh
 
 
@@ -293,15 +267,14 @@ RobotController コンポーネントではこの値が一定以上の時に自�
 RobotController コンポーネントの雛型の生成は、RTCBuilder を用いて行います。
 
 **** RTCBuilder の起動
-Eclipse では、各種作業を行うフォルダーを「ワークスペース」(Work Space)とよび、原則としてすべての生成物はこのフォルダーの下に保存されます。
+OpenRTP では、各種作業を行うフォルダーを「ワークスペース」(Work Space)とよび、原則としてすべての生成物はこのフォルダーの下に保存されます。
 ワークスペースはアクセスできるフォルダーであれば、どこに作っても構いませんが、このチュートリアルでは以下のワークスペースを仮定します。
 
 - /home/ユーザー名/workspace
 
-まずは Eclipse を起動します。
-OpenRTP を展開したディレクトリーに移動して以下のコマンドを入力します。
+まずは OpenRTP を起動します。
 
- $ ./openrtp
+ $ openrtp
 
 最初にワークスペースの場所を尋ねられますので、上記のワークスペースを指定してください。
 
@@ -315,7 +288,7 @@ OpenRTP を展開したディレクトリーに移動して以下のコマンド
 
 
 #ref(install41.png,/ja/node/6026,60%,nolink,center)
-CENTER:''Eclipse の初期起動時の画面''
+CENTER:''OpenRTP の初期起動時の画面''
 
 Welcome ページはいまは必要ないので左上の「×」ボタンをクリックして閉じてください。
 
@@ -326,8 +299,9 @@ CENTER:''パースペクティブの切り替え''
 
 「RTC Builder」を選択することで、RTCBuilderが起動します。メニューバーに「カナヅチとRT」の RTCBuilder のアイコンが現れます。
 
-#ref(install43.png,/ja/node/6026,60%,nolink,center)
+#ref(robomech2018_3.jpg,/ja/node/6550,60%,nolink,center)
 CENTER:''パースペクティブの選択''
+
 
 
 
@@ -371,20 +345,21 @@ RTC.xmlが生成された時点で、このプロジェクトに関連付けら�
 まず、いちばん左の「基本」タブを選択し、基本情報を入力します。先ほど決めた RobotController コンポーネントの仕様(名前)の他に、概要やバージョン等を入力してください。
 ラベルが赤字の項目は必須項目です。その他はデフォルトで構いません。
 
--モジュール名: RobotController
--モジュール概要: 任意(Robot Controller component)
+-コンポーネント名: RobotController
+-概要: 任意(Robot Controller component)
 -バージョン: 任意(1.0.0)
 -ベンダ名: 任意
--モジュールカテゴリ: 任意(Controller)
+-カテゴリ: 任意(Controller)
 
 
 
 
 #br
 
-#ref(Basic_1.png,/ja/node/6310,nolink,50%,center)
+#ref(rtcb10.png, /ja/node/6550,nolink,50%,center)
 CENTER:''基本情報の入力''
 #br
+
 
 
 次に、「アクティビティ」タブを選択し、使用するアクションコールバックを指定します。
@@ -482,7 +457,7 @@ CENTER:''プログラミング言語の選択''
 CENTER:''雛型の生成(Generate)''
 #br
 
-&color(red){※ 生成されるコード群は、eclipse起動時に指定したワークスペースフォルダーの中に生成されます。
+&color(red){※ 生成されるコード群は、OpenRTP起動時に指定したワークスペースフォルダーの中に生成されます。
 現在のワークスペースは、[ファイル] > [ワークスペースの切り替え...] で確認することができます。};
 
 
@@ -522,15 +497,15 @@ CENTER:''CMake GUI の起動とディレクトリーの指定''
 ビルドディレクトリーとは、ビルドするためのプロジェクトファイルやオブジェクトファイル、バイナリを格納する場所のことです。
 場所は任意ですが、この場合 <ワークスペースディレクトリー>/RobotController/build のように分かりやすい名前をつけた RobotController のサブディレクトリーを指定することをお勧めします。
 
-| ''Where is the soruce code'' |  /home/ユーザー名/RobotController |
-| ''Where to build the binaries'' |  /home/ユーザー名/RobotController\build |
+| ''Where is the soruce code'' |  /home/ユーザー名/workspace/RobotController |
+| ''Where to build the binaries'' |  /home/ユーザー名/workspace/RobotController/build |
 
 指定したら、下の [Configure] ボタンをクリックします。すると下図のようなダイアログが表示されますので、生成したいプロジェクトの種類を指定します。
 今回は CodeBlocks - Unix Makefiles を指定します。
 Code::Blocks を使わない場合は Unix Makefiles を使ってください。
 
 
-#ref(CMakeGUI1_0.png,/ja/node/6026,nolink,80%,center)
+#ref(cmake_ubuntu.png,/ja/node/6551,nolink,80%,center)
 CENTER:''生成するプロジェクトの種類の指定''
 
 
@@ -695,6 +670,13 @@ CENTER:''ビルドの実行''
 
 
 
+*** RTSystemEditorの起動
+OpenRTPのパースペクティブを開くのウインドウからRT System Editorを選択して起動します。
+
+#br
+
+#ref(rtse2000.png,/ja/node/6550,50%, center)
+#br
 
 
 *** NameService の起動
@@ -702,7 +684,13 @@ CENTER:''ビルドの実行''
 コンポーネントの参照を登録するためのネームサービスを起動します。
 
 #br
- $ rtm-naming
+RT System Editorのネームサービス起動ボタンを押すと起動します。
+
+#ref(robomech2018_6.jpg,/ja/node/6550,100%,nolink,center)
+
+&color(red){※ 「Start Naming Service」をクリックしても omniNames が起動されない場合は、フルコンピュータ名が14文字以内に設定されているかを確認してください。};
+
+
 
 
 *** RobotController コンポーネントの起動
@@ -734,7 +722,7 @@ CENTER:''コンポーネントの接続''
 
 *** コンポーネントの Activate
 
-RTSystemEditor の上部にあります [All Activate] というアイコンをクリックし、全てのコンポーネントをアクティブ化します。
+RTSystemEditor の上部にあります [Activate Systems] というアイコンをクリックし、全てのコンポーネントをアクティブ化します。
 正常にアクティベートされた場合、下図のように黄緑色でコンポーネントが表示されます。
 
 #br

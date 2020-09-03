@@ -1,4 +1,4 @@
-﻿// Title: 一括インストールスクリプト
+// Title: 一括インストールスクリプト
 #contents(5)
 
 ** 一括インストールスクリプト入手先
@@ -13,6 +13,19 @@ openrtm.orgが提供するインストール・スクリプトの入手先です
 
 ただし、このスクリプトはOpenRTM-aist関係のすべてのパッケージをインストールするので、不必要なパッケージもインストールされる可能性があります。
 詳しく理解している場合は、手動でインストールすることも可能です。
+
+&color(red){※UbuntuとRaspbian用スクリプトはバージョン番号を確認してください。};
+
+Python3に対応した OpenRTM-aist 1.2.2 をインストールする場合は、対応するスクリプトを使う必要があるので、バージョン番号を確認して下さい。
+バージョン番号は次のようにして確認できます。バージョン番号が取得できない場合は古いスクリプトです。
+
+Ubuntu用は2.0.0.04以上、Raspbian用は2.0.0.02以上が必要です。
+
+ $ sh pkg_install_ubuntu.sh --version
+ 2.0.0.04
+
+ $ sh pkg_install_raspbian.sh --version
+ 2.0.0.02
 
 ** pkg_install_{ubuntu|debian|raspbian}.sh
 
@@ -51,6 +64,11 @@ openrtm.orgが提供するインストール・スクリプトの入手先です
 *** インストールされるdebパッケージ一覧
 赤字は-u(アンインストール)指定時にアンインストールされるパッケージです。
 
+&color(red){※OpenRTM-aist 1.2.2 以降はPythonバージョンを2系から3系へ変更しましたので、インストールされるパッケージは下記となります。};
+
+omniidl-python3 openrtm-aist-python3 openrtm-aist-python3-example openrtm-aist-python3-doc
+
+
 #ref(deb-list.png,nolink,right,center)
 
 
@@ -77,7 +95,7 @@ openrtm.orgが提供するインストール・スクリプトの入手先です
  
   Options:
     -l <argument>  language or tool {c++|python|java|openrtp|rtshell|all}
-       all:       install packages for all the supported languages and tools
+        all:       install packages for all the supported languages and tools
     -r             install robot component runtime
     -d             install for robot component developer [default]
     -s             install tool packages for building from the source code

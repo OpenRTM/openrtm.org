@@ -105,6 +105,27 @@ ROS/ROS2用のシリアライザと対応するROS/ROS2メッセージ型の関�
 
 ''ConsoleInComp.exe''、''ConsoleOutComp.exe''を実行すると通信ができるようになります。
 
+
+**** 接続時のオプション
+
+接続時に設定可能な項目は以下の通りです。
+
+***** FastRTPs
+
+|オプション名|意味|デフォルト値|
+|fastrtps.QoSXML|QoSを設定するためのXMLファイル名||
+|marshaling_type|シリアライザの種類|corba|
+|fastrtps.topic|DDSトピック名|chatter|
+|fastrtps.subscriber.name|サブスクライバー名(XMLファイルを読み込んだ場合に個別にQoSを設定可能)||
+|fastrtps.publisher.name|パブリッシャー名(XMLファイルを読み込んだ場合に個別にQoSを設定可能)||
+
+***** OpenSplice
+
+|オプション名|意味|デフォルト値|
+|marshaling_type|シリアライザの種類|corba|
+|opensplice.topic|DDSトピック名|chatter|
+
+
 *** Ubuntu
 **** ROS2のインストール
 以下のコマンドでインストールします。
@@ -162,7 +183,35 @@ RTCを起動して動作確認します。
 
 ** Python版
 *** Windows
-執筆中
+C++版と同じ手順でROS2をインストールしてください。
+
+**** OpenRTM-aistのインストール
+OpenRTM-aist 1.2等をインストーラーでインストールしておいてください。
+OpenRTM-aist Python版のソースコードを入手してください。
+
+- https://github.com/OpenRTM/OpenRTM-aist-Python
+
+以下のコマンドでOpenRTM-aist Python版をインストールしてください。
+
+ python setup.py build
+ python setup.py install
+
+**** 動作確認
+動作前に以下のコマンドを実行してください。
+
+  call C:\dev\ros2\setup.bat
+
+以下のようなrtc.confを作成し、''ROS2Transport.py''をロード後、インターフェース型に''opensplice''を指定して起動します。
+
+ manager.modules.load_path: C:\\Python37\\Lib\\site-packages\\OpenRTM_aist\\ext\\transport\\ROS2Transport
+ manager.modules.preload: ROS2Transport.py
+ manager.components.preconnect: ConsoleOut0.in?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32&ros2.topic=chatter, ConsoleIn0.out?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32&ros2.topic=chatter
+
+: manager.module.load_path | シリアライザ用モジュール(ROS2Transport.py)が置かれている場所
+: manager.modules.preload | シリアライザ用モジュールを読み込む順番で指定
+: manager.components.preconnect | コネクタ生成時の設定を記述します。interface_type(インターフェース型)に''ros2''を、marshaling_type(マーシャリング型)に対応シリアライザ名を、ros2.topic(トピック)に適当な任意の名前を記述します。
+
+
 
 *** Ubuntu
 **** ROS2のインストール
@@ -204,11 +253,7 @@ omniORBpyがインストールされているディレクトリにあわせて�
 
  manager.modules.load_path: /usr/local/lib/python3.6/site-packages/OpenRTM_aist/ext/transport/ROS2Transport/
  manager.modules.preload: ROS2Transport.py
- manager.components.preconnect: ConsoleOut0.in?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32&fastrtps.topic=chatter, ConsoleIn0.out?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32&fastrtps.topic=chatter
-
-: manager.module.load_path | シリアライザ用モジュール(ROS2Transport.py)が置かれている場所
-: manager.modules.preload | シリアライザ用モジュールを読み込む順番で指定
-: manager.components.preconnect | コネクタ生成時の設定を記述します。interface_type(インターフェース型)に''ros2''を、marshaling_type(マーシャリング型)に対応シリアライザ名を、fastrtps.topic(トピック)に適当な任意の名前を記述します。
+ manager.components.preconnect: ConsoleOut0.in?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32&ros2.topic=chatter, ConsoleIn0.out?interface_type=ros2&marshaling_type=ros2:std_msgs/Float32&ros2.topic=chatter
 
 OpenRTM-aistのシリアライザが対応しているメッセージ型を以下に示します。
 
@@ -220,3 +265,12 @@ OpenRTM-aistのシリアライザが対応しているメッセージ型を以�
  $ python /usr/local/share/openrtm-2.0/components/python/SimpleIO/ConsoleIn.py
 
  $ python /usr/local/share/openrtm-2.0/components/python/SimpleIO/ConsoleOut.py
+
+
+**** 接続時のオプション
+
+接続時に設定可能な項目は以下の通りです。
+
+|オプション名|意味|デフォルト値|
+|marshaling_type|シリアライザの種類|ros2:std_msgs/Float32|
+|ros2.topic|DDSトピック名|chatter|

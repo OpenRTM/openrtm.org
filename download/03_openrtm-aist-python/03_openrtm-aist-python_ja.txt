@@ -1,9 +1,11 @@
-﻿// Title: OpenRTM-aist (Python版)
+// Title: OpenRTM-aist (Python版)
 #ref(python-logo.png,right,80%,around,url=/node/118)
 Python で RTコンポーネントを作成するためのライブラリです。Linux、Windows に対応しています。
 ソースコード、Windows用インストーラ、各種Linuxパッケージがダウンロードできます。
 
--[[1.2.0-RELESE:/ja/node/6572]]
+-[[1.2.2-RELESE:/ja/download/openrtm-aist-python/openrtm-aist-python_1_2_2_release]]
+-[[1.2.1-RELESE:/ja/node/6912]]
+//-[[1.2.0-RELESE:/ja/node/6572]]
 -[[1.1.2-RELESE:/ja/node/6035]]
 <!--break-->
 ***ソースコードリポジトリ

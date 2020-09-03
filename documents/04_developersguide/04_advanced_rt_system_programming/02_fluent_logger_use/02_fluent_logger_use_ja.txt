@@ -1,4 +1,4 @@
-﻿// Title: Fluent Loggerによるログ収集
+// Title: Fluent Loggerによるログ収集
 #contents
 
 ** C++版
@@ -131,12 +131,12 @@ Td-agent Command Promptで以下のコマンドを入力してfluentdを実行�
 *** RTCの起動
 rtc.confに以下のように記述してRTCを起動するとfluentdにログが送信されます。
 
- manager.modules.load_path: C:\\Python27\\Lib\\site-packages\\OpenRTM_aist\\ext\\logger\\fluentbit_stream
- logger.plugins: FluentBit.py
+ manager.modules.load_path: C:\\Python27\\Lib\\site-packages\\OpenRTM_aist\\ext\\logger\\fluentlogger
+ logger.plugins: FluentLogger.py
  logger.logstream.fluentd.output0.tag: test.simpleio
 
 ''manager.modules.load_path''はOpenRTM-aistをインストールしたPythonのパスによって適宜変更してください。
-Ubuntuの場合は''/usr/local/lib/python2.7/dist-packages/OpenRTM_aist/ext/logger/fluentbit_stream''等になります。
+Ubuntuの場合は''/usr/local/lib/python2.7/dist-packages/OpenRTM_aist/ext/logger/fluentlogger''等になります。
 
 fluentdでログは以下のように表示される。
 
