@@ -81,15 +81,4 @@ OpenRTPの実行にはJDK8を別途インストールする必要がある場合
 --- Ubuntu 16.04 i386、 amd64
 --- Ubuntu 18.04 amd64
 --- Windows-10 (32/64bit)
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+
