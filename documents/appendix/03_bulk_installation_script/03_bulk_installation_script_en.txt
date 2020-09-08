@@ -14,6 +14,19 @@ This script can be installed by specifying the options, according to the purpose
 However, this script installs all packages related to OpenRTM-aist, so unnecessary packages may also be installed.
 If you are familiar with it, you can also install it manually.
 
+&color(red){※Please check the version number of scripts for Ubuntu and Raspbian.};
+
+If you install OpenRTM-aist 1.2.2 for Python3, you need to use the corresponding script, so check the version number.
+You can check the version number as follows. If you cannot get the version number, it is an old script.
+
+You need 2.0.0.04 or higher for Ubuntu and 2.0.0.02 or higher for Raspbian.
+
+ $ sh pkg_install_ubuntu.sh --version
+ 2.0.0.04
+
+ $ sh pkg_install_raspbian.sh --version
+ 2.0.0.02
+
 ** pkg_install_{ubuntu|debian|raspbian}.sh
 
 The available options are the same, but pkg_install_raspbian.sh does not support openrtp installation. Therefore, openrtp cannot be used as an argument of the -l option.
@@ -50,6 +63,10 @@ By specifying the option, the package shown below will be installed.
 
 *** List of deb packages to be installed
 Red letters indicate packages that are uninstalled when -u (uninstall) is specified.
+
+&color(red){※Since OpenRTM-aist 1.2.2 has changed the Python version from 2 series to 3 series, the packages to be installed are as follows.};
+
+omniidl-python3 openrtm-aist-python3 openrtm-aist-python3-example openrtm-aist-python3-doc
 
 #ref(deb-list.png,nolink,right,center)
 

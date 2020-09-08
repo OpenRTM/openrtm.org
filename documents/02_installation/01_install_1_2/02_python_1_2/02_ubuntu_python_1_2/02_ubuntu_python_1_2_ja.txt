@@ -1,4 +1,4 @@
-﻿// Title: Ubuntu/Debianへのインストール
+// Title: Ubuntu/Debianへのインストール
 #ref(ubuntu_logo2.png,/ja/node/1182,around,right)
 
 Python版のOpenRTM-aistは、UbuntuやDebian GNU Linuxで利用可能なdebパッケージが提供されています。
@@ -12,6 +12,8 @@ openrtm.orgが提供するインストール・スクリプト''pkg_install_ubun
 
 オプションを指定することで、目的に合わせたパッケージをインストールすることが可能です。
 
+一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[[一括インストールスクリプト:http://openrtm.org/openrtm/ja/node/6345]]」のページをご確認ください。
+
 一括インストールスクリプトは、ダウンロードした後、ダウンロード先ディレクトリに移動し、
 
 Ubuntuの場合は
@@ -23,7 +25,7 @@ Debianの場合はsuでroot権限を得た後に
 でインストールできます。
 
 
-一括インストールスクリプトのダウンロードや詳しいインストール方法、指定可能なオプションの種類につきましては、「[[一括インストールスクリプト:http://openrtm.org/openrtm/ja/node/6345]]」のページをご確認ください。
+
 
 ** OpenRTPのインストール
 一般的なUbuntu/Debian環境での開発にはRTCBuilderやRTSystemEditorを使用しますが、その場合にはOpenRTPが必要です。一括インストールスクリプトを用いてOpenRTPをインストールしてください。Ubuntuではpkg_install_ubuntu.shが置いてあるディレクトリで
@@ -249,57 +251,59 @@ openrtm-aist-devには、開発に必要なコマンド群とヘッダが含ま�
  中略
  /usr/lib/x86_64-linux-gnu/openrtm-1.2/py_helpver/yat.py
  /usr/lib/x86_64-linux-gnu/pkgconfig/libcoil.pc
-*** openrtm-aist-python
+*** openrtm-aist-python3
+
+OpenRTM-aist 1.2.2 からメインPythonバージョンが2系から3系へ変更されました。
 
 - コマンド
- /usr/bin/rtcd_python
- /usr/bin/rtcprof_python
+ /usr/bin/rtcd_python3
+ /usr/bin/rtcprof_python3
 
 - OpenRTM-aist 本体の Python モジュール
- usr/lib/python2.7/dist-packages/OpenRTM-aist/*
+ usr/lib/python3/dist-packages/OpenRTM-aist/*
 
 - OpenRTM-aist用Python検索パスファイル
- /usr/lib/python2.7/dist-packages/OpenRTM_aist.ph
+ /usr/lib/python3/dist-packages/OpenRTM_aist.ph
 
 - ユーティリティ
- /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/__init__.py
- /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtc-template/*
- /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtcd/*
- /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtcprof/*
- /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtm-naming/*
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/__init__.py
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtc-template/*
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtcd/*
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtcprof/*
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtm-naming/*
 
-*** openrtm-aist-python-example
+*** openrtm-aist-python3-example
 
- /usr/share/openrtm-1.2/components/python/__init__.py
- /usr/share/openrtm-1.2/components/python/rtcd.conf
- /usr/share/openrtm-1.2/components/python/components.conf
- /usr/share/openrtm-1.2/components/python/AutoControl/*
- /usr/share/openrtm-1.2/components/python/AutoTest/*
- /usr/share/openrtm-1.2/components/python/Composite/*
- /usr/share/openrtm-1.2/components/python/ConfigSample/*
- /usr/share/openrtm-1.2/components/python/ExtTrigger/*
- /usr/share/openrtm-1.2/components/python/MobileRobotCanvas/*
- /usr/share/openrtm-1.2/components/python/SeqIO/*
- /usr/share/openrtm-1.2/components/python/SimpleIO/*
- /usr/share/openrtm-1.2/components/python/SimpleService/*
- /usr/share/openrtm-1.2/components/python/Slider_and_Motor/*
- /usr/share/openrtm-1.2/components/python/Templates/*
- /usr/share/openrtm-1.2/components/python/Throughput/*
- /usr/share/openrtm-1.2/components/python/TkJoyStick/
- /usr/share/openrtm-1.2/components/python/TkLRFViewer/*
+ /usr/share/openrtm-1.2/components/python3/__init__.py
+ /usr/share/openrtm-1.2/components/python3/rtcd.conf
+ /usr/share/openrtm-1.2/components/python3/components.conf
+ /usr/share/openrtm-1.2/components/python3/AutoControl/*
+ /usr/share/openrtm-1.2/components/python3/AutoTest/*
+ /usr/share/openrtm-1.2/components/python3/Composite/*
+ /usr/share/openrtm-1.2/components/python3/ConfigSample/*
+ /usr/share/openrtm-1.2/components/python3/ExtTrigger/*
+ /usr/share/openrtm-1.2/components/python3/MobileRobotCanvas/*
+ /usr/share/openrtm-1.2/components/python3/SeqIO/*
+ /usr/share/openrtm-1.2/components/python3/SimpleIO/*
+ /usr/share/openrtm-1.2/components/python3/SimpleService/*
+ /usr/share/openrtm-1.2/components/python3/Slider_and_Motor/*
+ /usr/share/openrtm-1.2/components/python3/Templates/*
+ /usr/share/openrtm-1.2/components/python3/Throughput/*
+ /usr/share/openrtm-1.2/components/python3/TkJoyStick/
+ /usr/share/openrtm-1.2/components/python3/TkLRFViewer/*
 
-***openrtm-aist-python-doc
+***openrtm-aist-python3-doc
 
 -クラスリファレンス(英語)
- /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/_async_8py.html
- /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/_buffer_base_8py.html
+ /usr/share/openrtm-1.2/doc/python3/ClassReference-en/html/_async_8py.html
+ /usr/share/openrtm-1.2/doc/python3/ClassReference-en/html/_buffer_base_8py.html
  中略
- /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/uuid_8py.html
+ /usr/share/openrtm-1.2/doc/python3/ClassReference-en/html/uuid_8py.html
 - クラスリファレンス(日本語)
- /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/_async_8py.html
- /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/_buffer_base_8py.html
+ /usr/share/openrtm-1.2/doc/python3/ClassReference-jp/html/_async_8py.html
+ /usr/share/openrtm-1.2/doc/python3/ClassReference-jp/html/_buffer_base_8py.html
  中略
- /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/uuid_8py.html 
+ /usr/share/openrtm-1.2/doc/python3/ClassReference-jp/html/uuid_8py.html 
 
 ***openrtp
 openrtpでは大量のファイルがインストールされるため、ここではリストしません。必要に応じて
@@ -339,14 +343,14 @@ openrtpでは大量のファイルがインストールされるため、ここ�
  /usr/local/bin/rtvlog
  /usr/local/bin/rtwatch
 
-- コマンド本体
- /usr/local/lib/python2.7/dist-packages/rtctree/*
- /usr/local/lib/python2.7/dist-packages/rtshell/*
- /usr/local/lib/python2.7/dist-packages/rtsprofile/*
+- コマンド本体 (下記はUbuntu20.04の例です。)
+ /usr/local/lib/python3.8/dist-packages/rtctree/*
+ /usr/local/lib/python3.8/dist-packages/rtshell/*
+ /usr/local/lib/python3.8/dist-packages/rtsprofile/*
 
-- パッケージ情報
- /usr/local/lib/python2.7/dist-packages/rtctree_aist-4.2.0.egg-info/*
- /usr/local/lib/python2.7/dist-packages/rtshell_aist-4.2.2.dist-info/*
- /usr/local/lib/python2.7/dist-packages/rtsprofile_aist-4.1.2.dist-info/*
+- パッケージ情報 (下記はUbuntu20.04の例です。)
+ /usr/local/lib/python3.8/dist-packages/rtctree_aist-4.2.0.egg-info/*
+ /usr/local/lib/python3.8/dist-packages/rtshell_aist-4.2.2.dist-info/*
+ /usr/local/lib/python3.8/dist-packages/rtsprofile_aist-4.1.2.dist-info/*
 
 
