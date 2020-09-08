@@ -24,7 +24,7 @@ If Python is installed under Program Files, execute the command prompt as an adm
 This message is not a problem because [[Start Name Server:/en/node/7005#toc2]] described in Operation check (Windows) is not executed.
 
 ** Installation on Linux environment
-Use [[bulk installation script>//node/6990]] to install rtshell with using "-l c++", "-l python" and "-l rtshell" options and then execute rtshell_post_install.
+Use [[bulk installation script>//node/6990]] to install rtshell with using "-l c++", "-l python" and "-l rtshell" options and then execute rtshell_post_install. 
 
 *** Ubuntu 18.04 case:
 Move to the directory where the bulk installation script is downloaded and type in:
@@ -45,4 +45,6 @@ Before closing the terminal, execute rtshell_post_install without "sudo" prefix.
  Link man pages? n
  Link documentation? n
  Add shell support to .bashrc? y
+
+
 

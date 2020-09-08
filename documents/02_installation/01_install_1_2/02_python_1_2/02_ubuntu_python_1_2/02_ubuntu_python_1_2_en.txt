@@ -12,6 +12,8 @@ Download the script from the specified URL and execute it with root privileges. 
 
 By specifying the option, it is possible to install the package depend on the purpose.
 
+For details on downloading the bulk installation script, detailed installation methods, and the options that can be specified, see [[Bulk Installation Script>//node/6990]].
+
 After downloading the bulk installation script, change to the downloaded directory,
 
 For Ubuntu
@@ -20,7 +22,7 @@ For Ubuntu
 For Debian, after getting root privileges using su command.
  # sh pkg_install_debian.sh -l python --yes.
 
-For details on downloading the bulk installation script, detailed installation methods, and the options that can be specified, see [[Bulk Installation Script>//node/6990]].
+
 
 ** Installation of OpenRTP
 For development in a general Ubuntu/Debian environment, use RTCBuilder or RTSystemEditor. In that case, OpenRTP is required.  You can install OpenRTP using the bulk installation script. 
@@ -247,57 +249,59 @@ openrtm-aist-dev package includes commands and header files which are needed for
  /usr/lib/x86_64-linux-gnu/openrtm-1.2/py_helpver/yat.py
  /usr/lib/x86_64-linux-gnu/pkgconfig/libcoil.pc
 
-*** openrtm-aist-python
+*** openrtm-aist-python3
+
+The main Python version has been changed from 2 to 3 from OpenRTM-aist 1.2.2.
 
 - Commands
- /usr/bin/rtcd_python
- /usr/bin/rtcprof_python
+ /usr/bin/rtcd_python3
+ /usr/bin/rtcprof_python3
 
 - OpenRTM-aist main modules
- usr/lib/python2.7/dist-packages/OpenRTM-aist/*
+ usr/lib/python3/dist-packages/OpenRTM-aist/*
 
 - Python search path file for OpenRTM-aist
- /usr/lib/python2.7/dist-packages/OpenRTM_aist.ph
+ /usr/lib/python3/dist-packages/OpenRTM_aist.ph
 
 - Utilities
- /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/__init__.py
- /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtc-template/*
- /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtcd/*
- /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtcprof/*
- /usr/lib/python2.7/dist-packages/OpenRTM_aist/utils/rtm-naming/*
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/__init__.py
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtc-template/*
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtcd/*
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtcprof/*
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtm-naming/*
 
-*** openrtm-aist-python-example
+*** openrtm-aist-python3-example
 
- /usr/share/openrtm-1.2/components/python/__init__.py
- /usr/share/openrtm-1.2/components/python/rtcd.conf
- /usr/share/openrtm-1.2/components/python/components.conf
- /usr/share/openrtm-1.2/components/python/AutoControl/*
- /usr/share/openrtm-1.2/components/python/AutoTest/*
- /usr/share/openrtm-1.2/components/python/Composite/*
- /usr/share/openrtm-1.2/components/python/ConfigSample/*
- /usr/share/openrtm-1.2/components/python/ExtTrigger/*
- /usr/share/openrtm-1.2/components/python/MobileRobotCanvas/*
- /usr/share/openrtm-1.2/components/python/SeqIO/*
- /usr/share/openrtm-1.2/components/python/SimpleIO/*
- /usr/share/openrtm-1.2/components/python/SimpleService/*
- /usr/share/openrtm-1.2/components/python/Slider_and_Motor/*
- /usr/share/openrtm-1.2/components/python/Templates/*
- /usr/share/openrtm-1.2/components/python/Throughput/*
- /usr/share/openrtm-1.2/components/python/TkJoyStick/
- /usr/share/openrtm-1.2/components/python/TkLRFViewer/*
+ /usr/share/openrtm-1.2/components/python3/__init__.py
+ /usr/share/openrtm-1.2/components/python3/rtcd.conf
+ /usr/share/openrtm-1.2/components/python3/components.conf
+ /usr/share/openrtm-1.2/components/python3/AutoControl/*
+ /usr/share/openrtm-1.2/components/python3/AutoTest/*
+ /usr/share/openrtm-1.2/components/python3/Composite/*
+ /usr/share/openrtm-1.2/components/python3/ConfigSample/*
+ /usr/share/openrtm-1.2/components/python3/ExtTrigger/*
+ /usr/share/openrtm-1.2/components/python3/MobileRobotCanvas/*
+ /usr/share/openrtm-1.2/components/python3/SeqIO/*
+ /usr/share/openrtm-1.2/components/python3/SimpleIO/*
+ /usr/share/openrtm-1.2/components/python3/SimpleService/*
+ /usr/share/openrtm-1.2/components/python3/Slider_and_Motor/*
+ /usr/share/openrtm-1.2/components/python3/Templates/*
+ /usr/share/openrtm-1.2/components/python3/Throughput/*
+ /usr/share/openrtm-1.2/components/python3/TkJoyStick/
+ /usr/share/openrtm-1.2/components/python3/TkLRFViewer/*
 
-***openrtm-aist-python-doc
+***openrtm-aist-python3-doc
 
 - Class reference (English)
- /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/_async_8py.html
- /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/_buffer_base_8py.html
+ /usr/share/openrtm-1.2/doc/python3/ClassReference-en/html/_async_8py.html
+ /usr/share/openrtm-1.2/doc/python3/ClassReference-en/html/_buffer_base_8py.html
  ...
- /usr/share/openrtm-1.2/doc/python/ClassReference-en/html/uuid_8py.html
+ /usr/share/openrtm-1.2/doc/python3/ClassReference-en/html/uuid_8py.html
 - Class reference (Japanese)
- /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/_async_8py.html
- /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/_buffer_base_8py.html
+ /usr/share/openrtm-1.2/doc/python3/ClassReference-jp/html/_async_8py.html
+ /usr/share/openrtm-1.2/doc/python3/ClassReference-jp/html/_buffer_base_8py.html
  ...
- /usr/share/openrtm-1.2/doc/python/ClassReference-jp/html/uuid_8py.html 
+ /usr/share/openrtm-1.2/doc/python3/ClassReference-jp/html/uuid_8py.html 
 
 ***openrtp
 In openrtp installation, since so many files are installed, the listing is not made. Depend on your needs, use the following command.
@@ -336,12 +340,12 @@ In openrtp installation, since so many files are installed, the listing is not m
  /usr/local/bin/rtvlog
  /usr/local/bin/rtwatch
 
-- Main code for the commans
- /usr/local/lib/python2.7/dist-packages/rtctree/*
- /usr/local/lib/python2.7/dist-packages/rtshell/*
- /usr/local/lib/python2.7/dist-packages/rtsprofile/*
+- Main code for the commans (An example of Ubuntu20.04.)
+ /usr/local/lib/python3.8/dist-packages/rtctree/*
+ /usr/local/lib/python3.8/dist-packages/rtshell/*
+ /usr/local/lib/python3.8/dist-packages/rtsprofile/*
 
-- Package information
- /usr/local/lib/python2.7/dist-packages/rtctree_aist-4.2.0.egg-info/*
- /usr/local/lib/python2.7/dist-packages/rtshell_aist-4.2.2.dist-info/*
- /usr/local/lib/python2.7/dist-packages/rtsprofile_aist-4.1.2.dist-info/*
+- Package information (An example of Ubuntu20.04.)
+ /usr/local/lib/python3.8/dist-packages/rtctree_aist-4.2.0.egg-info/*
+ /usr/local/lib/python3.8/dist-packages/rtshell_aist-4.2.2.dist-info/*
+ /usr/local/lib/python3.8/dist-packages/rtsprofile_aist-4.1.2.dist-info/*
