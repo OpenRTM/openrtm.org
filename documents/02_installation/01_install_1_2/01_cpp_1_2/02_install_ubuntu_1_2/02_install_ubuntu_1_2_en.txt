@@ -13,6 +13,9 @@ Download the installation script "pkg_install_ubuntu.sh" or "pkg_install_debian.
 
 By specifying the option, it is possible to install the packages required for your purpose.
 
+For details on how to download the batch installation script, detailed installation methods, and the types of options that can be specified, see the [[Bulk Installation Script>/node/6990]] page. &br;
+&color(red){※If the latest version is "1.2.2", you can install "1.2.1" by option and downgrade from "1.2.2" to "1.2.1".};
+
 To install OpenRTM-aist C++ version, download the bulk installation script, move to the download destination directory, and type in:
 
 For Ubuntu
@@ -21,8 +24,6 @@ For Ubuntu
 After getting root privileges with su for Debian
  # sh pkg_install_debian.sh -l c++ --yes
 
-
-For details on how to download the batch installation script, detailed installation methods, and the types of options that can be specified, see the [[Bulk Installation Script>/node/6990]] page.
 
 ** Install OpenRTP
 RTCBuilder and RTSystemEditor are used for general RT system development on Ubuntu/Debian environment. In that case, OpenRTP is required. To install OpenRTP using the bulk installation script in Ubuntu, in the directory where pkg_install_ubuntu.sh is located, type in:
