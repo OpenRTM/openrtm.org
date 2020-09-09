@@ -1,4 +1,4 @@
-﻿// Title: rtc.conf setting item list
+// Title: rtc.conf setting item list
 #contents(3)
 
 //------------------------------------------------------------=============
