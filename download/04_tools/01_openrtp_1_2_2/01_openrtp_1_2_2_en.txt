@@ -14,7 +14,7 @@ The msi file is 800MB in size. Use a high-speed line (50Mbps or more) to downloa
 
 **** For 64bit
 
-|LEFT:300|LEFT|LEFT:120|c
+|LEFT:300|LEFT:240|LEFT:120|c
 | Windows Installer &br; (including OpenRTM-aist, C++, Python, &br; Java version and OpenRTP, &br; rtshell (4.2.2)) &br; (Visual Studio 2012, 2013, &br; 2015, 2017, 2019) | [[OpenRTM-aist-1.2.2-RELEASE_x86_64.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86_64.msi]] &br; MD5:0ef7130c2568713cce4054d0b7975677 | 2020/08/26 |
 |Python-3.6|[[python-3.6.8-amd64.exe:https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe]]|[[python.org:https://www.python.org]]|
 |Python-3.7|[[python-3.7.9-amd64.exe:https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe]]|[[python.org:https://www.python.org]]|
@@ -26,7 +26,7 @@ The msi file is 800MB in size. Use a high-speed line (50Mbps or more) to downloa
 
 **** For 32bit
 
-|LEFT:300|LEFT|LEFT:120|c
+|LEFT:300|LEFT:240|LEFT:120|c
 |Installer for Windows&br; (OpenRTM-aist、C++、Python、&br;Java version, and OpenRTP、&br;including rtshell(4.2.2))&br;(Visual Studio 2012、2013、&br;2015、2017、2019)|[[OpenRTM-aist-1.2.2-RELEASE_x86.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86.msi]] &br;MD5:5cb7243ff642bbbd40463b95c2308e4a | 2020/08/26 |
 |Python-3.6|[[python-3.6.8.exe:https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe]]|[[python.org:https://www.python.org]]|
 |Python-3.7|[[python-3.7.9.exe:https://www.python.org/ftp/python/3.7.9/python-3.7.9.exe]]|[[python.org:https://www.python.org]]|
