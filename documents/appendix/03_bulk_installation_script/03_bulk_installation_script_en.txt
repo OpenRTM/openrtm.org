@@ -19,23 +19,25 @@ If you are familiar with it, you can also install it manually.
 If you install OpenRTM-aist 1.2.2 for Python3, you need to use the corresponding script, so check the version number.
 You can check the version number as follows. If you cannot get the version number, it is an old script.
 
-You need 2.0.0.04 or higher for Ubuntu and 2.0.0.02 or higher for Raspbian.
+You need 2.0.0.05 or higher for Ubuntu and 2.0.0.03 or higher for Raspbian.
 
  $ sh pkg_install_ubuntu.sh --version
- 2.0.0.04
+ 2.0.0.05
 
  $ sh pkg_install_raspbian.sh --version
- 2.0.0.02
+ 2.0.0.03
 
 ** pkg_install_{ubuntu|debian|raspbian}.sh
 
 The available options are the same, but pkg_install_raspbian.sh does not support openrtp installation. Therefore, openrtp cannot be used as an argument of the -l option.
+&color(red){※The -t option only supports ubuntu and raspbian.};
 
 *** Option list
   Usage:
-    pkg_install_ubuntu.sh -l {all|c++} [-r|-d|-s|-c] [-u|--yes]
+    pkg_install_ubuntu.sh -l {all|c++} [-r|-d|-s|-c] [-t OpenRTM-aist old version number] [-u|--yes]
     pkg_install_ubuntu.sh [-u|--yes]
-    pkg_install_ubuntu.sh -l {python|java} [-r|-d|-c] [-u|--yes]
+    pkg_install_ubuntu.sh -l {python} [-r|-d|-c] [-t OpenRTM-aist old version number] [-u|--yes]
+    pkg_install_ubuntu.sh -l {java} [-r|-d|-c] [-u|--yes]
     pkg_install_ubuntu.sh -l {openrtp|rtshell} [-d] [-u|--yes]
     pkg_install_ubuntu.sh  {--help|-h|--version}
  
@@ -50,6 +52,7 @@ The available options are the same, but pkg_install_raspbian.sh does not support
         all        install packages of all the supported languages and tools
     -r             install robot component runtime
     -d             install for robot component developer [default]
+    -t <argument>  OpenRTM-aist old version number
     -s             install tool packages for building from the source code
     -c             install tool packages for core developer
     -u             uninstall packages
@@ -135,3 +138,8 @@ Uninstall the C ++ version by adding the option "-u".
 
 For the packages to be uninstalled, check [[List of deb packages to be installed: # toc3]] and [[List of rpm packages to be installed: # toc6]].
  $ sudo ./pkg_install_ubuntu.sh -l c ++ -u
+
+**** Install the old version (1.2.1)
+If the latest version of OpenRTM-aist is 1.2.2, use option "-t" to install the 1.2.1 version.  The target is only c++ and python.  If you execute it in the environment where 1.2.2 is already installed, it will be downgraded to 1.2.1.
+ $ sudo ./pkg_install_ubuntu.sh -l c++ -t 1.2.1
+ $ sudo ./pkg_install_ubuntu.sh -l python -t 1.2.1
