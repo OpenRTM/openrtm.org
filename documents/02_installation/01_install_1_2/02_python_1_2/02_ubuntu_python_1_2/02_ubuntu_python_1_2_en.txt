@@ -12,7 +12,8 @@ Download the script from the specified URL and execute it with root privileges. 
 
 By specifying the option, it is possible to install the package depend on the purpose.
 
-For details on downloading the bulk installation script, detailed installation methods, and the options that can be specified, see [[Bulk Installation Script>//node/6990]].
+For details on downloading the bulk installation script, detailed installation methods, and the options that can be specified, see [[Bulk Installation Script>//node/6990]]. &br;
+&color(red){※If the latest version is "1.2.2", you can install "1.2.1" by option and downgrade from "1.2.2" to "1.2.1".};
 
 After downloading the bulk installation script, change to the downloaded directory,
 
