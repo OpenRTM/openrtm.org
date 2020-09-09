@@ -19,23 +19,25 @@ openrtm.orgが提供するインストール・スクリプトの入手先です
 Python3に対応した OpenRTM-aist 1.2.2 をインストールする場合は、対応するスクリプトを使う必要があるので、バージョン番号を確認して下さい。
 バージョン番号は次のようにして確認できます。バージョン番号が取得できない場合は古いスクリプトです。
 
-Ubuntu用は2.0.0.04以上、Raspbian用は2.0.0.02以上が必要です。
+Ubuntu用は2.0.0.05以上、Raspbian用は2.0.0.03以上が必要です。
 
  $ sh pkg_install_ubuntu.sh --version
- 2.0.0.04
+ 2.0.0.05
 
  $ sh pkg_install_raspbian.sh --version
- 2.0.0.02
+ 2.0.0.03
 
 ** pkg_install_{ubuntu|debian|raspbian}.sh
 
 使えるオプションは同じですが、pkg_install_raspbian.shではopenrtpインストールの対応はありません。従って-lオプションの引数としてopenrtpは使用できません。
+&color(red){※-tオプションはubuntuとraspbianのみ対応しています。};
 
 *** オプション一覧
   Usage:
-    pkg_install_ubuntu.sh -l {all|c++} [-r|-d|-s|-c] [-u|--yes]
+    pkg_install_ubuntu.sh -l {all|c++} [-r|-d|-s|-c] [-t OpenRTM-aist old version number] [-u|--yes]
     pkg_install_ubuntu.sh [-u|--yes]
-    pkg_install_ubuntu.sh -l {python|java} [-r|-d|-c] [-u|--yes]
+    pkg_install_ubuntu.sh -l {python} [-r|-d|-c] [-t OpenRTM-aist old version number] [-u|--yes]
+    pkg_install_ubuntu.sh -l {java} [-r|-d|-c] [-u|--yes]
     pkg_install_ubuntu.sh -l {openrtp|rtshell} [-d] [-u|--yes]
     pkg_install_ubuntu.sh  {--help|-h|--version}
  
@@ -50,6 +52,7 @@ Ubuntu用は2.0.0.04以上、Raspbian用は2.0.0.02以上が必要です。
        all        install packages of all the supported languages and tools
     -r             install robot component runtime
     -d             install for robot component developer [default]
+    -t <argument>  OpenRTM-aist old version number
     -s             install tool packages for building from the source code
     -c             install tool packages for core developer
     -u             uninstall packages
@@ -137,3 +140,8 @@ omniidl-python3 openrtm-aist-python3 openrtm-aist-python3-example openrtm-aist-p
 
 アンインストールされるパッケージは、[[インストールされるdebパッケージ一覧:#toc3]] 、[[インストールされるrpmパッケージ一覧:#toc6]]を確認ください。
  $ sudo ./pkg_install_ubuntu.sh -l c++ -u
+
+**** 旧バージョン（1.2.1）をインストールする
+OpenRTM-aist の最新バージョンが1.2.2の場合、オプション"-t"で1.2.1バージョンをインストールします。対象はc++とpythonのみです。　すでに1.2.2がインストールされている環境で実行した場合は1.2.1へダウングレードされます。
+ $ sudo ./pkg_install_ubuntu.sh -l c++ -t 1.2.1
+ $ sudo ./pkg_install_ubuntu.sh -l python -t 1.2.1
