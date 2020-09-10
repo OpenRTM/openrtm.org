@@ -1,4 +1,4 @@
-﻿// Title: ROS通信機能の利用
+// Title: ROS通信機能の利用
 #contents
 
 ** C++版
@@ -102,6 +102,18 @@ ConsoleInComp、ConsoleOutCompを起動して動作確認します。
 
  $ /usr/local/share/openrtm-2.0/components/c++/examples/ConsoleOutComp
 
+**** 接続時のオプション
+
+接続時に設定可能な項目は以下の通りです。
+
+|オプション名|意味|デフォルト値|
+|marshaling_type|シリアライザの種類|ros:std_msgs/Float32|
+|ros.topic|ROSトピック名|chatter|
+|ros.roscore.host|ROSマスターのアドレス|localhost|
+|ros.roscore.port|ROSマスターのポート番号|11311|
+|ros.node.name|ROSノード名|UUIDから生成|
+
+
 ** Python版
 *** Windows
 **** ROSのインストール
@@ -190,3 +202,14 @@ OpenRTM-aistのシリアライザーモジュール(ROSTransport.py)が対応し
  $ python /usr/local/share/openrtm-2.0/components/python/SimpleIO/ConsoleIn.py
 
  $ python /usr/local/share/openrtm-2.0/components/python/SimpleIO/ConsoleOut.py
+
+**** 接続時のオプション
+
+接続時に設定可能な項目は以下の通りです。
+
+|オプション名|意味|デフォルト値|
+|marshaling_type|シリアライザの種類|ros:std_msgs/Float32|
+|ros.topic|ROSトピック名|chatter|
+|ros.roscore.host|ROSマスターのアドレス|localhost|
+|ros.roscore.port|ROSマスターのポート番号|11311|
+|ros.node.name|ROSノード名|UUIDから生成|
