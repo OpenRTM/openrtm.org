@@ -1,4 +1,4 @@
-﻿// Title: OpenSplice通信機能の利用
+// Title: OpenSplice通信機能の利用
 #contents
 
 ** C++版
@@ -48,7 +48,7 @@ OpenRTM-aist Python版のソースコードを入手してください。
 
 以下のようなrtc.confを作成し、''OpenSpliceTransport.py''をロード後、インターフェース型に''opensplice''を指定して起動します。
 
- manager.modules.load_path: C:\\Python37\\Lib\\site-packages\\OpenRTM_aist\\ext\\transport\\OpenSplice\\
+ manager.modules.load_path: C:\\Python37\\Lib\\site-packages\\OpenRTM_aist\\ext\\transport\\OpenSplice
  manager.modules.preload: OpenSpliceTransport.py
  manager.components.preconnect: ConsoleOut0.in?interface_type=opensplice&marshaling_type=opensplice, ConsoleIn0.out?interface_type=opensplice&marshaling_type=opensplice
 
