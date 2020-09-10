@@ -1,4 +1,3 @@
-﻿// Title: Fluent Loggerによるログ収集
 #contents
 
 ** C++版
