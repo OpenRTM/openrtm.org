@@ -26,11 +26,13 @@ AdoptOpenJDKは、IBMがスポンサーしコミュニティによりメンテ�
 
 下記リンクより[OpenJDK8(LTS)]と、JVM([HotSpot]か[OpenJ9])を選択し[Latest release]のボタンをクリックしてください。プラットフォームに合わせたものダウンロードが始まるはずです。違うプラットフォーム用のものが欲しい場合は、[Other platforms]のボタンをクリックして必要なJDKを入手してください。 またインストール方法については[Installation]と書かれたリンクより情報を得てください。
 - [[AdoptOpenJDK>https://adoptopenjdk.net/]]
+-- [[Adopt Open JDK 8 サポート:https://adoptopenjdk.net/support.html]](2026年5月まで)
 
 *** Amazon Open JDK
 Amazon CorrettoはAmazonの長期サポートを含むOpenJDKのビルドです。入手は下記リンクからWebサイトに行き、[Amazon Corretto8ダウンロードする]ボタンをクリックしてください。プラットウォームごとのビルドのリストが表示されますので、プラットフォームに合わせて必要なインストレーション用ファイルを入手してください。
 
 - [[Amazon Corretto>https://aws.amazon.com/jp/corretto/]]
+-- [[Amazon Open JDK 8 サポート:https://aws.amazon.com/jp/corretto/faqs/#support]] (2026年6月まで)
 
 ** Linux環境でのインストール
 *** リポジトリからのパッケージ入手
