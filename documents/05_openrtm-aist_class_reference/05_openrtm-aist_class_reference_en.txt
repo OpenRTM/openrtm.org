@@ -1,15 +1,21 @@
-﻿// Title: OpenRTM-aist class references
+// Title: OpenRTM-aist class references
 //-[[Configuration:/en/node/474]]OpenRTM-aist class references
 //-[[Detailed explanation for DataPort:/en/node/475]]
 
 #ref(reference.png,right,around,70%,url=/node/376)
-** The class reference of the latest version (1.2.1)
+** The class reference of the latest version (1.2.2)
 The class references were automatically generated from the newest source codes on the repository. There might be some inconsistencies between it and the latest release version of OpenRTM-aist.
+
+-[[C++ class reference>http://openrtm.org/doc/cxx/1.2.2/classreference_en/index.html]]
+-[[Python class reference>http://openrtm.org/doc/python/1.2.2/classreference_en/index.html]]
+-[[Java class reference>http://openrtm.org/doc/java/1.2.2/classreference_en/index.html]]
+<!--break-->
+
+** 1.2.1 class references
 
 -[[C++ class reference>http://openrtm.org/doc/cxx/1.2.1/classreference_en/index.html]]
 -[[Python class reference>http://openrtm.org/doc/python/1.2.1/classreference_en/index.html]]
 -[[Java class reference>http://openrtm.org/doc/java/1.2.1/classreference_en/index.html]]
-<!--break-->
 
 ** 1.2 IDL references
 

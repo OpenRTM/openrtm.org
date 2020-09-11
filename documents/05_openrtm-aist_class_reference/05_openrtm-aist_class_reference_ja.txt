@@ -1,15 +1,22 @@
-﻿// Title: クラスリファレンス
+// Title: クラスリファレンス
 #ref(reference.png,right,around,70%,url=/node/109)
-** 最新版(1.2.1)クラスリファレンス
+** 最新版(1.2.2)クラスリファレンス
 
 クラスリファレンスは、リポジトリ上の最新版のソースコードから自動的に生成されています。
 リリース版の機能とは一部異なっている可能性があるのでご注意ください。
+
+-[[C++クラスリファレンス>http://openrtm.org/doc/cxx/1.2.2/classreference_ja/index.html]]
+-[[Pythonクラスリファレンス>http://openrtm.org/doc/python/1.2.2/classreference_ja/index.html]]
+-[[Javaクラスリファレンス>http://openrtm.org/doc/java/1.2.2/classreference_ja/index.html]]
+
+<!--break-->
+
+** 1.2クラスリファレンス
 
 -[[C++クラスリファレンス>http://openrtm.org/doc/cxx/1.2.1/classreference_ja/index.html]]
 -[[Pythonクラスリファレンス>http://openrtm.org/doc/python/1.2.1/classreference_ja/index.html]]
 -[[Javaクラスリファレンス>http://openrtm.org/doc/java/1.2.1/classreference_ja/index.html]]
 -[[データ型解説ページ>https://nobu19800.github.io/DataTypeManual/docs/]]
-<!--break-->
 
 ** 1.2 IDLリファレンス
 
