@@ -68,10 +68,15 @@ msiファイルは800MBのサイズがあります。ダウンロードを数分
 
 1.2.1-RELEASEを既にインストールしている場合は、以下の手順でPython3用パッケージをインストールして下さい。
 
-Ubuntu/Debianの場合
+Ubuntu/Debianの場合（Ubuntu16.04を除く）
 
  $ sudo apt update
  $ sudo apt install omniidl-python3 openrtm-aist-python3 openrtm-aist-python3-example openrtm-aist-python3-doc
+
+Ubuntu16.04の場合
+
+ $ sudo apt update
+ $ sudo apt install omniidl-python3 openrtm-aist-python3 openrtm-aist-python3-example
 
 //Fedora　の場合
 //

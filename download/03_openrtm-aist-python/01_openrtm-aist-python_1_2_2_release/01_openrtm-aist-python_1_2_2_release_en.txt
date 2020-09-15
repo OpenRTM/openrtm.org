@@ -61,10 +61,16 @@ Please refer to [[Bulk installation script:/ja/node/6345]] for installation meth
 
 If you have already installed 1.2.1-RELEASE, please install the package for Python3 by the following procedure.
 
-For Ubuntu / Debian
+For Ubuntu / Debian (Except Ubuntu 16.04)
 
  $ sudo apt update
  $ sudo apt install omniidl-python3 openrtm-aist-python3 openrtm-aist-python3-example openrtm-aist-python3-doc
+ 
+For Ubuntu 16.04
+
+ $ sudo apt update
+ $ sudo apt install omniidl-python3 openrtm-aist-python3 openrtm-aist-python3-example
+ 
 
 // For Fedora
 //
