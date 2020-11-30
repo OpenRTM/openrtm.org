@@ -10,12 +10,71 @@ The procedure for installing OpenRTM-aist using the MSI installer is described o
 ** Installation of software required for development
 RTC development requires installation of CMake, Doxygen, and Visual Studio.
 
-- [[CMake (3.11 or more recommended):https://cmake.org/download/]]
-During the installation, you will be asked what to do with system PATH as [Install Options], it is recommended that you select Add CMake to the system PATH for all users. (Our validation is done with this setting)
-- [[Doxygen:http://www.doxygen.nl/download.html]]
-Download and execute the Windows version binary executable file from the web page.
--[[Visual Studio>/node/7036]]
+**** Visual Studio
+It is necessary not only for developing the C ++ version, but also for building the installer when creating the Python version and Java version of the RTC.
 Install it by downloading from the link, or obtain and install Visual Studio 2010/2012/2013/2015/2017/2019 separately.
+- [[Microsoft ''Download Visual Studio 2019'':https://visualstudio.microsoft.com/ja/downloads/?utm_source=mscom&utm_campaign=msdocs]]
+
+**** Python
+Python is used not only for developing the Python language version of RTC, but also for various tools of OpenRTM-aist, so it must be installed.
+As of November 2020, support is provided for Python 3.6, 3.8, 3.7, 3.9 (released in October 2020), but OpenRTM-aist supports 3.6 to 3.8.
+We recommend that you install the latest version.
+
+- [[Python 3.8:https://www.python.org/downloads/windows/]]
+-- [[python-3.8.5-amd64.exe (64bit版):https://www.python.org/ftp/python/3.8.5/python-3.8.5-amd64.exe]]
+-- Please install the latest version as much as possible
+
+**** CMake
+CMake is required to automatically generate the files required for build (Visual Studio project file, Makefile on Linux, etc.) in various environments such as Windows and Linux.
+During the installation, you will be asked what to do with system PATH as [Install Options], it is recommended that you select Add CMake to the system PATH for all users. (Our validation is done with this setting)
+
+- [[CMake (3.11 or more recommended):https://cmake.org/download/]]
+--  [[cmake-3.18.1-win64-x64.msi (64bit版):https://github.com/Kitware/CMake/releases/download/v3.18.1/cmake-3.18.1-win64-x64.msi]]
+-- Please install the latest version as much as possible
+
+
+**** Doxygen & Graphviz
+Doxygen is a tool that automatically generates documents from comments such as source code.
+Graphviz is a tool required to generate diagrams such as class diagrams when generating documents with Doxygen.
+In OpenRTM-aist, various design information can be entered in RTCBuilder when designing RTC, and they are output as comments in the source code.
+By processing this with Doxygen, you can generate a beautiful RTC document.
+
+- [[Doxygen:http://www.doxygen.nl/download.html]]
+- [[Doxygen:http://www.doxygen.nl/download.html]]
+-- [[doxygen-1.8.19-setup.exe:http://doxygen.nl/files/doxygen-1.8.19-setup.exe]] 
+-- Please install the latest version as much as possible
+- [[Graphviz:https://graphviz.gitlab.io/download/]]
+-- [[graphviz-install-2.44.1-win64.exe::https://www2.graphviz.org/Packages/stable/windows/10/cmake/Release/x64/graphviz-install-2.44.1-win64.exe]]
+
+During the installation, you will be asked what to do with system PATH as [Install Options], it is recommended that you select Add CMake to the system PATH for all users.
+Download and execute the Windows version binary executable file from the web page.
+
+After installation, run dot -v at the command prompt and check that the plugin information is displayed.
+ >dot -v
+ dot - graphviz version 2.44.1 (20200629.0846)
+ libdir = "C:\Program Files\Graphviz 2.44.1\bin"
+ Activated plugin library: gvplugin_dot_layout.dll
+ Using layout: dot:dot_layout
+ Activated plugin library: gvplugin_core.dll
+ Using render: dot:core
+ Using device: dot:dot:core
+ The plugin configuration file:
+        C:\Program Files\Graphviz 2.44.1\bin\config6
+                was successfully loaded.
+    render      :  cairo dot dot_json fig gdiplus json json0 map mp pic ps svg tk vml xdot xdot_json
+    layout      :  circo dot fdp neato nop nop1 nop2 osage patchwork sfdp twopi
+    textlayout  :  textlayout
+    device      :  bmp canon cmap cmapx cmapx_np dot dot_json emf emfplus eps fig gif gv imap imap_np ismap jpe jpeg jpg 
+                      json json0 metafile mp pdf pic plain plain-ext png ps ps2 svg tif tiff tk vml xdot xdot1.2 xdot1.4 xdot_json
+    loadimage   :  (lib) bmp eps gif jpe jpeg jpg png ps svg
+
+If the following is displayed, open a command prompt as an administrator, execute dot -c and then dot -v, and the above will be displayed.
+ >dot -v
+ dot - graphviz version 2.44.1 (20200629.0846)
+ There is no layout engine support for "dot"
+ Perhaps "dot -c" needs to be run (with installer's privileges) to register the plugins?
+
+To open a command prompt as an administrator, type cmd in the Windows 10 search window, right-click Command Prompt in the search results and select Run as administrator.
 
 ** What the installer does
 The installer does the following:
