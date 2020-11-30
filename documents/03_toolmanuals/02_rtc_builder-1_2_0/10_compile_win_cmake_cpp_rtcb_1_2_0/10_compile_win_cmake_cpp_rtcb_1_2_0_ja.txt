@@ -1,4 +1,4 @@
-﻿// Title: コンパイル方法 (Windows、CMake 利用、C++ 編 )
+// Title: コンパイル方法 (Windows、CMake 利用、C++ 編 )
 Windows でのビルド方法を説明します。
 
 
@@ -16,7 +16,9 @@ Windows でのビルド方法を説明します。
 
 
 
-Wix、Grapjvisをインストールしたディレクトリ(''C:\Program Files (x86)\WiX Toolset v3.11\bin''、C:\Program Files (x86)\WiX Toolset v3.11\bin、''C:\Program Files (x86)\Graphviz2.38\bin'')が環境変数PATHに設定されていない場合は設定してください。
+Wix、Graphvizをインストールしたディレクトリ(''C:\Program Files (x86)\WiX Toolset v3.11\bin''、''C:\Program Files (x86)\Graphviz2.44.1\bin'')が環境変数PATHに設定されていない場合は設定してください。
+
+Graphvizはインストール後にプラグインの登録状況を dot -v コマンドで確認して下さい。　手順については [[こちら>/ja/node/6610#Graphviz]] のページをご覧ください。
 
 
 ** ビルド手順
