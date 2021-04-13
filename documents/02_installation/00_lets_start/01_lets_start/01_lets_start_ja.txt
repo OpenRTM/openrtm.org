@@ -118,7 +118,8 @@ CENTER:''初期起動時の画面''
 CENTER:&ref(OpenRTP122-003.png,center);  &ref(OpenRTP122-004.png,center);
 CENTER:''パースペクティブの切り替え''
 &br;
-- [NameServiceView]にコンポーネントが表示されます。最初は折りたたまれているため表示されていませんが、[>]をクリックし展開すると、ConsoleIn、ConsoleOutコンポーネントが確認できます。
+- [NameServiceView]にコンポーネントが表示されます。最初は折りたたまれているため表示されていませんが、[>]をクリックし展開すると、ホスト名のホストコンテキストとConsoleIn、ConsoleOutコンポーネントが確認できます。設定により、ホストコンテキスト(図中 “TPAD-RTM-NO13|host_cxt” のような “ホスト名|host_cxt” の階層) が表示されず、直接コンポーネントが表示される場合もあります。
+
 #ref(OpenRTP122-005.png,center)
 CENTER:''コンポーネント起動確認''
 &br;
@@ -206,6 +207,11 @@ CENTER:''コマンドプロンプトの起動''
 //CENTER:''データポート接続の表示''
 
 - 念のためRTSystemEditorで確認します。&br;
+-- RTSystemEditorを以下の手順で起動します。詳しくは本ページ「[[OpenRTP起動:/ja/doc/installation/lets_start#toc9]]」「[[RTSystemEditorの使用:/ja/doc/installation/lets_start#toc10]]」項を参考に起動してください。
+--- デスクトップのショートカット[OpenRTP]をクリックするか、スタートメニューの[OpenRTM-aist 1.2.2 x86_64]>[OpenRTP]と選択して起動し、ワークスペースを選択します。
+--- 画面右上の[パースペクティブを開く]をクリックします。表示されるダイアログで[RT System Editor]を選択して[開く]をクリックするとRTSystemEditorが起動します。
+--- [NameServiceView]にコンポーネントが表示されます。最初は折りたたまれているため表示されていませんが、[>]をクリックし展開すると、ConsoleIn、ConsoleOutコンポーネントが確認できます。
+
 -- [NameServiceView]のコンポーネントをSystem Diagramにドラッグ＆ドロップすると、データポートが接続されたことが確認できます。
 #ref(Console122-007.png,center)
 CENTER:''データポート接続の確認''
