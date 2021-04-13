@@ -200,7 +200,7 @@ CENTER:''Add Name Server''
 CENTER:''Display System Diagram''
 //CENTER:''System Diagramを表示''
 &br;
-- [NameServiceView]にあるConsoleIn、ConsoleOutのコンポーネントを[System Diagram]上にドラッグ＆ドロップすると、以下の画像のように表示されます。
+- [NameServiceView]にあるConsoleIn、ConsoleOutのコンポーネントを[System Diagram]上にドラッグ＆ドロップすると、ホスト名のホストコンテキストとConsoleIn、ConsoleOutコンポーネントが確認できます。設定により、ホストコンテキスト(図中 “TPAD-RTM-NO13|host_cxt” のような “ホスト名|host_cxt” の階層) が表示されず、直接コンポーネントが表示される場合もあります。
 #ref(OpenRTP122-009.png,center)
 CENTER:''Drag and drop components''
 //CENTER:''コンポーネントをドラッグ＆ドロップ''
@@ -330,6 +330,7 @@ CENTER:''Launch Command Prompt''
 
 - Check with RTSystemEditor just in case.
 //- 念のためRTSystemEditorで確認します。&br;
+-- For details, please refer to [[Start OpenRTP:/doc/installation/lets_start#toc9]], [[Using RTSystemEditor:/doc/installation/lets_start#toc10]] to start.
 -- You can confirm that the data port is connected by dragging and dropping the [NameServiceView] component to the System Diagram.
 //-- [NameServiceView]のコンポーネントをSystem Diagramにドラッグ＆ドロップすると、データポートが接続されたことが確認できます。
 #ref(Console122-007.png,center)
