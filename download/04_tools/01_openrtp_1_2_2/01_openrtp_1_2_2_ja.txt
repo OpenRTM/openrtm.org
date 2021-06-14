@@ -14,7 +14,7 @@ msiファイルは800MBのサイズがあります。ダウンロードを数分
 **** 64bit用
 
 |LEFT:300|LEFT:240|LEFT:120|c
-|Windows用インストーラー&br; (OpenRTM-aist、C++、Python、&br;Java版、および OpenRTP、&br; rtshell(4.2.2)含む)&br;(Visual Studio 2012、2013、&br; 2015、2017、2019 共通)|[[OpenRTM-aist-1.2.2-RELEASE_x86_64.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86_64.msi]] &br;MD5:0ef7130c2568713cce4054d0b7975677 | 2020/08/26 |
+|Windows用インストーラー&br; (OpenRTM-aist、C++、Python、&br;Java版、および OpenRTP、&br; rtshell(4.2.2)含む)&br;(Visual Studio 2012、2013、&br; 2015、2017、2019 共通)|[[OpenRTM-aist-1.2.2-RELEASE_x86_64.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86_64.msi]] &br;MD5:3275df2f82252e6c6a33249ce2170563 | 2020/08/26 |
 |Python-3.6|[[python-3.6.8-amd64.exe:https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe]]|[[python.org:https://www.python.org]]|
 |Python-3.7|[[python-3.7.9-amd64.exe:https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe]]|[[python.org:https://www.python.org]]|
 |Python-3.8|[[python-3.8.5-amd64.exe:https://www.python.org/ftp/python/3.8.5/python-3.8.5-amd64.exe]]|[[python.org:https://www.python.org]]|
@@ -27,7 +27,7 @@ msiファイルは800MBのサイズがあります。ダウンロードを数分
 **** 32bit用
 
 |LEFT:300|LEFT:240|LEFT:120|c
-|Windows用インストーラー&br; (OpenRTM-aist、C++、Python、&br;Java版、およびOpenRTP、&br;rtshell(4.2.2)含む)&br;(Visual Studio 2012、2013、&br;2015、2017、2019共通)|[[OpenRTM-aist-1.2.2-RELEASE_x86.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86.msi]] &br;MD5:5cb7243ff642bbbd40463b95c2308e4a | 2020/08/26 |
+|Windows用インストーラー&br; (OpenRTM-aist、C++、Python、&br;Java版、およびOpenRTP、&br;rtshell(4.2.2)含む)&br;(Visual Studio 2012、2013、&br;2015、2017、2019共通)|[[OpenRTM-aist-1.2.2-RELEASE_x86.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86.msi]] &br;MD5: 5e3f29853dedf0bf5af69675657a5c04 | 2020/08/26 |
 |Python-3.6|[[python-3.6.8.exe:https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe]]|[[python.org:https://www.python.org]]|
 |Python-3.7|[[python-3.7.9.exe:https://www.python.org/ftp/python/3.7.9/python-3.7.9.exe]]|[[python.org:https://www.python.org]]|
 |Python-3.8|[[python-3.8.5.exe:https://www.python.org/ftp/python/3.8.5/python-3.8.5.exe]]|[[python.org:https://www.python.org]]|
