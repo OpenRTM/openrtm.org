@@ -19,10 +19,10 @@ msiファイルは800MBのサイズがあります。ダウンロードを数分
 |Python-3.7|[[python-3.7.9-amd64.exe:https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe]]|[[python.org:https://www.python.org]]|
 |Python-3.8|[[python-3.8.5-amd64.exe:https://www.python.org/ftp/python/3.8.5/python-3.8.5-amd64.exe]]|[[python.org:https://www.python.org]]|
 |CMake |[[cmake-3.18.1-win64-x64.msi:https://github.com/Kitware/CMake/releases/download/v3.18.1/cmake-3.18.1-win64-x64.msi]] |[[cmake:https://cmake.org/]]|
-|Doxygen|[[doxygen-1.8.19-setup.exe:http://doxygen.nl/files/doxygen-1.8.19-setup.exe]] |[[doxygen:http://www.doxygen.nl/index.html]]|
+|Doxygen|[[doxygen-1.9.2-setup.exe:https://www.doxygen.nl/files/doxygen-1.9.2-setup.exe]] |[[doxygen:http://www.doxygen.nl/index.html]]|
 
 -&color(red){※Pythonは、"3.8"、"3.7"、"3.6"のいずれかのバージョンをインストールしてください。};
-//-&color(red){※古いrtshellは事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiを用いてでインストールしている場合は対応不要です。};
+-Doxygenは最新版がリリースされると上記のダウンロードリンクが切れることがあります。その際は[[doxygen:http://www.doxygen.nl/index.html]]のダウンロードページに移動し、最新の "doxygen-X.X.X-setup.exe" をダウンロード・インストールしてください。
 
 **** 32bit用
 
@@ -32,11 +32,10 @@ msiファイルは800MBのサイズがあります。ダウンロードを数分
 |Python-3.7|[[python-3.7.9.exe:https://www.python.org/ftp/python/3.7.9/python-3.7.9.exe]]|[[python.org:https://www.python.org]]|
 |Python-3.8|[[python-3.8.5.exe:https://www.python.org/ftp/python/3.8.5/python-3.8.5.exe]]|[[python.org:https://www.python.org]]|
 |CMake|[[cmake-3.18.1-win32-x86.msi:https://github.com/Kitware/CMake/releases/download/v3.18.1/cmake-3.18.1-win32-x86.msi]] |[[cmake:https://cmake.org/]]|
-|Doxygen|[[doxygen-1.8.19-setup.exe:http://doxygen.nl/files/doxygen-1.8.19-setup.exe]] |[[doxygen:http://www.doxygen.nl/index.html]]|
+|Doxygen|[[doxygen-1.9.2-setup.exe:https://www.doxygen.nl/files/doxygen-1.9.2-setup.exe]] |[[doxygen:http://www.doxygen.nl/index.html]]|
 
 -&color(red){※Pythonは、"3.8"、"3.7"、"3.6"のいずれかのバージョンをインストールしてください。};
-//-&color(red){※古いrtshellは事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiを用いてインストールしている場合は対応不要です。};
-
+-Doxygenは最新版がリリースされると上記のダウンロードリンクが切れることがあります。その際は[[doxygen:http://www.doxygen.nl/index.html]]のダウンロードページに移動し、最新の "doxygen-X.X.X-setup.exe" をダウンロード・インストールしてください。
 
 インストールについては、[[OpenRTM-aistを10分で始めよう！:/ja/doc/installation/lets_start]]のページで手順を紹介しています。&br;
 

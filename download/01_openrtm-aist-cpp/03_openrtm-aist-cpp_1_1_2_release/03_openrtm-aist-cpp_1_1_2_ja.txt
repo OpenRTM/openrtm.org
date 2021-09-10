@@ -1,4 +1,4 @@
-﻿// Title: OpenRTM-aist C++ 1.1.2-RELEASE
+// Title: OpenRTM-aist C++ 1.1.2-RELEASE
 #ref(cpp_logo.png,nolink,right,around)
 #contents(4)
 
@@ -15,10 +15,11 @@
 |Python-2.7|[[python-2.7.10.msi:https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi]]|[[python.org:https://www.python.org]]|
 |PyYAML|[[PyYAML-3.11.win32-py2.7.exe:http://pyyaml.org/download/pyyaml/PyYAML-3.11.win32-py2.7.exe]]|[[pyyaml.org:http://pyyaml.org/]]|
 |CMake|[[cmake-3.5.2-win32-x86.msi:https://cmake.org/files/v3.5/cmake-3.5.2-win32-x86.msi]] |[[cmake:https://cmake.org/]]|
-|Doxygen|[[doxygen-1.8.11-setup.exe:http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.11-setup.exe]] |[[doxygen:http://www.stack.nl/~dimitri/doxygen/]]|
+|Doxygen|[[doxygen-1.9.2-setup.exe:https://www.doxygen.nl/files/doxygen-1.9.2-setup.exe]] |[[doxygen:http://doxygen.nl/]]|
 
 -&color(red){※ Python 2.7.10 推奨。2.7.11 は PYTHONPATH 等環境変数の設定が必要な場合があります。};
 -&color(red){※ 古い rtshell は事前に削除しておいてください。};
+-Doxygenは最新版がリリースされると上記のダウンロードリンクが切れることがあります。その際は[[doxygen:http://www.doxygen.nl/index.html]]のダウンロードページに移動し、最新の "doxygen-X.X.X-setup.exe" をダウンロード・インストールしてください。
 
 **** 64bit用
 
@@ -28,10 +29,11 @@
 |Python-2.7|[[python-2.7.10.amd64.msi:https://www.python.org/ftp/python/2.7.10/python-2.7.10.amd64.msi]]|[[python.org:https://www.python.org]]|
 |PyYAML |[[PyYAML-3.11.win-amd64-py2.7.exe:http://pyyaml.org/download/pyyaml/PyYAML-3.11.win-amd64-py2.7.exe]]|[[pyyaml.org:http://pyyaml.org/]]|
 |CMake |[[cmake-3.5.2-win32-x86.msi:https://cmake.org/files/v3.5/cmake-3.5.2-win32-x86.msi]] |[[cmake:https://cmake.org/]]|
-|Doxygen|[[doxygen-1.8.11-setup.exe:http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.11-setup.exe]] |[[doxygen:http://www.stack.nl/~dimitri/doxygen/]]|
+|Doxygen|[[doxygen-1.9.2-setup.exe:https://www.doxygen.nl/files/doxygen-1.9.2-setup.exe]] |[[doxygen:http://doxygen.nl/]]|
 
 -&color(red){※ Python 2.7.10 推奨。2.7.11は PYTHONPATH 等環境変数の設定が必要な場合があります。};
 -&color(red){※ 古い rtshell は事前に削除しておいてください。};
+-Doxygenは最新版がリリースされると上記のダウンロードリンクが切れることがあります。その際は[[doxygen:http://www.doxygen.nl/index.html]]のダウンロードページに移動し、最新の "doxygen-X.X.X-setup.exe" をダウンロード・インストールしてください。
 
 インストールについては、[[OpenRTM-aistを10分で始めよう！:http://openrtm.org/openrtm/ja/node/6026]] のページで手順を紹介しています。&br;
 

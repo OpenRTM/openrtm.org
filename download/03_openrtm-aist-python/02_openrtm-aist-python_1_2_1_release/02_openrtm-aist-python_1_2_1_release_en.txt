@@ -13,27 +13,30 @@ The msi file is over 900MB in size. Use a high-speed line (50Mbps or more) to do
 
 **** For 64bit
 
-| LEFT:300 | LEFT | LEFT:120 | c
-| Installer for Windows &br; (including OpenRTM-aist, C ++, Python, &br; Java version and OpenRTP, &br; rtshell (4.2.2)) &br; (Visual Studio 2010, 2012, &br; 2013, 2015, 2017 , 2019)) | .msi]] &br; MD5: be6b346d61768435d812cc032bc7a529 | November 25, 2019 |
+//| LEFT:300 | LEFT | LEFT:120 |
+|LEFT:300|LEFT|LEFT:120|c
+| Installer for Windows &br; (including OpenRTM-aist, C ++, Python, &br; Java version and OpenRTP, &br; RTShell (4.2.2)) &br; (Visual Studio 2010, 2012, &br; 2013, 2015, 2017 , 2019)) | .msi]] &br; MD5: be6b346d61768435d812cc032bc7a529 | November 25, 2019 |
 | Python-2.7 | [[python-2.7.16.amd64.msi:https://www.python.org/ftp/python/2.7.16/python-2.7.16.amd64.msi]] | [[python.org:https://www.python.org]] |
 | Python-3.6 | [[python-3.6.8-amd64.exe:https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe]] | [[python.org:https://www.python.org]] |
 | Python-3.7 | [[python-3.7.5-amd64.exe:https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe]] | [[[python.org:https://www.python.org]] |
 | CMake | [[cmake-3.15.5-win64-x64.msi:https://github.com/Kitware/CMake/releases/download/v3.15.5/cmake-3.15.5-win64-x64.msi]] | [[cmake:https://cmake.org/]] |
-| Doxygen | [[doxygen-1.8.16-setup.exe:http://doxygen.nl/files/doxygen-1.8.16-setup.exe]] | [[doxygen:http://www.doxygen.nl/index.html]] |
+|Doxygen|[[doxygen-1.9.2-setup.exe:https://www.doxygen.nl/files/doxygen-1.9.2-setup.exe]] | [[doxygen:http://www.doxygen.nl/index.html]] |
 
 -&color(red){* Install Python version "3.7", "3.6", or "2.7". };
+- The above download link may be broken when the latest version of Doxygen is released. In that case, please go to the download page of [[doxygen: http: //www.doxygen.nl/index.html]] and download and install the latest "doxygen-X.X.X-setup.exe".
 
 **** For 32bit
 
-| LEFT:300 | LEFT | LEFT:120 |c
-| Windows installer &br; (including OpenRTM-aist, C ++, Python, &br; Java version and OpenRTP, &br; rtshell (4.2.2)) &br; (Visual Studio 2010, 2012, &br; 2013, 2015, 2017, 2019 Common) | [[OpenRTM-aist-1.2.1-RELEASE_x86.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.1/OpenRTM-aist-1.2.1-RELEASE_x86. msi]] &br; MD5: a9186d409cafc039432a0e1c6e7e02ef | November 25, 2019 |
+| LEFT:300 | LEFT | LEFT:120 |
+| Windows installer &br; (including OpenRTM-aist, C ++, Python, &br; Java version and OpenRTP, &br; RTShell (4.2.2)) &br; (Visual Studio 2010, 2012, &br; 2013, 2015, 2017, 2019 Common) | [[OpenRTM-aist-1.2.1-RELEASE_x86.msi:https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.1/OpenRTM-aist-1.2.1-RELEASE_x86. msi]] &br; MD5: a9186d409cafc039432a0e1c6e7e02ef | November 25, 2019 |
 | Python-2.7 | [[python-2.7.16.msi:https://www.python.org/ftp/python/2.7.16/python-2.7.16.msi]] | [[python.org:https://www.python.org]] |
 | Python-3.6 | [[python-3.6.8.exe:https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe]] | [[python.org:https://www.python.org]] |
 | Python-3.7 | [[python-3.7.5.exe:https://www.python.org/ftp/python/3.7.5/python-3.7.5.exe]] | [[python.org:https://www.python.org]] |
 | CMake | [[cmake-3.15.5-win32-x86.msi:https://github.com/Kitware/CMake/releases/download/v3.15.5/cmake-3.15.5-win32-x86.msi]] | [[cmake:https://cmake.org/]] |
-| Doxygen | [[doxygen-1.8.16-setup.exe:http://doxygen.nl/files/doxygen-1.8.16-setup.exe]] | [[doxygen:http://www.doxygen.nl/index.html]] |
+|Doxygen|[[doxygen-1.9.2-setup.exe:https://www.doxygen.nl/files/doxygen-1.9.2-setup.exe]]  | [[doxygen:http://www.doxygen.nl/index.html]] |
 
 -&color(red){* Install Python version "3.7", "3.6", or "2.7". };
+- The above download link may be broken when the latest version of Doxygen is released. In that case, please go to the download page of [[doxygen: http: //www.doxygen.nl/index.html]] and download and install the latest "doxygen-X.X.X-setup.exe".
 
 
 For installation, [[Start OpenRTM-aist in 10 minutes!:/ja/node/6521]] page for instructions. 

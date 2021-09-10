@@ -19,10 +19,12 @@ The msi file is 800MB in size. Use a high-speed line (50Mbps or more) to downloa
 |Python-3.7|[[python-3.7.9-amd64.exe:https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe]]|[[python.org:https://www.python.org]]|
 |Python-3.8|[[python-3.8.5-amd64.exe:https://www.python.org/ftp/python/3.8.5/python-3.8.5-amd64.exe]]|[[python.org:https://www.python.org]]|
 |CMake |[[cmake-3.18.1-win64-x64.msi:https://github.com/Kitware/CMake/releases/download/v3.18.1/cmake-3.18.1-win64-x64.msi]] |[[cmake:https://cmake.org/]]|
-|Doxygen|[[doxygen-1.8.19-setup.exe:http://doxygen.nl/files/doxygen-1.8.19-setup.exe]] |[[doxygen:http://www.doxygen.nl/index.html]]|
+|Doxygen|[[doxygen-1.9.2-setup.exe:https://www.doxygen.nl/files/doxygen-1.9.2-setup.exe]] |[[doxygen:http://www.doxygen.nl/index.html]]|
+
 
 - &color(red){* Install Python version "3.8", "3.7", or "3.6". };
-//- &color(red){* Please delete the old rtshell beforehand. However, if the OpenRTM-aist 1.1.2 version is installed using the msi file, no action is required. };
+//- &color (red){* Please delete the old rtshell beforehand. However, if the OpenRTM-aist 1.1.2 version is installed using the msi file, no action is required. };
+- The above download link may be broken when the latest version of Doxygen is released. In that case, please go to the download page of [[doxygen:http://www.doxygen.nl/index.html]] and download and install the latest "doxygen-X.X.X-setup.exe".
 
 **** For 32bit
 
@@ -32,10 +34,12 @@ The msi file is 800MB in size. Use a high-speed line (50Mbps or more) to downloa
 |Python-3.7|[[python-3.7.9.exe:https://www.python.org/ftp/python/3.7.9/python-3.7.9.exe]]|[[python.org:https://www.python.org]]|
 |Python-3.8|[[python-3.8.5.exe:https://www.python.org/ftp/python/3.8.5/python-3.8.5.exe]]|[[python.org:https://www.python.org]]|
 |CMake|[[cmake-3.18.1-win32-x86.msi:https://github.com/Kitware/CMake/releases/download/v3.18.1/cmake-3.18.1-win32-x86.msi]] |[[cmake:https://cmake.org/]]|
-|Doxygen|[[doxygen-1.8.19-setup.exe:http://doxygen.nl/files/doxygen-1.8.19-setup.exe]] |[[doxygen:http://www.doxygen.nl/index.html]]|
+|Doxygen|[[doxygen-1.9.2-setup.exe:https://www.doxygen.nl/files/doxygen-1.9.2-setup.exe]] |[[doxygen:http://www.doxygen.nl/index.html]]|
+
 
 - &color(red){* Install Python version "3.8", "3.7", or "3.6". };
-//- &color(red){* Please delete the old rtshell beforehand. However, if the OpenRTM-aist 1.1.2 version is installed using the msi file, no action is required. };
+//- &color (red){* Please delete the old rtshell beforehand. However, if the OpenRTM-aist 1.1.2 version is installed using the msi file, no action is required. };
+- The above download link may be broken when the latest version of Doxygen is released. In that case, please go to the download page of [[doxygen:http://www.doxygen.nl/index.html]] and download and install the latest "doxygen-X.X.X-setup.exe".
 
 
 For installation, [[Start OpenRTM-aist in 10 minutes!:/ja/doc/installation/lets_start]] page for instructions. &br;

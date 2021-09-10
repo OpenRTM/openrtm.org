@@ -18,10 +18,11 @@ The msi file is over 900MB in size. Use a high-speed line (50Mbps or more) to do
 | Python-3.6 | [[python-3.6.8-amd64.exe:https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe]] | [[python .org:https://www.python.org]] |
 | Python-3.7 | [[python-3.7.5-amd64.exe:https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe]] | [[python .org:https://www.python.org]] |
 | CMake | [[cmake-3.15.5-win64-x64.msi:https://github.com/Kitware/CMake/releases/download/v3.15.5/cmake-3.15.5-win64-x64.msi]] | [[cmake:https://cmake.org/]] |
-| Doxygen | [[doxygen-1.8.16-setup.exe:http://doxygen.nl/files/doxygen-1.8.16-setup.exe]] | [[doxygen:http://www.doxygen.nl/index.html]] |
+|Doxygen|[[doxygen-1.9.2-setup.exe:https://www.doxygen.nl/files/doxygen-1.9.2-setup.exe]] |[[doxygen:http://www.doxygen.nl/index.html]]|
 
 - &color(red){* Install Python version "3.7", "3.6", or "2.7". };
 //- &color(red){* Please delete the old rtshell beforehand. However, if the OpenRTM-aist 1.1.2 version is installed using the msi file, no action is required. };
+- The above download link may be broken when the latest version of Doxygen is released. In that case, please go to the download page of [[doxygen:http://www.doxygen.nl/index.html]] and download and install the latest "doxygen-X.X.X-setup.exe".
 
 **** For 32bit
 
