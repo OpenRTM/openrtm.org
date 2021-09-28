@@ -1,4 +1,4 @@
-﻿// Title: OpenRTM-aist-Java-1.2.1-RELEASE
+// Title: OpenRTM-aist-Java-1.2.1-RELEASE
 #ref(java_logo.png,right,nolink,around)
 #contents(4)
 
@@ -18,10 +18,11 @@ msiファイルは900MB以上のサイズがあります。ダウンロードを
 |Python-3.6|[[python-3.6.8-amd64.exe:https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe]]|[[python.org:https://www.python.org]]|
 |Python-3.7|[[python-3.7.5-amd64.exe:https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe]]|[[python.org:https://www.python.org]]|
 |CMake |[[cmake-3.15.5-win64-x64.msi:https://github.com/Kitware/CMake/releases/download/v3.15.5/cmake-3.15.5-win64-x64.msi]] |[[cmake:https://cmake.org/]]|
-|Doxygen|[[doxygen-1.8.16-setup.exe:http://doxygen.nl/files/doxygen-1.8.16-setup.exe]] |[[doxygen:http://www.doxygen.nl/index.html]]|
+|Doxygen|[[doxygen-1.9.2-setup.exe:https://www.doxygen.nl/files/doxygen-1.9.2-setup.exe]]  |[[doxygen:http://www.doxygen.nl/index.html]]|
 
 -&color(red){※Pythonは、"3.7"、"3.6"、"2.7"のいずれかのバージョンをインストールしてください。};
 //-&color(red){※古いrtshellは事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiファイルを用いてインストールしている場合は対応不要です。};
+-Doxygenは最新版がリリースされると上記のダウンロードリンクが切れることがあります。その際は[[doxygen:http://www.doxygen.nl/index.html]]のダウンロードページに移動し、最新の "doxygen-X.X.X-setup.exe" をダウンロード・インストールしてください。
 
 **** 32bit用
 
@@ -31,11 +32,11 @@ msiファイルは900MB以上のサイズがあります。ダウンロードを
 |Python-3.6|[[python-3.6.8.exe:https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe]]|[[python.org:https://www.python.org]]|
 |Python-3.7|[[python-3.7.5.exe:https://www.python.org/ftp/python/3.7.5/python-3.7.5.exe]]|[[python.org:https://www.python.org]]|
 |CMake|[[cmake-3.15.5-win32-x86.msi:https://github.com/Kitware/CMake/releases/download/v3.15.5/cmake-3.15.5-win32-x86.msi]] |[[cmake:https://cmake.org/]]|
-|Doxygen|[[doxygen-1.8.16-setup.exe:http://doxygen.nl/files/doxygen-1.8.16-setup.exe]] |[[doxygen:http://www.doxygen.nl/index.html]]|
+|Doxygen|[[doxygen-1.9.2-setup.exe:https://www.doxygen.nl/files/doxygen-1.9.2-setup.exe]]  |[[doxygen:http://www.doxygen.nl/index.html]]|
 
 -&color(red){※Pythonは、"3.7"、"3.6"、"2.7"のいずれかのバージョンをインストールしてください。};
 //-&color(red){※古いrtshellは事前に削除しておいてください。ただし、OpenRTM-aist 1.1.2版をmsiファイルを用いてインストールしている場合は対応不要です。};
-
+-Doxygenは最新版がリリースされると上記のダウンロードリンクが切れることがあります。その際は[[doxygen:http://www.doxygen.nl/index.html]]のダウンロードページに移動し、最新の "doxygen-X.X.X-setup.exe" をダウンロード・インストールしてください。
 
 インストールについては、[[OpenRTM-aistを10分で始めよう！:/ja/node/6521]]のページで手順を紹介しています。&br;
 

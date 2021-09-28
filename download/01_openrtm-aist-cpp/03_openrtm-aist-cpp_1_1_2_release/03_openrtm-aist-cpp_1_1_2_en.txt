@@ -1,4 +1,4 @@
-﻿// Title: OpenRTM-aist C++ 1.1.2-RELEASE
+// Title: OpenRTM-aist C++ 1.1.2-RELEASE
 #ref(cpp_logo.png,nolink,right,around)
 #contents(4)
 
@@ -15,10 +15,12 @@
 |Python-2.7|[[python-2.7.10.msi:https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi]]|[[python.org:https://www.python.org]]|
 |PyYAML|[[PyYAML-3.11.win32-py2.7.exe:http://pyyaml.org/download/pyyaml/PyYAML-3.11.win32-py2.7.exe]]|[[pyyaml.org:http://pyyaml.org/]]|
 |CMake|[[cmake-3.5.2-win32-x86.msi:https://cmake.org/files/v3.5/cmake-3.5.2-win32-x86.msi]] |[[cmake:https://cmake.org/]]|
-|Doxygen|[[doxygen-1.8.11-setup.exe:http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.11-setup.exe]] |[[doxygen:http://www.stack.nl/~dimitri/doxygen/]]|
+|Doxygen|[[doxygen-1.9.2-setup.exe:https://www.doxygen.nl/files/doxygen-1.9.2-setup.exe]] |[[doxygen:https://www.doxygen.nl/]]|
 
 -&color(red){* Currently Python 2.7.10 is recommended. 2.7.11 might need to set PYTHONPATH environment variables.};
 -&color(red){* Old rtshell must be removed before installing rtshell from this installer.};
+- The above download link may be broken when the latest version of Doxygen is released. In that case, please go to the download page of [[doxygen: http: //www.doxygen.nl/index.html]] and download and install the latest "doxygen-X.X.X-setup.exe".
+
 
 **** For 64bit
 
@@ -28,10 +30,12 @@
 |Python-2.7|[[python-2.7.10.amd64.msi:https://www.python.org/ftp/python/2.7.10/python-2.7.10.amd64.msi]]|[[python.org:https://www.python.org]]|
 |PyYAML |[[PyYAML-3.11.win-amd64-py2.7.exe:http://pyyaml.org/download/pyyaml/PyYAML-3.11.win-amd64-py2.7.exe]]|[[pyyaml.org:http://pyyaml.org/]]|
 |CMake |[[cmake-3.5.2-win32-x86.msi:https://cmake.org/files/v3.5/cmake-3.5.2-win32-x86.msi]] |[[cmake:https://cmake.org/]]|
-|Doxygen|[[doxygen-1.8.11-setup.exe:http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.11-setup.exe]] |[[doxygen:http://www.stack.nl/~dimitri/doxygen/]]|
+|Doxygen|[[doxygen-1.9.2-setup.exe:https://www.doxygen.nl/files/doxygen-1.9.2-setup.exe]] |[[doxygen:https://www.doxygen.nl/]]|
 
 -&color(red){* Currently Python 2.7.10 is recommended. 2.7.11 might need to set PYTHONPATH environment variables.};
 -&color(red){* Old rtshell must be removed before installing rtshell from this installer.};
+- The above download link may be broken when the latest version of Doxygen is released. In that case, please go to the download page of [[doxygen: http: //www.doxygen.nl/index.html]] and download and install the latest "doxygen-X.X.X-setup.exe".
+
 
 // インストールについては、[[OpenRTM-aistを10分で始めよう！:http://openrtm.org/openrtm/ja/node/6026]] のページで手順を紹介しています。&br;
 
