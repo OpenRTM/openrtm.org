@@ -1,0 +1,105 @@
+// Title: Linuxにインストール
+
+
+メモ）
+- インストール（一括インストールスクリプト）
+
+
+// Title: Ubuntu/Debianへのインストール
+#ref(ubuntu_logo2.png,around,right)
+
+
+OpenRTM-aistは、UbuntuやDebian GNU Linuxにおいて利用可能なdebパッケージが提供されています。
+２.０は現在、Debian、Ubuntu、Raspbian OSのディストリビューションに対応しています。
+//それぞれのリリースが対応しているOSのディストリビューション・バージョンは、ダウンロードページで確認できます。
+Ubuntu/Debian GNU Linuxへのサポートバージョンや対応の有無は、予告なしに変更されることがありますので、あらかじめご了承ください。
+
+#contents
+
+** 一括インストールスクリプト
+
+openrtm.orgが提供するインストール・スクリプト''pkg_install_ubuntu.sh''または''pkg_install_debian.sh''を以下のコマンドでダウンロードし、root 権限で実行します。このスクリプトはOpenRTM-aist-2.0に必要なパッケージを順次apt-getを用いてインストールしていきます。
+
+オプションを指定することで、目的に合わせたパッケージをインストールすることが可能です。
+
+//inaba
+コマンドプロンプトを起動し、以下のいずれかのコマンドでダウンロードします。
+&color(red){ダウンロードコマンド・URLを確認する。}; 
+
+ Ubuntuの場合:
+ wget URL
+ curl -O URL
+ 
+ Debianの場合:
+ wget URL
+ curl -O URL
+
+ダウンロードが完了したら、スクリプトが置いてあるディレクトリでオプションを指定して実行します。
+
+Ubuntuに全ての言語(C++、Python、Java)のパッケージをインストールする場合:
+
+ $ sudo sh pkg_install_ubuntu.sh -l all --yes
+
+Debianに全て言語(C++、Python。Java)のパッケージをインストールする場合:
+
+suでroot権限を得た後に
+
+ $ su sh pkg_install_debian.sh -l all --yes
+
+例えば、UbuntuにC++言語のパッケージのみをインストールする場合は
+ $ sudo sh pkg_install_ubuntu.sh -l c++ --yes
+
+でインストールできます。
+
+一括インストールスクリプトの詳しいインストール方法、指定可能なオプションの種類につきましては、「[[一括インストールスクリプト(準備中につき１.２にリンク):http://openrtm.org/openrtm/ja/node/6345]]」のページをご確認ください。&br;
+
+「2.0.x」と「1.2.2」はC++言語のみ共存可能です。「1.2.2」をインストールする際は一括インストールスクリプトが異なりますので、上記のリンク「「[[一括インストールスクリプト(1.2用):http://openrtm.org/openrtm/ja/node/6345]]」からダウンロードしてください。
+
+//&color(red){※最新バージョンが「1.2.2」である場合は、オプション指定で「1.2.1」のインストール、「1.2.2」から「1.2.1」へのダウングレードができます。}; 
+
+//一括インストールスクリプトは、ダウンロードした後、ダウンロード先ディレクトリに移動し、
+
+//Ubuntuの場合は
+// $ sudo sh pkg_install_ubuntu.sh -l c++ --yes
+//
+//Debianの場合はsuでroot権限を得た後に
+// # sh pkg_install_debian.sh -l c++ --yes
+
+//でインストールできます。
+
+
+** OpenRTPのインストール
+一般的なUbuntu/Debian環境での開発にはRTC BuilderやRTSystem Editorを使用しますが、その場合にはOpenRTPが必要ですので、一括インストールスクリプトを用いてOpenRTPをインストールしてください。Ubuntuではpkg_install_ubuntu.shが置いてあるディレクトリで
+
+Ubuntuは:
+ $ sudo sh pkg_install_ubuntu.sh -l openrtp --yes
+
+Debianはsuでroot権限を得た後に:
+ # sh pkg_install_debian.sh -l openrtp --yes
+
+と入力するとOpenRTPをインストールできます。
+
+//2.0ではスクリプトでJDKをインストールし、優先パッケージにするので説明は不要.
+//** JDK8のインストール
+
+//OpenRTP(RTSystem EditorやRTC Builderなど)の実行にはJDK8相当のJava環境が必要です。(デフォルトの環境でJDK8がインストールされている場合もありますが、Ubuntu 18.04ではJDK11がインストールされているため、JDK8のインストールが必要です。)  JDK8の入手やインストールについては以下を参照してください。
+//- [[JDK8のインストール>/ja/node/6911]]
+
+***インストールの確認
+インストールを確認します。
+
+ $ dpkg -l 'openrt*'
+ 要望=(U)不明/(I)インストール/(R)削除/(P)完全削除/(H)保持
+ | 状態=(N)無/(I)インストール済/(C)設定/(U)展開/(F)設定失敗/(H)半インストール/(W)トリガ待ち/(T)トリガ保留
+ |/ エラー?=(空欄)無/(R)要再インストール (状態,エラーの大文字=異常)
+ ||/ 名前                     バージョン        アーキテクチャ    説明
+ +++-========================-=================-+++-======================-================- 
+ ii  openrtm-aist:amd64     2.0.x-x          amd64            OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm-aist-dev:amd64 2.0.x-x          amd64            OpenRTM-aist headers for development
+ ii  openrtm-aist-doc       2.0.x-x          all              Documentation for openrtm-aist
+ ii  openrtm-aist-example:a 2.0.x-x          amd64            OpenRTM-aist examples
+ ii  openrtm-aist-idl:amd64 2.0.x-x          amd64            OpenRTM-aist idls for development
+ ii  openrtp:amd64          2.0.x-x          amd64            OpenRTP, Open RT Platform distributed by AIST
+
+
+インストールされるパッケージの詳しい内容は「[[OpenRTM-aist-2.0 debパッケージの詳しい内容>/ja/node/6911]] 」で確認できます。
