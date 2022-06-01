@@ -1,0 +1,164 @@
+// Title: インストール
+#ref(windows10-logo.png,60%,margin=30 30 30 30,around,nolink,right)
+#contents
+
+//作業メモ：２.０.０がリリースされたら、リンクを確認。
+
+** インストールの準備
+
+*** 32bit版と64bit版
+
+現状、ほとんどのWindowsは64bit版が利用されていますので、基本的には以下は 64bit を前提として説明します。
+インストールしているWindowsが32bit版の場合は、OpenRTM-aistやその他のソフトウェアは32bit版をインストールする必要があります。
+
+&color(red){''NOTE: 基本的にすべて64bit版のソフトウェアを使用してください。''};
+
+//MSIインストーラーによるOpenRTM-aistのインストール手順については下記のページに記載。
+//- [[OpenRTM-aist 1.2系のインストール(Windows、MSIインストーラー使用):/ja/node/6652]]
+
+
+*** 必要なソフトウエアのインストール
+OpenRTM-aistを利用するには、Python、CMake、Doxygen、Visual Studio等のソフトウェアのインストールが必要です。
+
+**** Visual Studio
+
+C++版の開発だけでなく、Python版、Java版のRTCを作成した際に、インストーラをビルドするのにも必要です。
+以下のCommunity版（無料）をインストールするか、別途Visual Studio 2015/2017/2019/2022を入手してインストールしてください。
+
+- [[Microsoft ''Download Visual Studio 2022'':https://visualstudio.microsoft.com/ja/downloads/?utm_source=mscom&utm_campaign=msdocs]]
+-- 現在動作確認できているVisual Studioのバージョンは2022です。
+-- C++の開発環境を入れ忘れることがよくあります。以下の説明を一読することをお勧めします。
+-- [[OpenRTM.org ''Visual Studioのインストール方法'':/ja/node/6650]] 
+
+**** Python
+//&color(red){''NOTE:'' Python2.7は2020年4月にサポートが終了しました。使用は推奨されていません。};
+//&color(gray){OpenRTM-aist-2.0.0でもPython2.7は一応利用することはできます。};
+
+PythonはPython言語版のRTCの開発だけでなく、OpenRTM-aistの様々なツールでも使用していますので必ずインストールする必要があります。
+2022年04月現在、サポートが提供されているPythonは 3.6, 3.8, 3.7, 3.9, 3.10 (2020年10月リリース) ですが、OpenRTM-aistがサポートしているのは 3.6～3.10 までです。
+最新版をインストールすることをお勧めします。
+
+- [[Python 3.10 :https://www.python.org/downloads/windows/]]
+-- [[python-3.10.4-amd64.exe (64bit版):https://www.python.org/ftp/python/3.10.4/python-3.10.4-amd64.exe]]
+-- できるだけ最新版をインストールしてください。
+-- インストールする際以下の点に注意してください。
+--- Pythonのインストール先は、インストール時の選択 [Customize installation]に対応しています。最初の画面の下部にある[add python *** to PATH]にチェックを入れて、[Customize installation]を選択してください。
+--- [Advanced Options]画面では、[Install for all users]にチェックを入れて、[Customize install location]でインストール先を設定してください。(例: Path=C:\Python38;C:\ Python38\Scripts;...）
+
+**** CMake
+CMakeはWindowsやLinux等様々な環境でビルドに必要なファイル（Visual Studioのプロジェクトファイル、Linux上のMakefile等）を自動生成するために必要です。
+
+- [[CMake(3.11以上推奨):https://cmake.org/download/]]
+--  [[cmake-3.22.3-windows-x86_64.msi (64bit版):https://github.com/Kitware/CMake/releases/download/v3.22.3/cmake-3.22.3-windows-x86_64.msi]]
+-- できるだけ最新版をインストールしてください。
+-- インストールする際、[Install Option]画面で[Add Cmake to the system PATH for all users]を選択することを推奨します。
+
+**** Doxygen & Graphviz
+
+Doxygenは、ソースコード等のコメントからドキュメントを自動生成するツールです。
+Graphvizは、Doxygenでドキュメントを生成する際に、クラス図等の図を生成するために必要とされるツールです。
+OpenRTM-aistでは、RTCBuilderでRTCの設計時に様々な設計情報を記入することができ、それらはソースコードのコメントとして出力されます。
+これをDoxygenで処理することで、RTCのキレイなドキュメントを生成することができます。
+
+- [[Doxygen:http://www.doxygen.nl/download.html]]
+//-- [[doxygen-1.8.19-setup.exe:http://doxygen.nl/files/doxygen-1.8.19-setup.exe]] (32bit, 64bitの別なし）
+-- [[doxygen-1.9.3-setup.exe :https://www.doxygen.nl/files/doxygen-1.9.3-setup.exe]] (32bit, 64bitの別なし）
+-- できるだけ最新版をインストールしてください。
+
+&aname(Graphviz);
+- [[Graphviz:https://graphviz.gitlab.io/download/]]
+//-- [[graphviz-install-2.44.1-win64.exe:https://www2.graphviz.org/Packages/stable/windows/10/cmake/Release/x64/graphviz-install-2.44.1-win64.exe]]
+-- [[windows_10_cmake_Release_graphviz-install-3.0.0-win64.exe:https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/3.0.0/windows_10_cmake_Release_graphviz-install-3.0.0-win64.exe]]
+
+
+インストールの途中で[Install Options]としてsystem PATHをどうするかを聞かれますが、Add Graphviz to the system PATH for all usersを選択することを推奨します。
+上記WebページからWindows版のバイナリ実行形式ファイルをダウンロードして実行してインストールしてください。
+
+インストール後、コマンドプロンプトで dot -v を実行してプラグイン情報が表示されることを確認して下さい。以下はGraphviz 2.44.1をインストールした時の
+ >dot -v
+ dot - graphviz version 3.0.0 (20220226.1711)
+ libdir = "C:\Program Files\Graphviz\bin"
+ Activated plugin library: gvplugin_dot_layout.dll
+ Using layout: dot:dot_layout
+ Activated plugin library: gvplugin_core.dll
+ Using render: dot:core
+ Using device: dot:dot:core
+ The plugin configuration file:
+         C:\Program Files\Graphviz\bin\config6
+                 was successfully loaded.
+     render      :  cairo dot dot_json fig gdiplus json json0 map mp pic pov ps svg tk vml xdot xdot_json
+     layout      :  circo dot fdp neato nop nop1 nop2 osage patchwork sfdp twopi
+     textlayout  :  textlayout
+     device      :  bmp canon cmap cmapx cmapx_np dot dot_json emf emfplus eps fig gif gv imap imap_np ismap jpe jpeg jpg json json0 metafile mp pdf pic plain plain-ext png pov ps ps2 svg tif tiff tk vml xdot xdot1.2 xdot1.4 xdot_json
+     loadimage   :  (lib) bmp eps gif jpe jpeg jpg png ps svg
+
+下記のように表示された場合、管理者でコマンドプロンプトを開き、dot -c を実行後に dot -v を実行すると上記のように表示されます。
+ >dot -v
+ dot - graphviz version 3.0.0 (20220226.1711)
+ There is no layout engine support for "dot"
+ Perhaps "dot -c" needs to be run (with installer's privileges) to register the plugins?
+
+管理者でコマンドプロンプトを開く方法は、Windows10の検索窓に cmd と入力し、検索結果の「コマンドプロンプト」を右クリックして「管理者として実行」を選択します。
+
+** OpenRTM-aistのインストール
+
+上記のソフトウェアのインストールが完了したら、OpenRTM-aistのインストールを行います。
+
+*** インストーラのダウンロード
+
+OpenRTM-aistのWindows版のインストーラ（msi形式）を以下のページからダウンロードします。
+
+- [[OpenRTM-aist-2.0.0-RELEASE:https://openrtm.org/openrtm/ja/download]]
+-- [[OpenRTM-aist-2.0.0-RELEASE_x86_64.msi (64bit版):https://github.com/OpenRTM/OpenRTM-aist/releases/download/vX.X.X/OpenRTM-aist-X.X.X-RELEASE_x86_64.msi]]（リンク）
+
+このインストーラには、以下の内容が含まれています。
+
+- C++ 用開発環境
+-- C++用過去バージョンのDLL (古いRTC実行時に必要)
+- Python 用開発環境
+- Java 用開発環境
+- OpenRTP (GUIツール、RTCBUilder，RTSystemEditor）
+-- JRE8環境 (OpenRTPに必要）
+- rtshell (CUIツール）
+
+したがって、ファイルサイズが1GB近くあり、ダウンロードに多少時間がかかります。ご注意ください。
+
+*** インストール
+
+msiファイルが正しくダウンロードされたら、ファイルをダブルクリックしてインストールを開始してください。
+以下のようなインストーラが起動しますので ''「次へ」'' をクリックして進みます。
+
+#ref(openrtm122_inst_01.png,100%,margin=10 10 10 10,nolink,center)
+
+使用許諾契約書が表示されますので、''ソフトウェアライセンス条項に同意します'' にチェックを入れます。
+なお、OpenRTM-aist は LGPLｖ３、OpenRTPはEPL v1.0 ライセンスです。
+
+#ref(openrtm122_inst_02.png,100%,margin=10 10 10 10,nolink,center)
+
+ユーザアカウントごとにインストールするか、すべてのユーザが使えるようにインストールするか選択します。
+現在インストールを行っているアカウントが管理者権限があれば、''「すべてのユーザにインストール」'' を推奨します。
+
+#ref(openrtm122_inst_03.png,100%,margin=10 10 10 10,nolink,center)
+
+使用しているVisual Studioのバージョンを選択します。
+
+#ref(openrtm122_inst_04.png,100%,margin=10 10 10 10,nolink,center)
+
+セットアップの種類を選択します。''「標準」''と''「完全」''は同じで、すべての項目をインストールします。通常か ''「標準」'' を選択します。
+
+#ref(openrtm122_inst_05.png,100%,margin=10 10 10 10,nolink,center)
+
+''「カスタム」'' をクリックすると、インストールする項目を選択できます。特定の言語のみインストールしたい場合などはこちらを選択します。
+
+#ref(openrtm122_inst_06.png,100%,margin=10 10 10 10,nolink,center)
+
+インストールを開始すると、以下のようなダイアログが出ます。''「はい」'' をクリックして先へ進んでください。
+
+#ref(openrtm122_inst_08.png,100%,margin=10 10 10 10,nolink,center)
+
+すべてインストールが完了すると以下の画面となります。''「完了」'' を押してウインドウを閉じてください。
+以上でインストールは完了です。正しくインストールされているかどうかは、[[「OpenRTMを10分で始めよう・サンプルコンポーネント」:https://openrtm.org/openrtm/ja/doc/installation/lets_start121#toc6]] などを見ながらサンプルコンポーネントを実行するなどして確認してください。
+
+インストーラの詳しい作業内容は[[「OpenRTM-aistインストーラの作業内容」 :https://openrtm.org/openrtm/ja/doc/installation/install_2_0/install_windows_2_0/install_2_0/install_workcontent_2_0]] で確認できます。
+
+
