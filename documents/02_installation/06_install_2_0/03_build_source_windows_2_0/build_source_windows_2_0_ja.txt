@@ -1,0 +1,180 @@
+// Title: ソースを使う
+
+
+// Title: ソースからのビルド(Windows編)
+OpenRTM-aist本体に改修を加えてWindows上利用したい場合は、OpenRTM-aist本体のWindows用ソースパッケージを自分でビルドできます。 ここでは、ダウンロードページやリポジトリからソースコードを取得しWindows環境でOpenRTM-aistをビルドする方法を説明します。
+
+Windows環境でのOpenRTM-aistのビルドにおいては、ビルド環境の構築やインストーラの作成など、Windows環境上でのソフトウエア開発についてのさまざまな知識が必要です。 以下の説明では、Windows環境上のプログラム開発やバッチファイル作成などの基本的な知識があることを前提にしています。
+
+#contents
+
+//------------------------------------------------------------
+**Windows用ソースコード
+
+Windows用のOpenRTM-aist(C++版)ソースパッケージはLinux 用のソースパッケージとは別個に配布されています。 ソースコードの基本的内容は同じですが、ビルド環境に依存するファイルは異なっています(例えばWindows環境におけるVisual StudioのプロジェクトファイルはWindows用ソースパッケージの中にしか存在しません)。
+
+***ソースパッケージの生成
+
+Windows用ソースコードのパッケージは
+下記に示すリンクより入手できますが、最新の開発中のソースコードを入手する場合はGitHubのOpenRTM/OpenRTM-aist projectより入手する必要があり、図に示すようにLinux上で、
+
+-Linux/Unix用ソースコード配布パッケージ
+-Windows用ソースコード配布パッケージ
+
+を作るようになっています。
+
+#ref(src-conversion_ja.png,/ja/node/793,70%,center,nolink)
+CENTER:''OpenRTM-aist のソースパッケージの生成''
+
+
+//------------------------------------------------------------
+**ビルド環境
+
+ビルドに必要な環境、ライブラリは以下の通りです。
+
+-Visual C++/Visual Studio
+-omniORB
+
+
+**** Visual C++/Visual Studio
+Windows 用のバイナリをビルドするためには、Visual Studio(C++)開発環境が必要です。
+現在対応している Visual Studio は Visual Studio 2015、2017、2019、2022 です。
+
+Visual Studio CommunityはMicrosoftが無償で提供する統合開発環境で、C++、C#、F#、Java、Pythonなどいろいろな言語を用いたソフトウエア開発に対応しています。
+Community版は有償のProfessional版とほぼ同等の機能ですが、個人開発者、大学関係者、非営利団体従事者、オープンソース開発者、および、開発者5名以下の営利企業でしか使用できません。ライセンス条件の詳細についてはマイクロソフト社のドキュメントを参照してください。
+
+以下よりVisual Studio 2022は入手できます。
+
+- [[Visual Studioのインストール手順:/ja/node/6650]]
+
+//なお、Visual Studio 2022をインストールする場合は"C++によるデスクトップ開発"を選択し、さらに"インストール詳細"のところで"Windows 8.1 SDK と UCRT SDK"を選択してインストールをおこなってください。
+
+*** omniORB
+
+OpenRTM-aistのビルドにはomniORB 4.2.5(2022/04/01現在)のライブラリが必要です。
+
+openrtm.org が提供するビルド済みバイナリパッケージを下記リンク先に omniORB-4.2.5-x64-vc14-pyXX.zip という名称で用意してあります。
+XXをインストールするpythonのヴァージョンに読み替えて適切なものをダウンロードし、適当な場所(以下の説明ではC:\workspace\omniORBとしています)に展開してください。
+
+//-[[openrtm.org提供バイナリパッケージ:http://openrtm.org/pub/omniORB/win32/]]
+-[[openrtm.org提供バイナリパッケージ:https://openrtm.org/pub/omniORB/win32/omniORB-4.2.5/]]
+
+**** 環境変数: OMNI_ROOT
+OMNI_ROOT に設定したディレクトリ以下は以下のような構造になっている必要があります。
+
+ <OMNI_ROOT>
+  + bin
+  |  + scripts
+  |  + x86_win32
+  + idl
+  |  + COS
+  + include
+  |  + COS
+  |  + omniORB4
+  |  |  + internal
+  |  + omnithread
+  |  + omniVms
+  + lib
+  |  + python
+  |  |  + omniidl
+  |  |  + omniidl_be
+  |  |     + cxx
+  |  |        + dynskel
+  |  |        + header
+  |  |        + impl
+  |  |        + skel
+  |  + x86_win32
+  + include
+  |  + COS
+  |  + omniORB4
+  |  + omnithread
+  |  + omniVms
+
+
+//RTM２.０ではcmakeデフォルトビルドする際OpenSSLはFLASEなので不要とのこと。
+//*** OpenSSL
+
+//OpenRTM-aistのビルドにはOpenSSL 1.1.0(2019/05/17現在)のライブラリが必要です。（稲葉：バージョン確認）
+//openrtm.orgが提供するビルド済みバイナリパッケージを下記リンク先に用意してあります。
+//環境に合わせて適切なものをダウンロードし、適当な場所 (以下の説明ではC:\workspace\OpenSSLとしています)に展開してください。
+
+//-[[openrtm.org提供バイナリパッケージ:https://openrtm.org/pub/OpenSSL/]]
+
+//**** 環境変数: SSL_ROOT
+//SSL_ROOT に設定したディレクトリ以下は以下のような構造になっている必要があります。(稲葉構造確認)
+
+// <SSL_ROOT>
+// + bin
+//  |  + scripts
+//  |  + x86_win32
+//  + lib
+//  |  + engines-1_1
+//  + include
+//  |  + openssl
+
+*** Python
+ビルドの途中でいくつかのPythonスクリプトを利用するので Python 3 が必要です。
+以下のサイトから最新のバージョンを取得しインストールしてください。
+
+-[[Python Official Website:https://www.python.org/]]
+
+インストーラーを起動すると、そのインストール過程で選択項目がでてきますが、デフォルトの項目を選択してインストールしてください。(デフォルト以外の選択も可能ですが、その場合は十分な理解の元で選択してください。)
+
+*** CMake
+
+OpenRTM 2.0のビルドにCMakeを使います。
+以下のサイトから最新のバージョンを取得しインストールしてください。
+
+- [[CMake(3.11以上推奨):https://cmake.org/download/]]
+--  [[cmake-3.22.3-windows-x86_64.msi (64bit版):https://github.com/Kitware/CMake/releases/download/v3.22.3/cmake-3.22.3-windows-x86_64.msi]]
+-- インストールする際、[Install Option]画面で[Add Cmake to the system PATH for all users]を選択することを推奨します。
+
+
+** ソースパッケージの取得
+
+まずソースコード OpenRTM-aist-2.0.X-win32.zip をダウンロードし、適当なディレクトリに展開します。（稲葉：URLまだないので確認する）
+
+- [[OpenRTM-aist 2.0.0:https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v2.0.0]]
+
+** ソースパッケージのビルド・インストール
+
+OpenRTM-aist 2.0 はコマンドプロンプト上でCMakeを使ってビルド・インストールを行います。
+Windowsのコマンドプロンプトでダウンロードしたソースパッケージに移動し、次のコマンドでビルド用ディレクトリを作成しCMakeを実行します。
+
+オプション -G "Visual Studio 17 2022" は
+
+ mkdir build
+ cd build
+ cmake -DORB_ROOT=C:/workspace/omniORB-4.2.5-x64-vc14-py310 -G "Visual Studio 17 2022" -DCMAKE_INSTALL_PREFIX=C:/workspace/openrtminstall ..
+ -- Selecting Windows SDK version 10.0.19041.0 to target Windows 10.0.19044.
+ -- The CXX compiler identification is MSVC 19.31.31105.0
+ -- Detecting CXX compiler ABI info
+ -- Detecting CXX compiler ABI info - done
+ -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.31.31103/bin/Hostx64/x64/cl.exe - skipped
+ -- Detecting CXX compile features
+ -- Detecting CXX compile features - done
+ -- Found Python3: C:/Program Files/Python310/python.exe (found version "3.10.4") found components: Interpreter
+ -- Could NOT find Boost (missing: Boost_INCLUDE_DIR filesystem)
+ -- Distribution is Windows
+ -- Configuring done
+ -- Generating done
+ -- Build files have been written to: C:/workspace/rtm20_202204/OpenRTM-aist/build
+
+次に以下のコマンドを実行します。 最後に以下のように表示したらビルドは成功です。
+ cmake --build . --verbose --config Release 
+ ビルドに成功しました。
+     0 個の警告
+     0 エラー
+
+ビルドが成功したら、次のコマンドでインストールを完了させます。
+ cmake --build . --config Release --target install
+
+
+//** インストール
+//すべてが正しくビルドできたら次のことを行い、インストールを完了させます。
+
+//-''環境変数RTM_ROOTを設定'': ビルド後に作成されたOpenRTM-aistのファイルが置かれたディレクトリを環境変数RTM_ROOTに設定してください。
+//- ''DLL へのパスを通す'': DLL をパスの通った場所にコピーするか、環境変数 PATHに%RTM_ROOT%\bin を追加します。
+
+
+以上で、OpenRTM-aistのインストールは終了です。
