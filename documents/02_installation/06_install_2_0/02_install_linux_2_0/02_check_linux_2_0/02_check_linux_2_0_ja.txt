@@ -1,0 +1,170 @@
+// title: 動作確認(Linux)
+
+
+// Titile: 動作確認(Linux編)
+インストールが正常に終了したら、付属のサンプルで動作テストをします。サンプルは、通常は以下の場所にあります。
+
+-/usr/share/openrtm-2.0/components/c++/examples
+// -/opt/local/share/openrtm-1.1/examples (Mac OS XにMacPortsでインストールした場合)
+
+
+ソースからビルドした場合は、ソースディレクトリ以下の
+
+-OpenRTM-aist/examples/<サンプルコンポーネントセット名>
+
+
+
+サンプルコンポーネントセットSimpleIO(ソースからビルドした場合は、このコンポネントセット名のディレクトリ下にコンポーネントが実行可能なものと存在していますが、一括インストールスクリプトでインストールした場合は、上記のexamplesディレクトリ上に他のサンプルコンポーネント一と一緒に置かれていて特にSimpleIOというセット名に沿って別ディレクトリなどにまとめられてはいませんので、そのケースではコンポーネントセットとはConsoleInCompとConsoleOutCompの2つコンポーネントのセットだと理解してください)を使って、OpenRTM-aistが正しくインストール/ビルドされているかを確認します。
+
+#contents
+
+
+**サンプルコンポーネントセットSimpleIO
+
+RTコンポーネントConsoleInComp、ConsoleOutCompからなるサンプルセットです。
+ConsoleInCompはコンソールから入力された数値をOutPortから出力するコンポーネント、ConsoleOutCompはInPortに入力された数値をコンソールに表示するコンポーネントです。
+これらは、基本的なI/O(入出力)を例示するためのサンプルです。
+ConsoleInCompのOutPortからConsoleOutCompのInPortへ接続を構成し、これらの2つのコンポーネントをアクティブ化(Activate)することで動作します。
+
+以降、簡単のためサンプルは/usr/share/openrtm-2.0/components/c++/examples以下にあるものとして説明を記述します。
+
+
+** サンプルを使用したテスト
+
+*** RTSystemEditor、ネームサーバー起動
+//- [[OpenRTP起動手順:/node/6654]]
+RTCの操作、RTシステムの構築を行うためのツールRTSystemEditorを起動します。
+RTSystemEditorはOpenRTPというツールの中に含まれているため、まずはOpenRTPを起動する必要があります。
+
+- 以下のコマンドでOpenRTPを起動してください。
+
+ $ openrtp
+
+**** RTSystemEditor(RTSE)の起動
+
+- OpenRTPの[パースペクティブを開く]ボタンをクリックしてください。
+
+#ref(rtm20_3.png,/ja/node/6633,60%,center)
+CENTER:''パースペクティブを開くをクリック''
+
+- [パースペクティブを開く]ウィンドウから[RTSystemEditor]を選択して開くボタンをクリックしてください。
+
+#ref(rtm20_4.png,/ja/node/6633,60%,center)
+CENTER:''RTSystemEditorの起動''
+
+*** ネームサーバーの起動
+- コンポーネントの参照を登録するためのネームサーバーを起動します。
+
+#ref(rtm20_5.png,/ja/node/6633,60%,center)
+CENTER:''ネームサーバーの起動''
+
+- ネームサーバーの起動に成功するとネームサービスビューに''localhost''と表示されます。
+
+#ref(rtm20_6.png,/ja/node/6633,60%,center)
+CENTER:''ネームサーバーの起動を確認''
+
+*** リーモートのRTCを使う場合
+Raspbianのような小さな構成のシステムの場合、openrtp自体がサポートされていないことがあります。その場合は、他のホストで動いているOpenRTPから、Raspbian上のネームサービースをリモート接続するか、他のOpenRTPが動作しているホスト上にあるネームサービスにRaspbian上で動作しているRTCを登録する必要があります。以下にその手順を示します。
+
+**** リモート環境で動いているネームサーバーサービスを登録する方法
+- まずRTCが動いているホストマシンのコマンドラインから
+ $ rtm-naming
+
+と入力し、ネームサービスを起動し、動作させたいRTCを起動します。
+
+- OpenRTPを動かすマシンで
+ $ openrtp
+と入力し、OpenRTPを起動します。同一マシンでRTCを動かす手順と同様に、[RTSystemEditor]を選んでパースペクティブを開きます。そして[ネームサーバーを追加」ボタンをクリックします。
+
+#ref(rtm20_11_1.png,center)
+CENTER:''ネームサーバーの追加’’
+- ネームサーバーのアドレスを聞かれますので、アドレスを指定します。デフォルト以外のポート番号を使った場合は、アドレスに<アドレス>:<ポート番号>の形でポート番号も指定してください。
+
+#ref(rtm6-3.png,center)
+CENTER:''ネームサーバーのアドレス指定''
+**** リモートマシン上のRTCをOpenRTPが動いているネームサービスに登録する方法
+
+- RTCのファイルがあるディレクトリ移動し、rtc.confを編集します。例えば
+ sudo gedit rtc.conf
+
+と入力し、rtc.confの編集を開始します。
+ corba.nameservers: localhost
+
+の行を
+ corba.nameservers: <OpenRTPが動作しているホストのアドレス>
+
+と書き換えます
+
+これにより、ネームサービスにリモートで動作しているRTCが登録され、そのネームサービスを表示しているOpenRTPのName Service Viewに表示されます。
+
+
+ここまで
+*** ConsoleInCompの起動
+
+ターミナルを起動してConsoleInCompを起動します。
+
+ $ /usr/share/openrtm-2.0/components/c++/examples/ConsoleInComp
+
+自分でビルド・インストールした場合は、
+
+ $ <source_dir>/OpenRTM-aist/examples/SimpleIO/ConsoleInComp
+
+などとしてConsoleInCompを起動します。
+
+
+*** ConsoleOutCompの起動
+
+別のターミナルを起動してConsoleOutCompを起動します。
+
+ $ /usr/share/openrtm-2.0/components/c++/examples/ConsoleOutComp 
+
+自分でビルド/インストールした場合は、同様に
+
+ $ <source_dir>/OpenRTM-aist/examples/SimpleIO/ConsoleOutComp
+
+などとしてConsoleOutCompを起動します。
+
+
+**** エディタ画面への配置
+
+RTSystemEditorのツリー表示の[localhost]の横の[>]をクリックし、そして&ref(rtm20_icon_db.png , 60%);アイコンの横の[>]をクリックすると、先ほど起動した2つのコンポーネントが登録されていることがわかります
+
+#ref(rtm20_10.png,/ja/node/6633,60%,center)
+CENTER:''ConsoleInコンポーネントとConsoleOutコンポーネント''
+
+システムを編集するエディタを開きます。上部の[Open New System Editor]ボタン&ref(rtm20_icon_rtce.png, 60%); をクリックすると、中央のペインにエディタ画面が表示されます。
+
+左側のネームサービスビューに &ref(rtm20_icon_rtce.png, 60%); のアイコンで表示されているコンポーネント(2つ)を中央のエディタ画面にドラッグアンドドロップします。
+
+#ref(rtm20_11.png,/ja/node/6633,80%,center)
+CENTER: ''コンポーネントをエディタに配置''
+
+
+**** 接続とアクティブ化
+
+ConsoleIn0コンポーネントの右側にはデータが出力されるOutPort &ref(rtse_outport_icon.png,/node/794); 、ConsoleOut0コンポーネントの左側にはデータが入力されるInPort &ref(rtse_inport_icon.png,/node/794); がそれぞれ配置されています。
+
+これらInPort/OutPort(まとめてデータポートと呼びます)を接続します。
+
+#ref(rtm20_13.png,/ja/node/6633,80%,center)
+CENTER: ''データポートの接続''
+
+OutPortからInPort(またはInPortからOutPort)へドラッグランドドロップすると、図のようなダイアログが現れますので、デフォルト設定のまま[OK]ボタンをクリックします。
+
+#ref(rtm20_12.png,/ja/node/6633,50%,center)
+CENTER: ''データポート接続ダイアログ''
+
+2つのコンポーネントの間に接続線が現れます。次に、エディタ上部メニューの[All Activate]ボタン &ref(rtm20_14.png, 60%); をクリックし、これらのコンポーネントをアクティブ化します。
+アクティブ化されると、コンポーネントが緑色に変化します。
+
+#ref(rtm20_15.png,/ja/node/6633,60%,center)
+CENTER: ''アクティブ化されたコンポーネント''
+
+コンポーネントがアクティブ化されるとConsoleInコンポーネント側では
+
+ Please input number: 
+
+というプロンプト表示に変わりますので、適当な数値(short intの範囲内:32767以下)を入力しEnterキーを押します。
+すると、ConsoleOut側では、入力した数値が表示され、ConsoleInコンポーネントからConsoleOutコンポーネントへデータが転送されたことがわかります。
+
+以上で、コンポーネントの基本動作の確認は終了です。
