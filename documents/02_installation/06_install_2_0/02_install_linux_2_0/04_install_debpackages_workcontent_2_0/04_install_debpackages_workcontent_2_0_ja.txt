@@ -1,7 +1,5 @@
 //OpenRTM-aist-2.0 debパッケージの詳しい内容
 
-メモ）パッケージ内容をdpkg-Lで確認
-
 #contents
 
 **OpenRTM-2.0 debパッケージの詳しい内容
@@ -17,170 +15,58 @@ openrtm2 にはランタイムライブラリとコマンド群が含まれて�
  /usr/bin/rtm-config2
  /usr/bin/rtm2-naming
 
--ライセンスなど(確認できず稲葉)
- /usr/share/doc/openrtm-aist/README
- /usr/share/doc/openrtm-aist/README.Debian
- /usr/share/doc/openrtm-aist/README.jp
- /usr/share/doc/openrtm-aist/changelog.Debian.gz
- /usr/share/doc/openrtm-aist/changelog.gz
- /usr/share/doc/openrtm-aist/copyright
-
--設定ファイルサンプル(確認できず稲葉)
- /usr/etc/fluent-bit/fluent-bit.conf(確認できず稲葉)
- /usr/etc/fluent-bit/parsers.conf(確認できず稲葉)
+-設定ファイルサンプル
+ /usr/etc/logger/rtc.fluentbit_stream.conf
  /usr/etc/rtc.conf.sample2
  /usr/etc/rtc.names.ssl.conf
  /usr/etc/ssl/rtc.ssl.conf
  /usr/lib/x86_64-linux-gnu/pkgconfig/openrtm2.pc
 
-- ヘッダなど(確認できず稲葉)
- /usr/include/fluent-bit.h
- /usr/include/fluent-bit/flb_api.h
- /usr/include/fluent-bit/flb_bits.h
- 中略
- /usr/include/fluent-bit/flb_worker.h
-
--ライブラリなど(確認できず稲葉)
- /lib/systemd/system/fluent-bit.service
- /usr/lib/libfluent-bit.so
-
---32bit(パッケージが無く、確認できず稲葉)
- /usr/lib/i386-linux-gnu/libRTC-2.0.x.so
- /usr/lib/i386-linux-gnu/libRTC.a
- 中略
- /usr/lib/i386-linux-gnu/librtmManipulator.so.0.0.0
- /usr/lib/i386-linux-gnu/openrtm-2.0/ec/FileNameservice.la
- /usr/lib/i386-linux-gnu/openrtm-2.0/ec/FileNameservice.so
- 中略
-  /usr/lib/i386-linux-gnu/openrtm-2.0/ec/RTPreemptEC.so.0.0.0
- /usr/lib/i386-linux-gnu/openrtm-2.0/logger/FluentBit.la
- 中略
- /usr/lib/i386-linux-gnu/openrtm-2.0/logger/FluentBit.so.0.0.0
- /usr/lib/i386-linux-gnu/openrtm-2.0/sdo/LoggerConsumer.a
- /usr/lib/i386-linux-gnu/openrtm-2.0/sdo/LoggerConsumer.la
- 中略
- /usr/lib/i386-linux-gnu/openrtm-2.0/sdo/LoggerConsumer.so.0.0.0
- /usr/lib/i386-linux-gnu/libRTC-X.X.X.so
- /usr/lib/i386-linux-gnu/libRTC.a
- 中略
- /usr/lib/i386-linux-gnu/librtmManipulator.so.X.X.X
-
-- 64 bit
+-ライブラリなど
  /usr/lib/x86_64-linux-gnu/libRTC2.a
  /usr/lib/x86_64-linux-gnu/libRTC2.so.2.0.0
  中略
+ /usr/lib/x86_64-linux-gnu/librtmCamera2.so
  /usr/lib/x86_64-linux-gnu/librtmManipulator2.so
+ 中略
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/ec/LogicalTimeTriggeredEC.so
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/local_service/FileNameservice.so
- 中略
- /usr/lib/x86_64-linux-gnu/openrtm-2.0/ec/RTPreemptEC.so.0.0.0（確認できず稲葉）
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/logger/FluentBit.so
- 中略
- /usr/lib/x86_64-linux-gnu/openrtm-2.0/logger/FluentBit.so.0.0.0（確認できず稲葉）
- /usr/lib/x86_64-linux-gnu/openrtm-2.0/sdo/LoggerConsumer.a（確認できず稲葉）
- /usr/lib/x86_64-linux-gnu/openrtm-2.0/sdo/LoggerConsumer.la（確認できず稲葉）
- 中略
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/sdo/ComponentObserverConsumer.so
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/sdo/ExtendedFsmServiceProvider.so
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/sdo/LoggerConsumer.so
- /usr/lib/x86_64-linux-gnu/libRTC2.so
- /usr/lib/x86_64-linux-gnu/libRTC2.a
- 中略
- /usr/lib/x86_64-linux-gnu/librtmManipulator2.so
-
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/ssl/SSLTransport.so
 
 ***openrtm2-dev_2.0.0-0_amd64.deb 
 openrtm2-devには、開発に必要なコマンド群とヘッダが含まれています。
 
 -コマンド
- /usr/bin/coil-config（確認できず稲葉）
- /usr/bin/rtc-template（確認できず稲葉）
  /usr/bin/rtm-skelwrapper2
-
--ライセンスなど（確認できず稲葉）
- /usr/share/doc/openrtm-aist-dev/changelog.Debian.gz
- /usr/share/doc/openrtm-aist-dev/changelog.gz
- /usr/share/doc/openrtm-aist-dev/copyright
 
 -ヘッダなど
  /usr/include/coil-2.0/coil/Affinity.h
  /usr/include/coil-2.0/coil/Async.h
  中略
- /usr/include/coil-2.0/coil/stringutil.h
  /usr/include/openrtm-2.0/rtm/BufferBase.h
  /usr/include/openrtm-2.0/rtm/BufferStatus.h
  中略
  /usr/include/openrtm-2.0/rtm/config_rtc.h
- /usr/include/openrtm-2.0/rtm/idl/CameraCommonInterface.hh
- /usr/include/openrtm-2.0/rtm/ext/CameraCommonInterfaceDynSK.cc（ /usr/include/openrtm-2.0/rtm/ext/ディレクトリは確認できず稲葉）
- 中略
- /usr/include/openrtm-2.0/rtm/ext/ManipulatorCommonInterface_MiddleStub.h（ /usr/include/openrtm-2.0/rtm/ext/ディレクトリは確認できず稲葉）
- /usr/include/openrtm-2.0/rtm/ext/ec/artlinux/ArtExecutionContext.h（ /usr/include/openrtm-2.0/rtm/ext/ディレクトリは確認できず稲葉）
- /usr/include/openrtm-2.0/rtm/ext/ec/artlinux/rtc.conf.sample（ /usr/include/openrtm-2.0/rtm/ext/ディレクトリは確認できず稲葉）
- /usr/include/openrtm-2.0/rtm/ext/ec/logical_time/LogicalTimeTriggeredEC.h（ /usr/include/openrtm-2.0/rtm/ext/ディレクトリは確認できず稲葉）
- /usr/include/openrtm-2.0/rtm/ext/ec/logical_time/LogicalTimeTriggeredEC.idl（ /usr/include/openrtm-2.0/rtm/ext/ディレクトリは確認できず稲葉）
- 中略
- /usr/include/openrtm-2.0/rtm/ext/ec/logical_time/LogicalTimeTriggeredECStub.h（ /usr/include/openrtm-2.0/rtm/ext/ディレクトリは確認できず稲葉）
- /usr/include/openrtm-2.0/rtm/ext/ec/logical_time/idl/LogicalTimeTriggeredEC.hh（ /usr/include/openrtm-2.0/rtm/ext/ディレクトリは確認できず稲葉）
- /usr/include/openrtm-2.0/rtm/ext/ec/logical_time/idl/LogicalTimeTriggeredEC.idl（ /usr/include/openrtm-2.0/rtm/ext/ディレクトリは確認できず稲葉）
- /usr/include/openrtm-2.0/rtm/ext/ec/logical_time/idl/LogicalTimeTriggeredECDynSK.cc（ /usr/include/openrtm-2.0/rtm/ext/ディレクトリは確認できず稲葉）
- /usr/include/openrtm-2.0/rtm/ext/ec/logical_time/idl/LogicalTimeTriggeredECSK.cc（ /usr/include/openrtm-2.0/rtm/ext/ディレクトリは確認できず稲葉）
- /usr/include/openrtm-2.0/rtm/ext/ec/rtpreempt/RTPreemptEC.h（  /usr/include/openrtm-2.0/rtm/ext/ディレクトリは確認できず稲葉）
- /usr/include/openrtm-2.0/rtm/ext/ec/rtpreempt/rtc.conf.sample（  /usr/include/openrtm-2.0/rtm/ext/ディレクトリは確認できず稲葉）
- /usr/include/openrtm-2.0/rtm/ext/local_service/nameservice_file/FileNameservice.h
- /usr/include/openrtm-2.0/rtm/ext/logger/fluentbit_stream/FluentBit.h
- /usr/include/openrtm-2.0/rtm/ext/logger/fluentbit_stream/fluentbit.conf
- /usr/include/openrtm-2.0/rtm/ext/sdo/logger/Logger.hh
- /usr/include/openrtm-2.0/rtm/ext/sdo/logger/Logger.idl
- 中略
- /usr/include/openrtm-2.0/rtm/ext/sdo/logger/LoggerStub.h
- /usr/include/openrtm-2.0/rtm/ext/sdo/observer/ComponentObserver.idl
- /usr/include/openrtm-2.0/rtm/ext/sdo/observer/ComponentObserverConsumer.h
- 中略
- /usr/include/openrtm-2.0/rtm/ext/sdo/observer/ComponentObserverStub.h
- /usr/include/openrtm-2.0/rtm/ext/sdo/observer/idl/ComponentObserver.hh
- /usr/include/openrtm-2.0/rtm/ext/sdo/observer/idl/ComponentObserver.idl
- /usr/include/openrtm-2.0/rtm/ext/sdo/observer/idl/ComponentObserverDynSK.cc
- /usr/include/openrtm-2.0/rtm/ext/sdo/observer/idl/ComponentObserverSK.cc
- /usr/include/openrtm-2.0/rtm/idl/BasicDataType.hh
- /usr/include/openrtm-2.0/rtm/idl/BasicDataTypeDynSK.cc
+ /usr/include/openrtm-2.0/rtm/ext/FastRTPSMessageInfo.h
+ /usr/include/openrtm-2.0/rtm/ext/ROSMessageInfo.h
+ /usr/include/openrtm-2.0/rtm/idl/BasicDataType.hh 
+ /usr/include/openrtm-2.0/rtm/idl/BasicDataTypeSkel.h
  中略
  /usr/include/openrtm-2.0/rtm/idl/SharedMemoryStub.h
  /usr/include/openrtm-2.0/rtm/version.h
- /usr/include/openrtm-2.0/rtm/version.txt
- /usr/include/coil-2.0/coil/Affinity.h
- /usr/include/coil-2.0/coil/Allocator.h
- 中略
- /usr/include/coil-2.0/coil/stringutil.h
- /usr/include/openrtm-2.0/rtm/BufferBase.h
- /usr/include/openrtm-2.0/rtm/BufferStatus.h
- 中略
- /usr/include/openrtm-2.0/rtm/config_rtc.h
- /usr/include/openrtm-2.0/rtm/idl/BasicDataType.hh
- /usr/include/openrtm-2.0/rtm/idl/BasicDataType.idl
- 中略
- /usr/include/openrtm-2.0/rtm/idl/device_interfaces/Ranger.idl
- /usr/include/openrtm-2.0/rtm/version.h
- /usr/include/openrtm-2.0/rtm/version.txt
 
 -ライブラリ・その他
---32bit（パッケージ無く確認できず稲葉）
- /usr/lib/i386-linux-gnu/openrtm-2.0/cmake/OpenRTMConfig.cmake
- /usr/lib/i386-linux-gnu/openrtm-2.0/py_helper/README_gen.py
- /usr/lib/i386-linux-gnu/openrtm-2.0/py_helpver/cxx_gen.py
- 中略
- /usr/lib/i386-linux-gnu/openrtm-2.0/py_helpver/yat.py
- /usr/lib/i386-linux-gnu/pkgconfig/libcoil.pc
- 
---64bit
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/cmake/OpenRTMConfig.cmake
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/cmake/OpenRTMConfigVersion.cmake
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/py_helper/skel_wrapper.py
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/py_helper/yat.py
 
- /usr/lib/x86_64-linux-gnu/openrtm-2.0/py_helper/README_gen.py（確認できず稲葉）
- /usr/lib/x86_64-linux-gnu/openrtm-2.0/py_helper/cxx_gen.py（確認できず稲葉）
-
-
 *** openrtm2-example_2.0.0-0_amd64.deb
-openrtm2-example にはスタンドアロン RTC、ローダブル RTC それぞれのサンプルと、サンプル RTC のソースが含まれています。
+openrtm2-example にはスタンドアロン RTC、ローダブル RTC それぞれのサンプルが含まれています。
 
 -サンプル(スタンドアロンRTC)
  /usr/share/openrtm-2.0/components/c++/examples/CompositeComp
@@ -190,59 +76,31 @@ openrtm2-example にはスタンドアロン RTC、ローダブル RTC それぞ
 
 -サンプル(ローダブルRTC)
  /usr/share/openrtm-2.0/components/c++/examples/rtc/ConfigSample.so
- /usr/share/openrtm-2.0/Components/C++/examples/rtc/ConfigSample.a(確認できず稲葉)
- /usr/share/openrtm-2.0/Components/C++/examples/rtc/ConfigSample.la(確認できず稲葉)
+ /usr/share/openrtm-2.0/components/c++/examples/rtc/ConsoleIn.so
  中略
  /usr/share/openrtm-2.0/components/c++/examples/rtc/Throughput.so
 
--サンプル(ソース)(srcディレクトリが確認できず、templatesは有り。稲葉)
- /usr/share/openrtm-2.0/components/c++/examples/src/Composite/Composite.cpp
- /usr/share/openrtm-2.0/components/c++/examples/src/Composite/Controller.cpp
- 中略
- /usr/share/openrtm-2.0/components/c++/examples/src/Composite/rtc.conf
- /usr/share/openrtm-2.0/components/c++/examples/src/ConfigSample/ConfigSample.cpp
- /usr/share/openrtm-2.0/components/c++/examples/src/ConfigSample/ConfigSample.h
- 中略
- /usr/share/openrtm-2.0/components/c++/examples/src/ConfigSample/rtc.conf
- /usr/share/openrtm-2.0/components/c++/examples/src/ExtTrigger/ConnectorComp.cpp
- /usr/share/openrtm-2.0/components/c++/examples/src/ExtTrigger/ConsoleIn.cpp
- 中略
- /usr/share/openrtm-2.0/components/c++/examples/src/ExtTrigger/run.sh
- /usr/share/openrtm-2.0/components/c++/examples/src/SeqIO/Makefile.SeqIn
- /usr/share/openrtm-2.0/components/c++/examples/src/SeqIO/Makefile.SeqOut
- 中略
- /usr/share/openrtm-2.0/components/c++/examples/src/SeqIO/rtc.conf
- /usr/share/openrtm-2.0/components/c++/examples/src/SimpleIO/ConnectorComp.cpp
- /usr/share/openrtm-2.0/components/c++/examples/src/SimpleIO/ConsoleIn.cpp
- 中略
- /usr/share/openrtm-2.0/components/c++/examples/src/SimpleIO/run.sh
- /usr/share/openrtm-2.0/components/c++/examples/src/SimpleService/Makefile.MyServiceConsumer
- /usr/share/openrtm-2.0/components/c++/examples/src/SimpleService/Makefile.MyServiceProvider 
- 中略
- /usr/share/openrtm-2.0/components/c++/examples/src/SimpleService/rtc.conf
- /usr/share/openrtm-2.0/components/c++/examples/src/Throughput/CMakeLists.txt
- /usr/share/openrtm-2.0/components/c++/examples/src/Throughput/Throughput.cpp
- 中略
- /usr/share/openrtm-2.0/components/c++/examples/src/Throughput/run.sh
+***openrtm2-ros-tp_2.0.0-0_amd64.deb
 
- /usr/share/openrtm-2.0/components/c++/examples/templates/AIO.xml（有）
- /usr/share/openrtm-2.0/components/c++/examples/templates/ActArray.xml（有）
- 中略 
- /usr/share/openrtm-2.0/components/c++/examples/templates/VelocityControl3D.xml（有）
+ROS通信機能ライブラリがインストールされます。
 
--ライセンスなど
- /usr/share/doc/openrtm-aist-example/changelog.Debian.gz(確認できず稲葉)
- /usr/share/doc/openrtm-aist-example/changelog.gz(確認できず稲葉)
- /usr/share/doc/openrtm-aist-example/copyright(確認できず稲葉)
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/transport/ROSTransport.so
+
+***openrtm2-ros2-tp_2.0.0-0_amd64.deb
+
+ROS2通信機能ライブラリがインストールされます。
+
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/transport/FastRTPSTransport.so
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/transport/ROS2Transport.so
 
 ***openrtm2-doc_2.0.0-0_all.deb
 openrtm2-doc には、日本語と英語のクラスリファレンス、IDL インターフェース定義リファレンスが含まれています。
 
--クラスリファレンス(確認できず稲葉)
- /usr/share/openrtm-2.0/doc/C++/ClassReference/html/Affinity_8h.html
- /usr/share/openrtm-2.0/doc/C++/ClassReference/html/Affinity_8h_dep_incl.map
+-クラスリファレンス
+ /usr/share/openrtm-2.0/doc/c++/ClassReference/html/BufferBase_8h.html
+ /usr/share/openrtm-2.0/doc/c++/ClassReference/html/BufferBase_8h__dep__incl.map
  中略
- /usr/share/openrtm-2.0/doc/C++/ClassReference/html/version_8h_source.html
+ /usr/share/openrtm-2.0/doc/c++/ClassReference/html/structSDOPackage_1_1Organization__impl_1_1sdo__id.html
 
 -IDL リファレンス
  /usr/share/openrtm-2.0/doc/idl/IDLReference/html/BasicDataType_8idl.html
@@ -251,23 +109,16 @@ openrtm2-doc には、日本語と英語のクラスリファレンス、IDL イ
  /usr/share/openrtm-2.0/doc/idl/IDLReference/html/unionSDOPackage_1_1Numeric.html
 
 -クラスリファレンス(英語)
- /usr/share/openrtm-2.0/doc/C++/ClassReference-en/html/Affinity_8h.html
- /usr/share/openrtm-2.0/doc/C++/ClassReference-en/html/Affinity_8h_dep_incl.map
+ /usr/share/openrtm-2.0/doc/c++/ClassReference-en/html/BufferBase_8h.html
+ /usr/share/openrtm-2.0/doc/c++/ClassReference-en/html/BufferBase_8h__dep__incl.map
  中略
  /usr/share/openrtm-2.0/doc/C++/ClassReference-en/html/version_8h_source.html
 
 -IDL リファレンス(英語)
  /usr/share/openrtm-2.0/doc/idl/IDLReference-en/html/BasicDataType_8idl.html
- /usr/share/openrtm-2.0/doc/idl/IDLReference-en/html/BasicDataType_8idl_dep_incl.map
+ /usr/share/openrtm-2.0/doc/idl/IDLReference-en/html/BasicDataType_8idl__dep__incl.map
  中略
  /usr/share/openrtm-2.0/doc/idl/IDLReference-en/html/unionSDOPackage_1_1Numeric.html
-
--ライセンスなど
- /usr/share/doc/openrtm-aist-doc/changelog.Debian.gz
- /usr/share/doc/openrtm-aist-doc/changelog.gz
- /usr/share/doc/openrtm-aist-doc/copyright
-
-
 
 ***openrtm2-idl_2.0.0-0_amd64.deb
 
@@ -282,124 +133,45 @@ openrtm2-doc には、日本語と英語のクラスリファレンス、IDL イ
  中略
  /usr/share/openrtm-2.0/idl/SharedMemory.idl
 
-- ライセンスなど（確認できず）
- /usr/share/doc/openrtm-aist-idl/changelog.Debian.gz
- /usr/share/doc/openrtm-aist-idl/changelog.gz
- /usr/share/doc/openrtm-aist-idl/copyright
-
 ***openrtm2-python3_2.0.0-0_amd64.deb
 
 -コマンド
  /usr/bin/rtcd_python3
  /usr/bin/rtcprof_python3
 
-- ライブラリ
- /usr/lib/python3/dist-packages/OpenRTM_aist/Async.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/BufferBase.py
- 以下略
- 
-- idlファイルなど
- /usr/lib/python3/dist-packages/OpenRTM_aist/RTM_IDL/BasicDataType.idl
- /usr/lib/python3/dist-packages/OpenRTM_aist/RTM_IDL/CSPPort.idl
- 以下略
-
--？？？
- /usr/lib/python3/dist-packages/OpenRTM_aist/RTObject.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/RTObjectBase.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/RTObjectStateMachine.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/RingBuffer.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/SdoConfiguration.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/SdoOrganization.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/SdoService.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/SdoServiceAdmin.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/SdoServiceConsumerBase.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/SdoServiceProviderBase.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/SharedMemory.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/SimulatorExecutionContext.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/Singleton.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/StateMachine.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/StaticFSM.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/StaticFSM_pyfsm.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/StringUtil.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/SystemLogger.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/Task.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/TimeMeasure.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/TimeValue.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/Timer.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/Timestamp.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/Typename.py
-
--？？？
- /usr/lib/python3/dist-packages/OpenRTM_aist/ext/extended_fsm/ExtendedFsmServiceProvider.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/ext/fsm4rtc_observer/COCTestRTC.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/ext/fsm4rtc_observer/ComponentObserverConsumer.py
- 以下略
-
--ユーティリティ？？？
- /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtc-template/gen_base.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtc-template/profile_gen.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtc-template/python_gen.py
- /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtc-template/rtc-template.py
- 中略
- /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtcd/rtcd_python.py
- 中略
- /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtcprof/rtcprof_python.py
-中略
- /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtm-naming/rtm-naming.py
-
+-OpenRTM-aist 本体の Python モジュール
+ /usr/lib/python3/dist-packages/OpenRTM_aist/* 
+- OpenRTM-aist用Python検索パスファイル
+ /usr/lib/python3/dist-packages/OpenRTM-aist.pth 
+-ユーティリティ
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/__init__.py
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtc-template/*
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtcd/*
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtcprof/*
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtm-naming/*
 
 ***openrtm2-python3-example_2.0.0-0_amd64.deb
 
--サンプルプログラム（確認してもらう）
-
- （↓サンプル？？）
- /usr/share/openrtm-2.0/components/python3/AutoControl/AutoControl.py
- /usr/share/openrtm-2.0/components/python3/AutoTest/AutoTestIn.py
- /usr/share/openrtm-2.0/components/python3/AutoTest/AutoTestOut.py
- /usr/share/openrtm-2.0/components/python3/CSPSample/DataIn2.py
- /usr/share/openrtm-2.0/components/python3/CSPSample/DataOut2.py
- /usr/share/openrtm-2.0/components/python3/CSPStaticFsmSample/Inputbutton.py
- /usr/share/openrtm-2.0/components/python3/CSPStaticFsmSample/Microwave.py
- /usr/share/openrtm-2.0/components/python3/CSPStaticFsmSample/MicrowaveFsm.py
- /usr/share/openrtm-2.0/components/python3/CSPStaticFsmSample/MicrowaveFsm_pyfsm.py
- /usr/share/openrtm-2.0/components/python3/CSPStaticFsmSample/Microwave_pyfsm.py
- 
- /usr/share/openrtm-2.0/components/python3/Composite/Composite.py
- /usr/share/openrtm-2.0/components/python3/Composite/Controller.py
- /usr/share/openrtm-2.0/components/python3/Composite/Motor.py
- /usr/share/openrtm-2.0/components/python3/Composite/Sensor.py
- 
- /usr/share/openrtm-2.0/components/python3/ConfigSample/ConfigSample.py
- /usr/share/openrtm-2.0/components/python3/MobileRobotCanvas/TkMobileRobotSimulator.py
- /usr/share/openrtm-2.0/components/python3/SeqIO/SeqIn.py
- /usr/share/openrtm-2.0/components/python3/SeqIO/SeqOut.py
- （↓サンプル？？）
- /usr/share/openrtm-2.0/components/python3/Serializer/ConsoleInShort.py
- /usr/share/openrtm-2.0/components/python3/Serializer/ConsoleOutDouble.py
- /usr/share/openrtm-2.0/components/python3/Serializer/LongToDoubleDeserializer.py
- /usr/share/openrtm-2.0/components/python3/Serializer/ShortToDoubleDeserializer.py
- /usr/share/openrtm-2.0/components/python3/Serializer/ShortToDoubleSerializer.py
- /usr/share/openrtm-2.0/components/python3/Serializer/ShortToLongSerializer.py
- /usr/share/openrtm-2.0/components/python3/Serializer/TestSerializer.py
- 
- /usr/share/openrtm-2.0/components/python3/SimpleService/Connector.py
- /usr/share/openrtm-2.0/components/python3/SimpleService/MyService.idl
- /usr/share/openrtm-2.0/components/python3/SimpleService/MyServiceConsumer.py
- /usr/share/openrtm-2.0/components/python3/SimpleService/MyServiceProvider.py
- /usr/share/openrtm-2.0/components/python3/Slider_and_Motor/SliderComp.py
- /usr/share/openrtm-2.0/components/python3/Slider_and_Motor/TkMotorComp.py
- /usr/share/openrtm-2.0/components/python3/Slider_and_Motor/TkMotorPosComp.py
- （↓サンプル？？）
- /usr/share/openrtm-2.0/components/python3/StaticFsm/Display.py
- /usr/share/openrtm-2.0/components/python3/StaticFsm/Inputbutton.py
- /usr/share/openrtm-2.0/components/python3/StaticFsm/Microwave.py
- /usr/share/openrtm-2.0/components/python3/StaticFsm/MicrowaveFsm.py
- /usr/share/openrtm-2.0/components/python3/StaticFsm/MicrowaveFsm_pyfsm.py
- /usr/share/openrtm-2.0/components/python3/StaticFsm/Microwave_pyfsm.py
- /usr/share/openrtm-2.0/components/python3/Throughput/Throughput_py.py
- 
- /usr/share/openrtm-2.0/components/python3/TkJoyStick/tkjoystick.py
- /usr/share/openrtm-2.0/components/python3/TkLRFViewer/TkLRFViewer.py
+ /usr/share/openrtm-2.0/components/python3/__init__.py
+ /usr/share/openrtm-2.0/components/python3/component.conf
+ /usr/share/openrtm-2.0/components/python3/rtcd.conf
+ /usr/share/openrtm-2.0/components/python3/AutoControl/*
+ /usr/share/openrtm-2.0/components/python3/AutoTest/*
+ /usr/share/openrtm-2.0/components/python3/CSPSample/*
+ /usr/share/openrtm-2.0/components/python3/CSPSelectSample/*
+ /usr/share/openrtm-2.0/components/python3/CSPStaticFsmSample/*
+ /usr/share/openrtm-2.0/components/python3/Composite/*
+ /usr/share/openrtm-2.0/components/python3/ConfigSample/*
+ /usr/share/openrtm-2.0/components/python3/ExtTrigger/*
+ /usr/share/openrtm-2.0/components/python3/MobileRobotCanvas/*
+ /usr/share/openrtm-2.0/components/python3/SeqIO/*
+ /usr/share/openrtm-2.0/components/python3/Serializer/*
+ /usr/share/openrtm-2.0/components/python3/SimpleIO/*
+ /usr/share/openrtm-2.0/components/python3/SimpleService/*
+ /usr/share/openrtm-2.0/components/python3/Slider_and_Motor/*
+ /usr/share/openrtm-2.0/components/python3/Throughput/*
+ /usr/share/openrtm-2.0/components/python3/TkJoyStick/
+ /usr/share/openrtm-2.0/components/python3/TkLRFViewer/*
 
 ***openrtm2-python3-doc_2.0.0-0_all.deb
 英語・日本語のクラスリファレンスをインストールします。
@@ -414,7 +186,6 @@ openrtm2-doc には、日本語と英語のクラスリファレンス、IDL イ
  以下略
 
 ***openrtm2-java_2.0.0-0_amd64.deb
-
 
  /etc/profile.d/openrtm-java.sh
  /usr/bin/rtcd_java
@@ -431,391 +202,94 @@ openrtm2-doc には、日本語と英語のクラスリファレンス、IDL イ
 
 ***openrtm2-java-example_2.0.0-0_amd64.deb
 
- /usr/share/openrtm-2.0/components/java/AutoTestIn.sh
- /usr/share/openrtm-2.0/components/java/AutoTestOut.sh
- /usr/share/openrtm-2.0/components/java/Composite.sh
- /usr/share/openrtm-2.0/components/java/ConfigSample.sh
- /usr/share/openrtm-2.0/components/java/Connector.sh
- /usr/share/openrtm-2.0/components/java/ConsoleIn.sh
- /usr/share/openrtm-2.0/components/java/ConsoleOut.sh
- /usr/share/openrtm-2.0/components/java/ExtConnector.sh
- /usr/share/openrtm-2.0/components/java/ExtConsoleIn.sh
-./usr/share/openrtm-2.0/components/java/ExtConsoleOut.sh
- /usr/share/openrtm-2.0/components/java/GUIIn.sh
- /usr/share/openrtm-2.0/components/java/MyServiceConsumer.sh
- /usr/share/openrtm-2.0/components/java/MyServiceProvider.sh
-  （以下確認してもらう）
- /usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/AutoTestIn.class
- /usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/AutoTestIn.java
- /usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/AutoTestInComp.class
- /usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/AutoTestInComp.java
- /usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/AutoTestInImpl.class
- /usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/AutoTestInImpl.java
- /usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/AutoTestOut.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/AutoTestOut.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/AutoTestOutComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/AutoTestOutComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/AutoTestOutImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/AutoTestOutImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/EchoListHelper.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/EchoListHelper.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/EchoListHolder.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/EchoListHolder.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/MyService.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/MyService.idl
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/MyService.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/MyServiceHelper.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/MyServiceHelper.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/MyServiceHolder.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/MyServiceHolder.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/MyServiceOperations.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/MyServiceOperations.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/MyServicePOA.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/MyServicePOA.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/MyServiceSVC_impl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/MyServiceSVC_impl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/ValueListHelper.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/ValueListHelper.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/ValueListHolder.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/ValueListHolder.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/_MyServiceStub.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/_MyServiceStub.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/autotestout.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/rtc.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/AutoTestService.idl
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/Composite.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/Composite.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/Controller.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/Controller.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/ControllerComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/ControllerComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/ControllerImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/ControllerImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/Motor.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/Motor.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/MotorComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/MotorComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/MotorImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/MotorImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/Sensor.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/Sensor.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/SensorComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/SensorComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/SensorImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/SensorImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/composite.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Composite/rtc.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ConfigSample/
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ConfigSample/ConfigSample.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ConfigSample/ConfigSample.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ConfigSample/ConfigSampleComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ConfigSample/ConfigSampleComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ConfigSample/ConfigSampleImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ConfigSample/ConfigSampleImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ConfigSample/VectorHolder.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ConfigSample/VectorHolder.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ConfigSample/configsample.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ConfigSample/rtc.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/ConnectorComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/ConnectorComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/ConsoleIn.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/ConsoleIn.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/ConsoleInComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/ConsoleInComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/ConsoleInImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/ConsoleInImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/ConsoleOut.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/ConsoleOut.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/ConsoleOutComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/ConsoleOutComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/ConsoleOutImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/ConsoleOutImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/rtc.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/CameraProtocol.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/CameraProtocol.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/Configuring.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/Configuring.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/Fsm.bat
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/Fsm.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/Fsm.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/Fsm.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/Fsm.sh
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/FsmComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/FsmComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/FsmImpl$DataListener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/FsmImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/FsmImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/Idle.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/Idle.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/NotShooting.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/NotShooting.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/Off.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/Off.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/ShootingCamera.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/ShootingCamera.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/ShootingCamera_Focused.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/ShootingCamera_Focused.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/ShootingCamera_Focusing.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/ShootingCamera_Focusing.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/ShootingCamera_Shooting.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/ShootingCamera_Shooting.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/ShootingCamera_Storing.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/ShootingCamera_Storing.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/Top.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/Top.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/rtc.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/GUIIn.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/GUIIn.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/GUIInComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/GUIInComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/GUIInImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/GUIInImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/control/
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/control/EventAction.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/control/EventAction.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/model/
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/model/PortValue.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/model/PortValue.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/model/PortValueListener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/model/PortValueListener.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/rtc.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/view/
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/view/PortValueInputApp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/view/PortValueInputApp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/view/PortValueSlider$Listener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/view/PortValueSlider.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/view/PortValueSlider.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/view/PortValueSpinner$Listener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/view/PortValueSpinner.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/view/PortValueSpinner.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/view/PortValueTextField$Listener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/view/PortValueTextField.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/view/PortValueTextField.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/view/RootPane.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/view/RootPane.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/MyService.idl
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/SeqIn.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/SeqIn.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/SeqInComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/SeqInComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/SeqInImpl$DataListener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/SeqInImpl$Listener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/SeqInImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/SeqInImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/SeqOut.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/SeqOut.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/SeqOutComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/SeqOutComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/SeqOutImpl$DataListener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/SeqOutImpl$Listener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/SeqOutImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/SeqOutImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/rtc.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/view/
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/view/RootPane.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/view/RootPane.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/view/SeqView.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/view/SeqView.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/view/SeqViewApp$Updater.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/view/SeqViewApp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/view/SeqViewApp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/ConnectorComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/ConnectorComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/ConsoleIn.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/ConsoleIn.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/ConsoleInComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/ConsoleInComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/ConsoleInImpl$DataListener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/ConsoleInImpl$Listener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/ConsoleInImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/ConsoleInImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/ConsoleOut.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/ConsoleOut.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/ConsoleOutComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/ConsoleOutComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/ConsoleOutImpl$DataListener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/ConsoleOutImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/ConsoleOutImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/UserManagerAction.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/UserManagerAction.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/UserModuleAction.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/UserModuleAction.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/UserNamingAction.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/UserNamingAction.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/UserRtcLifeCycle.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/UserRtcLifeCycle.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/component.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/get_actual_ec.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/get_actual_ec.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/get_component_profile_Comp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/get_component_profile_Comp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/is_alive_in_default_ec.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/is_alive_in_default_ec.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/is_existing.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/is_existing.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/rtc.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/EchoListHelper.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/EchoListHelper.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/EchoListHolder.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/EchoListHolder.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyService.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyService.idl
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyService.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceConsumer.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceConsumer.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceConsumerComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceConsumerComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceConsumerImpl$echoFunctor.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceConsumerImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceConsumerImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceHelper.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceHelper.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceHolder.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceHolder.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceOperations.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceOperations.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServicePOA.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServicePOA.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceProvider.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceProvider.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceProviderComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceProviderComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceProviderImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceProviderImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceSVC_impl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/MyServiceSVC_impl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/ValueListHelper.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/ValueListHelper.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/ValueListHolder.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/ValueListHolder.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/_MyServiceStub.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/_MyServiceStub.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/component.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/rtc.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SinCosOut/
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SinCosOut/SinCosOut.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SinCosOut/SinCosOut.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SinCosOut/SinCosOutComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SinCosOut/SinCosOutComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SinCosOut/SinCosOutImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SinCosOut/SinCosOutImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/SinCosOut/rtc.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/.classpath
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/.project
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/Cooking.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/Cooking.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/Disabled.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/Disabled.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/Idle.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/Idle.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/Inputbutton.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/Inputbutton.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/InputbuttonComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/InputbuttonComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/InputbuttonImpl$DataListener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/InputbuttonImpl$Listener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/InputbuttonImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/InputbuttonImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/Microwave.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/Microwave.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/MicrowaveComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/MicrowaveComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/MicrowaveImpl$DataListener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/MicrowaveImpl$Listener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/MicrowaveImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/MicrowaveImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/MicrowaveProtocol.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/MicrowaveProtocol.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/Operational.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/Operational.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/Programmed.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/Programmed.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/StaticFsm.bat
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/StaticFsm.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/StaticFsm.sh
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/Top$Data.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/Top.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/Top.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/rtc.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Throughput/
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Throughput/Throughput.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Throughput/Throughput.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Throughput/ThroughputComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Throughput/ThroughputComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Throughput/ThroughputImpl$DataListener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Throughput/ThroughputImpl$Listener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Throughput/ThroughputImpl$func_exit.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Throughput/ThroughputImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Throughput/ThroughputImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/Throughput/rtc.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConnectorComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConnectorComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleIn.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleIn.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleInComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleInComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleInImpl$DataListener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleInImpl$Listener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleInImpl$TopicCorbaPort.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleInImpl$TopicOutPort.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleInImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleInImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleOut.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleOut.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleOutComp.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleOutComp.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleOutImpl$DataListener.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleOutImpl$TopicCorbaPort.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleOutImpl$TopicInPort.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleOutImpl.class
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/ConsoleOutImpl.java
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/component.conf
- ./usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/rtc.conf
- ./usr/share/openrtm-2.0/components/java/SeqIn.sh
- ./usr/share/openrtm-2.0/components/java/SeqOut.sh
- ./usr/share/openrtm-2.0/components/java/SinCosOut.sh
- ./usr/share/openrtm-2.0/components/java/StaticFsm.sh
- ./usr/share/openrtm-2.0/components/java/Throughput.sh
- ./usr/share/openrtm-2.0/components/java/TopicConssoleIn.sh
- ./usr/share/openrtm-2.0/components/java/TopicConssoleOut.sh
- ./usr/share/openrtm-2.0/components/java/original-data
- ./usr/share/openrtm-2.0/components/java/rtcd_java.conf
- ./usr/share/openrtm-2.0/components/java/search_classpath.func
- ./usr/share/openrtm-2.0/components/java/start-orbd.sh
+Java版サンプルRTC、Classファイル、ソースファイル、起動スクリプト
+ /usr/share/openrtm-2.0/components/java/* 
+ /usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/Composite/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/ConfigSample/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/control/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/model/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/view/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/MyService.idl
+ /usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/view/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/SinCosOut/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/Throughput/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/*
 
 ***openrtm2-java-doc_2.0.0-0_all.deb
 
-openrtm2-javaのドキュメントがインストールされます。
+openrtm2-java-doc には、日本語と英語のクラスリファレンスが含まれています。
 
- /usr/share/openrtm-2.0/doc/java/JavaDoc/OpenRTM/CdrDataHelper.html
- /usr/share/openrtm-2.0/doc/java/JavaDoc/OpenRTM/CdrDataHolder.html
- /usr/share/openrtm-2.0/doc/java/JavaDoc/OpenRTM/ComponentObserver.html
- /usr/share/openrtm-2.0/doc/java/JavaDoc/OpenRTM/ComponentObserverHelper.html
- 以下略
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/OpenRTM/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/OpenRTM/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/RTC/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/RTC/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/RTM/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/RTM/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/_SDOPackage/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/_SDOPackage/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/Constants.html
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/buffer/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/buffer/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/executionContext/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/executionContext/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/log/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/port/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/port/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/port/publisher/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/port/publisher/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/util/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/util/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/util/clock/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/util/clock/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/Version.html
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/class-use
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/OpenRTM/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/OpenRTM/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/RTC/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/RTC/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/RTM/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/RTM/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/_SDOPackage/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/_SDOPackage/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/index-files/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/Constants.html
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/buffer/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/buffer/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/executionContext/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/executionContext/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/log/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/log/class-use/Logbuf.html
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/port/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/port/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/port/publisher/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/port/publisher/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/util/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/util/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/util/clock/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/util/clock/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/*
 
-***openrtm2-ros-tp_2.0.0-0_amd64.deb
 
-rosと互換性があるライブラリがインストールされます。(確認)
-
- /usr/lib/x86_64-linux-gnu/openrtm-2.0/transport/ROSTransport.so
-
-***openrtm2-ros2-tp_2.0.0-0_amd64.deb
-
-ros2と互換性があるライブラリがインストールされます。(確認)
-
- /usr/lib/x86_64-linux-gnu/openrtm-2.0/transport/FastRTPSTransport.so
- /usr/lib/x86_64-linux-gnu/openrtm-2.0/transport/ROS2Transport.so
-
-***openrtp
+***openrtp2
 openrtpでは大量のファイルがインストールされるため、ここではリストしません。必要に応じて
- $ dpkg -L openrtp
+ $ dpkg -L openrtp2
 と入力して各自での確認をしてください。

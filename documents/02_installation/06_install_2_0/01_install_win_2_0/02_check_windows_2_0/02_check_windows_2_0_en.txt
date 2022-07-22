@@ -1,0 +1,100 @@
+//Title : Operation Check
+
+
+#contents
+
+
+** Run the sample component
+
+After successful installation, you can check the operation with the attached sample component.
+We have prepared a bat file, so you can start it by double-clicking it.
+
+The bat file is easily accessible by opening the start menu folder from [OpenRTM-aist 2.0.0 x86_64] in the start menu. &br;
+There is a bat file under each folder of "C ++_Examples" "C ++_OpenCV-Examples" "Python_Examples" "Java_Examples".
+For more information, see Let's start OpenRTM-aist in 10 minutes!. &br;
+- [[Let's start OpenRTM-aist in 10 minutes!・Run the sample component:/en/doc/installation/lets_start#toc3]] 
+&br;
+#ref(start-menu-folder.png,center,90%)&br;
+CENTER:''Start menu folder''
+&br;
+
+
+The installation destination of the sample component is as follows.
+
+ C:\Program Files\OpenRTM-aist\2.0.x\Components\C++\Examples
+ C:\Program Files\OpenRTM-aist\2.0.x\Components\Python
+ C:\Program Files\OpenRTM-aist\2.0.x\Components\Java
+ C:\Program Files\OpenRTM-aist\2.0.x\Components\C++\OpenCV
+
+
+** List of sample components
+
+Below is a brief description of the included sample components and a link to a page that explains how to use them.
+
+*** Included with C ++, Python, and Java
+
+|LEFT:30|LEFT:80|LEFT:10|c
+|bat file name|brief description of the sample component|Explanation page|
+|ConsoleIn.bat &br;ConsoleOut.bat |''ConsoleIn.bat'' : Start ConsoleIn component that outputs the number entered from the console from OutPort. &br; ''ConsoleOut.bat'' :Start ConsoleOut component that displays the number entered in the InPort on the console.|[[SimpleIO:/en/doc/installation/sample_components/simpleio]]|
+|SeqIn.bat &br; SeqOut.bat|''SeqIn.bat'' : Start SeqIn component that outputs random numbers (Short, Long, Float, Double and their sequence types).　&br; ''SeqOut.bat'' : Start SeqOut component that displays the numbers (Short, Long, Float, Double and their sequence types) that will be input to the InPort.|[[SeqIO:/en/doc/installation/sample_components/seqio]]|
+|MyServiceProvider.bat &br;MyServiceConsumer.bat|''MyServiceProvider.bat'' : Start MyServiceProvider component that provides a service of type MyService. &br; ''MyServiceConsumer.bat'' : Start MyServiceConsumer component that provides the MyService type service.。|[[SimpleService:/en/doc/installation/sample_components/simpleservice]]|
+|ConfigSample.bat|Start ConfigSample component, which is an example of using the Configuration function. This is a sample to understand the behavior of Configuration by changing Configuration from RtcLink.|[[ConfigSample:/en/doc/installation/sample_components/configsample]]|
+|Composite.bat|Start composite component creation sample PeriodicECSharedComponent component. It combines three sub-components, Sensor, Controller, and Motor. It is a good idea to connect to a component such as ConsoleIn and use it.|[[Composite:/en/doc/installation/sample_components/composite]]|
+
+*** Included with Python
+
+|LEFT:30|LEFT:80|LEFT:10|c
+|bat file name|brief description of the sample component|Explanation page|
+|TkJoystickComp.bat|Sample GUI component using Tcl/Tk. Simple joystick component.|[[TkJoyStick:/en/doc/installation/sample_components/tkjoystick_mobilerobotsimulator#toc0]]|
+|TkMobileRobotSimulator.bat|A simple simulator for mobile robots. The speed of the robot is received by InPort, and the position after movement is output from OutPort.|[[TkMobileRobotSimulator:/en/doc/installation/sample_components/tkjoystick_mobilerobotsimulator#toc4]]|
+|TkMotorComp.bat|Sample GUI component using Tcl/Tk. GUI displays how the InPort rotates at the speed of the value received.|[[TkMotorComp:/en/doc/installation/sample_components/tkmotorcomp_slidercomp#toc0]]|
+|SliderComp.bat|Sample GUI component using Tcl/Tk. Output the value specified by Slider from OutPort.|[[SliderComp:/en/doc/installation/sample_components/tkmotorcomp_slidercomp#toc3]]|
+|TkMotorPosComp.bat|Sample GUI component using Tcl/Tk. GUI displays how the value received by InPort moves as the angle of rotation.|[[TkMotorPosComp:/en/doc/installation/sample_components/tkmotorposcomp_slidercomp]]|
+|TkLRFViewer.bat|Sample GUI component using Tcl/Tk. Display the data output from the laser range sensor, etc.|[[tkLRFViewer:/en/node/7001]]|
+|AutoControl.bat|Output speed with a component for mobile robots. The data of the positioning sensor is received by InPort, the speed of the robot is calculated, and it is output from OutPort.|[[Autocontrol:/en/node/6999]]|
+
+*** Included with Python, and Java
+
+|LEFT:30|LEFT:80|LEFT:10|c
+|bat file name|brief description of the sample component|Explanation page|
+|ExtConsoleIn.bat &br; ExtConsoleOut.bat &br; ExtConnector.bat|''ExtConsoleIn.bat'' : Console controlled by an external trigger Starts a component that outputs the input numerical value from Outport. &br; ''ExtConsoleOut.bat'' : Starts a component that outputs the numerical value input to the Inport controlled by an external trigger to the console. &br; ''ExtConnector.bat'' : Launches a program that sends external triggers to ExtTrigger / ConsoleInComp.class or .py and ExtTrigger / ConsoleOutComp.class or .py.|[[ExtTrigger:/en/doc/installation/sample_components/exttrigger]]|
+
+*** Included with Java
+
+|LEFT:30|LEFT:80|LEFT:10|c
+|bat file name|brief description of the sample component|Explanation page|
+|GUIIn.bat|Launch a GUI sample that outputs the slider position from Outport. You can also connect to ConsoleOutComp.class.|[[GUIIn:/en/doc/installation/sample_components/guiin]]|
+
+*** OpenCV C ++ version
+
+|LEFT:30|LEFT:80|LEFT:10|c
+|bat file name|brief description of the sample component|Explanation page|
+|Affine.bat               |Affine transforms the input image.||
+|BackgroundSubtractionSimple.bat|Outputs the change from the image when the key was input in the input image.||
+|Binarization.bat      |Converts an input image to a binary black and white image.||
+|CameraViewer.bat|The image received by ImPort is displayed on the screen.|[[CameraViewer:/en/doc/installation/sample_components/opencvcamera]]|
+|Chromakey.bat|Extracts an object by removing a specific color from the image.|[[Chromakey:/en/doc/installation/sample_components/chromakey]]|
+|DialationErosion.bat|Perform dialing / erosion processing||
+|Edge.bat     |Outputs the first-order derivative image in the X direction, the first-order derivative image in the Y direction, and the Laplacian image (second-order derivative image)||
+|Findcontour.bat|Extract the outline and display the outline in the image.||
+|Flip|Invert the image.|[[Flip usage example:/en/doc/installation/sample_components/opencvcamera]]|
+|Histgram.bat          |Displays changes in histogram while changing brightness / contrast of black and white image||
+|Hough.bat|Line extraction by Hough transform||
+|ImageCalibration.bat|Calibrate the camera.|[[Automatically start from TkCalibGUI:/en/doc/installation/sample_components/tkcalibgui]]|
+|ImageSubtraction.bat|Background image is extracted from the input image, the foreground image part is output as a mask image and the background image is output.|[[ImageSubtraction:/en/doc/installation/sample_components/imagesubtraction]]|
+|ObjectTracking.bat|Tracks an object selected on the screen and show the position by a red oval.|[[ObjectTracking:/en/doc/installation/sample_components/objecttracking]]|
+|OpenCVCamera.bat|Output the captured image of the USB camera from OutPort.|[[OpenCVCamera:/en/doc/installation/sample_components/opencvcamera]]|
+|Perspective.bat      |Perspective conversion of image (Convert as viewed from below.||
+|RockPaperScissors.bat|Judgment of Goocho kipper in image.||
+|Rotate.bat             |Rotates and scales images||
+|Scale.bat|Processes images for scaling||
+|Sepia.bat|Separates images||
+|SubtractCaptureImage.bat|Updates the background in real-time using the dynamic background subtraction method.|[[SubtractCaptureImage:/en/doc/installation/sample_components/substractcaptureimage]]|
+|Template.bat|Template matching||
+|TkCalibGUI.bat|GUI for ImageCalibration component that performs camera calibration.|[[TkCalibGUI:/en/doc/installation/sample_components/tkcalibgui]]|
+|Translate.bat|Performs two-dimensional translation of images||
+
+
+
+
+

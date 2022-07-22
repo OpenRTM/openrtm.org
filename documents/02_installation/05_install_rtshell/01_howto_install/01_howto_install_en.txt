@@ -2,36 +2,22 @@
 
 #contents
 
-To install rtshell, you need to install OpenRTM-aist-Python because rtshell is a Python program. Therefore, to use rtshell, it is required to install OpenRTM-aist-Python and Python execution environment before installing rtshell. (The bulk installation script for Linux installs Python in the script, but in the case of Windows the msi install needs to be installed beforehand. The supported Python version is 3.7, 3.6, 3.5, 2.7.)
+To install rtshell, you need to install OpenRTM-aist-Python because rtshell is a Python program. Therefore, to use rtshell, it is required to install OpenRTM-aist-Python and Python execution environment before installing rtshell. (The bulk installation script for Linux installs Python in the script, but in the case of Windows the msi install needs to be installed beforehand. The supported Python version is 3.10, 3.9, 3.8, 3.7.)
 
 ** Installation on Windows
 Please install OpenRTM-aist by msi installer. Please refer to the following page for the procedure. &br;
-[[OpenRTM-aist 1.2 installation (Windows, using msi installer)>//node/6652]]
+[[Let's start OpenRTM-aist in 10 minutes!/Installing OpenRTM-aist:/en/doc/installation/lets_start#toc2]]
 
-*** Check rtcwd command
-
-Check if the rtcwd command can be executed on the command line.
- > rtcwd
- 'rtcwd' is not recognized as an internal or external command,
- operable program or batch file.
-
-If you see this message, run rtshell_post_install.
- > rtshell_post_install -n
-If Python is installed under Program Files, execute the command prompt as an administrator.
-
- > rtcwd
- rtcwd: Invalid CORBA naming service: localhost
-This message is not a problem because [[Start Name Server:/en/node/7005#toc2]] described in Operation check (Windows) is not executed.
 
 ** Installation on Linux environment
-Use [[bulk installation script>//node/6990]] to install rtshell with using "-l c++", "-l python" and "-l rtshell" options and then execute rtshell_post_install. 
+Running the bulk install script with no arguments installs C ++, Python, Java, OpenRTP (amd64 only), and JDK8, including rtshell.
 
-*** Ubuntu 18.04 case:
-Move to the directory where the bulk installation script is downloaded and type in:
- $ sudo sh pkg_install_ubuntu.sh -l c++ -l python -l rtshell --yes
- $ sudo rtshell_post_install
+When installing OpenRTM-aist 2.0 series, paste the following into the shell prompt and execute it.　
+ $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh)
 
-Close the terminal once.
+When installing OpenRTM-aist 1.2 series, please execute the following.
+ $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_ubuntu.sh)
+
 
 *** Raspbian case:
 Move to the directory where the bulk installation script is downloaded and type in:

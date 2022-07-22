@@ -1,0 +1,295 @@
+//Title : What the installer does
+
+#contents
+
+**Package details
+
+The contents of each package are as follows.
+
+***openrtm2_2.0.0-0_amd64.deb
+openrtm2 contains runtime libraries and commands.
+
+-Command
+ /usr/bin/rtcd2
+ /usr/bin/rtcprof2
+ /usr/bin/rtm-config2
+ /usr/bin/rtm2-naming
+
+-Sample configuration file
+ /usr/etc/logger/rtc.fluentbit_stream.conf
+ /usr/etc/rtc.conf.sample2
+ /usr/etc/rtc.names.ssl.conf
+ /usr/etc/ssl/rtc.ssl.conf
+ /usr/lib/x86_64-linux-gnu/pkgconfig/openrtm2.pc
+
+-Libraries, etc.
+ /usr/lib/x86_64-linux-gnu/libRTC2.a
+ /usr/lib/x86_64-linux-gnu/libRTC2.so.2.0.0
+ ...
+ /usr/lib/x86_64-linux-gnu/librtmCamera2.so
+ /usr/lib/x86_64-linux-gnu/librtmManipulator2.so
+ ...
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/ec/LogicalTimeTriggeredEC.so
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/local_service/FileNameservice.so
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/logger/FluentBit.so
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/sdo/ComponentObserverConsumer.so
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/sdo/ExtendedFsmServiceProvider.so
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/sdo/LoggerConsumer.so
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/ssl/SSLTransport.so
+
+***openrtm2-dev_2.0.0-0_amd64.deb 
+openrtm2-dev contains the commands and headers needed for development.
+
+-Command
+ /usr/bin/rtm-skelwrapper2
+
+-Header files
+ /usr/include/coil-2.0/coil/Affinity.h
+ /usr/include/coil-2.0/coil/Async.h
+ ...
+ /usr/include/openrtm-2.0/rtm/BufferBase.h
+ /usr/include/openrtm-2.0/rtm/BufferStatus.h
+ ...
+ /usr/include/openrtm-2.0/rtm/config_rtc.h
+ /usr/include/openrtm-2.0/rtm/ext/FastRTPSMessageInfo.h
+ /usr/include/openrtm-2.0/rtm/ext/ROSMessageInfo.h
+ /usr/include/openrtm-2.0/rtm/idl/BasicDataType.hh 
+ /usr/include/openrtm-2.0/rtm/idl/BasicDataTypeSkel.h
+ ...
+ /usr/include/openrtm-2.0/rtm/idl/SharedMemoryStub.h
+ /usr/include/openrtm-2.0/rtm/version.h
+
+-Libraries and others
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/cmake/OpenRTMConfig.cmake
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/cmake/OpenRTMConfigVersion.cmake
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/py_helper/skel_wrapper.py
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/py_helper/yat.py
+
+*** openrtm2-example_2.0.0-0_amd64.deb
+openrtm2-example contains samples for standalone RTC and loadable RTC respectively.
+
+-Sample (Stand alone RTC)
+ /usr/share/openrtm-2.0/components/c++/examples/CompositeComp
+ /usr/share/openrtm-2.0/components/c++/examples/ConfigSampleComp
+ ...
+ /usr/share/openrtm-2.0/components/c++/examples/rtc.conf
+
+-Sample (Loadable RTC)
+ /usr/share/openrtm-2.0/components/c++/examples/rtc/ConfigSample.so
+ /usr/share/openrtm-2.0/components/c++/examples/rtc/ConsoleIn.so
+ ...
+ /usr/share/openrtm-2.0/components/c++/examples/rtc/Throughput.so
+
+
+***openrtm2-ros-tp_2.0.0-0_amd64.deb
+
+ROS communication function library is installed.
+
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/transport/ROSTransport.so
+
+***openrtm2-ros2-tp_2.0.0-0_amd64.deb
+
+ROS2 communication function library is installed.
+
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/transport/FastRTPSTransport.so
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/transport/ROS2Transport.so
+
+***openrtm2-doc_2.0.0-0_all.deb
+openrtm2-doc contains Japanese and English class references and IDL interface definition references.
+
+-Class Reference (Japanese)
+ /usr/share/openrtm-2.0/doc/c++/ClassReference/html/BufferBase_8h.html
+ /usr/share/openrtm-2.0/doc/c++/ClassReference/html/BufferBase_8h__dep__incl.map
+ ...
+ /usr/share/openrtm-2.0/doc/c++/ClassReference/html/structSDOPackage_1_1Organization__impl_1_1sdo__id.html
+
+-IDL Reference (Japanese)
+ /usr/share/openrtm-2.0/doc/idl/IDLReference/html/BasicDataType_8idl.html
+ /usr/share/openrtm-2.0/doc/idl/IDLReference/html/BasicDataType_8idl_dep_incl.map
+ ...
+ /usr/share/openrtm-2.0/doc/idl/IDLReference/html/unionSDOPackage_1_1Numeric.html
+
+-Class Reference (English)
+ /usr/share/openrtm-2.0/doc/c++/ClassReference-en/html/BufferBase_8h.html
+ /usr/share/openrtm-2.0/doc/c++/ClassReference-en/html/BufferBase_8h__dep__incl.map
+ ...
+ /usr/share/openrtm-2.0/doc/C++/ClassReference-en/html/version_8h_source.html
+
+-IDL Reference (English)
+ /usr/share/openrtm-2.0/doc/idl/IDLReference-en/html/BasicDataType_8idl.html
+ /usr/share/openrtm-2.0/doc/idl/IDLReference-en/html/BasicDataType_8idl__dep__incl.map
+ ...
+ /usr/share/openrtm-2.0/doc/idl/IDLReference-en/html/unionSDOPackage_1_1Numeric.html
+
+***openrtm2-idl_2.0.0-0_amd64.deb
+
+- idl files etc.
+ /etc/profile.d/openrtm2-idl.sh
+ /usr/include/openrtm-2.0/rtm/idl/BasicDataType.idl
+ /usr/include/openrtm-2.0/rtm/idl/CameraCommonInterface.idl
+ ...
+ /usr/include/openrtm-2.0/rtm/idl/SharedMemory.idl
+ /usr/share/openrtm-2.0/idl/BasicDataType.idl
+ /usr/share/openrtm-2.0/idl/CameraCommonInterface.idl
+ ...
+ /usr/share/openrtm-2.0/idl/SharedMemory.idl
+
+***openrtm2-python3_2.0.0-0_amd64.deb
+
+-Command
+ /usr/bin/rtcd_python3
+ /usr/bin/rtcprof_python3
+
+-Python module of OpenRTM-aist body
+ /usr/lib/python3/dist-packages/OpenRTM_aist/* 
+- Python search path file for OpenRTM-aist
+ /usr/lib/python3/dist-packages/OpenRTM-aist.pth 
+-utility
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/__init__.py
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtc-template/*
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtcd/*
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtcprof/*
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtm-naming/*
+
+***openrtm2-python3-example_2.0.0-0_amd64.deb
+
+ /usr/share/openrtm-2.0/components/python3/__init__.py
+ /usr/share/openrtm-2.0/components/python3/component.conf
+ /usr/share/openrtm-2.0/components/python3/rtcd.conf
+ /usr/share/openrtm-2.0/components/python3/AutoControl/*
+ /usr/share/openrtm-2.0/components/python3/AutoTest/*
+ /usr/share/openrtm-2.0/components/python3/CSPSample/*
+ /usr/share/openrtm-2.0/components/python3/CSPSelectSample/*
+ /usr/share/openrtm-2.0/components/python3/CSPStaticFsmSample/*
+ /usr/share/openrtm-2.0/components/python3/Composite/*
+ /usr/share/openrtm-2.0/components/python3/ConfigSample/*
+ /usr/share/openrtm-2.0/components/python3/ExtTrigger/*
+ /usr/share/openrtm-2.0/components/python3/MobileRobotCanvas/*
+ /usr/share/openrtm-2.0/components/python3/SeqIO/*
+ /usr/share/openrtm-2.0/components/python3/Serializer/*
+ /usr/share/openrtm-2.0/components/python3/SimpleIO/*
+ /usr/share/openrtm-2.0/components/python3/SimpleService/*
+ /usr/share/openrtm-2.0/components/python3/Slider_and_Motor/*
+ /usr/share/openrtm-2.0/components/python3/Throughput/*
+ /usr/share/openrtm-2.0/components/python3/TkJoyStick/
+ /usr/share/openrtm-2.0/components/python3/TkLRFViewer/*
+
+***openrtm2-python3-doc_2.0.0-0_all.deb
+Install English/Japanese class reference.
+
+-Class reference
+ /usr/share/openrtm-2.0/doc/python3/ClassReference-en/html/_async_8py.html
+ /usr/share/openrtm-2.0/doc/python3/ClassReference-en/html/_buffer_base_8py.html
+ ...
+ /usr/share/openrtm-2.0/doc/python3/ClassReference-jp/html/_async_8py.html
+ /usr/share/openrtm-2.0/doc/python3/ClassReference-jp/html/_buffer_base_8py.html
+ /usr/share/openrtm-2.0/doc/python3/ClassReference-jp/html/_buffer_status_8py.html
+ ...
+
+***openrtm2-java_2.0.0-0_amd64.deb
+
+ /etc/profile.d/openrtm-java.sh
+ /usr/bin/rtcd_java
+ /usr/bin/rtcprof_java
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/jar/License.txt
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/jar/LogicalTimeTriggeredEC.jar
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/jar/NameserviceFile.jar
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/jar/OpenRTM-aist-2.0.0.jar
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/jar/commons-cli-1.1.jar
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/jar/jna-4.2.2.jar
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/jar/jna-platform-4.2.2.jar
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/jar/rtcd.jar
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/jar/rtcprof.jar
+
+***openrtm2-java-example_2.0.0-0_amd64.deb
+
+Java version sample RTC, Class file, source file, startup script
+ /usr/share/openrtm-2.0/components/java/* 
+ /usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/Composite/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/ConfigSample/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/control/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/model/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/view/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/MyService.idl
+ /usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/view/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/SinCosOut/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/Throughput/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/*
+
+***openrtm2-java-doc_2.0.0-0_all.deb
+
+openrtm2-java-doc contains Japanese and English class references.
+
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/OpenRTM/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/OpenRTM/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/RTC/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/RTC/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/RTM/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/RTM/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/_SDOPackage/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/_SDOPackage/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/Constants.html
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/buffer/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/buffer/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/executionContext/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/executionContext/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/log/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/port/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/port/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/port/publisher/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/port/publisher/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/util/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/util/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/util/clock/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/RTC/util/clock/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/Version.html
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/class-use
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/jp/go/aist/rtm/*
+ /usr/share/openrtm-2.0/doc/java/JavaDoc/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/OpenRTM/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/OpenRTM/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/RTC/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/RTC/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/RTM/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/RTM/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/_SDOPackage/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/_SDOPackage/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/index-files/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/Constants.html
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/buffer/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/buffer/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/executionContext/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/executionContext/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/log/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/log/class-use/Logbuf.html
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/port/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/port/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/port/publisher/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/port/publisher/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/util/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/util/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/util/clock/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/RTC/util/clock/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/jp/go/aist/rtm/class-use/*
+ /usr/share/openrtm-2.0/doc/java/JavaDocEn/*
+
+
+***openrtp2
+In openrtp installation, since so many files are installed, the listing is not made. Depend on your needs, use the following command.
+ $ dpkg -L openrtp2

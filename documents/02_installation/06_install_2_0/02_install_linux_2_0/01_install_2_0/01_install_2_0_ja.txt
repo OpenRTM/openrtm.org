@@ -1,105 +1,180 @@
-// Title: Linuxにインストール
+// Title: インストール
 
-
-メモ）
-- インストール（一括インストールスクリプト）
-
-
-// Title: Ubuntu/Debianへのインストール
 #ref(ubuntu_logo2.png,around,right)
 
 
 OpenRTM-aistは、UbuntuやDebian GNU Linuxにおいて利用可能なdebパッケージが提供されています。
-２.０は現在、Debian、Ubuntu、Raspbian OSのディストリビューションに対応しています。
-//それぞれのリリースが対応しているOSのディストリビューション・バージョンは、ダウンロードページで確認できます。
-Ubuntu/Debian GNU Linuxへのサポートバージョンや対応の有無は、予告なしに変更されることがありますので、あらかじめご了承ください。
+//２.０は現在、Debian、Ubuntu、Raspbian OSのディストリビューションに対応しています。
+
 
 #contents
 
+2.0 は現在、Ubuntu 18.04, 20.04 (各amd64, arm64）に対応しています。
+Ubuntu/Debian GNU Linuxへのサポートバージョンや対応の有無は、予告なしに変更されることがありますので、あらかじめご了承ください。
+
+** 2.0系での変更点
+
+C++と OpenRTP は 1.2系と2.0系の共存が可能となりました。　この対応で、インストールに関しては下記が変更となっています。
+
+- 2.0系のdebパッケージ名を変更しました
+- Python と Java は1.2系と2.0系の共存はできません
+-- 一括インストールスクリプトを使用すれば、インストール済みの異なるバージョンを自動でアンインストールします
+- 1.2系と2.0系の一括インストールスクリプトを分けました
+-- 1.2系のインストール : pkg_install_ubuntu.sh
+-- 2.0系のインストール : openrtm2_install_ubuntu.sh
+
+また、インストールスクリプト（1.2系、2.0系どちらも）は、ダウンロードからインストールまでの一括処理に対応しました。
+
 ** 一括インストールスクリプト
 
-openrtm.orgが提供するインストール・スクリプト''pkg_install_ubuntu.sh''または''pkg_install_debian.sh''を以下のコマンドでダウンロードし、root 権限で実行します。このスクリプトはOpenRTM-aist-2.0に必要なパッケージを順次apt-getを用いてインストールしていきます。
+2.0系のインストールは、下記をシェルプロンプトに貼り付けて実行してください。　C++版、 Python版、 Java版、 OpenRTP(amd64のみ)、 rtshell、JDK8 がインストールされます。　スクリプトはローカルに保存されません。&br;
+※スクリプトの実行で、Javaの複数バージョンがインストールされても、Java８ 使用に切り替わっています
 
-オプションを指定することで、目的に合わせたパッケージをインストールすることが可能です。
+ $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh)
 
-//inaba
-コマンドプロンプトを起動し、以下のいずれかのコマンドでダウンロードします。
-&color(red){ダウンロードコマンド・URLを確認する。}; 
+この実行により以下のパッケージがインストールされます。
 
- Ubuntuの場合:
- wget URL
- curl -O URL
- 
- Debianの場合:
- wget URL
- curl -O URL
-
-ダウンロードが完了したら、スクリプトが置いてあるディレクトリでオプションを指定して実行します。
-
-Ubuntuに全ての言語(C++、Python、Java)のパッケージをインストールする場合:
-
- $ sudo sh pkg_install_ubuntu.sh -l all --yes
-
-Debianに全て言語(C++、Python。Java)のパッケージをインストールする場合:
-
-suでroot権限を得た後に
-
- $ su sh pkg_install_debian.sh -l all --yes
-
-例えば、UbuntuにC++言語のパッケージのみをインストールする場合は
- $ sudo sh pkg_install_ubuntu.sh -l c++ --yes
-
-でインストールできます。
-
-一括インストールスクリプトの詳しいインストール方法、指定可能なオプションの種類につきましては、「[[一括インストールスクリプト(準備中につき１.２にリンク):http://openrtm.org/openrtm/ja/node/6345]]」のページをご確認ください。&br;
-
-「2.0.x」と「1.2.2」はC++言語のみ共存可能です。「1.2.2」をインストールする際は一括インストールスクリプトが異なりますので、上記のリンク「「[[一括インストールスクリプト(1.2用):http://openrtm.org/openrtm/ja/node/6345]]」からダウンロードしてください。
-
-//&color(red){※最新バージョンが「1.2.2」である場合は、オプション指定で「1.2.1」のインストール、「1.2.2」から「1.2.1」へのダウングレードができます。}; 
-
-//一括インストールスクリプトは、ダウンロードした後、ダウンロード先ディレクトリに移動し、
-
-//Ubuntuの場合は
-// $ sudo sh pkg_install_ubuntu.sh -l c++ --yes
-//
-//Debianの場合はsuでroot権限を得た後に
-// # sh pkg_install_debian.sh -l c++ --yes
-
-//でインストールできます。
+ $ dpkg -l | grep openrt
+ ii  openrtm2:amd64                          2.0.0-0                  amd64        OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm2-dev:amd64                    2.0.0-0                  amd64        OpenRTM-aist headers for development
+ ii  openrtm2-doc                               2.0.0-0                  all               Documentation for openrtm2
+ ii  openrtm2-example:amd64             2.0.0-0                  amd64        OpenRTM-aist examples
+ ii  openrtm2-idl:amd64                      2.0.0-0                  amd64        OpenRTM-aist idls for development
+ ii  openrtm2-java:amd64                   2.0.0-0                  amd64        OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm2-java-doc                        2.0.0-0                  all               Documentation for openrtm2-java
+ ii  openrtm2-java-example:amd64      2.0.0-0                  amd64        OpenRTM-aist-Java examples
+ ii  openrtm2-python3                         2.0.0-0                  amd64        OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm2-python3-doc                   2.0.0-0                  all               Documentation for openrtm2-python3
+ ii  openrtm2-python3-example            2.0.0-0                  amd64        OpenRTM-aist-Python examples
+ ii  openrtp2:amd64                            2.0.0-0                  amd64        OpenRTP, Open RT Platform distributed by AIST
 
 
-** OpenRTPのインストール
-一般的なUbuntu/Debian環境での開発にはRTC BuilderやRTSystem Editorを使用しますが、その場合にはOpenRTPが必要ですので、一括インストールスクリプトを用いてOpenRTPをインストールしてください。Ubuntuではpkg_install_ubuntu.shが置いてあるディレクトリで
 
-Ubuntuは:
- $ sudo sh pkg_install_ubuntu.sh -l openrtp --yes
+オプションを指定することで、目的に合わせたパッケージをインストールすることが可能です。 help は下記で確認できます。
 
-Debianはsuでroot権限を得た後に:
- # sh pkg_install_debian.sh -l openrtp --yes
+ $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh) --help
 
-と入力するとOpenRTPをインストールできます。
+インストールされるパッケージの詳しい内容は「[[OpenRTM-aist-2.0 debパッケージの詳しい内容>/ja/node/6665]] 」で確認できます。
 
-//2.0ではスクリプトでJDKをインストールし、優先パッケージにするので説明は不要.
-//** JDK8のインストール
+**ROS用パッケージのインストール
 
-//OpenRTP(RTSystem EditorやRTC Builderなど)の実行にはJDK8相当のJava環境が必要です。(デフォルトの環境でJDK8がインストールされている場合もありますが、Ubuntu 18.04ではJDK11がインストールされているため、JDK8のインストールが必要です。)  JDK8の入手やインストールについては以下を参照してください。
-//- [[JDK8のインストール>/ja/node/6911]]
+2.0系ではROS通信機能用パッケージをインストールできます。（ROS用、ROS2用)  &br;
+ここでは、ROS, ROS2 の両方をインストールしている環境へのパッケージインストール方法を説明します。
 
-***インストールの確認
-インストールを確認します。
+help に記載しているように、ROSパッケージインストールオプションは以下で対応しています。&br;
+[-e ros|ros2|all] [--ros|--ros2]
 
- $ dpkg -l 'openrt*'
- 要望=(U)不明/(I)インストール/(R)削除/(P)完全削除/(H)保持
- | 状態=(N)無/(I)インストール済/(C)設定/(U)展開/(F)設定失敗/(H)半インストール/(W)トリガ待ち/(T)トリガ保留
- |/ エラー?=(空欄)無/(R)要再インストール (状態,エラーの大文字=異常)
- ||/ 名前                     バージョン        アーキテクチャ    説明
- +++-========================-=================-+++-======================-================- 
- ii  openrtm-aist:amd64     2.0.x-x          amd64            OpenRTM-aist, RT-Middleware distributed by AIST
- ii  openrtm-aist-dev:amd64 2.0.x-x          amd64            OpenRTM-aist headers for development
- ii  openrtm-aist-doc       2.0.x-x          all              Documentation for openrtm-aist
- ii  openrtm-aist-example:a 2.0.x-x          amd64            OpenRTM-aist examples
- ii  openrtm-aist-idl:amd64 2.0.x-x          amd64            OpenRTM-aist idls for development
- ii  openrtp:amd64          2.0.x-x          amd64            OpenRTP, Open RT Platform distributed by AIST
+すでにインストールスクリプトをオプション無しで実行済みで、追加でROS, ROS2用パッケージを追加インストールする場合は、「-l c++ -e all」で可能です。
 
+ $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh) -l c++ -e all
 
-インストールされるパッケージの詳しい内容は「[[OpenRTM-aist-2.0 debパッケージの詳しい内容>/ja/node/6911]] 」で確認できます。
+最初からROS, ROS2用パッケージも加えてすべてインストールしたい場合は、「 -l all -e all」で可能です。
+
+ $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh) -l all -e all
+
+インストールされたパッケージを確認します。
+
+ $ dpkg -l | grep openrt
+ ii  openrtm2:amd64                          2.0.0-0       amd64        OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm2-dev:amd64                    2.0.0-0       amd64        OpenRTM-aist headers for development
+ ii  openrtm2-doc                               2.0.0-0       all               Documentation for openrtm2
+ ii  openrtm2-example:amd64             2.0.0-0       amd64        OpenRTM-aist examples
+ ii  openrtm2-idl:amd64                      2.0.0-0       amd64        OpenRTM-aist idls for development
+ ii  openrtm2-java:amd64                   2.0.0-0       amd64        OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm2-java-doc                        2.0.0-0       all               Documentation for openrtm2-java
+ ii  openrtm2-java-example:amd64      2.0.0-0      amd64        OpenRTM-aist-Java examples
+ ii  openrtm2-python3                         2.0.0-0      amd64        OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm2-python3-doc                   2.0.0-0      all               Documentation for openrtm2-python3
+ ii  openrtm2-python3-example            2.0.0-0      amd64        OpenRTM-aist-Python examples
+ ii  openrtm2-ros-tp:amd64                 2.0.0-0      amd64        OpenRTM-aist extension ROS package
+ ii  openrtm2-ros2-tp:amd64               2.0.0-0      amd64        OpenRTM-aist extension ROS2 package
+ ii  openrtp2:amd64                            2.0.0-0      amd64        OpenRTP, Open RT Platform distributed by AIST
+
+**1.2系インストール環境への2.0系インストール
+
+1.2系のインストールスクリプトも、URL指定で実行可能となっています。スクリプトをオプション無しで全パッケージインストールします。
+
+ $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/pkg_install_ubuntu.sh)
+
+インストールされたパッケージを確認します。
+
+ $ dpkg -l | grep openrt
+ ii  openrtm-aist:amd64                         1.2.2-0
+ ii  openrtm-aist-dev:amd64                   1.2.2-0
+ ii  openrtm-aist-doc                              1.2.2-0
+ ii  openrtm-aist-example:amd64            1.2.2-0
+ ii  openrtm-aist-idl:amd64                     1.2.2-0
+ ii  openrtm-aist-java:amd64                  1.2.2-0
+ ii  openrtm-aist-java-doc                       1.2.2-0
+ ii  openrtm-aist-java-example:amd64     1.2.2-0
+ ii  openrtm-aist-python3                        1.2.2-0
+ ii  openrtm-aist-python3-doc                  1.2.2-0
+ ii  openrtm-aist-python3-example           1.2.2-0
+ ii  openrtp:amd64                                  1.2.2-4
+
+続けて2.0系をインストールすると、c++とopenrtpは1.2系、2.0系が共存しますが、javaとpythonは2.0系のみがインストールされている状態になります。
+
+ $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh)
+
+スクリプト実行中、1.2系のjavaとpythonパッケージのアンインストールについて、「Do you want to continue? [Y/n] 」と聞かれますので、Enterキーを押してください。 &br;
+インストールされたパッケージを確認します。
+
+ $ dpkg -l | grep openrt
+ ii  openrtm-aist:amd64                         1.2.2-0
+ ii  openrtm-aist-dev:amd64                   1.2.2-0
+ ii  openrtm-aist-doc                              1.2.2-0
+ ii  openrtm-aist-example:amd64            1.2.2-0
+ ii  openrtm-aist-idl:amd64                     1.2.2-0
+ ii  openrtm2:amd64                              2.0.0-0
+ ii  openrtm2-dev:amd64                        2.0.0-0
+ ii  openrtm2-doc                                   2.0.0-0
+ ii  openrtm2-example:amd64                 2.0.0-0
+ ii  openrtm2-idl:amd64                          2.0.0-0
+ ii  openrtm2-java:amd64                        2.0.0-0
+ ii  openrtm2-java-doc                             2.0.0-0
+ ii  openrtm2-java-example:amd64           2.0.0-0
+ ii  openrtm2-python3                              2.0.0-0
+ ii  openrtm2-python3-doc                       2.0.0-0
+ ii  openrtm2-python3-example                2.0.0-0
+ ii  openrtp:amd64                                  1.2.2-4
+ ii  openrtp2:amd64                                2.0.0-0
+
+これに伴い、rtshellもインストールし直されます。
+
+ $ pip3 list | grep aist
+ OpenRTM-aist-Python    2.0.0
+ rtctree-aist           4.2.3
+ rtshell-aist           4.2.9
+ rtsprofile-aist        4.1.5
+
+**2.0系インストール環境への1.2系インストール
+
+c++とopenrtpは1.2系、2.0系が共存しますが、javaとpythonは1.2系のみがインストールされている状態になります。 
+
+ $ dpkg -l | grep openrt
+ ii  openrtm-aist:amd64                        1.2.2-0
+ ii  openrtm-aist-dev:amd64                 1.2.2-0
+ ii  openrtm-aist-doc                             1.2.2-0
+ ii  openrtm-aist-example:amd64           1.2.2-0
+ ii  openrtm-aist-idl:amd64                    1.2.2-0
+ ii  openrtm-aist-java:amd64                 1.2.2-0
+ ii  openrtm-aist-java-doc                      1.2.2-0
+ ii  openrtm-aist-java-example:amd64    1.2.2-0
+ ii  openrtm-aist-python3                       1.2.2-0
+ ii  openrtm-aist-python3-doc                 1.2.2-0
+ ii  openrtm-aist-python3-example          1.2.2-0
+ ii  openrtm2:amd64                             2.0.0-0
+ ii  openrtm2-dev:amd64                       2.0.0-0
+ ii  openrtm2-doc                                  2.0.0-0
+ ii  openrtm2-example:amd64                2.0.0-0
+ ii  openrtm2-idl:amd64                         2.0.0-0
+ ii  openrtp:amd64                                1.2.2-4
+ ii  openrtp2:amd64                             2.0.0-0
+
+rtshellも OpenRTM-aist-Python1.2.2 に対してインストールし直されます。
+
+ $ pip3 list | grep aist
+ OpenRTM-aist-Python    1.2.2
+ rtctree-aist           4.2.3
+ rtshell-aist           4.2.9
+ rtsprofile-aist        4.1.5

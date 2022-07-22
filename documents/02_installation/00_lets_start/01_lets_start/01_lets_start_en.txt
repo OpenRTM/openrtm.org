@@ -2,24 +2,17 @@
 #contents
 #br
 
-The latest version OpenRTM-aist-1.2.２-RELEASE installs C++ version, Python version, Java version. #br
+The latest version OpenRTM-aist-2.0.0-RELEASE installs C++ version, Python version, Java version. #br
 Also, rtshell will be installed at the same time.
 
 * Advance preparation
 ** Installation of Python
-//* 事前準備
-//** Pythonのインストール
+
 If Python is not installed, OpenRTM-aist can not be installed. #br
 Please install Python before installing OpenRTM - aist. #br
-The Python version corresponds to "3.8", "3.7", "3.6".#br
-//Pythonをインストールしていない場合は、OpenRTM-aistをインストールできません。
-//OpenRTM-aistをインストールする前に、Pythonをインストールしてください。バージョンは、"3.8"、"3.7"、"3.6"に対応しています。
+The Python version corresponds to "3.10", "3.9", "3.8", "3.7".#br
 
-To download Python please see [[OpenRTM-aist-1.2.2-RELEASE:/ja/node/7049]].
-//Pythonのダウンロードは[[OpenRTM-aist-1.2.2-RELEASE:/ja/node/7049]]をご覧ください。
-
-//http://opensource.org/licenses/eclipse-1.0.php
-//http://sourceforge.jp/projects/opensource/wiki/licenses%2FEclipse_Public_License(日本語訳)
+To download Python please see [[Installation of OpenRTM-aist 2.0 series on Windows:/en/doc/installation/install_2_0/install_windows_2_0/install_2_0]].
 
 
 For Python , check [add python *** to PATH] at the bottom of the first screen.
@@ -34,50 +27,50 @@ Set the search path automatically by the following method. This will add the dir
 
 ''[Installing Python]''
 
-- Launch the Python installer. To install Python 3.6, 3.7, 3.8, check [add python *** to PATH] at the bottom of the first screen and select [Customize installation].
+- Launch the Python installer. To install Python 3.7, 3.8, 3.9, 3.10 check [add python *** to PATH] at the bottom of the first screen and select [Customize installation].
 //- Pythonインストーラーを起動します。Python 3.6, 3.7, 3.8のインストールでは、最初の画面の下部にある[add python *** to PATH]にチェックを入れて、[Customize installation]を選択してください。
 
-#ref(Python38-install001_.png,center)
+#ref(Python38-install001_.png,center,70%)
 
 - There are no changes on the next Optional Features screen. Select [Next] to proceed.
 //- 次の[Optional Features]画面で変更はありません。[Next]を選択して進んでください。
 
-#ref(Python38-install002.png,center)
+#ref(Python38-install002.png,center,70%)
 
 - On the [Advanced Options] screen, check [Install for all users] and set the installation destination in [Customize install location]. (Example: Path=C:\Python38;C:\ Python38\Scripts;...)
 //- [Advanced Options]画面では、[Install for all users]にチェックを入れて、[Customize install location]でインストール先を設定してください。(例: Path=C:\Python38;C:\ Python38\Scripts;...）
 
-#ref(Python38-install003.png,center)
+#ref(Python38-install003.png,center,70%)
 
 - Select Install to complete the installation.
 //- [Install] を選択してインストールを完了します。
 
 ** Installing OpenRTM-aist
 //** OpenRTM-aistのインストール
-Here, we will introduce the installation procedure using 64-bit installer OpenRTM-aist-1.2.2-RELEASE_x86_64.msi on Windows 10. #br
+Here, we will introduce the installation procedure using 64-bit installer OpenRTM-aist-2.0.0-RELEASE_x86_64.msi on Windows 10. #br
 //ここではWindows 10で64bit用インストーラーOpenRTM-aist-1.2.2-RELEASE_x86_64.msiを使ったインストール手順を紹介します。
 
-To download the installer please see [[OpenRTM-aist-1.2.2-RELEASE:/ja/node/7049]].
-//インストーラーのダウンロードは[[OpenRTM-aist-1.2.2-RELEASE:/ja/node/7049]]をご覧ください。
+To download the installer please see [[Download:/en/node/7159]].
+
 
 ''[Installation procedure]''
 //''[インストール手順]''
 
-+インストーラーを起動します。[WindowsによってPCが保護されました]の画面が表示されたら[詳細情報]をクリックして[実行]ボタンを表示させて、[実行]をクリックします。(この画面はWindowsのあるバージョン以降でMicrosoft Corp.に登録されていないアプリケーションのインストール時に表示される画面で、本ソフトウエアは登録をしていないため、この画面が表示されます。)
++Launch the installer. When the [Windows protected your PC] screen is displayed, click [Details] to display the [Run] button, and then click [Run]. (This screen is displayed when installing an application that is not registered with Microsoft Corp. on a certain version of Windows or later, and this screen is displayed because this software is not registered.)
 
 + Then click Next.
 //+ [次へ]をクリックします。
-#ref(Openrtm122-Install001.png,center,90%)
+#ref(RTM2.0.0-msi-1.png,center,90%)
 &br;
 
 +This is the page of the license agreement. Accept the software license terms and click Next.
 //+使用承諾契約書のページです。ソフトウェアライセンス条項に同意して[次へ]をクリックします。
-#ref(Openrtm122-Install002.png,center,90%)
+#ref(RTM2.0.0-msi-2.png,center,90%)
 &br;
 
 +Select the installation type. Accept the default and click Next.
 //+インストールの種類を選択します。デフォルトのまま[次へ]をクリックします。
-#ref(Openrtm122-Install003.png,center,90%)
+#ref(RTM2.0.0-msi-3.png,center,90%)
 &br;
 +Select the Visual Studio version.
 //+Visual Studioのバージョンを選択します。
@@ -85,30 +78,30 @@ To download the installer please see [[OpenRTM-aist-1.2.2-RELEASE:/ja/node/7049]
 //-- C++版で使用するVisual Studioのバージョンをシステム環境変数に設定します。
 -- Select the installed version of Visual Studio and click Next.
 //-- インストールされている Visual Studioのバージョンを選択して[次へ]をクリックします。
---- For downloading Visual Studio, see [[OpenRTM-aist-1.2.2-RELEASE:/en/node/7049]].
+--- For downloading Visual Studio, see [[OpenRTM-aist 2.0 installation to Windows:/en/doc/installation/install_2_0/install_windows_2_0/install_2_0]].
 //--- Visual Studioのダウンロードは[[OpenRTM-aist-1.2.2-RELEASE:/ja/node/7049]]をご覧ください。
---- The version of Visual Studio can be changed with the tool VCVerChanger after installation is complete. [[(How to use VCVerChanger):/ja/node/6136/]]
+--- The version of Visual Studio can be changed with the tool VCVerChanger after installation is complete. [[(How to use VCVerChanger):/en/doc/installation/install_1_1/cpp_1_1/howtouse_env_ver_tool_1_1]]
 //--- Visual Studioのバージョンは、インストール終了後にツールのVCVerChangerで変更できます。[[(VCVerChangerの使い方):/ja/node/6136/]]
 --- Since it is irrelevant for Python version and Java version, click [Next] with the default.
 //--- Python版、Java版では無関係ですのでデフォルトのまま[次へ]をクリックしてください。
-#ref(Openrtm122-Install004.png,center,90%)
+#ref(RTM2.0.0-msi-4.png,center,90%)
 &br;
 + Select the setup type.&br;
-When [Standard] is selected, OpenRTM-aist C++ version, Java version, Python version, OpenRTP, RTSystemEditorRCP, RTShell, OpenRTM-aist-C++ version Visual Studio 2012 to 2019 runtime library, OpenRTM-aist-1.0. The runtime libraries from 0 to 1.2.2 are installed. If you have no particular reason to change it, click Standard.
+When [Standard] is selected, OpenRTM-aist C++ version, Java version, Python version, OpenRTP, RTSystemEditorRCP, RTShell, OpenRTM-aist-C++ version Visual Studio 2015 to 2022 runtime library, OpenRTM-aist-1.0. The runtime libraries from 0 to 2.0.0 are installed. If you have no particular reason to change it, click Standard.
 //+セットアップの種類を選択します。
-[標準]を選択した場合、OpenRTM-aistのC++版、Java版、Python版、OpenRTP、RTSystemEditorRCP、RTShell、OpenRTM-aist-C++版のVisual Studio 2012から2019までのランタイムライブラリ、OpenRTM-aist-1.0.0から1.2.2までのランタイムライブラリがインストールされます。特に変更理由がないようであれば[標準]をクリックします。(inaba:ランタイムのver確認)
+//[標準]を選択した場合、OpenRTM-aistのC++版、Java版、Python版、OpenRTP、RTSystemEditorRCP、RTShell、OpenRTM-aist-C++版のVisual Studio 2012から2019までのランタイムライブラリ、OpenRTM-aist-1.0.0から1.2.2までのランタイムライブラリがインストールされます。特に変更理由がないようであれば[標準]をクリックします。(inaba:ランタイムのver確認)
 &br;
-#ref(Openrtm122-Install005.png,center,90%)
+#ref(RTM2.0.0-msi-5.png,center,90%)
 &br;
 + Click [Install] to start the installation.
 //+[インストール]をクリックするとインストールが開始されます。
-#ref(Openrtm122-Install006.png,center,90%)
+#ref(RTM2.0.0-msi-6.png,center,90%)
 &br;
-#ref(Openrtm122-Install007.png,center,90%)
+#ref(RTM2.0.0-msi-7.png,center,90%)
 &br;
 + The installation is complete. Click Finish to exit the installer.
 //+インストールが終了しました。[完了]をクリックしてインストーラーを終了します。
-#ref(Openrtm122-Install008.png,center,90%)
+#ref(RTM2.0.0-msi-8.png,center,90%)
 &br;
 
 ** Run the sample component
@@ -116,15 +109,15 @@ When [Standard] is selected, OpenRTM-aist C++ version, Java version, Python vers
 //** サンプルコンポーネントを実行する
 //*** 事前準備
 - Although not required, start many applications registered in the start menu from here. It's hard to go from the start menu each time, so
-Display the start menu from the start button, right-click [OpenRTM-aist 1.2.2 x86_64]> [OpenRTP] and select [Open File Location].
+Display the start menu from the start button, right-click [OpenRTM-aist 2.0.0 x86_64]> [OpenRTP] and select [Open File Location].
 //- 必須ではありませんが、ここからはスタートメニューに登録されたアプリケーションを多数起動します。毎回スタートメニューから順番にたどるのは大変ですので、
-スタートボタンからスタートメニューを表示させ[OpenRTM-aist 1.2.2 x86_64]>[OpenRTP]を右クリックして[ファイルの場所を開く]を選択してください。
+//スタートボタンからスタートメニューを表示させ[OpenRTM-aist 2.0.0 x86_64]>[OpenRTP]を右クリックして[ファイルの場所を開く]を選択してください。
 &br;
-#ref(Startmenu122-001.png,center,90%)
+#ref(start-menu.png,center,70%)
 CENTER:''Open file location''
 //CENTER:''ファイルの場所を開く''
 &br;
-#ref(Startmenu122-002.png,center,90%)&br;
+#ref(start-menu-folder.png,center,90%)&br;
 CENTER:''Start menu folder''
 //CENTER:''スタートメニューフォルダー''
 &br;
@@ -150,7 +143,7 @@ ConsoleInComp and ConsoleOutComp are samples showing how to use DataInPort and D
 
 *** Launch the sample component
 //*** サンプルコンポーネントの起動
-- Double-click ConsoleIn.bat and ConsoleOut.bat in the [OpenRTM-aist 1.2.2 x86_64]>[C++_Example] folder. If the [Important Windows Security Warning] screen is displayed, check [Private network (home network, corporate network, etc.)] and click [Allow access]. The following console screen will be displayed.
+- Double-click ConsoleIn.bat and ConsoleOut.bat in the [OpenRTM-aist 2.0.0 x86_64]>[C++_Example] folder. If the [Important Windows Security Warning] screen is displayed, check [Private network (home network, corporate network, etc.)] and click [Allow access]. The following console screen will be displayed.
 //- [OpenRTM-aist 1.2.2 x86_64]>[C++_Example]フォルダー内のConsoleIn.batとConsoleOut.batをダブルクリックします。もし[Windows セキュリティのの重要な警告]画面が表示されたら[プライベートネットワーク(ホームネットワーク社内ネットワークなど)(R)]にチェックマークをつけて[アクセスを許可する(A)]をクリックしてください。以下のようなコンソール画面が表示されます。
 
 CENTER:&ref(ConsoleInOut122-001.png,center,90%);
@@ -160,7 +153,7 @@ CENTER:''ConsoleIn.bat and ConsoleOut.bat''
 &aname(openrtp_start);
 **Start OpenRTP
 //** OpenRTP起動
-- Click the desktop shortcut to launch it. In the start menu, select [OpenRTM-aist 1.2.2 x86_64]> [OpenRTP]. You can also start it by double-clicking OpenRTP from the folder screen you opened earlier.
+- Click the desktop shortcut to launch it. In the start menu, select [OpenRTM-aist 2.0.0 x86_64]> [OpenRTP]. You can also start it by double-clicking OpenRTP from the folder screen you opened earlier.
 //- デスクトップのショートカットをクリックして起動します。スタートメニューでは、[OpenRTM-aist 1.2.2 x86_64]>[OpenRTP]と選択してください。先ほど開いたフォルダー画面からOpenRTPをダブルクリックすることによっても起動できます。
 -- Please specify a suitable place for the workspace.
 //-- ワークスペースは適当な場所を指定してください。
@@ -170,7 +163,7 @@ CENTER:''Select Workspace''
 &br;
 - Since the "Welcome" screen is not required, click the [x] button on the [Welcome] tab in the upper left to close the screen.
 //-「ようこそ」画面は必要ないので左上の[ようこそ]タブの[×]ボタンをクリックして画面を閉じてください。
-#ref(OpenRTP122-002.png,90%,center)
+#ref(OpenRTP122-002.png,70%,center)
 CENTER:''Initial startup screen''
 //CENTER:''初期起動時の画面''
 &br;
@@ -200,7 +193,8 @@ CENTER:''Add Name Server''
 CENTER:''Display System Diagram''
 //CENTER:''System Diagramを表示''
 &br;
-- [NameServiceView]にあるConsoleIn、ConsoleOutのコンポーネントを[System Diagram]上にドラッグ＆ドロップすると、ホスト名のホストコンテキストとConsoleIn、ConsoleOutコンポーネントが確認できます。設定により、ホストコンテキスト(図中 “TPAD-RTM-NO13|host_cxt” のような “ホスト名|host_cxt” の階層) が表示されず、直接コンポーネントが表示される場合もあります。
+//- [NameServiceView]にあるConsoleIn、ConsoleOutのコンポーネントを[System Diagram]上にドラッグ＆ドロップすると、ホスト名のホストコンテキストとConsoleIn、ConsoleOutコンポーネントが確認できます。設定により、ホストコンテキスト(図中 “TPAD-RTM-NO13|host_cxt” のような “ホスト名|host_cxt” の階層) が表示されず、直接コンポーネントが表示される場合もあります。
+- If you drag and drop the ConsoleIn and ConsoleOut components in the [NameServiceView] onto the [System Diagram], you can see the host context of the host name and the ConsoleIn and ConsoleOut components. Depending on the settings, the host context (the hierarchy of “hostname | host_cxt” such as “TPAD-RTM-NO13 | host_cxt” in the figure) may not be displayed and the component may be displayed directly.
 #ref(OpenRTP122-009.png,center)
 CENTER:''Drag and drop components''
 //CENTER:''コンポーネントをドラッグ＆ドロップ''
@@ -259,120 +253,22 @@ CENTER:''Component termination''
 
 ** Use rtshell
 //** rtshellを利用する
-OpenRTM-aist-1.2.2 installs rtshell as standard.&br;
-By using rtshell, you can activate, deactivate, and terminate RTC from the command line.
+OpenRTM-aist installs rtshell as standard.
+By using rtshell, you can activate, deactivate, and terminate RTC from the command line. &br;
 //OpenRTM-aist-1.2.2ではrtshellが標準でインストールされます。
 //rtshellを利用することでコマンドラインからRTCのActivate、Deactivate、終了等ができるようになります。
--When 64-bit version is installed, it may not operate normally due to lack of dll. In that case, please execute Windows Update.
-//- 64bit版をインストールした場合にdllの不足により正常動作しない場合があります。その場合はWindows Updateを実行してください。
-*** RTC operation
-//*** RTCの操作
-Start the sample component and connect the data port, activate, deactivate, and close the RTC from the command line using rtshell.
-//サンプルコンポーネントを起動し、rtshellによりコマンドラインからデータポートの接続、RTCのActivate、Deactivate、終了を行います。
+Please see [[Install rtshell・Operation Check (On Windows):/en/node/7005]]
 
-*** Start rtm-naming
-//*** rtm-namingを起動
-- Double-click Start Naming Service in the [OpenRTM-aist 1.2.2 x86_64] folder to start it.
-//- [OpenRTM-aist 1.2.2 x86_64]フォルダー内のStart Naming Serviceをダブルクリックして起動します。
-
-**** Launch the sample component
-//**** サンプルコンポーネントの起動
-
-First, start the sample component and operate the started component with rtshell.
-//まずはサンプルコンポーネントを起動して、起動したコンポーネントをrtshellで操作します。
-
--Click ConsoleIn.bat and ConsoleOut.bat in the [OpenRTM-aist 1.2.2 x86_64]>[Python_Examples] folder to launch the console screen. If the [Important Windows Security Warning] screen is displayed, check [Private network (home network, corporate network, etc.)] and click [Allow access]. At this point, the start command of the py program at startup is only displayed on the console screen, and the screen output is different from that of the C++ Example executed earlier.
-//- [OpenRTM-aist 1.2.2 x86_64]>[Python_Examples]フォルダー内のConsoleIn.batとConsoleOut.batをクリックするとコンソール画面が起動します。もし[Windows セキュリティのの重要な警告]画面が表示されたら[プライベートネットワーク(ホームネットワーク社内ネットワークなど)(R)]にチェックマークをつけて[アクセスを許可する(A)]をクリックしてください。この時点ではコンソール画面上は起動時のpyプログラムの起動コマンドが表示されるだけで、先に実行したC++ Exampleの場合とは画面が出力が異なります。
-
-**** Operation from command prompt
-//**** コマンドプロンプトからの操作
-- Then start [Windows System Tools]> [Command Prompt] from the Start menu.
-//- 次にスタートメニューから[Windows システム ツール]>[コマンドプロンプト]を起動してください。
-#ref(Console006.png,center)
-CENTER:''Launch Command Prompt''
-//CENTER:''コマンドプロンプトの起動''
-&br;
-- If the path is not set to C:\Python3.6\Scripts, set the path with the following command.
-//- C:\Python3.6\Scriptsをパスを設定していない場合は以下のコマンドでパスを設定してください。
-
- # If Python 3.6 is installed in the Python36 directory directly under C:\
- 
- set PATH=C:\Python36\Scripts;%PATH%
- # If Python 3.7 is installed in the Python37 directory under C:\Program Files
- set PATH=C:\Program Files\Python37\Scripts;%PATH%
-
-//※ Python をインストールする場合できるだけ管理者権限でデフォルト
-// # Python 3.6がC:\の直下 Python36 ディレクトリにインストールされている場合
-// set PATH=C:\Python36\Scripts;%PATH%
-// # Python 3.7がC:\Program Filesの下 Python37 ディレクトリにインストールされている場合
-// set PATH=C:\Program Files\Python37\Scripts;%PATH%
-
-
-※ When installing Python, please install it in the default path with administrator privileges.
-※ Please note that it may be installed in a location such as C:\Users\<user name>\AppData\Local\Programs\Python if it is installed with the local directory of the account or Visual Studio. ..
-//※ Python をインストールする場合できるだけ管理者権限でデフォルトのパスにインストールしてください。
-//※ アカウントのローカルディレクトリやVisual Studio と一緒にインストールしている場合は、C:\Users\<ユーザ名>\AppData\Local\Programs\Python といった場所にインストールされている場合もありますので注意してください。
-
-- Next, connect the data port with the following command.
-//- 次に以下のコマンドでデータポートを接続します。
- rtcon /localhost/ConsoleIn0.rtc:out /localhost/ConsoleOut0.rtc:in
-
--- Then, the following strings will be displayed in ConsoleIn.py and ConsoleOut.py consoles.
-//-- すると ConsoleIn.py、ConsoleOut.pyコンソールに以下のような文字列が表示されます。
- ------------------------------
- Listener:        ON_CONNECT
- Profile::name:   outin
- Profile::id:     4d622f80-135f-11e6-b923-001c4231a7a3
- ------------------------------
-
-//#ref(Console007.png,center)
-//CENTER:''データポート接続の表示''
-
-- Check with RTSystemEditor just in case.
-//- 念のためRTSystemEditorで確認します。&br;
--- For details, please refer to [[Start OpenRTP:/doc/installation/lets_start#toc9]], [[Using RTSystemEditor:/doc/installation/lets_start#toc10]] to start.
--- You can confirm that the data port is connected by dragging and dropping the [NameServiceView] component to the System Diagram.
-//-- [NameServiceView]のコンポーネントをSystem Diagramにドラッグ＆ドロップすると、データポートが接続されたことが確認できます。
-#ref(Console122-007.png,center)
-CENTER:''Check data port connection''
-//CENTER:''データポート接続の確認''
-&br;
-- Next, activate RTC with the following command.
-//- 次に、以下のコマンドでRTCをActivateします。
- rtact /localhost/ConsoleIn0.rtc /localhost/ConsoleOut0.rtc
-
--- If Activate succeeds, "Please input number:" will be displayed in ConsoleIn.py console. If you look at RTSystemEditor, you can see that RTC has been activated.
-//-- Activateに成功するとConsoleIn.pyコンソールに「Please input number:」と表示されます。RTSystemEditorを見ると、RTCがActivateされたことが確認できます。
-#ref(Console008.png,center)
-CENTER:''Confirmation of Activate''
-//CENTER:''Activateの確認''
-&br;
-- Then, enter the value on the ConsoleIn.py screen and press [Enter]. The value will be displayed on the ConsoleOut.py screen.
-//- そしてConsoleIn.py画面で数値を入力し[Enter]を押すと、ConsoleOut.py画面に数値が表示されます。
-CENTER:&ref(Console122-009.png,center,90%);
-CENTER:''ConsoleIn.py and ConsoleOut.py''
-//CENTER:''ConsoleIn.pyとConsoleOut.py''
-&br;
-- Deactivate the RTC with the following command.
-//- 以下のコマンドでRTCをDeactivateしてください。
- rtdeact /localhost/ConsoleIn0.rtc /localhost/ConsoleOut0.rtc
-
--- If ConsoleIn cannot be deactivated, enter a numerical value because it is stopped by entering a numerical value.
-//-- ConsoleInがDeactivateできない場合、数値入力で止まっているので何か数値を入力してください。
-- Finally, terminate RTC with the following command.
-//- 最後に以下のコマンドでRTCを終了させてください。
- rtexit /localhost/ConsoleIn0.rtc
- rtexit /localhost/ConsoleOut0.rtc
 ** Next...
 //** 次は...
 Please see the link below.
 //下記リンク先をご覧ください。
 
--''Try running more samples &t;：'' [[Sample component: /ja/node/811]]
--''Try making a component &t;：'' [[Case study: /ja/node/110]]
--''Learn from the basics of OpenRTM &t;：'' [[Developer's Guide:/ja/node/113]]
--'' Join the community &t;：'' [[community:/ja/node/624]]
--''Look at the public components &t;：'' [[Project:/ja/node/123]]
+-''Try running more samples &t;：'' [[Sample component: /en/doc/installation/sample_components]]
+-''Try making a component &t;：'' [[Case study: /en/doc/casestudy]]
+-''Learn from the basics of OpenRTM &t;：'' [[Developer's Guide:/en/doc/developersguide]]
+-'' Join the community &t;：'' [[community:/en/community]]
+-''Look at the public components &t;：'' [[Project:/en/content/projects]]
 
 //- ''もっとサンプルを動かしてみる　&t;：　''[[サンプルコンポーネント:/ja/node/811]]
 //- ''コンポーネントを作ってみる　　&t;：　''[[ケーススタディー:/ja/node/110]]

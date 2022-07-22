@@ -1,0 +1,134 @@
+// Title: Install
+#ref(windows10-logo.png,60%,margin=30 30 30 30,around,nolink,right)
+#contents
+
+** Installation of software required for development
+
+RTC development requires installation of Python, CMake, Doxygen, and Visual Studio.
+
+*** Visual Studio
+It is necessary not only for developing the C ++ version, but also for building the installer when creating the Python version and Java version of the RTC.
+Install it by downloading from the link, or obtain and install Visual Studio 2015/2017/2019/2022 separately.
+
+- [[Microsoft ''Download Visual Studio 2022'':https://visualstudio.microsoft.com/ja/downloads/?utm_source=mscom&utm_campaign=msdocs]]
+
+The latest version of Visual Studio that has been confirmed to work is 2022.　&br;
+I often forget to include the C ++ development environment. We recommend that you read the following instructions.
+-- [[Installing Visual Studio Community 2022:/ja/node/6650]] 
+
+*** Python
+
+Python is used not only for developing the Python language version of RTC, but also for various tools of OpenRTM-aist, so it must be installed. 
+Python supported by OpenRTM-aist is 3.7, 3.8, 3.9, 3.10.
+We recommend that you install the latest version.
+
+- [[Python Releases for Windows:https://www.python.org/downloads/windows/]]
+-- [[python-3.10.5-amd64.exe (64bit版):https://www.python.org/ftp/python/3.10.5/python-3.10.5-amd64.exe]]
+
+Please note the following points when installing.
+-- The Python installation destination corresponds to the selection [Customize installation] at the time of installation.
+--  For the procedure to specify the installation destination in [Customize installation], see the explanation on the following page.
+--- [[Let's start OpenRTM-aist in 10 minutes!・Installation of Python:/en/doc/installation/lets_start#toc1]] 
+
+
+*** CMake
+CMake is required to automatically generate the files required for build (Visual Studio project file, Makefile on Linux, etc.) in various environments such as Windows and Linux.  &br;
+Please install the latest version as much as possible.
+
+- [[CMake(3.11以上推奨):https://cmake.org/download/]]
+--  [[cmake-3.23.2-windows-x86_64.msi (64bit):https://github.com/Kitware/CMake/releases/download/v3.23.2/cmake-3.23.2-windows-x86_64.msi]]
+-- During the installation, you will be asked what to do with system PATH as [Install Options], it is recommended that you select Add CMake to the system PATH for all users.
+
+*** Doxygen & Graphviz
+
+
+Doxygen is a tool that automatically generates documents from comments such as source code.  &br;
+Graphviz is a tool required to generate diagrams such as class diagrams when generating documents with Doxygen.   &br;
+In OpenRTM-aist, various design information can be entered in RTCBuilder when designing RTC, and they are output as comments in the source code. By processing this with Doxygen, you can generate a beautiful RTC document.   &br;
+Please install the latest version as much as possible.
+
+- [[Doxygen:https://doxygen.nl/download.html#latestsrc]]
+-- [[doxygen-1.9.4-setup.exe :https://www.doxygen.nl/files/doxygen-1.9.4-setup.exe]]
+
+
+&aname(Graphviz);
+- [[Graphviz:https://graphviz.gitlab.io/download/]]
+-- [[windows_10_cmake_Release_graphviz-install-4.0.0-win64.exe:https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/4.0.0/windows_10_cmake_Release_graphviz-install-4.0.0-win64.exe]]
+
+
+During the installation, you will be asked what to do with the system PATH as the Install Options, but we recommend that you select Add Graphviz to the system PATH for all users.
+Download and execute the Windows version binary executable file from the web page.
+
+After installation, run dot -v at the command prompt and check that the plugin information is displayed.
+ >dot -v
+ dot - graphviz version 4.0.0 (20220529.0937)
+ libdir = "C:\Program Files\Graphviz\bin"
+ Activated plugin library: gvplugin_dot_layout.dll
+ Using layout: dot:dot_layout
+ Activated plugin library: gvplugin_core.dll
+ Using render: dot:core
+ Using device: dot:dot:core
+ The plugin configuration file:
+         C:\Program Files\Graphviz\bin\config6
+                 was successfully loaded.
+     render      :  cairo dot dot_json fig gdiplus json json0 map mp pic pov ps svg tk visio vml xdot xdot_json
+     layout      :  circo dot fdp neato nop nop1 nop2 osage patchwork sfdp twopi
+     textlayout  :  textlayout
+     device      :  bmp canon cmap cmapx cmapx_np dot dot_json emf emfplus eps fig gif gv imap imap_np ismap jpe jpeg jpg json json0 metafile mp pdf pic plain plain-ext png pov ps ps2 svg tif tiff tk vdx vml xdot xdot1.2 xdot1.4 xdot_json
+     loadimage   :  (lib) bmp eps gif jpe jpeg jpg png ps svg
+
+
+*** JDK8
+
+Required when developing in Java versions of OpenRTM. Please see the explanation on the following page.
+--- [[Install JDK8:/en/doc/appendix/jdk8installtion]] 
+
+
+** Install OpenRTM-aist
+
+After installing the above software, install OpenRTM-aist.
+
+*** Download installer
+
+Download and execute "msi" file.
+
+|[[OpenRTM-aist-2.0.0-RELEASE_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.0-RELEASE_x86_64.msi]]|MD5:bda5f38285c722991573ca7d92431437|756MB|
+
+This installer contains the following.
+
+- Development environment for C ++
+-- OpenCV4.4
+-- Past versions of DLLs for C ++ (Required when running the old RTC)
+- Development environment for Python
+- Development environment for Java
+- omniORB4.2.5
+- OpenRTP (GUI tool, RTCBuilder，RTSystemEditor）
+-- JRE8 environment (Required for OpenRTP）
+- VCVerChanger (GUI tool）
+- rtshell (CUI tool）
+
+
+*** Install
+
+Please see the following page for details on the installation process.
+--- [[Let's start OpenRTM-aist in 10 minutes!・Installing OpenRTM-aist:/en/doc/installation/lets_start#toc2]] 
+
+Try running the sample components to see if they are installed correctly.
+--- [[Let's start OpenRTM-aist in 10 minutes!・Run the sample component:/en/doc/installation/lets_start#toc3]] 
+
+For details on system environment variables set by the installer, files to be installed, etc., see the following page.
+--- [[What the installer does:/en/doc/installation/install_2_0/install_windows_2_0/install_workcontent_2_0]]
+
+*** Specify the version of Visual Studio
+
+The system environment variable  "RTM_VC_VERSION'' is set according to the installed version of Visual Studio.
+If you want to change it after installation, you can set it using GUI tools. See the [[VCVerChanger:/en/doc/installation/install_1_1/cpp_1_1/howtouse_env_ver_tool_1_1]] page for how to use it.
+&br;
+
+|LEFT:200|LEFT:200|LEFT:200|c
+|Visual Studio version|Specified value of RTM_VC_VERSION||
+|2015、2017|vc14||
+|2019、2022|vc16|default|
+
+※Even if you do not change the version of Visual Studio after installation, check the system environment variable settings once with [[VCVerChanger:/en/doc/installation/install_1_1/cpp_1_1/howtouse_env_ver_tool_1_1]]. If there are any unnecessary paths left, delete them.
+&br;

@@ -1,217 +1,168 @@
 // Title: ソースからのビルド (Linux編)
 #contents
 
-メモ）
-- ビルド・インストール・動作確認（複数ページにわたる？？）
-
-// Title: ソースからのビルド(Linux編)
-パッケージが用意されていないUNIX系の環境や、クロス開発環境などで、OpenRTM-aist本体のソースを変更したり再ビルドて、OpenRTM-aistを利用したい場合には、ソースからビルド可能です。ここでは、ダウンロードページやリポジトリからソースを取得しLinux上でOpenRTM-aist をビルドする方法を説明します。
+OpenRTM-aist本体のソースを変更して利用したい場合には、OpenRTM-aistのソースコードを取得してビルドできます。
 
 
-#contents
+**Dockerでのビルド
 
-**配布ソースのビルド
+Dockerfileを使い、OpenRTM-aistソースビルドに必要な最小限のライブラリだけをインストールした環境でビルドを行う手順を紹介します。 &br;
+docker build コマンドで Dockerイメージを生成するのですが、毎回まっさらな環境でビルドできるのでお勧めです。
 
-OpenRTM-aist(C++版)はautotoolsを利用したビルド環境を提供しているため、さまざまな環境でビルドできます。
+初めてDockerを使う場合は、以下のようにインストールしてください。Ubuntuのデスクトップ環境であれば docker.io パッケージが提供されていると思います。
 
-***対応 OS およびディストリビューション 
-OpenRTM-aistは下記のLinuxディストリビューションでビルドできることが確認されています。
+ sudo apt install docker.io
 
-- Fedora(限定されたバージョンのみ)
-- Debian(限定されたバージョンのみ)
-- Ubuntu
-- Raspbian(未確認)
-
-これ以外の環境でも、一般的Linux/UNIX環境であれば、ビルドできる可能性があります。
-
-***必要ツールとライブラリ
-
-OpenRTM-aist-2.0.xをソースからビルドするには下記の開発用ツールおよびライブラリが必要です。
-
-- gcc/g++ version3以降: コンパイルに必要
-- omniORB-4.x以上: OpenRTM-aistのビルドに必要
-- uuidライブラリ: libuuid (Linux環境ではデフォルトでuuid生成関数を提供していないため) 
-- python: ビルドツールを利用するために必要
-- boost: 拡張モジュールをコンパイルする際に必要になる場合がある 
-- openssl: OpenSSLによるセキュアな通信機能を使用するために必要
+- 参考：docker.io パッケージの提供が無い場合のインストール
+-- 手動で、DockerのGPGキーを取得して、リポジトリ情報を書き込んで、docker-ceをインストールする流れになります
+-- QEMU上にubuntu-20.04-server-cloudimg-arm64.imgで aarch64 環境を構築した時は、以下の手順でインストールしました
+ sudo apt install apt-transport-https ca-certificates curl software-properties-common
+ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+ sudo add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" 
+ sudo apt update
+ sudo apt install docker-ce
 
 
-それぞれのライブラリなどのドキュメントに従いインストールを行ってください。これらが標準のディレクトリ(/usr、/usr/localなど)下にインストールされていると、以降のOpenRTM-aistのコンパイル作業を比較的簡単に行うことができます。
+**C++ソースのビルド
 
-UbuntuやFedoraなどの特定のディストリビューション向けには、一括インストール・スクリプト ''pkg_install_OS名.sh’’という依存ライブラリやOpenRTMのパッケージをインストールするスクリプトが用意されていて、それにより必要なツールをインストールすることができます。下記のリンクに入手方法やコマンドラインオプションなどが説明されています。
+OpenRTM-aist 2.0系のソースには、Ubuntu18.04、20.04用のDockerfileが含まれています。
 
-このスクリプトを-cオプションを用いて実行することにより、コア(OpenRTM-aist自体の)開発用のツールをインストールすることができます。それを実行するか、別個に必要なツールをインストールしておいてください。
+ OpenRTM-aist/scripts/ubuntu_1804/Dockerfile
+ OpenRTM-aist/scripts/ubuntu_2004/Dockerfile
 
-- [[一括インストール・スクリプト:/node/6345]]
+ビルド手順は以下となります。　Ubuntu20.04用のビルド例です。　&br;
+ここではGitHubから最新のOpenRTM-aistソースを取得していますが、修正を加えたソースのビルドでも同様の手順で行えます。
 
-***ソースのダウンロード
+ git clone https://github.com/OpenRTM/OpenRTM-aist
+ sudo docker build -t test -f OpenRTM-aist/scripts/ubuntu_2004/Dockerfile .
 
-OpenRTM-aistのソースをダウンロードします。
-ソースコードは、https://github.com/OpenRTM/OpenRTM-aist/releases のバージョン番号のタグからダウンロードできます。バージョン2.0.0のソースコードは以下の場所にあります。
--https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v2.0.0
+エラーなくビルドが終了したら、-tオプションで指定した test という名前のDockerイメージが生成されていることを確認できます。
 
-***ソースコードの展開 
+ sudo docker images
+ REPOSITORY       TAG           IMAGE ID          CREATED           SIZE
+ test                    latest         0bc00f471b64   27 seconds ago   1.52GB
 
-まずソースコードOpenRTM-aist-X.X.X.tar.gzを適当なディレクトリに展開します。
+ソースを修正しながらビルドが通るまで繰り返すと、 <none> というイメージが多数生成されます。　docker rmi で IMAGE ID を指定して削除できますが、まとめて削除したい場合は下記コマンド実行が便利です。
 
- $ wget https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v2.0.0/OpenRTM-aist-2.0.0.tar.gz
- $ tar xvzf OpenRTM-aist-2.0.0.tar.gz
- $ cd OpenRTM-aist-2.0.0
+ sudo docker rmi $(sudo docker images -f dangling=true -q)
 
-*** ビルド 
+***Dockerイメージ「openrtm/devel-rtm」について
 
-OpenRTM-aistはパッケージのビルドにautoconf、automakeを使用しています。上記の方法でダウンロードできるソースコードのパッケージは、あらかじめそれらのツールを使用して構成されているものです。
+ソースビルドで使用した Dockerfile の1行目は、Ubuntu18.04用と20.04用でそれぞれの以下のようになっており、Dockerハブにアップロードされているこの名前のイメージを使用します。
 
- $  ./configure --prefix=/usr --enable-fluentd=no --enable-observer=yes --enable-ssl=yes [options]
+ FROM openrtm/devel-rtm:ubuntu18.04
+        or
+ FROM openrtm/devel-rtm:ubuntu20.04
 
-基本的には[options]の指定はいりませんが、特別な設定をしたい場合の[options]で使用可能なオプションは
+これらのイメージは、下記 Docierfile.devel-rtm から生成したものです。fluent-bitと、ROS、ROS2がインストールされています。
+-Ubuntu18.04用：dashing、melodic
+-Ubuntu20.04用：foxy、noetic
 
- $ ./configure --help
+ OpenRTM-aist/scripts/ubuntu_1804/Dockerfile.devel-rtm
+ OpenRTM-aist/scripts/ubuntu_2004/Dockerfile.devel-rtm
 
-で参照してください。
+***Dockerでdebパッケージ生成まで一括処理するスクリプト
 
-*** make
-
-configureが正常に終了したことを確認してください。正常に終了したらmake します。
-
- $ make
-
-ビルドが正常に終了したら、ヘッダファイル、ライブラリ、ユーティリティコマンド群をインストールします。
-
- $  sudo make install
-
-以上で、ソースコードからのビルドおよびインストールは終了です。
+ここで紹介するスクリプトは、OpenRTM-aistのリリース用debパッケージ作成時に利用しているものです。 &br;
+OpenRTM-aistソースを変更してインストールしたい場合、debパッケージで手軽に試せます。
 
 
-**GitHubリポジトリ上のソースを用いたビルド
+このスクリプトは、Dockerでソースビルドからdebパッケージ生成まで行い、成果物であるdebパッケージをDockerコンテナからホスト側へコピーする処理までを一括で行います。
 
-OpenRTM-aistは開発に利用しているgithubリポジトリを一般に公開しています。リポジトリからクローンしたソースコードを用いてもビルド可能です。
+Ubuntu20.04用のdebパッケージを作成する場合の手順は以下となります。
 
-***必要なツール
+ git clone https://github.com/n-kawauchi/RTM-src-pkgs-docker-build
+ cd RTM-src-pkgs-docker-build/ubuntu_2004/
+ sh build-cxx.sh
+ ls -l
+ drwxr-xr-x  2 root    root    4096 Jun 30 15:53 cxx-deb-pkgs/
 
-リポジトリからチェックアウトしたソースはconfigureスクリプトやMakefile.inが含まれていません。これらを生成するには、
+成果物のdebパッケージは cxx-deb-pkgs 下に出力されています。所有者がrootになっていますので、実行ユーザに変更しておいた方がアクセスしやすいです。 &br;
+ROSがインストールされたDockerイメージを使用しているので、ROS向けのパッケージ（openrtm2-ros*-tp）も生成されます。
 
--automake
--libtool
--atoconf
+ ls cxx-deb-pkgs/
+ openrtm2-dev_2.0.0-0_amd64.deb         openrtm2-ros-tp_2.0.0-0_amd64.deb     openrtm2_2.0.0-0_amd64.buildinfo
+ openrtm2-doc_2.0.0-0_all.deb                openrtm2-ros2-tp_2.0.0-0_amd64.deb   openrtm2_2.0.0-0_amd64.changes
+ openrtm2-example_2.0.0-0_amd64.deb  openrtm2_2.0.0-0.dsc                            openrtm2_2.0.0-0_amd64.deb
+ openrtm2-idl_2.0.0-0_amd64.deb           openrtm2_2.0.0-0.tar.gz
 
-などのツールが必要ですのであらかじめインストールしておきます。これらの必要なツールやOmniORBなどのライブラリをインストールするのにあたって、Ubuntuなどでは上記で説明した[[一括インストール・スクリプト>/node/6345]]を利用可能です。このスクリプトをあらかじめ実行しておくことを推奨します。
+（※）このスクリプトを amd64 環境で実行すれば amd64 用debパッケージが生成され、aarch64 環境で実行すれば arm64 用debパッケージが生成されます。
 
-- https://github.com/OpenRTM/OpenRTM-aist
+OpenRTM-aistソースを変更してインストールしたい場合、build-cxx.sh スクリプトの以下の部分をコメントアウトし、build-cxx.sh と同じディレクトリにOpenRTM-aistソースを配置して実行してください。
 
-Ubuntuでは上記で推奨した一括インストールスクリプトpkg_install_ubuntu.shを以下のように実行することで、OpenRTM-aist本体の開発(ここで行うソースからのビルドも含みます)のためのツール(automakeなどを含む)などをまとめてインストール可能です。
+ #----- OpenRTM-aist
+ echo "${password}" | sudo -S rm -rf ${TARGET}-*
+ #rm -rf OpenRTM-aist    <-- コメントアウト
+ #git clone https://github.com/OpenRTM/OpenRTM-aist    <-- コメントアウト
 
- # sudo sh pkg_install_ubuntu.sh -l c++ -c 
+**Pythonソースのビルド
 
-***GitHubリポジトリからのソースのクローン
+OpenRTM-aist-Python ソースには Dockerfile は含まれておりません。OpenRTM-aist-Pythonのリリース用debパッケージ作成時に下記Dockerfileを利用しています。
+- [[ubuntu_1804/Dockerfile-python-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_1804/Dockerfile-python-deb]]
+- [[ubuntu_2004/Dockerfile-python-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_2004/Dockerfile-python-deb]]
 
-ソースをリポジトリからクローンします。
+C++ソースビルドと同様に、Dockerでソースビルドからdebパッケージ生成まで行い、成果物であるdebパッケージをDockerコンテナからホスト側へコピーする処理までを一括で行うスクリプトを紹介します。
 
- $ git clone -b svn/RELENG_1_2 https://github.com/OpenRTM/OpenRTM-aist
- Cloning into 'OpenRTM-aist'...
- remote: Enumerating objects: 24, done.
- remote: Counting objects: 100% (24/24), done.
- remote: Compressing objects: 100% (24/24), done.
- remote: Total 42092 (delta 14), reused 2 (delta 0), pack-reused 42068
- Receiving objects: 100% (42092/42092), 10.41 MiB | 8.36 MiB/s, done.
- Resolving deltas: 100% (31578/31578), done.
+Ubuntu20.04用のdebパッケージを作成する場合の手順は以下となります。
 
+ git clone https://github.com/n-kawauchi/RTM-src-pkgs-docker-build
+ cd RTM-src-pkgs-docker-build/ubuntu_2004/
+ sh build-python.sh
 
-*** autogen.shの実行
-クローンすると、OpenRTM-aistというディレクトリができているはずですので、そのディレクトリに入ります。
+成果物のdebパッケージはpython-deb-pkgs下に、ソースパッケージはpython-src-pkgs下に出力されます。
 
- $ ls 
- OpenRTM-aist
- $ cd OpenRTM-aist
- $ ls
- AUTHORS         Makefile.am     acinclude.m4    examples/       win32/
- COPYING.LIB     NEWS            build/          include/
- COPYRIGHT*      README          configure.ac    openrtm.m4
- ChangeLog       README.jp       docs/           src/
- INSTALL.jp      TUTORIAL.jp     etc/            utils/
+ ls python-deb-pkgs/
+ openrtm2-python3-doc_2.0.0-0_all.deb 
+ openrtm2-python3-example_2.0.0-0_amd64.deb  openrtm2-python3_2.0.0-0_amd64.changes
+ openrtm2-python3_2.0.0-0.dsc                           openrtm2-python3_2.0.0-0_amd64.deb
 
-buildディレクトリの下にautogenというシェルスクリプトがあることを確認し、このスクリプトを実行します。実行には、数分程度の時間がかかることがあります。
+ ls python-src-pkgs/
+ OpenRTM-aist-Python-2.0.0.tar.gz  OpenRTM-aist-Python-2.0.0.zip  
 
- $ls build/autogen
- build/autogen*
- $ sh build/autogen
- 
- Setting up environment to generate configure script.
- 
- ------------------------------------------------------------
-  Searching Autotools
- ------------------------------------------------------------
- autoconf   was found in /usr/local/bin/autoconf.
- autoheader was found in /usr/local/bin/autoheader.
- autom4te   was found in /usr/local/bin/autom4te.
- autoreconf was found in /usr/local/bin/autoreconf.
- autoupdate was found in /usr/local/bin/autoupdates.
- automake   was found in /usr/local/bin/automake-1.9.
- aclocal    was found in /usr/local/bin/aclocal-1.9.
- libtool    was found in /usr/local/bin/libtool.
- libtoolize was found in /usr/local/bin/libtoolize.
- 
- 
- ------------------------------------------------------------
-  Searching libtool.m4
- ------------------------------------------------------------
- file was found: /usr/local/share/aclocal/libtool.m4
- 
-  Copying libtool.m4 from /usr/local/share/aclocal/libtool.m4
- 
- ------------------------------------------------------------
-  Doing autoreconf
- ------------------------------------------------------------
- autoreconf-2.62: Entering directory `.'
- autoreconf-2.62: configure.ac: not using Gettext
- autoreconf-2.62: running: /usr/local/bin/aclocal-1.9 --force
- autoreconf-2.62: configure.ac: tracing
- autoreconf-2.62: configure.ac: adding subdirectory src/lib/coil to autoreconf
- autoreconf-2.62: Entering directory `src/lib/coil'
- autoreconf-2.62: running: /usr/local/bin/libtoolize --copy --force
- You should update your `aclocal.m4' by running aclocal.
- autoreconf-2.62: running: /usr/local/bin/autoconf --force
- autoreconf-2.62: running: /usr/local/bin/autoheader --force
- autoreconf-2.62: running: /usr/local/bin/automake-1.9 --add-missing --copy --force-missing
- configure.ac: installing `./install-sh'
- configure.ac: installing `./missing'
- ace/coil/Makefile.am: installing `./depcomp'
- Makefile.am: installing `./INSTALL'
- autoreconf-2.62: Leaving directory `src/lib/coil'
- You should update your `aclocal.m4' by running aclocal.
- configure.ac: installing `./install-sh'
- configure.ac: installing `./missing'
- examples/AutoTest/Makefile.am: installing `./depcomp'
- Makefile.am: installing `./INSTALL'
- autoreconf-2.62: Leaving directory `.'
- done
- $
+OpenRTM-aist-Pythonソースを変更してインストールしたい場合、build-python.sh スクリプトの以下の部分をコメントアウトし、build-python.sh、Dockerfile-python-debと同じディレクトリにOpenRTM-aist-Pythonソースを配置して実行してください。
 
-***configure & ビルド
+ #----- OpenRTM-aist-Python
+ echo "${password}" | sudo -S rm -rf ${TARGET}-*
+ #--------　コメントアウト　ここから
+ #rm -rf OpenRTM-aist-Python
+ #git clone https://github.com/OpenRTM/OpenRTM-aist-Python
+ #cd OpenRTM-aist-Python
+ #git checkout ${BRANCH}
+ #cd -
+ #--------　コメントアウト　ここまで
 
-autogenの実行により、configureがOpenRTM-aistディレクトリ内にできているはずですので、以降は通常のソースからのビルドと同様に、configure & makeでビルドします。
+**Javaソースのビルド
 
- $ ls -l configure
- -rwxr-xr-x  1 n-ando  n-ando  812893 Jul  6 05:56 configure*
- $  ./configure --prefix=/usr --enable-fluentd=no --enable-observer=yes --enable-ssl=yes
- $ make
+OpenRTM-aist-Java ソースには Dockerfile は含まれておりません。OpenRTM-aist-Javaのリリース用debパッケージ作成時に下記Dockerfileを利用しています。
+- [[ubuntu_1804/Dockerfile-java-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_1804/Dockerfile-java-deb]]
+- [[ubuntu_2004/Dockerfile-java-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_2004/Dockerfile-java-deb]]
 
-***make dist
+C++ソースビルドと同様に、Dockerでソースビルドからdebパッケージ生成まで行い、成果物であるdebパッケージをDockerコンテナからホスト側へコピーする処理までを一括で行うスクリプトを紹介します。
 
-''make dist''を行うことでopenrtm.orgで配布しているようなソースのパッケージの作成も可能です。
-また、make dist では Windows上でビルド可能なソースコードのパッケージも同時に作成します。
-ただし、make distを行うには、doxygenやlatex、qkcなど、追加のコマンドが必要です。
+Ubuntu20.04用のdebパッケージを作成する場合の手順は以下となります。
 
- $ make dist
- 数分程度かかります。
- $ ls -l OpenRTM-aist*
- -rw-r--r--  1 n-ando  n-ando  9266837 Apr  7 09:53 OpenRTM-aist-2.0.0-win32.zip
- -rw-r--r--  1 n-ando  n-ando  4831099 Apr  7 09:53 OpenRTM-aist-2.0.0.tar.bz2
- -rw-r--r--  1 n-ando  n-ando  7258796 Apr  7 09:53 OpenRTM-aist-2.0.0.tar.gz
- $
+ git clone https://github.com/n-kawauchi/RTM-src-pkgs-docker-build
+ cd RTM-src-pkgs-docker-build/ubuntu_2004/
+ sh build-java.sh
 
-生成されるソースパッケージはそれぞれ以下の通りです。
+成果物のdebパッケージはjava-deb-pkgs下に、ソースパッケージはjava-src-pkgs下に出力されます。
 
--OpenRTM-aist-2.0.0-win32.zip: Windows用ソース
--OpenRTM-aist-2.0.0.tar.gz: 汎用ソース (gzip圧縮)
--OpenRTM-aist-2.0.0.tar.bz2: 汎用ソース (bzip圧縮)
+ ls java-deb-pkgs/
+ openrtm2-java-doc_2.0.0-0_all.deb        openrtm2-java_2.0.0-0_amd64.buildinfo
+ openrtm2-java-example_2.0.0-0_amd64.deb  openrtm2-java_2.0.0-0_amd64.changes
+ openrtm2-java_2.0.0-0.dsc                openrtm2-java_2.0.0-0_amd64.deb
+
+ ls java-src-pkgs/
+ OpenRTM-aist-Java-2.0.0-jar.zip  OpenRTM-aist-Java-2.0.0.zip
+ OpenRTM-aist-Java-2.0.0.tar.gz  
+OpenRTM-aist-Javaソースを変更してインストールしたい場合、build-java.sh スクリプトの以下の部分をコメントアウトし、build-java.sh、Dockerfile-java-debと同じディレクトリにOpenRTM-aist-Javaソースを配置して実行してください。
+
+ #----- OpenRTM-aist-Java
+ echo "${password}" | sudo -S rm -rf ${TARGET}-*
+ #--------　コメントアウト　ここから
+ #rm -rf OpenRTM-aist-Java
+ #git clone https://github.com/OpenRTM/OpenRTM-aist-Java
+ #cd OpenRTM-aist-Java
+ #git checkout ${BRANCH}
+ #cd -
+ #--------　コメントアウト　ここまで
