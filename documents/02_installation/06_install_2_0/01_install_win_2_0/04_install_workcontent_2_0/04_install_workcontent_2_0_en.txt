@@ -1,0 +1,64 @@
+// Title: What the installer does
+
+#br
+
+** What the installer does
+
+The installer copies the files and configures the system according to the following work contents.
+It is described below for reference when confirming that the installation and uninstallation are performed correctly.
+
+- Copy various files under the installation directory (C:\Program Files)
+- Create an OpenRTM-aist folder under the start menu and set various shortcuts.
+- Environment variable settings (when OpenRTM-aist 2.0.0 version is installed with default settings)
+ RTM_BASE=C:\Program Files\OpenRTM-aist\\
+
+ RTM_ROOT=C:\Program Files\OpenRTM-aist\2.0.0\\
+
+ RTM_VC_VERSION=vc16  (※If you selected Visual Studio versions 2015, 2017 during installation, vc14)
+ RTM_JAVA_ROOT=C:\Program Files\OpenRTM-aist\2.0.0\\
+
+ RTM_IDL_DIR=C:\Program Files\OpenRTM-aist\2.0.0\rtm\idl\\
+
+ OMNI_ROOT=C:\Program Files\OpenRTM-aist\2.0.0\omniORB\4.2.5_vc16\\
+
+ OpenCV_DIR=C:\Program Files\OpenRTM-aist\2.0.0\OpenCV4.4\\
+
+ OpenRTM_DIR=C:\Program Files\OpenRTM-aist\2.0.0\cmake\\
+
+- Additional settings to PATH (when OpenRTM-aist 2.0.0 version is installed with default settings)
+ C:\Program Files\OpenRTM-aist\2.0.0\bin\vc16\\
+
+ C:\Program Files\OpenRTM-aist\2.0.0\omniORB\4.2.5_vc16\bin\x86_win32\\
+ 
+ C:\Program Files\OpenRTM-aist\2.0.0\OpenCV4.4\x64\vc16\bin\\
+
+
+** Files to be installed
+The files are installed with the following structure. &br;
+
+
+ <install_dir>
+   + OpenRTM-aist
+      + 1.x.x  : Older version runtime
+      + 2.0.x
+         + bin: dll、lib Various commands
+         + cmake: OpenRTMConfig.cmake
+         + coil: coil header files
+         + Components
+            + C++
+               + Examples: C++ sample component
+               + OpenCV: OpenCV C ++ sample component
+            + Java: Java sample component
+            + Python: Python sample component
+         + ext: Extension module file
+         + hrtm: HRTM Wrapper Library
+         + jar: jar files
+         + jre: AdoptOpenJDK JRE
+         + omniORB 4.2.5
+         + OpenCV 4.4
+         + rtm: OpenRTM-aist header files
+            + idl: OpenRTM-aistIDL files
+         + util
+            + OpenRTP: RTCBuilder and RTSystemEditor tools
+            + RTSystemEditor: 
+            + VCVerChanger: Tool to specify the version of Visual Studio you are using

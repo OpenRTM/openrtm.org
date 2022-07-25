@@ -1,75 +1,71 @@
 // Title: OpenRTM-aistを10分で始めよう！
 #contents
-最新バージョンOpenRTM-aist-1.2.2-RELEASEではC++版、Python版、Java版、OpenRTPがインストールされます。また、rtshellも同時にインストールされます。
+最新バージョンOpenRTM-aist-2.0.0-RELEASEではC++版、Python版、Java版、OpenRTP、rtshell がインストールされます。
 
 * 事前準備
 ** Pythonのインストール
 Pythonをインストールしていない場合は、OpenRTM-aistをインストールできません。
-OpenRTM-aistをインストールする前に、Pythonをインストールしてください。バージョンは、"3.8"、"3.7"、"3.6"に対応しています。
+OpenRTM-aistをインストールする前に、Pythonをインストールしてください。バージョンは、"3.10"、"3.9"、"3.8"、"3.7"に対応しています。
 
-Pythonのダウンロードは[[OpenRTM-aist-1.2.2-RELEASE:/ja/node/7049]]をご覧ください。
-
-//http://opensource.org/licenses/eclipse-1.0.php
-//http://sourceforge.jp/projects/opensource/wiki/licenses%2FEclipse_Public_License(日本語訳)
+Pythonのダウンロードは [[OpenRTM-aist 2.0系のWindowsへのインストール:/ja/doc/installation/install_2_0/install_windows_2_0/install_2_0]] をご覧ください。
 
 Pythonのインストール先は、インストール時の選択 [Customize installation]に対応しています。
-//2.7の場合はデフォルトの[Install for all users]設定のみに対応しています。
 
 サーチパスは、以下の方法で自動で設定されるようにしてください。こうすると、python.exeが置いてあるディレクトリとScriptsディレクトリがPathに追加されます。&br; (例: Path=C:\Python38;C:\ Python38\Scripts;...）
 
 ''[インストール手順]''
 
-- Pythonインストーラーを起動します。Python 3.6, 3.7, 3.8のインストールでは、最初の画面の下部にある[add python *** to PATH]にチェックを入れて、[Customize installation]を選択してください。
-//- Python 2.7のインストールを実行した際は、以下の画面で[Add python.exe to Path]を[Will be installed on local hard drive]に設定してください。
+- Pythonインストーラーを起動します。ここではバージョン3.8を例に説明します。
+- 最初の画面の下部にある[add python *** to PATH]にチェックを入れて、[Customize installation]を選択してください。
 
-#ref(Python38-install001_.png,center)
+
+#ref(Python38-install001_.png,center,70%)
 
 - 次の[Optional Features]画面で変更はありません。[Next]を選択して進んでください。
 
-#ref(Python38-install002.png,center)
+#ref(Python38-install002.png,center,70%)
 
 - [Advanced Options]画面では、[Install for all users]にチェックを入れて、[Customize install location]でインストール先を設定してください。(例: Path=C:\Python38;C:\ Python38\Scripts;...）
 
-#ref(Python38-install003.png,center)
+#ref(Python38-install003.png,center,70%)
 
 - [Install] を選択してインストールを完了します。
 
 ** OpenRTM-aistのインストール
-ここではWindows 10で64bit用インストーラーOpenRTM-aist-1.2.2-RELEASE_x86_64.msiを使ったインストール手順を紹介します。
 
-インストーラーのダウンロードは[[OpenRTM-aist-1.2.2-RELEASE:/ja/node/7049]]をご覧ください。
+インストーラーのダウンロードは [[ダウンロード:/ja/download]] をご覧ください。
 
 ''[インストール手順]''
 +インストーラーを起動します。[WindowsによってPCが保護されました]の画面が表示されたら[詳細情報]をクリックして[実行]ボタンを表示させて、[実行]をクリックします。(この画面はWindowsのあるバージョン以降でMicrosoft Corp.に登録されていないアプリケーションのインストール時に表示される画面で、本ソフトウエアは登録をしていないため、この画面が表示されます。)
 + [次へ]をクリックします。
-#ref(Openrtm122-Install001.png,center,90%)
+#ref(RTM2.0.0-msi-1.png,center,90%)
 &br;
 +使用承諾契約書のページです。ソフトウェアライセンス条項に同意して[次へ]をクリックします。
-#ref(Openrtm122-Install002.png,center,90%)
+#ref(RTM2.0.0-msi-2.png,center,90%)
 &br;
 +インストールの種類を選択します。デフォルトのまま[次へ]をクリックします。
-#ref(Openrtm122-Install003.png,center,90%)
+#ref(RTM2.0.0-msi-3.png,center,90%)
 &br;
 +Visual Studioのバージョンを選択します。
 -- C++版で使用するVisual Studioのバージョンをシステム環境変数に設定します。
 -- インストールされている Visual Studioのバージョンを選択して[次へ]をクリックします。
---- Visual Studioのダウンロードは[[OpenRTM-aist-1.2.2-RELEASE:/ja/node/7049]]をご覧ください。
+--- Visual Studioのダウンロードは [[OpenRTM-aist 2.0系のWindowsへのインストール:/ja/doc/installation/install_2_0/install_windows_2_0/install_2_0]] をご覧ください。
 --- Visual Studioのバージョンは、インストール終了後にツールのVCVerChangerで変更できます。[[(VCVerChangerの使い方):/ja/node/6136/]]
 --- Python版、Java版では無関係ですのでデフォルトのまま[次へ]をクリックしてください。
-#ref(Openrtm122-Install004.png,center,90%)
+#ref(RTM2.0.0-msi-4.png,center,90%)
 &br;
 +セットアップの種類を選択します。
-[標準]を選択した場合、OpenRTM-aistのC++版、Java版、Python版、OpenRTP、RTSystemEditorRCP、RTShell、OpenRTM-aist-C++版のVisual Studio 2012から2019までのランタイムライブラリ、OpenRTM-aist-1.0.0から1.2.2までのランタイムライブラリがインストールされます。特に変更理由がないようであれば[標準]をクリックします。
+[標準]を選択した場合、OpenRTM-aistのC++版、Java版、Python版、OpenRTP、RTSystemEditorRCP、RTShell、OpenRTM-aist-C++版のVisual Studio 2015から2022までのランタイムライブラリ、OpenRTM-aist-1.0.0から2.0.0までのランタイムライブラリがインストールされます。特に変更理由がないようであれば[標準]をクリックします。
 &br;
-#ref(Openrtm122-Install005.png,center,90%)
+#ref(RTM2.0.0-msi-5.png,center,90%)
 &br;
 +[インストール]をクリックするとインストールが開始されます。
-#ref(Openrtm122-Install006.png,center,90%)
+#ref(RTM2.0.0-msi-6.png,center,90%)
 &br;
-#ref(Openrtm122-Install007.png,center,90%)
+#ref(RTM2.0.0-msi-7.png,center,90%)
 &br;
 +インストールが終了しました。[完了]をクリックしてインストーラーを終了します。
-#ref(Openrtm122-Install008.png,center,90%)
+#ref(RTM2.0.0-msi-8.png,center,90%)
 &br;
 //※使用しているVisual Studio のバージョンが2019(vc14)以外の場合は、以下のページを参考に環境変数のRTM_VC_VERSIONを変更してください。&br;
 //[[RTM_VC_VERSIONの変更:/ja/node/6136/]]
@@ -77,12 +73,12 @@ Pythonのインストール先は、インストール時の選択 [Customize in
 ** サンプルコンポーネントを実行する
 *** 事前準備
 - 必須ではありませんが、ここからはスタートメニューに登録されたアプリケーションを多数起動します。毎回スタートメニューから順番にたどるのは大変ですので、
-スタートボタンからスタートメニューを表示させ[OpenRTM-aist 1.2.2 x86_64]>[OpenRTP]を右クリックして[ファイルの場所を開く]を選択してください。
+スタートボタンからスタートメニューを表示させ[OpenRTM-aist 2.0.0 x86_64]>[C++_Examples]を右クリックして[ファイルの場所を開く]を選択してください。
 &br;
-#ref(Startmenu122-001.png,center,90%)
+#ref(start-menu.png,center,70%)
 CENTER:''ファイルの場所を開く''
 &br;
-#ref(Startmenu122-002.png,center,90%)&br;
+#ref(start-menu-folder.png,center,90%)&br;
 CENTER:''スタートメニューフォルダー''
 &br;
 -- このように、スタートメニューのフォルダーが開かれ、メニューに登録されているアプリケーションにアクセスしやすくなります。
@@ -96,7 +92,7 @@ CENTER:''Start Naming Service''
 *** ConsoleInComp、ConsoleOutCompを使用する
 ConsoleInComp、ConsoleOutCompはDataInPort、DataOutPortの使用方法を示したサンプルです。ConsoleIn側で入力した数字が，ConsoleOut側に表示されます。ここではこの二つのコンポーネントを使用し、動作確認を行います。
 *** サンプルコンポーネントの起動
-- [OpenRTM-aist 1.2.2 x86_64]>[C++_Example]フォルダー内のConsoleIn.batとConsoleOut.batをダブルクリックします。もし[Windows セキュリティのの重要な警告]画面が表示されたら[プライベートネットワーク(ホームネットワーク社内ネットワークなど)(R)]にチェックマークをつけて[アクセスを許可する(A)]をクリックしてください。以下のようなコンソール画面が表示されます。
+- [OpenRTM-aist 2.0.0 x86_64]>[C++_Example]フォルダー内のConsoleIn.batとConsoleOut.batをダブルクリックします。もし[Windows セキュリティのの重要な警告]画面が表示されたら[プライベートネットワーク(ホームネットワーク社内ネットワークなど)(R)]にチェックマークをつけて[アクセスを許可する(A)]をクリックしてください。以下のようなコンソール画面が表示されます。
 //CENTER:&ref(ConsoleIn001.png,center,90%);&ref(ConsoleOut001.png,center,90%);
 CENTER:&ref(ConsoleInOut122-001.png,center,90%);
 CENTER:''ConsoleIn.batとConsoleOut.bat''
@@ -104,22 +100,22 @@ CENTER:''ConsoleIn.batとConsoleOut.bat''
 
 &aname(openrtp_start);
 ** OpenRTP起動
-- デスクトップのショートカットをクリックして起動します。スタートメニューでは、[OpenRTM-aist 1.2.2 x86_64]>[OpenRTP]と選択してください。先ほど開いたフォルダー画面からOpenRTPをダブルクリックすることによっても起動できます。
+- デスクトップのショートカットをクリックして起動します。スタートメニューでは、[OpenRTM-aist 2.0.0 x86_64]>[OpenRTP]と選択してください。先ほど開いたフォルダー画面からOpenRTPをダブルクリックすることによっても起動できます。
 -- ワークスペースは適当な場所を指定してください。
 #ref(OpenRTP122-001.png,center)
 CENTER:''ワークスペースの選択''
 &br;
 -「ようこそ」画面は必要ないので左上の[ようこそ]タブの[×]ボタンをクリックして画面を閉じてください。
-#ref(OpenRTP122-002.png,90%,center)
+#ref(OpenRTP122-002.png,70%,center)
 CENTER:''初期起動時の画面''
 &br;
+
 ** RTSystemEditorの使用
 - 画面右上の[パースペクティブを開く]をクリックします。表示されるダイアログで[RT System Editor]を選択して[開く]をクリックするとRTSystemEditorが起動します。
 CENTER:&ref(OpenRTP122-003.png,center);  &ref(OpenRTP122-004.png,center);
 CENTER:''パースペクティブの切り替え''
 &br;
 - [NameServiceView]にコンポーネントが表示されます。最初は折りたたまれているため表示されていませんが、[>]をクリックし展開すると、ホスト名のホストコンテキストとConsoleIn、ConsoleOutコンポーネントが確認できます。設定により、ホストコンテキスト(図中 “TPAD-RTM-NO13|host_cxt” のような “ホスト名|host_cxt” の階層) が表示されず、直接コンポーネントが表示される場合もあります。
-
 #ref(OpenRTP122-005.png,center)
 CENTER:''コンポーネント起動確認''
 &br;
@@ -170,68 +166,11 @@ CENTER:''コンポーネントの終了''
 - 以上でConsoleInとConsoleOutを使用した動作確認は終了です。
 
 ** rtshellを利用する
-OpenRTM-aist-1.2.2ではrtshellが標準でインストールされます。
-rtshellを利用することでコマンドラインからRTCのActivate、Deactivate、終了等ができるようになります。
-- 64bit版をインストールした場合にdllの不足により正常動作しない場合があります。その場合はWindows Updateを実行してください。
-*** RTCの操作
-サンプルコンポーネントを起動し、rtshellによりコマンドラインからデータポートの接続、RTCのActivate、Deactivate、終了を行います。
-*** rtm-namingを起動
-- [OpenRTM-aist 1.2.2 x86_64]フォルダー内のStart Naming Serviceをダブルクリックして起動します。
-**** サンプルコンポーネントの起動
-まずはサンプルコンポーネントを起動して、起動したコンポーネントをrtshellで操作します。
-- [OpenRTM-aist 1.2.2 x86_64]>[Python_Examples]フォルダー内のConsoleIn.batとConsoleOut.batをクリックするとコンソール画面が起動します。もし[Windows セキュリティのの重要な警告]画面が表示されたら[プライベートネットワーク(ホームネットワーク社内ネットワークなど)(R)]にチェックマークをつけて[アクセスを許可する(A)]をクリックしてください。この時点ではコンソール画面上は起動時のpyプログラムの起動コマンドが表示されるだけで、先に実行したC++ Exampleの場合とは画面が出力が異なります。
-**** コマンドプロンプトからの操作
-- 次にスタートメニューから[Windows システム ツール]>[コマンドプロンプト]を起動してください。
-#ref(Console006.png,center)
-CENTER:''コマンドプロンプトの起動''
-&br;
-- C:\Python3.6\Scriptsをパスを設定していない場合は以下のコマンドでパスを設定してください。
- # Python 3.6がC:\の直下 Python36 ディレクトリにインストールされている場合
- set PATH=C:\Python36\Scripts;%PATH%
- # Python 3.7がC:\Program Filesの下 Python37 ディレクトリにインストールされている場合
- set PATH=C:\Program Files\Python37\Scripts;%PATH%
+OpenRTM-aistではrtshellが標準でインストールされます。
+rtshellを利用することでコマンドラインからRTCのActivate、Deactivate、終了等ができるようになります。&br;
+[[rtshellのインストール・動作確認(Windows編):/ja/doc/installation/install_rtshell/check_windows]] をご覧ください。
 
-※ Python をインストールする場合できるだけ管理者権限でデフォルトのパスにインストールしてください。
-※ アカウントのローカルディレクトリやVisual Studio と一緒にインストールしている場合は、C:\Users\<ユーザ名>\AppData\Local\Programs\Python といった場所にインストールされている場合もありますので注意してください。
 
-- 次に以下のコマンドでデータポートを接続します。
- rtcon /localhost/ConsoleIn0.rtc:out /localhost/ConsoleOut0.rtc:in
--- すると ConsoleIn.py、ConsoleOut.pyコンソールに以下のような文字列が表示されます。
- ------------------------------
- Listener:        ON_CONNECT
- Profile::name:   outin
- Profile::id:     4d622f80-135f-11e6-b923-001c4231a7a3
- ------------------------------
-
-//#ref(Console007.png,center)
-//CENTER:''データポート接続の表示''
-
-- 念のためRTSystemEditorで確認します。&br;
--- RTSystemEditorを以下の手順で起動します。詳しくは本ページ「[[OpenRTP起動:/ja/doc/installation/lets_start#toc9]]」「[[RTSystemEditorの使用:/ja/doc/installation/lets_start#toc10]]」項を参考に起動してください。
---- デスクトップのショートカット[OpenRTP]をクリックするか、スタートメニューの[OpenRTM-aist 1.2.2 x86_64]>[OpenRTP]と選択して起動し、ワークスペースを選択します。
---- 画面右上の[パースペクティブを開く]をクリックします。表示されるダイアログで[RT System Editor]を選択して[開く]をクリックするとRTSystemEditorが起動します。
---- [NameServiceView]にコンポーネントが表示されます。最初は折りたたまれているため表示されていませんが、[>]をクリックし展開すると、ConsoleIn、ConsoleOutコンポーネントが確認できます。
-
--- [NameServiceView]のコンポーネントをSystem Diagramにドラッグ＆ドロップすると、データポートが接続されたことが確認できます。
-#ref(Console122-007.png,center)
-CENTER:''データポート接続の確認''
-&br;
-- 次に、以下のコマンドでRTCをActivateします。
- rtact /localhost/ConsoleIn0.rtc /localhost/ConsoleOut0.rtc
--- Activateに成功するとConsoleIn.pyコンソールに「Please input number:」と表示されます。RTSystemEditorを見ると、RTCがActivateされたことが確認できます。
-#ref(Console008.png,center)
-CENTER:''Activateの確認''
-&br;
-- そしてConsoleIn.py画面で数値を入力し[Enter]を押すと、ConsoleOut.py画面に数値が表示されます。
-CENTER:&ref(Console122-009.png,center,90%);
-CENTER:''ConsoleIn.pyとConsoleOut.py''
-&br;
-- 以下のコマンドでRTCをDeactivateしてください。
- rtdeact /localhost/ConsoleIn0.rtc /localhost/ConsoleOut0.rtc
--- ConsoleInがDeactivateできない場合、数値入力で止まっているので何か数値を入力してください。
-- 最後に以下のコマンドでRTCを終了させてください。
- rtexit /localhost/ConsoleIn0.rtc
- rtexit /localhost/ConsoleOut0.rtc
 ** 次は...
 下記リンク先をご覧ください。
 - ''もっとサンプルを動かしてみる　&t;：　''[[サンプルコンポーネント:/ja/node/811]]

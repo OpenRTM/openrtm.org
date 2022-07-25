@@ -1,0 +1,169 @@
+// Title: Build from the source code
+#contents
+
+If you want to change the source of OpenRTM-aist itself and use it, you can get the source code of OpenRTM-aist and build it.
+
+
+**Build with Docker
+
+I will introduce the procedure to build in the environment where only the minimum library required for OpenRTM-aist source build is installed using Dockerfile. &br;
+I use the docker build command to generate a Docker image, but it is recommended because it can be built in a clean environment every time.
+
+If you are using Docker for the first time, please install it as follows. If you have an Ubuntu desktop environment, the docker.io package is probably provided.
+
+ sudo apt install docker.io
+
+- Reference：Installation if the docker.io package is not provided
+-- Manually get the GPG key of Docker, write the repository information, and install docker-ce.
+-- When I built aarch64 environment with ubuntu-20.04-server-cloudimg-arm64.img on QEMU, I installed it by the following procedure.
+ sudo apt install apt-transport-https ca-certificates curl software-properties-common
+ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+ sudo add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" 
+ sudo apt update
+ sudo apt install docker-ce
+
+
+**Build C ++ source
+
+The OpenRTM-aist 2.0 series source includes Dockerfile for Ubuntu18.04 and 20.04.
+
+ OpenRTM-aist/scripts/ubuntu_1804/Dockerfile
+ OpenRTM-aist/scripts/ubuntu_2004/Dockerfile
+
+The build procedure is as follows.　This is a build example for Ubuntu 20.04.　&br;
+Here, the latest OpenRTM-aist source is obtained from GitHub, but you can do the same procedure for building the modified source.
+
+ git clone https://github.com/OpenRTM/OpenRTM-aist
+ sudo docker build -t test -f OpenRTM-aist/scripts/ubuntu_2004/Dockerfile .
+
+If the build finishes without error, you can see that the Docker image named test specified by the -t option has been generated.
+
+ sudo docker images
+ REPOSITORY       TAG           IMAGE ID          CREATED           SIZE
+ test             latest        0bc00f471b64      27 seconds ago    1.52GB
+
+If you modify the source and repeat until the build passes, many images <none> will be generated.　You can delete by specifying IMAGE ID with docker rmi, but if you want to delete all at once, it is convenient to execute the following command.
+ sudo docker rmi $(sudo docker images -f dangling=true -q)
+
+***About Docker image "openrtm/develop-rtm"
+
+The first line of the Dockerfile used in the source build looks like this for Ubuntu 18.04 and 20.04 respectively, and uses the image with this name uploaded to the Docker hub.
+
+ FROM openrtm/devel-rtm:ubuntu18.04
+        or
+ FROM openrtm/devel-rtm:ubuntu20.04
+
+These images are generated from the Docierfile.devel-rtm below. fluent-bit, ROS and ROS2 are installed.
+-For Ubuntu 18.04：dashing、melodic
+-For Ubuntu 20.04：foxy、noetic
+
+ OpenRTM-aist/scripts/ubuntu_1804/Dockerfile.devel-rtm
+ OpenRTM-aist/scripts/ubuntu_2004/Dockerfile.devel-rtm
+
+***Script that batch processes up to deb package creation with Docker
+
+The script introduced here is used when creating the deb package for the release of OpenRTM-aist. &br;
+If you want to modify and install the OpenRTM-aist source, you can easily try it with the deb package.
+
+
+This script performs from source build to deb package generation with Docker, and performs the process of copying the deb package that is the deliverable from the Docker container to the host side at once.
+
+The procedure for creating a deb package for Ubuntu 20.04 is as follows.
+
+ git clone https://github.com/n-kawauchi/RTM-src-pkgs-docker-build
+ cd RTM-src-pkgs-docker-build/ubuntu_2004/
+ sh build-cxx.sh
+ ls -l
+ drwxr-xr-x  2 root    root    4096 Jun 30 15:53 cxx-deb-pkgs/
+
+The deb package of the deliverable is output under cxx-deb-pkgs. Since the owner is root, it is easier to access if you change it to the execution user. &br;
+Since we are using a Docker image with ROS installed, a package for ROS (openrtm2-ros * -tp) will also be generated.
+
+ ls cxx-deb-pkgs/
+ openrtm2-dev_2.0.0-0_amd64.deb        openrtm2-ros-tp_2.0.0-0_amd64.deb     openrtm2_2.0.0-0_amd64.buildinfo
+ openrtm2-doc_2.0.0-0_all.deb          openrtm2-ros2-tp_2.0.0-0_amd64.deb    openrtm2_2.0.0-0_amd64.changes
+ openrtm2-example_2.0.0-0_amd64.deb    openrtm2_2.0.0-0.dsc                  openrtm2_2.0.0-0_amd64.deb
+ openrtm2-idl_2.0.0-0_amd64.deb        openrtm2_2.0.0-0.tar.gz
+
+（※）Running this script in an amd64 environment will generate a deb package for amd64, and running it in an aarch64 environment will generate a deb package for arm64.
+
+If you want to modify and install the OpenRTM-aist source, comment out the following part of the build-cxx.sh script, place the OpenRTM-aist source in the same directory as build-cxx.sh, and execute it.
+
+ #----- OpenRTM-aist
+ echo "${password}" | sudo -S rm -rf ${TARGET}-*
+ #rm -rf OpenRTM-aist    <-- Comment out
+ #git clone https://github.com/OpenRTM/OpenRTM-aist    <-- Comment out
+
+**Build Python source
+
+OpenRTM-aist-Python source does not include Dockerfile. The following Dockerfile is used when creating the deb package for the release of OpenRTM-aist-Python.
+- [[ubuntu_1804/Dockerfile-python-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_1804/Dockerfile-python-deb]]
+- [[ubuntu_2004/Dockerfile-python-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_2004/Dockerfile-python-deb]]
+
+As with C ++ source build, I will introduce a script that performs from source build to deb package generation with Docker, and the process of copying the deb package that is the deliverable from the Docker container to the host side at once.
+
+The procedure for creating a deb package for Ubuntu 20.04 is as follows.
+
+ git clone https://github.com/n-kawauchi/RTM-src-pkgs-docker-build
+ cd RTM-src-pkgs-docker-build/ubuntu_2004/
+ sh build-python.sh
+
+The deb package of the deliverable is output under python-deb-pkgs, and the source package is output under python-src-pkgs.
+
+ ls python-deb-pkgs/
+ openrtm2-python3-doc_2.0.0-0_all.deb 
+ openrtm2-python3-example_2.0.0-0_amd64.deb     openrtm2-python3_2.0.0-0_amd64.changes
+ openrtm2-python3_2.0.0-0.dsc                   openrtm2-python3_2.0.0-0_amd64.deb
+
+
+ ls python-src-pkgs/
+ OpenRTM-aist-Python-2.0.0.tar.gz  OpenRTM-aist-Python-2.0.0.zip  
+
+If you want to modify and install the OpenRTM-aist-Python source, comment out the following part of the build-python.sh script.　Place the OpenRTM-aist-Python source in the same directory as build-python.sh and Dockerfile-python-deb and execute it.
+
+ #----- OpenRTM-aist-Python
+ echo "${password}" | sudo -S rm -rf ${TARGET}-*
+ #--------　Comment out
+ #rm -rf OpenRTM-aist-Python
+ #git clone https://github.com/OpenRTM/OpenRTM-aist-Python
+ #cd OpenRTM-aist-Python
+ #git checkout ${BRANCH}
+ #cd -
+ #--------　Comment out
+
+**Build Java source
+
+OpenRTM-aist-Java source does not include Dockerfile. The following Dockerfile is used when creating the deb package for the release of OpenRTM-aist-Java.
+- [[ubuntu_1804/Dockerfile-java-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_1804/Dockerfile-java-deb]]
+- [[ubuntu_2004/Dockerfile-java-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_2004/Dockerfile-java-deb]]
+
+As with C ++ source build, I will introduce a script that performs from source build to deb package generation with Docker, and the process of copying the deb package that is the deliverable from the Docker container to the host side at once.
+
+The procedure for creating a deb package for Ubuntu 20.04 is as follows.
+
+ git clone https://github.com/n-kawauchi/RTM-src-pkgs-docker-build
+ cd RTM-src-pkgs-docker-build/ubuntu_2004/
+ sh build-java.sh
+
+The deb package of the deliverable is output under java-deb-pkgs, and the source package is output under java-src-pkgs.
+
+ ls java-deb-pkgs/
+ openrtm2-java-doc_2.0.0-0_all.deb        openrtm2-java_2.0.0-0_amd64.buildinfo
+ openrtm2-java-example_2.0.0-0_amd64.deb  openrtm2-java_2.0.0-0_amd64.changes
+ openrtm2-java_2.0.0-0.dsc                openrtm2-java_2.0.0-0_amd64.deb
+
+ ls java-src-pkgs/
+ OpenRTM-aist-Java-2.0.0-jar.zip  OpenRTM-aist-Java-2.0.0.zip
+ OpenRTM-aist-Java-2.0.0.tar.gz  
+
+If you want to modify and install the OpenRTM-aist-Python source, comment out the following part of the build-python.sh script.　Place the OpenRTM-aist-Python source in the same directory as build-python.sh and Dockerfile-python-deb and execute it.
+
+ #----- OpenRTM-aist-Java
+ echo "${password}" | sudo -S rm -rf ${TARGET}-*
+ #--------　Comment out
+ #rm -rf OpenRTM-aist-Java
+ #git clone https://github.com/OpenRTM/OpenRTM-aist-Java
+ #cd OpenRTM-aist-Java
+ #git checkout ${BRANCH}
+ #cd -
+ #--------　Comment out

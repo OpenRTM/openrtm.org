@@ -1,44 +1,55 @@
-// Title: フロントページ
-ここは国立研究開発法人産業技術総合研究所が開発・配布しているRTミドルウエア: OpenRTM-aistの公式Webサイトです。
+// Title: ダウンロード
 
-//&color(red){[[※旧Webサイトはこちらからご覧いただけます。:http://old.openrtm.org]]};
+*** 現在の最新RELEASEバージョン: 2.0.0-RELEASE
 
-//*** 現在の最新RELEASEバージョン: 1.2.1-RELEASE
-*** 現在の最新RELEASEバージョン: 1.2.2-RELEASE
-
-//#ref(openrtm-1.2.1-x86-5pt-download.png,right,60%,around,url=https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.1/OpenRTM-aist-1.2.1-RELEASE_x86.msi,,download)
-//#ref(openrtm-1.2.1-x64-5pt-download.png,right,60%,around,url=https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.1/OpenRTM-aist-1.2.1-RELEASE_x86_64.msi,download)
-#ref(openrtm-1.2.2-x86-5pt-download.png,right,60%,around,url=https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86.msi,,download)
-#ref(openrtm-1.2.2-x64-5pt-download.png,right,60%,around,url=https://github.com/OpenRTM/OpenRTM-aist/releases/download/v1.2.2/OpenRTM-aist-1.2.2-RELEASE_x86_64.msi,download)
-
-//現在の最新RELEASEバージョンは OpenRTM-aist-1.2.1-RELEASE です。
-//[[こちら:/ja/node/6877]]からダウンロードできます。
-現在の最新RELEASEバージョンは OpenRTM-aist-1.2.2-RELEASE です。
-[[こちら:/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_2_release]]からダウンロードできます。
+現在の最新RELEASEバージョンは OpenRTM-aist-2.0.0-RELEASE です。
 
 - '' リリースノート ''
-//-- '' [[C++ >https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v1.2.1]]''
-//-- '' [[Python >https://github.com/OpenRTM/OpenRTM-aist-Python/releases/tag/v1.2.1]]''
-//-- '' [[Java >https://github.com/OpenRTM/OpenRTM-aist-Java/releases/tag/v1.2.1]]''
-//-- '' [[tools (OpenRTP) >https://github.com/OpenRTM/OpenRTP-aist/releases/tag/v1.2.1]]''
--- '' [[C++ >https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v1.2.2]]''
--- '' [[Python >https://github.com/OpenRTM/OpenRTM-aist-Python/releases/tag/v1.2.2]]''
--- '' [[Java >https://github.com/OpenRTM/OpenRTM-aist-Java/releases/tag/v1.2.2]]''
--- '' [[tools (OpenRTP) >https://github.com/OpenRTM/OpenRTP-aist/releases/tag/v1.2.2]]''
+-- '' [[C++ >https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v2.0.0]]''
+-- '' [[Python >https://github.com/OpenRTM/OpenRTM-aist-Python/releases/tag/v2.0.0]]''
+-- '' [[Java >https://github.com/OpenRTM/OpenRTM-aist-Java/releases/tag/v2.0.0]]''
+-- '' [[tools (OpenRTP) >https://github.com/OpenRTM/OpenRTP-aist/releases/tag/v2.0.0]]''
 
-現在の各言語、ツールのバージョンは以下の通りです。
-OpenRTM-aistは他のパッケージに依存します。以下のリンクからダウンロードできます。
+*** Windowsインストーラ
 
-//- '' [[C++: 1.2.1-RELEASE:/ja/node/6877]]''
-//- '' [[Python: 1.2.1-RELEASE:/ja/node/6912]]''
-//- '' [[Java: 1.2.1-RELEASE:/ja/node/6913]]''
-//- '' [[tools: 1.2.1:/ja/node/6914]]''
-- '' [[C++: 1.2.2-RELEASE:/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_2_release]]''
-- '' [[Python: 1.2.2-RELEASE:/ja/download/openrtm-aist-python/openrtm-aist-python_1_2_2_release]]''
-- '' [[Java: 1.2.2-RELEASE:/ja/download/openrtm-aist-java/openrtm-aist-java_1_2_2_release]]''
-- '' [[tools: 1.2.2:/ja/download/tools/openrtp_1_2_2]]''
+64bit版のみの提供です。ダウンロードしたmsiを実行すると、C++版、 Python版、 Java版、 OpenRTP、 rtshell、OpenCV4.4、omniORB4.2.5、JRE8 がインストールされます。 
 
-#clear
+|[[OpenRTM-aist-2.0.0-RELEASE_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.0-RELEASE_x86_64.msi]]|MD5:bda5f38285c722991573ca7d92431437|2022/07/01|
 
-右リンクからダウンロードできるWindows用インストーラにはサンプルを実行するために必要なライブラリやツールがすべて含まれていますので、手軽に試すことができます。
-&color(Red){''ダウンロード後、こちらの[[OpenRTM-aistを10分で始めよう！:/ja/doc/installation/lets_start]]をご覧ください。10分以内でインストール、サンプルの動作確認ができます。''};
+必要なソフトウエアである Visual Studio と Python は下記バージョンに対応しています。
+- Visual Studio（2015, 2017, 2019, 2022）
+- Python （3.7, 3.8, 3.9, 3.10）
+
+インストールに関しては、[[2.0系のWindowsへのインストール:/ja/doc/installation/install_2_0/install_win_2_0]] をご覧ください。　&br;
+初めてインストールされる場合は、[[OpenRTM-aistを10分で始めよう！:/ja/doc/installation/lets_start]] をご覧ください。
+
+*** Linuxパッケージ
+
+既に1.2系をご利用されている場合は、インストール前に [[2.0系での変更点:/ja/doc/installation/install_2_0/install_linux_2_0/install_2_0#toc0]] をご覧ください。　&br;
+
+Ubuntu18.04、20.04（各amd64、arm64環境）では、下記をシェルプロンプトに貼り付けて実行すると、C++版、 Python版、 Java版、 OpenRTP(amd64のみ)、 rtshell、JDK8 がインストールされます。 
+
+ $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh)
+
+インストールに関しては、[[2.0系のLinuxへのインストール:/ja/doc/installation/install_2_0/install_linux_2_0]]をご覧ください。
+
+*** 旧バージョン
+**** 1.2.2
+- [[OpenRTM-aist C++ 1.2.2-RELEASE:/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_2_release]]
+- [[OpenRTM-aist Python 1.2.2-RELEASE:/ja/download/openrtm-aist-python/openrtm-aist-python_1_2_2_release]]
+- [[OpenRTM-aist Java 1.2.2-RELEASE:/ja/download/openrtm-aist-java/openrtm-aist-java_1_2_2_release]]
+- [[OpenRTP 1.2.2:/ja/download/tools/openrtp_1_2_2]]
+
+**** 1.2.1
+- [[OpenRTM-aist C++ 1.2.1-RELEASE:/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_1_release]]
+- [[OpenRTM-aist Python 1.2.1-RELEASE:/ja/download/openrtm-aist-python/openrtm-aist-python_1_2_1_release]]
+- [[OpenRTM-aist Java 1.2.1-RELEASE:/ja/download/openrtm-aist-java/openrtm-aist-java_1_2_1_release]]
+- [[OpenRTP 1.2.1:/ja/download/tools/openrtp_1_2_1]]
+
+**** 1.1.2
+- [[OpenRTM-aist C++ 1.1.2-RELEASE:/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release]]
+- [[OpenRTM-aist Python 1.1.2-RELEASE:/ja/download/openrtm-aist-python/openrtm-aist-python_1_1_2_release]]
+- [[OpenRTM-aist Java 1.1.2-RELEASE:/ja/download/openrtm-aist-java/openrtm-aist-java_1_1_2_release]]
+- [[OpenRTP 1.1.2:/ja/download/tools/openrtp_1_1_2]]
+
+**** [[各種仕様:/ja/download/various_specs]]

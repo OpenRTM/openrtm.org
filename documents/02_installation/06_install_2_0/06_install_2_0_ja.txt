@@ -1,1 +1,1 @@
-﻿// Title OpenRTM-aist 2.0系のインストール(開発中)
+﻿// Title OpenRTM-aist 2.0系のインストール

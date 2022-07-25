@@ -1,18 +1,28 @@
 ﻿// Title: Installation
 #ref(install.png,right,around,80%,url=/ja/node/111)
 ***Let's start OpenRTM-aist in 10 minutes!
--[[Let's start OpenRTM-aist in 10 minutes!:/en/node/6140]]
+-[[Let's start OpenRTM-aist in 10 minutes!:/en/doc/installation/lets_start]]
+
+***OpenRTM-aist-2.0 series installation manual
+-[[Windows:/en/doc/installation/install_2_0/install_win_2_0]]
+-[[Linux:/en/doc/installation/install_2_0/install_linux_2_0]]
+
+***OpenRTM-aist-1.2 series installation manual
+-[[C++:/en/doc/installation/install_1_2/cpp_1_2]]
+-[[Python:/en/doc/installation/install_1_2/python_1_2]]
+-[[Java:/en/doc/installation/install_1_2/java_1_2]]
+-[[OpenRTP:/en/doc/installation/install_1_2/openrtp_1_2]]
+-[[About the sample components:/en/doc/installation/sample_components]]
+-[[rtshell:/en/doc/installation/install_rtshell]]
+
 
 ***OpenRTM-aist-1.1 series installation manual
 -[[C++:/en/node/1191]]
 -[[Python:/en/node/6744]]
 -[[Java:/en/node/913]]
 -[[Eclipse tools:/en/node/680]]
--[[Sample usage:/en/node/882]]
--[[Installation of rtshell:/en/node/6464]]
+-[[About the sample components:/en/node/882]]
+-[[rtshell:/en/node/7002]]
 <!--break-->
 ***Other
--[[Installation on Kurobox HG:/en/node/436]]
--[[Installation on Kurobx PRO:/en/node/437]]
--[[Installation on Armadillo 240:/ja/node/170]]
--[[Installation on Raspberry Pi:/ja/node/5269]]5269]]
+-[[Installation on Raspberry Pi:/ja/node/5269]]

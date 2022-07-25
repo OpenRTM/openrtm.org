@@ -1,1 +1,1 @@
-// Title: Linuxにインストール
+// Title: Linuxへのインストール

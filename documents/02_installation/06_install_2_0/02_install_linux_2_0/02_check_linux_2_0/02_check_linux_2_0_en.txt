@@ -1,0 +1,114 @@
+// Titile: Operation Check
+
+#contents
+
+** Run the sample component
+
+After successful installation, you can check the operation with the attached sample component. The installation destination of the sample component is as follows.
+
+ /usr/share/openrtm-2.0/components/c++/examples
+ /usr/share/openrtm-2.0/components/python3/
+ /usr/share/openrtm-2.0/components/java
+
+Start OpenRTP, a tool for operating the RTC and building the RT system.
+
+- OpenRTM-aist 2.0 series is started by the openrtp2 command.
+
+ $ openrtp2
+
+In OpenRTM-aist 1.2 series, it is started by the openrtp command. Although the command name is different, the startup procedure and usage are the same as 1.2 series, so please see the following page for details.
+- [[OpenRTP startup procedure (1.2 series, Linux):/en/doc/installation/install_1_2/start_openrtp_linux_1_2]]
+
+※OpenRTP can coexist with 1.2 series and 2.0 series. Therefore, it is possible to run both openrtp and openrtp2. 
+
+The attached sample components are listed on the following pages for the Windows version. There is no difference between the Windows version and the Linux version in terms of component operation.
+- [[List of sample components:/en/doc/installation/install_2_0/install_windows_2_0/check_windows_2_0#toc1]]
+
+If you want to know a little more about the procedure for executing the sample component in the Linux environment, see the 1.2 series explanation page below. If you read the component path, the execution procedure is the same for 2.0 series.
+- [[Install OpenRTM-aist (C++ Version) 1.2・Operation Check (On Linux):/en/doc/installation/install_1_2/cpp_1_2/check_linux_1_2]]
+- [[Install OpenRTM-aist (Python Version) 1.2・Operation Check (On Linux)):/en/doc/installation/install_1_2/python_1_2/check_python_linux_1_2]]
+- [[Install OpenRTM-aist (Java Version) 1.2・Operation Check (On Linux):/en/doc/installation/install_1_2/java_1_2/check_Linux_java_1_2]]
+
+** Installation of OpenCV sample components
+
+OpenCV's C ++ sample components do not provide a deb package for installation. We provide a script to generate a deb package from the source, so please build and install it.
+
+*** Installation example of OpenCV4.5.4
+
+This is an example of building and installing the OpenCV main unit of version 4.5.4 and the extension module group (opencv_contrib) together.
+
+-First, comment in the following deb-src line in /etc/apt/sources.list.
+
+ $ sudo vi /etc/apt/sources.list
+      :
+ deb-src http://jp.archive.ubuntu.com/ubuntu/ *** universe
+    or
+ deb-src http://us.archive.ubuntu.com/ubuntu/ *** universe
+
+-The installation of OpenCV is completed by executing the following command.
+
+ sudo apt build-dep opencv
+ wget https://github.com/opencv/opencv/archive/refs/tags/4.5.4.tar.gz -O opencv-4.5.4.tar.gz
+ tar xvzf opencv-4.5.4.tar.gz
+ wget https://github.com/opencv/opencv_contrib/archive/refs/tags/4.5.4.tar.gz -O opencv_contrib-4.5.4.tar.gz
+ tar xvzf opencv_contrib-4.5.4.tar.gz
+ cd opencv-4.5.4
+ mkdir build
+ cd build
+ cmake -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.5.4/modules -DBUILD_opencv_java=OFF ..
+ make -j$(nproc)
+ sudo make install
+ sudo ldconfig
+
+***OpenCV sample component build procedure
+
+Get the source ImageProcessing, build it, and generate a deb package.
+
+ git clone https://github.com/OpenRTM/ImageProcessing
+ cd ImageProcessing/opencv
+ mkdir build
+ cd build
+ cmake ..
+ ./build_linux_package.sh
+
+This will generate imageprocessing_1.2.3_amd64.deb and install it.
+
+ sudo dpkg -i imageprocessing_1.2.3_amd64.deb
+ ls /usr/share/openrtm-2.0/components/c++/opencv-rtcs/
+ Affine                       CameraViewer     Edge         Histogram         ImageSubtraction  Perspective        Scale                 Template
+ BackGroundSubtractionSimple  Chromakey        Findcontour  Hough             ObjectTracking    RockPaperScissors  Sepia                 Translate
+ Binarization                 DilationErosion  Flip         ImageCalibration  OpenCVCamera      Rotate             SubtractCaptureImage  rtc.conf
+
+An executable file (*** Comp) is installed under each sample directory, so please try it.
+
+** Precautions when CMake in an environment where 1.2 series and 2.0 series coexist
+
+The C ++ sample components have been regenerated so that they can be built mostly with CMake. &br;
+Let's take ConsoleIn as an example.
+
+In the coexistence environment of 1.2 series and 2.0 series, OpenRTMConfig.cmake is installed in the following two places. For this reason, the OpenRTMConfig.cmake found earlier is used.
+
+ /usr/lib/x86_64-linux-gnu/openrtm-2.0/cmake/OpenRTMConfig.cmake
+ /usr/lib/x86_64-linux-gnu/openrtm-1.2/cmake/OpenRTMConfig.cmake
+
+In this environment, try running ConsoleIn cmake.
+
+ git clone https://github.com/OpenRTM/OpenRTM-aist
+ cd OpenRTM-aist/examples/ConsoleIn/
+ mkdir build
+ cd build
+ cmake ..
+      :
+ -- OpenRTMConfig.cmake 2.0.0 found.
+
+In 2.0 series OpenRTMConfig.cmake, the version number is output. The version number is not output in 1.2 series. &br;
+If you want to build with 1.2 series, specify OpenRTM_DIR as follows in the cmake option.
+
+ cmake -DOpenRTM_DIR=/usr/lib/x86_64-linux-gnu/openrtm-1.2/cmake ..
+    :
+ -- OpenRTMConfig.cmake found.
+
+
+
+
+
