@@ -1,24 +1,24 @@
 // Title: Download
 
-*** Current version: 2.0.0-RELEASE
+*** Current version: 2.0.1-RELEASE
 
-The newest RELEASE version is OpenRTM-aist-2.0.0-RELEASE.
+The newest RELEASE version is OpenRTM-aist-2.0.1-RELEASE.
 
 - ''Release Note''
--- '' [[C++ >https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v2.0.0]]''
--- '' [[Python >https://github.com/OpenRTM/OpenRTM-aist-Python/releases/tag/v2.0.0]]''
--- '' [[Java >https://github.com/OpenRTM/OpenRTM-aist-Java/releases/tag/v2.0.0]]''
--- '' [[tools (OpenRTP) >https://github.com/OpenRTM/OpenRTP-aist/releases/tag/v2.0.0]]''
+-- '' [[C++ >https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v2.0.1]]''
+-- '' [[Python >https://github.com/OpenRTM/OpenRTM-aist-Python/releases/tag/v2.0.1]]''
+-- '' [[Java >https://github.com/OpenRTM/OpenRTM-aist-Java/releases/tag/v2.0.1]]''
+-- '' [[tools (OpenRTP) >https://github.com/OpenRTM/OpenRTP-aist/releases/tag/v2.0.1]]''
 
 *** Windows installer
 
 Only 64bit version is available. Download and execute "msi" file, and then C++, Python, Java versions of OpenRTM, and OpenRTP, rtshell, OpenCV4.4, omniORB4.2.5 and JRE8 will be also installed.
 
-|[[OpenRTM-aist-2.0.0-RELEASE_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.0-RELEASE_x86_64.msi]]|MD5:bda5f38285c722991573ca7d92431437|2022/07/01|
+|[[OpenRTM-aist-2.0.1-RELEASE_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.1-RELEASE_x86_64.msi]]|MD5:057354e97e6dd531801a9ae435ed2abe|2023/01/25|
 
 The supported versions of Visual Studio and Python are the follows.
 - Visual Studio（2015, 2017, 2019, 2022）
-- Python （3.7, 3.8, 3.9, 3.10）
+- Python （3.7, 3.8, 3.9, 3.10, 3.11）
 
 For the installation, see [[OpenRTM-aist 2.0 installation to Windows:/en/doc/installation/install_2_0/install_windows_2_0/install_2_0]] &br;
 If this is the first time to use OpenRTM, please visit [[Start OpenRTM-aist in ten minitues!! :/en/doc/installation/lets_start]].
@@ -32,6 +32,16 @@ On the Ubuntu18.04, 20.04 (amd64, arm64), please copy and paste the following on
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh)
 
 See [[Installing to Linux:/en/doc/installation/install_2_0/install_linux_2_0]] for the installation.
+
+*** Raspberry Pi OS packages
+
+If you are already using 1.2 series, see [[Changes in 2.0 series:/en/doc/installation/install_2_0/install_raspbian_2_0#toc0]] 　&br;
+
+On the Buster (32bit), Bullseye (32bit, 64bit), please copy and paste the following one-liner in your terminal, and then C++, Python, Java, rtshell  will be also installed.
+
+ $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_raspbian.sh)
+
+See [[Installing to Raspberry Pi OS:/en/doc/installation/install_2_0/install_raspbian_2_0]] for the installation.
 
 *** Older versions
 **** 1.2.2

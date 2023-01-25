@@ -71,9 +71,9 @@ OpenCVのC++サンプルコンポーネントはインストール用debパッ�
  cmake ..
  ./build_linux_package.sh
 
-これで、imageprocessing_1.2.3_amd64.deb が生成されますのでインストールします。
+これで、imageprocessing_2.0.0_amd64.deb が生成されますのでインストールします。
 
- sudo dpkg -i imageprocessing_1.2.3_amd64.deb
+ sudo dpkg -i imageprocessing_2.0.0_amd64.deb
  ls /usr/share/openrtm-2.0/components/c++/opencv-rtcs/
  Affine                       CameraViewer     Edge         Histogram         ImageSubtraction  Perspective        Scale                 Template
  BackGroundSubtractionSimple  Chromakey        Findcontour  Hough             ObjectTracking    RockPaperScissors  Sepia                 Translate

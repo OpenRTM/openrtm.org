@@ -6,13 +6,13 @@
 
 The contents of each package are as follows.
 
-***openrtm2_2.0.0-0_amd64.deb
+***openrtm2
 openrtm2 contains runtime libraries and commands.
 
 -Command
  /usr/bin/rtcd2
  /usr/bin/rtcprof2
- /usr/bin/rtm-config2
+ /usr/bin/rtm2-config
  /usr/bin/rtm2-naming
 
 -Sample configuration file
@@ -37,11 +37,11 @@ openrtm2 contains runtime libraries and commands.
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/sdo/LoggerConsumer.so
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/ssl/SSLTransport.so
 
-***openrtm2-dev_2.0.0-0_amd64.deb 
+***openrtm2-dev 
 openrtm2-dev contains the commands and headers needed for development.
 
 -Command
- /usr/bin/rtm-skelwrapper2
+ /usr/bin/rtm2-skelwrapper
 
 -Header files
  /usr/include/coil-2.0/coil/Affinity.h
@@ -65,7 +65,7 @@ openrtm2-dev contains the commands and headers needed for development.
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/py_helper/skel_wrapper.py
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/py_helper/yat.py
 
-*** openrtm2-example_2.0.0-0_amd64.deb
+*** openrtm2-example
 openrtm2-example contains samples for standalone RTC and loadable RTC respectively.
 
 -Sample (Stand alone RTC)
@@ -81,20 +81,20 @@ openrtm2-example contains samples for standalone RTC and loadable RTC respective
  /usr/share/openrtm-2.0/components/c++/examples/rtc/Throughput.so
 
 
-***openrtm2-ros-tp_2.0.0-0_amd64.deb
+***openrtm2-ros-tp
 
 ROS communication function library is installed.
 
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/transport/ROSTransport.so
 
-***openrtm2-ros2-tp_2.0.0-0_amd64.deb
+***openrtm2-ros2-tp
 
 ROS2 communication function library is installed.
 
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/transport/FastRTPSTransport.so
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/transport/ROS2Transport.so
 
-***openrtm2-doc_2.0.0-0_all.deb
+***openrtm2-doc
 openrtm2-doc contains Japanese and English class references and IDL interface definition references.
 
 -Class Reference (Japanese)
@@ -121,7 +121,7 @@ openrtm2-doc contains Japanese and English class references and IDL interface de
  ...
  /usr/share/openrtm-2.0/doc/idl/IDLReference-en/html/unionSDOPackage_1_1Numeric.html
 
-***openrtm2-idl_2.0.0-0_amd64.deb
+***openrtm2-idl
 
 - idl files etc.
  /etc/profile.d/openrtm2-idl.sh
@@ -134,11 +134,11 @@ openrtm2-doc contains Japanese and English class references and IDL interface de
  ...
  /usr/share/openrtm-2.0/idl/SharedMemory.idl
 
-***openrtm2-python3_2.0.0-0_amd64.deb
+***openrtm2-python3
 
 -Command
- /usr/bin/rtcd_python3
- /usr/bin/rtcprof_python3
+ /usr/bin/rtcd2_python3
+ /usr/bin/rtcprof2_python3
 
 -Python module of OpenRTM-aist body
  /usr/lib/python3/dist-packages/OpenRTM_aist/* 
@@ -151,7 +151,7 @@ openrtm2-doc contains Japanese and English class references and IDL interface de
  /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtcprof/*
  /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtm-naming/*
 
-***openrtm2-python3-example_2.0.0-0_amd64.deb
+***openrtm2-python3-example
 
  /usr/share/openrtm-2.0/components/python3/__init__.py
  /usr/share/openrtm-2.0/components/python3/component.conf
@@ -174,7 +174,7 @@ openrtm2-doc contains Japanese and English class references and IDL interface de
  /usr/share/openrtm-2.0/components/python3/TkJoyStick/
  /usr/share/openrtm-2.0/components/python3/TkLRFViewer/*
 
-***openrtm2-python3-doc_2.0.0-0_all.deb
+***openrtm2-python3-doc
 Install English/Japanese class reference.
 
 -Class reference
@@ -186,11 +186,11 @@ Install English/Japanese class reference.
  /usr/share/openrtm-2.0/doc/python3/ClassReference-jp/html/_buffer_status_8py.html
  ...
 
-***openrtm2-java_2.0.0-0_amd64.deb
+***openrtm2-java
 
  /etc/profile.d/openrtm-java.sh
- /usr/bin/rtcd_java
- /usr/bin/rtcprof_java
+ /usr/bin/rtcd2_java
+ /usr/bin/rtcprof2_java
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/jar/License.txt
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/jar/LogicalTimeTriggeredEC.jar
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/jar/NameserviceFile.jar
@@ -201,7 +201,7 @@ Install English/Japanese class reference.
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/jar/rtcd.jar
  /usr/lib/x86_64-linux-gnu/openrtm-2.0/jar/rtcprof.jar
 
-***openrtm2-java-example_2.0.0-0_amd64.deb
+***openrtm2-java-example
 
 Java version sample RTC, Class file, source file, startup script
  /usr/share/openrtm-2.0/components/java/* 
@@ -224,7 +224,7 @@ Java version sample RTC, Class file, source file, startup script
  /usr/share/openrtm-2.0/components/java/RTMExamples/Throughput/*
  /usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/*
 
-***openrtm2-java-doc_2.0.0-0_all.deb
+***openrtm2-java-doc
 
 openrtm2-java-doc contains Japanese and English class references.
 

@@ -1,11 +1,11 @@
 // Title: OpenRTM-aistを10分で始めよう！
 #contents
-最新バージョンOpenRTM-aist-2.0.0-RELEASEではC++版、Python版、Java版、OpenRTP、rtshell がインストールされます。
+最新バージョンOpenRTM-aist-2.0.1-RELEASEではC++版、Python版、Java版、OpenRTP、rtshell がインストールされます。
 
 * 事前準備
 ** Pythonのインストール
 Pythonをインストールしていない場合は、OpenRTM-aistをインストールできません。
-OpenRTM-aistをインストールする前に、Pythonをインストールしてください。バージョンは、"3.10"、"3.9"、"3.8"、"3.7"に対応しています。
+OpenRTM-aistをインストールする前に、Pythonをインストールしてください。バージョンは、"3.11"、"3.10"、"3.9"、"3.8"、"3.7"に対応しています。
 
 Pythonのダウンロードは [[OpenRTM-aist 2.0系のWindowsへのインストール:/ja/doc/installation/install_2_0/install_windows_2_0/install_2_0]] をご覧ください。
 
@@ -70,10 +70,18 @@ Pythonのインストール先は、インストール時の選択 [Customize in
 //※使用しているVisual Studio のバージョンが2019(vc14)以外の場合は、以下のページを参考に環境変数のRTM_VC_VERSIONを変更してください。&br;
 //[[RTM_VC_VERSIONの変更:/ja/node/6136/]]
 
+** VCVerChangerの実行
+
+インストーラはOpenRTM-aistが使用するシステム環境変数をレジストリに登録しています。この環境変数の中に、他の環境変数である%RTM_VC_VERSION%を含むものがあります。
+このようなネストされた環境変数が再帰的に展開されない場合があります。
+
+解決のため、VCVerChanger を実行して下さい。「確認」ボタンを押すと、環境変数を展開してレジストリに書き戻します。
+[[(VCVerChangerの使い方):/ja/node/6136/]]
+
 ** サンプルコンポーネントを実行する
 *** 事前準備
 - 必須ではありませんが、ここからはスタートメニューに登録されたアプリケーションを多数起動します。毎回スタートメニューから順番にたどるのは大変ですので、
-スタートボタンからスタートメニューを表示させ[OpenRTM-aist 2.0.0 x86_64]>[C++_Examples]を右クリックして[ファイルの場所を開く]を選択してください。
+スタートボタンからスタートメニューを表示させ[OpenRTM-aist 2.0.1 x86_64]>[C++_Examples]を右クリックして[ファイルの場所を開く]を選択してください。
 &br;
 #ref(start-menu.png,center,70%)
 CENTER:''ファイルの場所を開く''
@@ -92,7 +100,7 @@ CENTER:''Start Naming Service''
 *** ConsoleInComp、ConsoleOutCompを使用する
 ConsoleInComp、ConsoleOutCompはDataInPort、DataOutPortの使用方法を示したサンプルです。ConsoleIn側で入力した数字が，ConsoleOut側に表示されます。ここではこの二つのコンポーネントを使用し、動作確認を行います。
 *** サンプルコンポーネントの起動
-- [OpenRTM-aist 2.0.0 x86_64]>[C++_Example]フォルダー内のConsoleIn.batとConsoleOut.batをダブルクリックします。もし[Windows セキュリティのの重要な警告]画面が表示されたら[プライベートネットワーク(ホームネットワーク社内ネットワークなど)(R)]にチェックマークをつけて[アクセスを許可する(A)]をクリックしてください。以下のようなコンソール画面が表示されます。
+- [OpenRTM-aist 2.0.1 x86_64]>[C++_Example]フォルダー内のConsoleIn.batとConsoleOut.batをダブルクリックします。もし[Windows セキュリティのの重要な警告]画面が表示されたら[プライベートネットワーク(ホームネットワーク社内ネットワークなど)(R)]にチェックマークをつけて[アクセスを許可する(A)]をクリックしてください。以下のようなコンソール画面が表示されます。
 //CENTER:&ref(ConsoleIn001.png,center,90%);&ref(ConsoleOut001.png,center,90%);
 CENTER:&ref(ConsoleInOut122-001.png,center,90%);
 CENTER:''ConsoleIn.batとConsoleOut.bat''
@@ -100,7 +108,7 @@ CENTER:''ConsoleIn.batとConsoleOut.bat''
 
 &aname(openrtp_start);
 ** OpenRTP起動
-- デスクトップのショートカットをクリックして起動します。スタートメニューでは、[OpenRTM-aist 2.0.0 x86_64]>[OpenRTP]と選択してください。先ほど開いたフォルダー画面からOpenRTPをダブルクリックすることによっても起動できます。
+- デスクトップのショートカットをクリックして起動します。スタートメニューでは、[OpenRTM-aist 2.0.1 x86_64]>[OpenRTP]と選択してください。先ほど開いたフォルダー画面からOpenRTPをダブルクリックすることによっても起動できます。
 -- ワークスペースは適当な場所を指定してください。
 #ref(OpenRTP122-001.png,center)
 CENTER:''ワークスペースの選択''
