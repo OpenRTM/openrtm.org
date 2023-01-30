@@ -51,6 +51,30 @@ Fedora Linuxではyumコマンドで以下のようにインストールする�
 *** リポジトリからのパッケージ入手以外の方法
 上記のサードパーティベンダのWebサイトから入手することもできます。インストール方法についてはそのサイトの情報に従うか、Javaの標準的方法でインストールしてください。
 
+参考として、Raspberry Pi OS bullseye 64bit環境へAdoptium（旧AdoptOpenJDK）からバイナリ（tar.gz）をダウンロード・展開し、既にインストールされているJDK11からJDK8に切り替える手順を示します。
+
+aarch64用のJDK8をダウンロード・展開します。
+
+ $ wget https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u352-b08/OpenJDK8U-jdk_aarch64_linux_hotspot_8u352b08.tar.gz
+ $ tar xvzf OpenJDK8U-jdk_aarch64_linux_hotspot_8u352b08.tar.gz
+ $ ls
+ OpenJDK8U-jdk_aarch64_linux_hotspot_8u352b08.tar.gz  jdk8u352-b08
+
+update-alternativeコマンドで、JDK11からJDK8へ切り替えられるように、/usr/lib/jvm/下にコピーし、--installオプションでシンボリックリンクの作成・登録を行います。
+
+ $ sudo mv ./jdk8u352-b08 /usr/lib/jvm/jdk8u352
+ $ sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk8u352/bin/java" 1
+ $ sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk8u352/bin/javac" 1
+
+これで、次の「既にJDK8以外がインストールされている場合」に示している sudo update-alternative --config java コマンドでJDK8に切り替えます。
+切り替え後にバージョンを確認しておきます。
+
+ $ java -version
+ openjdk version "1.8.0_352" 
+ OpenJDK Runtime Environment (Temurin)(build 1.8.0_352-b08)
+ OpenJDK 64-Bit Server VM (Temurin)(build 25.352-b08, mixed mode)
+
+
 *** 既にJDK8以外がインストールされている場合
 なお、JDK8以外のJDKがデフォルト状態でインストールされている可能性がありますので、
 

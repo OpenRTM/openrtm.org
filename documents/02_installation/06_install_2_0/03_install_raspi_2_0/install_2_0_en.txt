@@ -1,0 +1,273 @@
+// Title: Raspberry Pi OSへのインストール
+
+#contents
+
+** Supported version
+
+The version of Raspbian for which packages are currently available is
+
+- Buster (32bit)
+- Bullseye (32bit / 64bit)
+
+
+
+** SD card preparation
+
+It is convenient to use Raspberry Pi Imager, a tool that can be downloaded from the official website, to write the OS image. &br;
+https://www.raspberrypi.com/software/
+
+
+You can download and write by selecting the following.
+- Debian GNU/Linux version (Latest / Legacy)
+- With or without GUI (Desktop / Lite)
+- system architecture (32-bit / 64-bit)
+
+** Changes in 2.0 series
+
+C++ can coexist in 1.2 series and 2.0 series.　However, 1.2 series can only be installed on Buster(32bit). &br;
+With this support, the following changes have been made regarding installation.
+
+- Changed the name of the 2.0 series deb package
+- Python and Java cannot coexist in 1.2 series and 2.0 series
+-- Use the bulk install script to automatically uninstall different installed versions
+- Separated 1.2 series and 2.0 series batch installation scripts
+-- 1.2 series installation : pkg_install_raspbian.sh
+-- 2.0 series installation : openrtm2_install_raspbian.sh
+
+Installation script (both 1.2 series and 2.0 series) supports batch processing from download to installation.
+
+** Bulk installation script
+
+To install 2.0 series, paste the following into the shell prompt and execute it.　C ++ version, Python version, Java version, rtshell, JDK8(32-bit environment only) will be installed.　Scripts are not saved locally.　　&br;
+※In a 32-bit environment, even if multiple versions of Java are installed when executing a script, it will switch to using Java8. &br;
+※See below for 64-bit environments.
+- [[Install JDK8・Other than obtaining the package from the repository:/en/doc/appendix/jdk8installtion#toc9]]
+
+ $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_raspbian.sh)
+
+This will install the following packages: (For 32bit version)
+
+ $ dpkg -l | grep openrt
+ ii  openrtm2:armhf                     2.0.1-0                         armhf        OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm2-dev:armhf               2.0.1-0                         armhf        OpenRTM-aist headers for development
+ ii  openrtm2-doc                         2.0.1-0                         all          Documentation for openrtm2
+ ii  openrtm2-example:armhf        2.0.1-0                         armhf        OpenRTM-aist examples
+ ii  openrtm2-idl:armhf                 2.0.1-0                         armhf        OpenRTM-aist idls for development
+ ii  openrtm2-java:armhf               2.0.1-0                        armhf        OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm2-java-doc                  2.0.1-0                        all          Documentation for openrtm2-java
+ ii  openrtm2-java-example:armhf  2.0.1-0                       armhf        OpenRTM-aist-Java examples
+ ii  openrtm2-python3                  2.0.1-0                         armhf        OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm2-python3-doc            2.0.1-0                         all          Documentation for openrtm2-python3
+ ii  openrtm2-python3-example     2.0.1-0                         armhf        OpenRTM-aist-Python examples
+
+ $ pip3 list | grep aist
+ OpenRTM-aist-Python 2.0.1
+ rtctree-aist        4.2.3
+ rtshell-aist         4.2.9
+ rtsprofile-aist     4.1.5
+
+** The package details
+The contents of each package are as follows.
+
+***openrtm2
+openrtm2 contains a runtime library and a set of commands.
+
+-Command
+ /usr/bin/rtcd2
+ /usr/bin/rtcprof2
+ /usr/bin/rtm2-config
+ /usr/bin/rtm2-naming
+
+-Sample configuration file
+ /usr/etc/rtc.conf.sample2
+ /usr/etc/rtc.names.ssl.conf
+ /usr/etc/ssl/rtc.ssl.conf
+ /usr/lib/arm-linux-gnueabihf/pkgconfig/openrtm2.pc
+
+
+-Libraries, etc.
+ /usr/lib/arm-linux-gnueabihf/libRTC2.a
+ /usr/lib/arm-linux-gnueabihf/libRTC2.so.2.0.0
+ ...
+ /usr/lib/arm-linux-gnueabihf/librtmCamera2.so
+ /usr/lib/arm-linux-gnueabihf/librtmManipulator2.so
+...
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/ec/LogicalTimeTriggeredEC.so
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/local_service/FileNameservice.so
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/sdo/ComponentObserverConsumer.so
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/sdo/ExtendedFsmServiceProvider.so
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/sdo/LoggerConsumer.so
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/ssl/SSLTransport.so
+ ...
+ /usr/lib/arm-linux-gnueabihf/openrtm-1.2/sdo/LoggerConsumer.so.0.0.0
+ /usr/lib/libfluent-bit.so
+
+***openrtm2-dev
+contains the commands and headers needed for development.
+
+-Command
+ /usr/bin/rtm2-skelwrapper
+
+-Header files
+ /usr/include/coil-2.0/coil/Affinity.h
+ /usr/include/coil-2.0/coil/Async.h
+ ...
+ /usr/include/openrtm-2.0/rtm/BufferBase.h
+ /usr/include/openrtm-2.0/rtm/BufferStatus.h
+ ...
+ /usr/include/openrtm-2.0/rtm/config_rtc.h
+ /usr/include/openrtm-2.0/rtm/idl/BasicDataType.hh 
+ /usr/include/openrtm-2.0/rtm/idl/BasicDataTypeSkel.h
+ ...
+ /usr/include/openrtm-2.0/rtm/idl/SharedMemoryStub.h
+ /usr/include/openrtm-2.0/rtm/version.h
+
+-Libraries and others
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/cmake/OpenRTMConfig.cmake
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/cmake/OpenRTMConfigVersion.cmake
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/py_helper/skel_wrapper.py
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/py_helper/yat.py
+
+*** openrtm2-idl
+- idl files etc.
+ /etc/profile.d/openrtm2-idl.sh
+ /usr/include/openrtm-2.0/rtm/idl/BasicDataType.idl
+ /usr/include/openrtm-2.0/rtm/idl/CameraCommonInterface.idl
+ ...
+ /usr/include/openrtm-2.0/rtm/idl/SharedMemory.idl
+ /usr/share/openrtm-2.0/idl/BasicDataType.idl
+ /usr/share/openrtm-2.0/idl/CameraCommonInterface.idl
+ ...
+ /usr/share/openrtm-2.0/idl/SharedMemory.idl
+
+*** openrtm2-example
+contains samples for standalone RTC and loadable RTC respectively.
+
+-Sample (Stand alone RTC)
+ /usr/share/openrtm-2.0/components/c++/examples/CompositeComp
+ /usr/share/openrtm-2.0/components/c++/examples/ConfigSampleComp
+ ...
+ /usr/share/openrtm-2.0/components/c++/examples/rtc.conf
+
+-Sample (Loadable RTC)
+ /usr/share/openrtm-2.0/components/c++/examples/rtc/ConfigSample.so
+ /usr/share/openrtm-2.0/components/c++/examples/rtc/ConsoleIn.so
+ ...
+ /usr/share/openrtm-2.0/components/c++/examples/rtc/Throughput.so
+
+***openrtm2-doc
+contains Japanese and English class references and IDL interface definition references.
+
+-Class Reference (Japanese)
+ /usr/share/openrtm-2.0/doc/c++/ClassReference/html/BufferBase_8h.html
+ /usr/share/openrtm-2.0/doc/c++/ClassReference/html/BufferBase_8h__dep__incl.map
+ ...
+ /usr/share/openrtm-2.0/doc/c++/ClassReference/html/structSDOPackage_1_1Organization__impl_1_1sdo__id.html
+
+-IDL Reference (Japanese)
+ /usr/share/openrtm-2.0/doc/idl/IDLReference/html/BasicDataType_8idl.html
+ /usr/share/openrtm-2.0/doc/idl/IDLReference/html/BasicDataType_8idl_dep_incl.map
+ ...
+ /usr/share/openrtm-2.0/doc/idl/IDLReference/html/unionSDOPackage_1_1Numeric.html
+
+-Class Reference(English)
+ /usr/share/openrtm-2.0/doc/c++/ClassReference-en/html/BufferBase_8h.html
+ /usr/share/openrtm-2.0/doc/c++/ClassReference-en/html/BufferBase_8h__dep__incl.map
+ ...
+ /usr/share/openrtm-2.0/doc/C++/ClassReference-en/html/version_8h_source.html
+
+-IDL Reference(English)
+ /usr/share/openrtm-2.0/doc/idl/IDLReference-en/html/BasicDataType_8idl.html
+ /usr/share/openrtm-2.0/doc/idl/IDLReference-en/html/BasicDataType_8idl__dep__incl.map
+ ...
+ /usr/share/openrtm-2.0/doc/idl/IDLReference-en/html/unionSDOPackage_1_1Numeric.html
+
+***openrtm2-python3
+
+-Command
+ /usr/bin/rtcd2_python3
+ /usr/bin/rtcprof2_python3
+
+-Python module of OpenRTM-aist body
+ /usr/lib/python3/dist-packages/OpenRTM_aist/* 
+- Python search path file for OpenRTM-aist
+ /usr/lib/python3/dist-packages/OpenRTM-aist.pth 
+-utility
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/__init__.py
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtc-template/*
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtcd/*
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtcprof/*
+ /usr/lib/python3/dist-packages/OpenRTM_aist/utils/rtm-naming/*
+
+***openrtm2-python3-example
+
+ /usr/share/openrtm-2.0/components/python3/__init__.py
+ /usr/share/openrtm-2.0/components/python3/component.conf
+ /usr/share/openrtm-2.0/components/python3/rtcd.conf
+ /usr/share/openrtm-2.0/components/python3/AutoControl/*
+ /usr/share/openrtm-2.0/components/python3/AutoTest/*
+ /usr/share/openrtm-2.0/components/python3/CSPSample/*
+ /usr/share/openrtm-2.0/components/python3/CSPSelectSample/*
+ /usr/share/openrtm-2.0/components/python3/CSPStaticFsmSample/*
+ /usr/share/openrtm-2.0/components/python3/Composite/*
+ /usr/share/openrtm-2.0/components/python3/ConfigSample/*
+ /usr/share/openrtm-2.0/components/python3/ExtTrigger/*
+ /usr/share/openrtm-2.0/components/python3/MobileRobotCanvas/*
+ /usr/share/openrtm-2.0/components/python3/SeqIO/*
+ /usr/share/openrtm-2.0/components/python3/Serializer/*
+ /usr/share/openrtm-2.0/components/python3/SimpleIO/*
+ /usr/share/openrtm-2.0/components/python3/SimpleService/*
+ /usr/share/openrtm-2.0/components/python3/Slider_and_Motor/*
+ /usr/share/openrtm-2.0/components/python3/Throughput/*
+ /usr/share/openrtm-2.0/components/python3/TkJoyStick/
+ /usr/share/openrtm-2.0/components/python3/TkLRFViewer/*
+
+***openrtm2-python3-doc
+Install English/Japanese class reference.
+
+-Class reference
+ /usr/share/openrtm-2.0/doc/python3/ClassReference-en/html/_async_8py.html
+ /usr/share/openrtm-2.0/doc/python3/ClassReference-en/html/_buffer_base_8py.html
+ ...
+ /usr/share/openrtm-2.0/doc/python3/ClassReference-jp/html/_async_8py.html
+ /usr/share/openrtm-2.0/doc/python3/ClassReference-jp/html/_buffer_base_8py.html
+ /usr/share/openrtm-2.0/doc/python3/ClassReference-jp/html/_buffer_status_8py.html
+
+***openrtm2-java
+
+ /etc/profile.d/openrtm-java.sh
+ /usr/bin/rtcd2_java
+ /usr/bin/rtcprof2_java
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/jar/License.txt
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/jar/LogicalTimeTriggeredEC.jar
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/jar/NameserviceFile.jar
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/jar/OpenRTM-aist-2.0.1.jar
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/jar/commons-cli-1.1.jar
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/jar/jna-4.2.2.jar
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/jar/jna-platform-4.2.2.jar
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/jar/rtcd.jar
+ /usr/lib/arm-linux-gnueabihf/openrtm-2.0/jar/rtcprof.jar
+
+***openrtm2-java-example
+
+Java版サンプルRTC、Classファイル、ソースファイル、起動スクリプト
+
+ /usr/share/openrtm-2.0/components/java/* 
+ /usr/share/openrtm-2.0/components/java/RTMExamples/AutoTest/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/Composite/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/ConfigSample/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/ExtTrigger/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/Fsm/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/control/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/model/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/GUIIn/view/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/MyService.idl
+ /usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/SeqIO/view/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/SimpleIO/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/SimpleService/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/SinCosOut/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/StaticFsm/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/Throughput/*
+ /usr/share/openrtm-2.0/components/java/RTMExamples/TopicTest/*
