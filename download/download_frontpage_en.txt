@@ -16,6 +16,9 @@ Only 64bit version is available. Download and execute "msi" file, and then C++, 
 
 |[[OpenRTM-aist-2.0.1-RELEASE_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.1-RELEASE_x86_64.msi]]|MD5:057354e97e6dd531801a9ae435ed2abe|2023/01/25|
 
+If you are using Microsoft Edge and cannot download, please see the explanation on the following page.
+- [[Let's start OpenRTM-aist in 10 minutes!・Download OpenRTM-aist:/en/doc/installation/lets_start#toc2]] 
+
 The supported versions of Visual Studio and Python are the follows.
 - Visual Studio（2015, 2017, 2019, 2022）
 - Python （3.7, 3.8, 3.9, 3.10, 3.11）

@@ -16,6 +16,9 @@
 
 |[[OpenRTM-aist-2.0.1-RELEASE_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.1-RELEASE_x86_64.msi]]|MD5:057354e97e6dd531801a9ae435ed2abe|2023/01/25|
 
+Microsoft Edge をお使いでダウンロードできない場合は、下記ページの解説をご覧ください。
+- [[OpenRTM-aistを10分で始めよう！・OpenRTM-aistのダウンロード:/ja/doc/installation/lets_start#toc2]] 
+
 必要なソフトウエアである Visual Studio と Python は下記バージョンに対応しています。
 - Visual Studio（2015, 2017, 2019, 2022）
 - Python （3.7, 3.8, 3.9, 3.10, 3.11）

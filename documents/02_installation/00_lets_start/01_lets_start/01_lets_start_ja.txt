@@ -31,9 +31,35 @@ Pythonのインストール先は、インストール時の選択 [Customize in
 
 - [Install] を選択してインストールを完了します。
 
-** OpenRTM-aistのインストール
+** OpenRTM-aistのダウンロード
 
 インストーラーのダウンロードは [[ダウンロード:/ja/download]] をご覧ください。
+
+Microsoft Edge をお使いで、下記メッセージが出てダウンロードできない場合の手順を紹介します。
+
+#ref(msi-download-01.png,center,70%)
+
+- マウスオーバーで表示される「・・・」をクリックします
+
+#ref(msi-download-02.png,center,70%)
+
+- 「保存」をクリックします
+
+#ref(msi-download-03.png,center,60%)
+
+- 「詳細表示」をクリックします
+
+#ref(msi-download-04.png,center,50%)
+
+- 「保存する」をクリックします
+
+#ref(msi-download-05.png,center,50%)
+
+- これでダウンロードが完了しますので、「ファイルを開く」をクリックするとインストーラが起動します
+
+#ref(msi-download-06.png,center,70%)
+
+** OpenRTM-aistのインストール
 
 ''[インストール手順]''
 +インストーラーを起動します。[WindowsによってPCが保護されました]の画面が表示されたら[詳細情報]をクリックして[実行]ボタンを表示させて、[実行]をクリックします。(この画面はWindowsのあるバージョン以降でMicrosoft Corp.に登録されていないアプリケーションのインストール時に表示される画面で、本ソフトウエアは登録をしていないため、この画面が表示されます。)
