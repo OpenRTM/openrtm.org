@@ -45,12 +45,38 @@ Set the search path automatically by the following method. This will add the dir
 - Select Install to complete the installation.
 //- [Install] を選択してインストールを完了します。
 
-** Installing OpenRTM-aist
-//** OpenRTM-aistのインストール
-Here, we will introduce the installation procedure using 64-bit installer OpenRTM-aist-2.0.0-RELEASE_x86_64.msi on Windows 10. #br
-//ここではWindows 10で64bit用インストーラーOpenRTM-aist-1.2.2-RELEASE_x86_64.msiを使ったインストール手順を紹介します。
+** Download OpenRTM-aist
 
 To download the installer please see [[Download:/en/node/7159]].
+
+//Microsoft Edge をお使いで、下記メッセージが出てダウンロードできない場合の手順を紹介します。
+If you are using Microsoft Edge and the following message appears and you cannot download, we will introduce the procedure.
+
+#ref(msi-download-01.png,center,70%)
+
+//- マウスオーバーで表示される「・・・」をクリックします
+- Click the "..." that appears when you over your mouse.
+
+#ref(msi-download-02.png,center,70%)
+
+- Click "Save".
+
+#ref(msi-download-03.png,center,60%)
+
+- Click "Details".
+
+#ref(msi-download-04.png,center,50%)
+
+- Click "Save".
+
+#ref(msi-download-05.png,center,50%)
+
+- This will complete the download, so click "Open File" to start the installer.
+
+#ref(msi-download-06.png,center,70%)
+
+
+** Installing OpenRTM-aist
 
 
 ''[Installation procedure]''
