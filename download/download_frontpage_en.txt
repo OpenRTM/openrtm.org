@@ -16,6 +16,12 @@ Only 64bit version is available. Download and execute "msi" file, and then C++, 
 
 |[[OpenRTM-aist-2.0.1-RELEASE_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.1-RELEASE_x86_64.msi]]|MD5:057354e97e6dd531801a9ae435ed2abe|2023/01/25|
 
+''[Installation fails]''
+- If you are in an environment where the dialog "There is a problem with this Windows Installer package" is displayed and the installation process rolls back, please use the 2.0.1-1 version msi below.
+- The reason for the rollback is that the script for rtshell that the installer is executing is blocked by Windows security.
+- The 2.0.1-1 version is the 2.0.1-RELEASE version with this script processing removed.
+|[[OpenRTM-aist-2.0.1-1_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.1-1_x86_64.msi]]|MD5:a26f7dc0e1c9aba7f3cfab48f203f630|2023/04/19|
+
 If you are using Microsoft Edge and cannot download, please see the explanation on the following page.
 - [[Let's start OpenRTM-aist in 10 minutes!・Download OpenRTM-aist:/en/doc/installation/lets_start#toc2]] 
 
