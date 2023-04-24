@@ -16,6 +16,12 @@
 
 |[[OpenRTM-aist-2.0.1-RELEASE_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.1-RELEASE_x86_64.msi]]|MD5:057354e97e6dd531801a9ae435ed2abe|2023/01/25|
 
+''[インストールに失敗する場合]''
+- 「このWindowsインストーラパッケージには問題があります」というダイアログが表示されてインストール処理がロールバックしてしまう環境の方は下記の2.0.1-1版msiをご利用ください
+- ロールバックする原因は、インストーラが実行しているrtshell用のスクリプトがWindowsセキュリティでブロックされてしまうためです
+- 2.0.1-RELEASE版からこのスクリプト処理のみを外したものが2.0.1-1版です
+|[[OpenRTM-aist-2.0.1-1_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.1-1_x86_64.msi]]|MD5:a26f7dc0e1c9aba7f3cfab48f203f630|2023/04/19|
+
 Microsoft Edge をお使いでダウンロードできない場合は、下記ページの解説をご覧ください。
 - [[OpenRTM-aistを10分で始めよう！・OpenRTM-aistのダウンロード:/ja/doc/installation/lets_start#toc2]] 
 
