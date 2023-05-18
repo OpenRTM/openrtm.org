@@ -36,7 +36,7 @@ Microsoft Edge をお使いでダウンロードできない場合は、下記�
 
 既に1.2系をご利用されている場合は、インストール前に [[2.0系での変更点:/ja/doc/installation/install_2_0/install_linux_2_0/install_2_0#toc0]] をご覧ください。　&br;
 
-Ubuntu18.04、20.04（各amd64、arm64環境）では、下記をシェルプロンプトに貼り付けて実行すると、C++版、 Python版、 Java版、 OpenRTP(amd64のみ)、 rtshell、JDK8 がインストールされます。 
+Ubuntu18.04、20.04、22.04（各amd64、arm64環境）では、下記をシェルプロンプトに貼り付けて実行すると、C++版、 Python版、 Java版、 OpenRTP(amd64のみ)、 rtshell、JDK8 がインストールされます。 
 
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh)
 

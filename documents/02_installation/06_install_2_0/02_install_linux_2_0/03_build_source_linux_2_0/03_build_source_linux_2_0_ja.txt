@@ -25,10 +25,11 @@ docker build コマンドで Dockerイメージを生成するのですが、毎
 
 **C++ソースのビルド
 
-OpenRTM-aist 2.0系のソースには、Ubuntu18.04、20.04用のDockerfileが含まれています。
+OpenRTM-aist 2.0系のソースには、Ubuntu18.04、20.04、22.04用のDockerfileが含まれています。
 
  OpenRTM-aist/scripts/ubuntu_1804/Dockerfile
  OpenRTM-aist/scripts/ubuntu_2004/Dockerfile
+ OpenRTM-aist/scripts/ubuntu_2204/Dockerfile
 
 ビルド手順は以下となります。　Ubuntu20.04用のビルド例です。　&br;
 ここではGitHubから最新のOpenRTM-aistソースを取得していますが、修正を加えたソースのビルドでも同様の手順で行えます。
@@ -48,18 +49,20 @@ OpenRTM-aist 2.0系のソースには、Ubuntu18.04、20.04用のDockerfileが�
 
 ***Dockerイメージ「openrtm/devel-rtm」について
 
-ソースビルドで使用した Dockerfile の1行目は、Ubuntu18.04用と20.04用でそれぞれの以下のようになっており、Dockerハブにアップロードされているこの名前のイメージを使用します。
+ソースビルドで使用した Dockerfile の1行目は、Ubuntu18.04用、20.04用、22.04用でそれぞれの以下のようになっており、Dockerハブにアップロードされているこの名前のイメージを使用します。
 
  FROM openrtm/devel-rtm:ubuntu18.04
-        or
  FROM openrtm/devel-rtm:ubuntu20.04
+ FROM openrtm/devel-rtm:ubuntu22.04
 
 これらのイメージは、下記 Docierfile.devel-rtm から生成したものです。fluent-bitと、ROS、ROS2がインストールされています。
 -Ubuntu18.04用：dashing、melodic
 -Ubuntu20.04用：foxy、noetic
+-Ubuntu22.04用：humble
 
  OpenRTM-aist/scripts/ubuntu_1804/Dockerfile.devel-rtm
  OpenRTM-aist/scripts/ubuntu_2004/Dockerfile.devel-rtm
+ OpenRTM-aist/scripts/ubuntu_2204/Dockerfile.devel-rtm
 
 ***Dockerでdebパッケージ生成まで一括処理するスクリプト
 
@@ -100,6 +103,7 @@ OpenRTM-aistソースを変更してインストールしたい場合、build-cx
 OpenRTM-aist-Python ソースには Dockerfile は含まれておりません。OpenRTM-aist-Pythonのリリース用debパッケージ作成時に下記Dockerfileを利用しています。
 - [[ubuntu_1804/Dockerfile-python-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_1804/Dockerfile-python-deb]]
 - [[ubuntu_2004/Dockerfile-python-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_2004/Dockerfile-python-deb]]
+- [[ubuntu_2204/Dockerfile-python-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_2204/Dockerfile-python-deb]]
 
 C++ソースビルドと同様に、Dockerでソースビルドからdebパッケージ生成まで行い、成果物であるdebパッケージをDockerコンテナからホスト側へコピーする処理までを一括で行うスクリプトを紹介します。
 
@@ -136,6 +140,7 @@ OpenRTM-aist-Pythonソースを変更してインストールしたい場合、b
 OpenRTM-aist-Java ソースには Dockerfile は含まれておりません。OpenRTM-aist-Javaのリリース用debパッケージ作成時に下記Dockerfileを利用しています。
 - [[ubuntu_1804/Dockerfile-java-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_1804/Dockerfile-java-deb]]
 - [[ubuntu_2004/Dockerfile-java-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_2004/Dockerfile-java-deb]]
+- [[ubuntu_2204/Dockerfile-java-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_2204/Dockerfile-java-deb]]
 
 C++ソースビルドと同様に、Dockerでソースビルドからdebパッケージ生成まで行い、成果物であるdebパッケージをDockerコンテナからホスト側へコピーする処理までを一括で行うスクリプトを紹介します。
 

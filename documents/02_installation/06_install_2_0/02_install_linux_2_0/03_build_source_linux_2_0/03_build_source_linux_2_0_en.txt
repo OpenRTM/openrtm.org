@@ -25,10 +25,11 @@ If you are using Docker for the first time, please install it as follows. If you
 
 **Build C ++ source
 
-The OpenRTM-aist 2.0 series source includes Dockerfile for Ubuntu18.04 and 20.04.
+The OpenRTM-aist 2.0 series source includes Dockerfile for Ubuntu18.04, 20.04 and 22.04.
 
  OpenRTM-aist/scripts/ubuntu_1804/Dockerfile
  OpenRTM-aist/scripts/ubuntu_2004/Dockerfile
+ OpenRTM-aist/scripts/ubuntu_2204/Dockerfile
 
 The build procedure is as follows.　This is a build example for Ubuntu 20.04.　&br;
 Here, the latest OpenRTM-aist source is obtained from GitHub, but you can do the same procedure for building the modified source.
@@ -47,18 +48,20 @@ If you modify the source and repeat until the build passes, many images <none> w
 
 ***About Docker image "openrtm/develop-rtm"
 
-The first line of the Dockerfile used in the source build looks like this for Ubuntu 18.04 and 20.04 respectively, and uses the image with this name uploaded to the Docker hub.
+The first line of the Dockerfile used in the source build looks like this for Ubuntu 18.04, 20.04 and 22.04 respectively, and uses the image with this name uploaded to the Docker hub.
 
  FROM openrtm/devel-rtm:ubuntu18.04
-        or
  FROM openrtm/devel-rtm:ubuntu20.04
+ FROM openrtm/devel-rtm:ubuntu22.04
 
 These images are generated from the Docierfile.devel-rtm below. fluent-bit, ROS and ROS2 are installed.
 -For Ubuntu 18.04：dashing、melodic
 -For Ubuntu 20.04：foxy、noetic
+-For Ubuntu 22.04：humble
 
  OpenRTM-aist/scripts/ubuntu_1804/Dockerfile.devel-rtm
  OpenRTM-aist/scripts/ubuntu_2004/Dockerfile.devel-rtm
+ OpenRTM-aist/scripts/ubuntu_2204/Dockerfile.devel-rtm
 
 ***Script that batch processes up to deb package creation with Docker
 
@@ -99,6 +102,7 @@ If you want to modify and install the OpenRTM-aist source, comment out the follo
 OpenRTM-aist-Python source does not include Dockerfile. The following Dockerfile is used when creating the deb package for the release of OpenRTM-aist-Python.
 - [[ubuntu_1804/Dockerfile-python-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_1804/Dockerfile-python-deb]]
 - [[ubuntu_2004/Dockerfile-python-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_2004/Dockerfile-python-deb]]
+- [[ubuntu_2204/Dockerfile-python-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_2204/Dockerfile-python-deb]]
 
 As with C ++ source build, I will introduce a script that performs from source build to deb package generation with Docker, and the process of copying the deb package that is the deliverable from the Docker container to the host side at once.
 
@@ -136,6 +140,7 @@ If you want to modify and install the OpenRTM-aist-Python source, comment out th
 OpenRTM-aist-Java source does not include Dockerfile. The following Dockerfile is used when creating the deb package for the release of OpenRTM-aist-Java.
 - [[ubuntu_1804/Dockerfile-java-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_1804/Dockerfile-java-deb]]
 - [[ubuntu_2004/Dockerfile-java-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_2004/Dockerfile-java-deb]]
+- [[ubuntu_2204/Dockerfile-java-deb:https://github.com/n-kawauchi/RTM-src-pkgs-docker-build/blob/master/ubuntu_2204/Dockerfile-java-deb]]
 
 As with C ++ source build, I will introduce a script that performs from source build to deb package generation with Docker, and the process of copying the deb package that is the deliverable from the Docker container to the host side at once.
 

@@ -36,7 +36,7 @@ If this is the first time to use OpenRTM, please visit [[Start OpenRTM-aist in t
 
 If you are already using 1.2 series, see [[Changes in 2.0 series:/en/doc/installation/install_2_0/install_linux_2_0/install_2_0#toc0]] &br;
 
-On the Ubuntu18.04, 20.04 (amd64, arm64), please copy and paste the following one-liner in your terminal, and then C++, Python, Java versions OpenRTM, OpenRTP (only in amd64), rtshell, JDK8 will be also installed.
+On the Ubuntu18.04, 20.04, 22.04 (amd64, arm64), please copy and paste the following one-liner in your terminal, and then C++, Python, Java versions OpenRTM, OpenRTP (only in amd64), rtshell, JDK8 will be also installed.
 
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh)
 
