@@ -1,33 +1,28 @@
 // Title: Download
 
-*** Current version: 2.0.1-RELEASE
+*** Current version: 2.0.2-RELEASE
 
-The newest RELEASE version is OpenRTM-aist-2.0.1-RELEASE.
+The newest RELEASE version is OpenRTM-aist-2.0.2-RELEASE.
 
 - ''Release Note''
--- '' [[C++ >https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v2.0.1]]''
--- '' [[Python >https://github.com/OpenRTM/OpenRTM-aist-Python/releases/tag/v2.0.1]]''
--- '' [[Java >https://github.com/OpenRTM/OpenRTM-aist-Java/releases/tag/v2.0.1]]''
--- '' [[tools (OpenRTP) >https://github.com/OpenRTM/OpenRTP-aist/releases/tag/v2.0.1]]''
+-- '' [[C++ >https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v2.0.2]]''
+-- '' [[Python >https://github.com/OpenRTM/OpenRTM-aist-Python/releases/tag/v2.0.2]]''
+-- '' [[Java >https://github.com/OpenRTM/OpenRTM-aist-Java/releases/tag/v2.0.2]]''
+-- '' [[tools (OpenRTP) >https://github.com/OpenRTM/OpenRTP-aist/releases/tag/v2.0.2]]''
 
 *** Windows installer
 
-Only 64bit version is available. Download and execute "msi" file, and then C++, Python, Java versions of OpenRTM, and OpenRTP, rtshell, OpenCV4.4, omniORB4.2.5 and JRE8 will be also installed.
+Only 64bit version is available. Download and execute "msi" file, and then C++, Python, Java versions of OpenRTM, and OpenRTP, rtshell, OpenCV4.5.0, omniORB4.3.2 and JRE8 will be also installed.
 
-|[[OpenRTM-aist-2.0.1-RELEASE_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.1-RELEASE_x86_64.msi]]|MD5:057354e97e6dd531801a9ae435ed2abe|2023/01/25|
+|[[OpenRTM-aist-2.0.2-RELEASE_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.2-RELEASE_x86_64.msi]]|MD5:a03eebe388dd4d63f4b91bf98afc5884|2024/06/07|
 
-''[Installation fails]''
-- If you are in an environment where the dialog "There is a problem with this Windows Installer package" is displayed and the installation process rolls back, please use the 2.0.1-1 version msi below.
-- The reason for the rollback is that the script for rtshell that the installer is executing is blocked by Windows security.
-- The 2.0.1-1 version is the 2.0.1-RELEASE version with this script processing removed.
-|[[OpenRTM-aist-2.0.1-1_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.1-1_x86_64.msi]]|MD5:a26f7dc0e1c9aba7f3cfab48f203f630|2023/04/19|
 
 If you are using Microsoft Edge and cannot download, please see the explanation on the following page.
 - [[Let's start OpenRTM-aist in 10 minutes!・Download OpenRTM-aist:/en/doc/installation/lets_start#toc2]] 
 
 The supported versions of Visual Studio and Python are the follows.
 - Visual Studio（2015, 2017, 2019, 2022）
-- Python （3.7, 3.8, 3.9, 3.10, 3.11）
+- Python （3.8, 3.9, 3.10, 3.11, 3.12）
 
 For the installation, see [[OpenRTM-aist 2.0 installation to Windows:/en/doc/installation/install_2_0/install_windows_2_0/install_2_0]] &br;
 If this is the first time to use OpenRTM, please visit [[Start OpenRTM-aist in ten minitues!! :/en/doc/installation/lets_start]].
@@ -36,7 +31,7 @@ If this is the first time to use OpenRTM, please visit [[Start OpenRTM-aist in t
 
 If you are already using 1.2 series, see [[Changes in 2.0 series:/en/doc/installation/install_2_0/install_linux_2_0/install_2_0#toc0]] &br;
 
-On the Ubuntu18.04, 20.04 (amd64, arm64), please copy and paste the following one-liner in your terminal, and then C++, Python, Java versions OpenRTM, OpenRTP (only in amd64), rtshell, JDK8 will be also installed.
+On the Ubuntu20.04, 22.04 (amd64, arm64), please copy and paste the following one-liner in your terminal, and then C++, Python, Java versions OpenRTM, OpenRTP (only in amd64), rtshell, JDK8 will be also installed.
 
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh)
 
@@ -46,7 +41,7 @@ See [[Installing to Linux:/en/doc/installation/install_2_0/install_linux_2_0]] f
 
 If you are already using 1.2 series, see [[Changes in 2.0 series:/en/doc/installation/install_2_0/install_raspbian_2_0#toc0]] 　&br;
 
-On the Buster (32bit), Bullseye (32bit, 64bit), please copy and paste the following one-liner in your terminal, and then C++, Python, Java, rtshell  will be also installed.
+On the Bullseye (32bit, 64bit), Bookworm (32bit, 64bit), please copy and paste the following one-liner in your terminal, and then C++, Python, Java, rtshell  will be also installed.
 
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_raspbian.sh)
 

@@ -50,28 +50,20 @@ In Fedora Linux, you can install with yum command as follows.
 *** Other than obtaining the package from the repository
 It can also be obtained from the Web site of the above third party vendor. Follow the information on the site for the installation method, or install using the standard Java method.
 
-As a reference, here are the steps to download and expand the binary (tar.gz) from Adoptium (formerly AdoptOpenJDK) to the Raspberry Pi OS bullseye 64bit environment and switch from the already installed JDK11 to JDK8.
+For reference, we will show you the steps to install the Adoptium (Temurin) package in the Raspberry Pi OS bookworm environment.
 
-Download JDK8 for aarch64.
+ $ sudo apt install apt-transport-https
+ $ wget -O - https://packages.adoptium.net/artifactory/api/gpg/key/public | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/adoptium.gpg > /dev/null
+ $ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/trusted.gpg.d/adoptium.gpg] https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) main" | sudo tee /etc/apt/sources.list.d/adoptium.list
+ $ sudo apt update
+ $ sudo apt install temurin-8-jdk
 
- $ wget https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u352-b08/OpenJDK8U-jdk_aarch64_linux_hotspot_8u352b08.tar.gz
- $ tar xvzf OpenJDK8U-jdk_aarch64_linux_hotspot_8u352b08.tar.gz
- $ ls
- OpenJDK8U-jdk_aarch64_linux_hotspot_8u352b08.tar.gz  jdk8u352-b08
-
-To switch from JDK11 to JDK8 with the update-alternative command, copy it under /usr/lib/jvm/ and create and register a symbolic link with the --install option.
-
- $ sudo mv ./jdk8u352-b08 /usr/lib/jvm/jdk8u352
- $ sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk8u352/bin/java" 1
- $ sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk8u352/bin/javac" 1
-
-Now switch to JDK8 with the sudo update-alternative --config java command shown in "When other than JDK8 is already installed" below.
-Check the version after switching.
+Let's check the version.
 
  $ java -version
- openjdk version "1.8.0_352" 
- OpenJDK Runtime Environment (Temurin)(build 1.8.0_352-b08)
- OpenJDK 64-Bit Server VM (Temurin)(build 25.352-b08, mixed mode)
+ openjdk version "1.8.0_402" 
+ OpenJDK Runtime Environment (Temurin)(build 1.8.0_402-b06)
+ OpenJDK Client VM (Temurin)(build 25.402-b06, mixed mode)
 
 *** When other than JDK8 is already installed
 Note that a JDK other than JDK8 may be installed in the default state.
@@ -79,7 +71,7 @@ Note that a JDK other than JDK8 may be installed in the default state.
 
 Make sure that the command version is JDK8, such as the version starting with 1.8.
 If not
- $ sudo update-alternative --config java
+ $ sudo update-alternatives --config java
 
 Use the command to select a Java environment based on JDK8.
 The execution example after installing openjdk-8-jdk in the environment of ubuntu18.04 is as follows.

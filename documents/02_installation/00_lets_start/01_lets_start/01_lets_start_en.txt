@@ -2,7 +2,7 @@
 #contents
 #br
 
-The latest version OpenRTM-aist-2.0.1-RELEASE installs C++ version, Python version, Java version. #br
+The latest version OpenRTM-aist-2.0.2-RELEASE installs C++ version, Python version, Java version. #br
 Also, rtshell will be installed at the same time.
 
 * Advance preparation
@@ -10,7 +10,7 @@ Also, rtshell will be installed at the same time.
 
 If Python is not installed, OpenRTM-aist can not be installed. #br
 Please install Python before installing OpenRTM - aist. #br
-The Python version corresponds to "3.11", "3.10", "3.9", "3.8", "3.7".#br
+The Python version corresponds to "3.12", "3.11", "3.10", "3.9", "3.8".#br
 
 To download Python please see [[Installation of OpenRTM-aist 2.0 series on Windows:/en/doc/installation/install_2_0/install_windows_2_0/install_2_0]].
 
@@ -84,8 +84,8 @@ If you are using Microsoft Edge and the following message appears and you cannot
 
 +Launch the installer. When the [Windows protected your PC] screen is displayed, click [Details] to display the [Run] button, and then click [Run]. (This screen is displayed when installing an application that is not registered with Microsoft Corp. on a certain version of Windows or later, and this screen is displayed because this software is not registered.)
 
-+ Then click Next.
-//+ [次へ]をクリックします。
++ Then click Next. Here we use images from version 2.0.0, but the steps are similar for 2.0.2.
+//+ [次へ]をクリックします。ここではバージョン2.0.0の画像で説明していますが、2.0.2でも手順は同様です。
 #ref(RTM2.0.0-msi-1.png,center,90%)
 &br;
 
@@ -143,7 +143,7 @@ To resolve, run VCVerChanger. Pressing the "Confirm" button expands the environm
 //** サンプルコンポーネントを実行する
 //*** 事前準備
 - Although not required, start many applications registered in the start menu from here. It's hard to go from the start menu each time, so
-Display the start menu from the start button, right-click [OpenRTM-aist 2.0.1 x86_64]> [OpenRTP] and select [Open File Location].
+Display the start menu from the start button, right-click [OpenRTM-aist 2.0.2 x86_64]> [OpenRTP] and select [Open File Location].
 //- 必須ではありませんが、ここからはスタートメニューに登録されたアプリケーションを多数起動します。毎回スタートメニューから順番にたどるのは大変ですので、
 //スタートボタンからスタートメニューを表示させ[OpenRTM-aist 2.0.0 x86_64]>[OpenRTP]を右クリックして[ファイルの場所を開く]を選択してください。
 &br;
@@ -177,7 +177,7 @@ ConsoleInComp and ConsoleOutComp are samples showing how to use DataInPort and D
 
 *** Launch the sample component
 //*** サンプルコンポーネントの起動
-- Double-click ConsoleIn.bat and ConsoleOut.bat in the [OpenRTM-aist 2.0.1 x86_64]>[C++_Example] folder. If the [Important Windows Security Warning] screen is displayed, check [Private network (home network, corporate network, etc.)] and click [Allow access]. The following console screen will be displayed.
+- Double-click ConsoleIn.bat and ConsoleOut.bat in the [OpenRTM-aist 2.0.2 x86_64]>[C++_Example] folder. If the [Important Windows Security Warning] screen is displayed, check [Private network (home network, corporate network, etc.)] and click [Allow access]. The following console screen will be displayed.
 //- [OpenRTM-aist 1.2.2 x86_64]>[C++_Example]フォルダー内のConsoleIn.batとConsoleOut.batをダブルクリックします。もし[Windows セキュリティのの重要な警告]画面が表示されたら[プライベートネットワーク(ホームネットワーク社内ネットワークなど)(R)]にチェックマークをつけて[アクセスを許可する(A)]をクリックしてください。以下のようなコンソール画面が表示されます。
 
 CENTER:&ref(ConsoleInOut122-001.png,center,90%);
@@ -187,7 +187,7 @@ CENTER:''ConsoleIn.bat and ConsoleOut.bat''
 &aname(openrtp_start);
 **Start OpenRTP
 //** OpenRTP起動
-- Click the desktop shortcut to launch it. In the start menu, select [OpenRTM-aist 2.0.0 x86_64]> [OpenRTP]. You can also start it by double-clicking OpenRTP from the folder screen you opened earlier.
+- Click the desktop shortcut to launch it. In the start menu, select [OpenRTM-aist 2.0.2 x86_64]> [OpenRTP]. You can also start it by double-clicking OpenRTP from the folder screen you opened earlier.
 //- デスクトップのショートカットをクリックして起動します。スタートメニューでは、[OpenRTM-aist 1.2.2 x86_64]>[OpenRTP]と選択してください。先ほど開いたフォルダー画面からOpenRTPをダブルクリックすることによっても起動できます。
 -- Please specify a suitable place for the workspace.
 //-- ワークスペースは適当な場所を指定してください。

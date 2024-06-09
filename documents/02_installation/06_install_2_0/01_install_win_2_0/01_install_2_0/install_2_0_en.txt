@@ -19,7 +19,7 @@ I often forget to include the C ++ development environment. We recommend that yo
 *** Python
 
 Python is used not only for developing the Python language version of RTC, but also for various tools of OpenRTM-aist, so it must be installed. 
-Python supported by OpenRTM-aist is 3.7, 3.8, 3.9, 3.10, 3.11.
+Python supported by OpenRTM-aist is 3.8, 3.9, 3.10, 3.11, 3.12.
 We recommend that you install the latest version.
 
 - [[Python Releases for Windows:https://www.python.org/downloads/windows/]]
@@ -36,7 +36,7 @@ CMake is required to automatically generate the files required for build (Visual
 Please install the latest version as much as possible.
 
 - [[CMake(3.11以上推奨):https://cmake.org/download/]]
---  [[cmake-3.25.2-windows-x86_64.msi (64bit):https://github.com/Kitware/CMake/releases/download/v3.25.2/cmake-3.25.2-windows-x86_64.msi]]
+--  [[cmake-3.29.3-windows-x86_64.msi (64bit):https://github.com/Kitware/CMake/releases/download/v3.29.3/cmake-3.29.3-windows-x86_64.msi]]
 -- During the installation, you will be asked what to do with system PATH as [Install Options], it is recommended that you select Add CMake to the system PATH for all users.
 
 *** Doxygen & Graphviz
@@ -48,14 +48,14 @@ In OpenRTM-aist, various design information can be entered in RTCBuilder when de
 Please install the latest version as much as possible.
 
 - [[Doxygen:https://doxygen.nl/download.html#latestsrc]]
--- [[doxygen-1.9.6-setup.exe :https://www.doxygen.nl/files/doxygen-1.9.6-setup.exe]]
+-- [[doxygen-1.11.0-setup.exe :https://www.doxygen.nl/files/doxygen-1.11.0-setup.exe]]
 -- If you are using Microsoft Edge and cannot download, please see the explanation for OpenRTM-aist.
 --- [[Let's start OpenRTM-aist in 10 minutes!・Download OpenRTM-aist:/en/doc/installation/lets_start#toc2]] 
 
 
 &aname(Graphviz);
 - [[Graphviz:https://graphviz.gitlab.io/download/]]
--- [[windows_10_cmake_Release_graphviz-install-7.1.0-win64.exe:https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/7.1.0/windows_10_cmake_Release_graphviz-install-7.1.0-win64.exe]]
+-- [[windows_10_cmake_Release_graphviz-install-11.0.0-win64.exe:https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/11.0.0/windows_10_cmake_Release_graphviz-install-11.0.0-win64.exe]]
 
 
 During the installation, you will be asked what to do with the system PATH as the Install Options, but we recommend that you select Add Graphviz to the system PATH for all users.
@@ -63,20 +63,20 @@ Download and execute the Windows version binary executable file from the web pag
 
 After installation, run dot -v at the command prompt and check that the plugin information is displayed.
  >dot -v
- dot - graphviz version 7.1.0 (20230121.1956)
- libdir = "C:\Program Files\Graphviz\bin"
- Activated plugin library: gvplugin_dot_layout.dll
- Using layout: dot:dot_layout
- Activated plugin library: gvplugin_core.dll
- Using render: dot:core
- Using device: dot:dot:core
- The plugin configuration file:
+dot - graphviz version 11.0.0 (20240428.1522)
+libdir = "C:\Program Files\Graphviz\bin"
+Activated plugin library: gvplugin_dot_layout.dll
+Using layout: dot:dot_layout
+Activated plugin library: gvplugin_core.dll
+Using render: dot:core
+Using device: dot:dot:core
+The plugin configuration file:
         C:\Program Files\Graphviz\bin\config6
                 was successfully loaded.
-    render      :  cairo dot dot_json fig gdiplus json json0 map mp pic pov ps svg tk visio vml xdot xdot_json
+    render      :  cairo dot dot_json fig gdiplus json json0 map mp pic pov ps svg svg_inline tk xdot xdot_json
     layout      :  circo dot fdp neato nop nop1 nop2 osage patchwork sfdp twopi
     textlayout  :  textlayout
-    device      :  bmp canon cmap cmapx cmapx_np dot dot_json emf emfplus eps fig gif gv imap imap_np ismap jpe jpeg jpg json json0 metafile mp pdf pic plain plain-ext png pov ps ps2 svg tif tiff tk vdx vml xdot xdot1.2 xdot1.4 xdot_json
+    device      :  bmp canon cmap cmapx cmapx_np dot dot_json emf emfplus eps fig gif gv imap imap_np ismap jpe jpeg jpg json json0 metafile mp pdf pic plain plain-ext png pov ps ps2 svg svg_inline svgz tif tiff tk xdot xdot1.2 xdot1.4 xdot_json
     loadimage   :  (lib) bmp eps gif jpe jpeg jpg png ps svg
 
 
@@ -94,7 +94,7 @@ After installing the above software, install OpenRTM-aist.
 
 Download and execute "msi" file.
 
-|[[OpenRTM-aist-2.0.1-RELEASE_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.1-RELEASE_x86_64.msi]]|MD5:057354e97e6dd531801a9ae435ed2abe|771MB|
+|[[OpenRTM-aist-2.0.2-RELEASE_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.2-RELEASE_x86_64.msi]]|MD5:a03eebe388dd4d63f4b91bf98afc5884|851MB|
 
 If you are using Microsoft Edge and cannot download, please see the explanation on the following page.
 - [[Let's start OpenRTM-aist in 10 minutes!・Download OpenRTM-aist:/en/doc/installation/lets_start#toc2]] 
@@ -102,11 +102,11 @@ If you are using Microsoft Edge and cannot download, please see the explanation 
 This installer contains the following.
 
 - Development environment for C ++
--- OpenCV4.4
+-- OpenCV 4.5.0
 -- Past versions of DLLs for C ++ (Required when running the old RTC)
 - Development environment for Python
 - Development environment for Java
-- omniORB4.2.5
+- omniORB 4.3.2
 - OpenRTP (GUI tool, RTCBuilder，RTSystemEditor）
 -- JRE8 environment (Required for OpenRTP）
 - VCVerChanger (GUI tool）
@@ -116,10 +116,10 @@ This installer contains the following.
 *** Install
 
 Please see the following page for details on the installation process.
---- [[Let's start OpenRTM-aist in 10 minutes!・Installing OpenRTM-aist:/en/doc/installation/lets_start#toc2]] 
+--- [[Let's start OpenRTM-aist in 10 minutes!・Installing OpenRTM-aist:/en/doc/installation/lets_start#toc3]] 
 
 Try running the sample components to see if they are installed correctly.
---- [[Let's start OpenRTM-aist in 10 minutes!・Run the sample component:/en/doc/installation/lets_start#toc3]] 
+--- [[Let's start OpenRTM-aist in 10 minutes!・Run the sample component:/en/doc/installation/lets_start#toc5]] 
 
 For details on system environment variables set by the installer, files to be installed, etc., see the following page.
 --- [[What the installer does:/en/doc/installation/install_2_0/install_windows_2_0/install_workcontent_2_0]]
