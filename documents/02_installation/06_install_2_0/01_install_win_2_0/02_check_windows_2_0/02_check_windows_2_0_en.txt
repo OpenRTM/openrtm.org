@@ -9,7 +9,7 @@
 After successful installation, you can check the operation with the attached sample component.
 We have prepared a bat file, so you can start it by double-clicking it.
 
-The bat file is easily accessible by opening the start menu folder from [OpenRTM-aist 2.0.0 x86_64] in the start menu. &br;
+The bat file is easily accessible by opening the start menu folder from [OpenRTM-aist 2.0.* x86_64] in the start menu. &br;
 There is a bat file under each folder of "C ++_Examples" "C ++_OpenCV-Examples" "Python_Examples" "Java_Examples".
 For more information, see Let's start OpenRTM-aist in 10 minutes!. &br;
 - [[Let's start OpenRTM-aist in 10 minutes!・Run the sample component:/en/doc/installation/lets_start#toc5]] 

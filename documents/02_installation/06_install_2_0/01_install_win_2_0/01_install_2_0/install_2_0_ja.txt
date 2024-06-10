@@ -30,7 +30,7 @@ C++の開発環境を入れ忘れることがよくあります。以下の説�
 *** Python
 
 PythonはPython言語版のRTCの開発だけでなく、OpenRTM-aistの様々なツールでも使用していますので必ずインストールする必要があります。
-OpenRTM-aistがサポートしているPythonは 3.7, 3.8, 3.9, 3.10, 3.11 です。
+OpenRTM-aistがサポートしているPythonは 3.8, 3.9, 3.10, 3.11, 3.12 です。
 最新版をインストールすることをお勧めします。
 
 - [[Python Releases for Windows:https://www.python.org/downloads/windows/]]
@@ -47,7 +47,7 @@ CMakeはWindowsやLinux等様々な環境でビルドに必要なファイル（
 できるだけ最新版をインストールしてください。
 
 - [[CMake(3.11以上推奨):https://cmake.org/download/]]
---  [[cmake-3.25.2-windows-x86_64.msi (64bit版):https://github.com/Kitware/CMake/releases/download/v3.25.2/cmake-3.25.2-windows-x86_64.msi]]
+--  [[cmake-3.29.3-windows-x86_64.msi (64bit版):https://github.com/Kitware/CMake/releases/download/v3.29.3/cmake-3.29.3-windows-x86_64.msi]]
 -- インストールする際、[Install Option]画面で[Add Cmake to the system PATH for all users]を選択することを推奨します。
 
 *** Doxygen & Graphviz
@@ -59,34 +59,34 @@ OpenRTM-aistでは、RTCBuilderでRTCの設計時に様々な設計情報を記�
 できるだけ最新版をインストールしてください。
 
 - [[Doxygen:https://doxygen.nl/download.html#latestsrc]]
--- [[doxygen-1.9.6-setup.exe :https://www.doxygen.nl/files/doxygen-1.9.6-setup.exe]] (32bit, 64bitの別なし）
+-- [[doxygen-1.11.0-setup.exe :https://www.doxygen.nl/files/doxygen-1.11.0-setup.exe]] (32bit, 64bitの別なし）
 -- Microsoft Edge をお使いでダウンロードできない場合は、OpenRTM-aistの場合の解説をご覧ください。
 --- [[OpenRTM-aistを10分で始めよう！・OpenRTM-aistのダウンロード:/ja/doc/installation/lets_start#toc2]] 
 
 
 &aname(Graphviz);
 - [[Graphviz:https://graphviz.gitlab.io/download/]]
--- [[windows_10_cmake_Release_graphviz-install-7.1.0-win64.exe:https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/7.1.0/windows_10_cmake_Release_graphviz-install-7.1.0-win64.exe]]
+-- [[windows_10_cmake_Release_graphviz-install-11.0.0-win64.exe:https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/11.0.0/windows_10_cmake_Release_graphviz-install-11.0.0-win64.exe]]
 
 インストールの途中で[Install Options]としてsystem PATHをどうするかを聞かれますが、Add Graphviz to the system PATH for all usersを選択することを推奨します。
 上記WebページからWindows版のバイナリ実行形式ファイルをダウンロードして実行してインストールしてください。
 
 インストール後、コマンドプロンプトで dot -v を実行してプラグイン情報が表示されることを確認して下さい。
  >dot -v
- dot - graphviz version 7.1.0 (20230121.1956)
- libdir = "C:\Program Files\Graphviz\bin"
- Activated plugin library: gvplugin_dot_layout.dll
- Using layout: dot:dot_layout
- Activated plugin library: gvplugin_core.dll
- Using render: dot:core
- Using device: dot:dot:core
- The plugin configuration file:
+dot - graphviz version 11.0.0 (20240428.1522)
+libdir = "C:\Program Files\Graphviz\bin"
+Activated plugin library: gvplugin_dot_layout.dll
+Using layout: dot:dot_layout
+Activated plugin library: gvplugin_core.dll
+Using render: dot:core
+Using device: dot:dot:core
+The plugin configuration file:
         C:\Program Files\Graphviz\bin\config6
                 was successfully loaded.
-    render      :  cairo dot dot_json fig gdiplus json json0 map mp pic pov ps svg tk visio vml xdot xdot_json
+    render      :  cairo dot dot_json fig gdiplus json json0 map mp pic pov ps svg svg_inline tk xdot xdot_json
     layout      :  circo dot fdp neato nop nop1 nop2 osage patchwork sfdp twopi
     textlayout  :  textlayout
-    device      :  bmp canon cmap cmapx cmapx_np dot dot_json emf emfplus eps fig gif gv imap imap_np ismap jpe jpeg jpg json json0 metafile mp pdf pic plain plain-ext png pov ps ps2 svg tif tiff tk vdx vml xdot xdot1.2 xdot1.4 xdot_json
+    device      :  bmp canon cmap cmapx cmapx_np dot dot_json emf emfplus eps fig gif gv imap imap_np ismap jpe jpeg jpg json json0 metafile mp pdf pic plain plain-ext png pov ps ps2 svg svg_inline svgz tif tiff tk xdot xdot1.2 xdot1.4 xdot_json
     loadimage   :  (lib) bmp eps gif jpe jpeg jpg png ps svg
 
 
@@ -113,7 +113,7 @@ Javaで開発される場合に必要となります。下記ページの解説�
 
 OpenRTM-aistのWindows版のインストーラ（msi形式）をダウンロードします。
 
-|[[OpenRTM-aist-2.0.1-RELEASE_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.1-RELEASE_x86_64.msi]]|MD5:057354e97e6dd531801a9ae435ed2abe|771MB|
+|[[OpenRTM-aist-2.0.2-RELEASE_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.2-RELEASE_x86_64.msi]]|MD5:a03eebe388dd4d63f4b91bf98afc5884|851MB|
 
 Microsoft Edge をお使いでダウンロードできない場合は、下記ページの解説をご覧ください。
 - [[OpenRTM-aistを10分で始めよう！・OpenRTM-aistのダウンロード:/ja/doc/installation/lets_start#toc2]] 
@@ -121,11 +121,11 @@ Microsoft Edge をお使いでダウンロードできない場合は、下記�
 このインストーラには、以下の内容が含まれています。
 
 - C++ 用開発環境
--- OpenCV4.4
+-- OpenCV 4.5.0
 -- C++用過去バージョンのDLL (古いRTC実行時に必要)
 - Python 用開発環境
 - Java 用開発環境
-- omniORB4.2.5
+- omniORB 4.3.2
 - OpenRTP (GUIツール、RTCBuilder，RTSystemEditor）
 -- JRE8環境 (OpenRTPに必要）
 - VCVerChanger (GUIツール）
@@ -135,10 +135,10 @@ Microsoft Edge をお使いでダウンロードできない場合は、下記�
 *** インストール
 
 インストール過程の詳細は、下記ページをご覧ください。
---- [[OpenRTM-aistを10分で始めよう！・OpenRTM-aistのインストール:/ja/doc/installation/lets_start#toc2]] 
+--- [[OpenRTM-aistを10分で始めよう！・OpenRTM-aistのインストール:/ja/doc/installation/lets_start#toc3]] 
 
 正しくインストールされているかどうかの確認として、サンプルコンポーネントを実行してみてください。
---- [[OpenRTM-aistを10分で始めよう！・サンプルコンポーネントを実行する:/ja/doc/installation/lets_start#toc3]] 
+--- [[OpenRTM-aistを10分で始めよう！・サンプルコンポーネントを実行する:/ja/doc/installation/lets_start#toc5]] 
 
 インストーラが設定するシステム環境変数、インストールするファイル等の詳細は、下記ページをご覧ください。
 --- [[OpenRTM-aistインストーラの作業内容:https://openrtm.org/openrtm/ja/doc/installation/install_2_0/install_windows_2_0/install_2_0/install_workcontent_2_0]]

@@ -6,8 +6,8 @@
 
 現在パッケージが用意されている Raspberry Pi OS のバージョンは
 
-- Buster (32bit)
 - Bullseye (32bit / 64bit)
+- Bookworm (32bit / 64bit)
 
 です。
 
