@@ -1,140 +1,97 @@
 // Title: OpenRTM-aistを10分で始めよう！
 #contents
-最新バージョンOpenRTM-aist-2.0.2-RELEASEではC++版、Python版、Java版、OpenRTP、rtshell がインストールされます。
+
+最新バージョンOpenRTM-aist-2.1.0-RELEASEではC++版、Python版、Java版、OpenRTP、rtshell がインストールされます。
 
 * 事前準備
 ** Pythonのインストール
 Pythonをインストールしていない場合は、OpenRTM-aistをインストールできません。
-OpenRTM-aistをインストールする前に、Pythonをインストールしてください。バージョンは、"3.12"、"3.11"、"3.10"、"3.9"、"3.8"に対応しています。
+OpenRTM-aistをインストールする前に、Pythonをインストールしてください。バージョンは、"3.14"、"3.13"、"3.12"、"3.11"、"3.10"に対応しています。
 
-Pythonのダウンロードは [[OpenRTM-aist 2.0系のWindowsへのインストール:/ja/doc/installation/install_2_0/install_windows_2_0/install_2_0]] をご覧ください。
+Pythonのダウンロードは [[OpenRTM-aist 2.1系のWindowsへのインストール:/ja/doc/installation/install_2_1/install_windows_2_1/install_2_1]] をご覧ください。
 
 Pythonのインストール先は、インストール時の選択 [Customize installation]に対応しています。
 
-サーチパスは、以下の方法で自動で設定されるようにしてください。こうすると、python.exeが置いてあるディレクトリとScriptsディレクトリがPathに追加されます。&br; (例: Path=C:\Python38;C:\ Python38\Scripts;...）
+サーチパスは、以下の方法で自動で設定されるようにしてください。こうすると、python.exeが置いてあるディレクトリとScriptsディレクトリがPathに追加されます。&br; (例: Path=C:\Python313;C:\ Python313\Scripts;...）
 
 ''[インストール手順]''
 
-- Pythonインストーラーを起動します。ここではバージョン3.8を例に説明します。
+- Pythonインストーラーを起動します。ここではバージョン3.13を例に説明します。
 - 最初の画面の下部にある[add python *** to PATH]にチェックを入れて、[Customize installation]を選択してください。
 
 
-#ref(Python38-install001_.png,center,70%)
+#ref(py313_install_1.png,center,70%)
 
 - 次の[Optional Features]画面で変更はありません。[Next]を選択して進んでください。
 
-#ref(Python38-install002.png,center,70%)
+#ref(py313_install_2.png,center,70%)
 
-- [Advanced Options]画面では、[Install for all users]にチェックを入れて、[Customize install location]でインストール先を設定してください。(例: Path=C:\Python38;C:\ Python38\Scripts;...）
+- [Advanced Options]画面では、[Install for all users]にチェックを入れて、[Customize install location]でインストール先を設定してください。(例: Path=C:\Python313;C:\ Python313\Scripts;...）
 
-#ref(Python38-install003.png,center,70%)
+#ref(py313_install_3.png,center,70%)
 
 - [Install] を選択してインストールを完了します。
 
 ** OpenRTM-aistのダウンロード
 
-インストーラーのダウンロードは [[ダウンロード:/ja/download]] をご覧ください。
+インストーラーのダウンロードは [[ダウンロード:/ja/node/7332]] をご覧ください。
 
 Microsoft Edge をお使いで、下記メッセージが出てダウンロードできない場合の手順を紹介します。
 
-#ref(msi-download-01.png,center,70%)
+#ref(edge-download-01.png,center,70%)
 
 - マウスオーバーで表示される「・・・」をクリックします
 
-#ref(msi-download-02.png,center,70%)
+#ref(edge-download-02.png,center,70%)
 
 - 「保存」をクリックします
 
-#ref(msi-download-03.png,center,60%)
+#ref(edge-download-03.png,center,60%)
 
-- 「詳細表示」をクリックします
+- 「削除」横の「レ（チェックマーク）」をクリックして表示される「保持する」をクリックします
 
-#ref(msi-download-04.png,center,50%)
-
-- 「保存する」をクリックします
-
-#ref(msi-download-05.png,center,50%)
+#ref(edge-download-04.png,center,50%)
 
 - これでダウンロードが完了しますので、「ファイルを開く」をクリックするとインストーラが起動します
-
-#ref(msi-download-06.png,center,70%)
 
 ** OpenRTM-aistのインストール
 
 ''[インストール手順]''
-+インストーラーを起動します。[WindowsによってPCが保護されました]の画面が表示されたら[詳細情報]をクリックして[実行]ボタンを表示させて、[実行]をクリックします。(この画面はWindowsのあるバージョン以降でMicrosoft Corp.に登録されていないアプリケーションのインストール時に表示される画面で、本ソフトウエアは登録をしていないため、この画面が表示されます。)
-+ [次へ]をクリックします。ここではバージョン2.0.0の画像で説明していますが、2.0.2でも手順は同様です。
-#ref(RTM2.0.0-msi-1.png,center,90%)
++インストーラーを起動し、 [次へ]をクリックします。
+#ref(RTM210_msi_1.png,center,90%)
 &br;
 +使用承諾契約書のページです。ソフトウェアライセンス条項に同意して[次へ]をクリックします。
-#ref(RTM2.0.0-msi-2.png,center,90%)
+#ref(RTM210_msi_2.png,center,90%)
 &br;
 +インストールの種類を選択します。デフォルトのまま[次へ]をクリックします。
-#ref(RTM2.0.0-msi-3.png,center,90%)
-&br;
-+Visual Studioのバージョンを選択します。
--- C++版で使用するVisual Studioのバージョンをシステム環境変数に設定します。
--- インストールされている Visual Studioのバージョンを選択して[次へ]をクリックします。
---- Visual Studioのダウンロードは [[OpenRTM-aist 2.0系のWindowsへのインストール:/ja/doc/installation/install_2_0/install_windows_2_0/install_2_0]] をご覧ください。
---- Visual Studioのバージョンは、インストール終了後にツールのVCVerChangerで変更できます。[[(VCVerChangerの使い方):/ja/node/6136/]]
---- Python版、Java版では無関係ですのでデフォルトのまま[次へ]をクリックしてください。
-#ref(RTM2.0.0-msi-4.png,center,90%)
+#ref(RTM210_msi_3.png,center,90%)
 &br;
 +セットアップの種類を選択します。
-[標準]を選択した場合、OpenRTM-aistのC++版、Java版、Python版、OpenRTP、RTSystemEditorRCP、RTShell、OpenRTM-aist-C++版のVisual Studio 2015から2022までのランタイムライブラリ、OpenRTM-aist-1.0.0から2.0.0までのランタイムライブラリがインストールされます。特に変更理由がないようであれば[標準]をクリックします。
+[標準]をクリックすることで全機能がインストールされます。
 &br;
-#ref(RTM2.0.0-msi-5.png,center,90%)
-&br;
-+[インストール]をクリックするとインストールが開始されます。
-#ref(RTM2.0.0-msi-6.png,center,90%)
-&br;
-#ref(RTM2.0.0-msi-7.png,center,90%)
+#ref(RTM210_msi_4.png,center,90%)
 &br;
 +インストールが終了しました。[完了]をクリックしてインストーラーを終了します。
-#ref(RTM2.0.0-msi-8.png,center,90%)
+#ref(RTM210_msi_5.png,center,90%)
 &br;
 //※使用しているVisual Studio のバージョンが2019(vc14)以外の場合は、以下のページを参考に環境変数のRTM_VC_VERSIONを変更してください。&br;
 //[[RTM_VC_VERSIONの変更:/ja/node/6136/]]
 
-** VCVerChangerの実行
+** システム環境変数確認
 
-インストーラはOpenRTM-aistが使用するシステム環境変数をレジストリに登録しています。この環境変数の中に、他の環境変数である%RTM_VC_VERSION%を含むものがあります。
-このようなネストされた環境変数が再帰的に展開されない場合があります。
-
-解決のため、VCVerChanger を実行して下さい。「確認」ボタンを押すと、環境変数を展開してレジストリに書き戻します。
-[[(VCVerChangerの使い方):/ja/node/6136/]]
+ネストされた環境変数が再帰的に展開されないケースが発生することを確認していますが、ツールのVerChangerで解決できます。詳細は下記ページをご覧ください。
+--- [[システム環境変数確認:/ja/doc/installation/install_2_1/install_win_2_1/install_2_1#toc9]]
 
 ** サンプルコンポーネントを実行する
-*** 事前準備
-- 必須ではありませんが、ここからはスタートメニューに登録されたアプリケーションを多数起動します。毎回スタートメニューから順番にたどるのは大変ですので、
-スタートボタンからスタートメニューを表示させ[OpenRTM-aist 2.0.2 x86_64]>[C++_Examples]を右クリックして[ファイルの場所を開く]を選択してください。
-&br;
-#ref(start-menu.png,center,70%)
-CENTER:''ファイルの場所を開く''
-&br;
-#ref(start-menu-folder.png,center,90%)&br;
-CENTER:''スタートメニューフォルダー''
-&br;
--- このように、スタートメニューのフォルダーが開かれ、メニューに登録されているアプリケーションにアクセスしやすくなります。
 
-** Naming Serviceの起動
-- Start Naming Serviceをダブルクリックします。以下のようなコンソール画面が表示されます。
-#ref(StartNameService122-001.png,center)
-CENTER:''Start Naming Service''
-&br;
-** サンプルコンポーネント
-*** ConsoleInComp、ConsoleOutCompを使用する
-ConsoleInComp、ConsoleOutCompはDataInPort、DataOutPortの使用方法を示したサンプルです。ConsoleIn側で入力した数字が，ConsoleOut側に表示されます。ここではこの二つのコンポーネントを使用し、動作確認を行います。
-*** サンプルコンポーネントの起動
-- [OpenRTM-aist 2.0.2 x86_64]>[C++_Example]フォルダー内のConsoleIn.batとConsoleOut.batをダブルクリックします。もし[Windows セキュリティのの重要な警告]画面が表示されたら[プライベートネットワーク(ホームネットワーク社内ネットワークなど)(R)]にチェックマークをつけて[アクセスを許可する(A)]をクリックしてください。以下のようなコンソール画面が表示されます。
-//CENTER:&ref(ConsoleIn001.png,center,90%);&ref(ConsoleOut001.png,center,90%);
-CENTER:&ref(ConsoleInOut122-001.png,center,90%);
-CENTER:''ConsoleIn.batとConsoleOut.bat''
-&br;
+OpenRTPのRTSystemEditor機能を使い、２つのRTCの接続動作を確認する手順を説明します。
 
 &aname(openrtp_start);
-** OpenRTP起動
-- デスクトップのショートカットをクリックして起動します。スタートメニューでは、[OpenRTM-aist 2.0.2 x86_64]>[OpenRTP]と選択してください。先ほど開いたフォルダー画面からOpenRTPをダブルクリックすることによっても起動できます。
+*** OpenRTP起動
+- デスクトップのショートカットをクリックして起動します。
+#ref(OpenRTP210-001.png,center)
+CENTER:''OpenRTP起動''
+
 -- ワークスペースは適当な場所を指定してください。
 #ref(OpenRTP122-001.png,center)
 CENTER:''ワークスペースの選択''
@@ -144,19 +101,39 @@ CENTER:''ワークスペースの選択''
 CENTER:''初期起動時の画面''
 &br;
 
-** RTSystemEditorの使用
+*** RTSystemEditorの使用
 - 画面右上の[パースペクティブを開く]をクリックします。表示されるダイアログで[RT System Editor]を選択して[開く]をクリックするとRTSystemEditorが起動します。
 CENTER:&ref(OpenRTP122-003.png,center);  &ref(OpenRTP122-004.png,center);
 CENTER:''パースペクティブの切り替え''
 &br;
-- [NameServiceView]にコンポーネントが表示されます。最初は折りたたまれているため表示されていませんが、[>]をクリックし展開すると、ホスト名のホストコンテキストとConsoleIn、ConsoleOutコンポーネントが確認できます。設定により、ホストコンテキスト(図中 “TPAD-RTM-NO13|host_cxt” のような “ホスト名|host_cxt” の階層) が表示されず、直接コンポーネントが表示される場合もあります。
-#ref(OpenRTP122-005.png,center)
-CENTER:''コンポーネント起動確認''
+
+- 初回起動時のみ「ツールバーの起動に失敗しました。」のダイアログが表示されるので、指示通りにOpenRTPを終了させて再度起動してください。
+#ref(OpenRTP210-002.png,70%,center)
+CENTER:''OpenRTPを再起動''
+
+- ネームサービス起動ボタンを押してネームサーバのlocalhostを起動してください。
+CENTER:&ref(OpenRTP210-003.png,center);  &ref(OpenRTP210-004.png,center);
+CENTER:''ネームサービス起動''
+
+*** C++のConsoleIn、ConsoleOutを起動
+- Windowsの検索窓に小文字で構わないので、「c++_e」 まで入力すると C++_Examples の候補が表示されるのでクリックしてください。
+#ref(menu-c++RTC_001.png,center)
+CENTER:''C++_Examplesを選択''
+
+- C++のサンプルRTCの一覧が表示されますので、ConsoleInとConsoleOutをダブルクリックで起動してください。
+#ref(menu-c++RTC_002.png, 20%, center)
+CENTER:''ConsoleInとConsoleOutを起動''
+
 &br;
--- NameServerViewにネームサーバーが表示されない時は、手動でlocalhostを追加します。画像の[ネームサーバを追加]をクリックしてダイアログを表示します。「localhost」と入力し[OK]をクリックして追加します。それでも起動されなかった場合は、一度すべてのコンソール画面を閉じてNaming Serviceの起動からの手順をやり直してみてください。
-CENTER:&ref(OpenRTP122-006.png,center);  &ref(OpenRTP122-007.png,center);
-CENTER:''ネームサーバの追加''
+
+
+- 起動すると以下のようなコンソール画面が表示されます。
+//CENTER:&ref(ConsoleIn001.png,center,90%);&ref(ConsoleOut001.png,center,90%);
+CENTER:&ref(ConsoleInOut122-001.png,center,90%);
+CENTER:''ConsoleIn.batとConsoleOut.bat''
 &br;
+
+
 - ツールバーから [Open New System Editor]をクリックして、[System Diagram]を表示します。
 #ref(OpenRTP122-008.png,center)
 CENTER:''System Diagramを表示''
@@ -212,4 +189,5 @@ rtshellを利用することでコマンドラインからRTCのActivate、Deact
 - ''OpenRTMの基礎から学ぶ　　　&t;：　''[[デベロッパーズガイド:/ja/node/113]]
 - ''コミュニティーに参加する　　　&t;：　''[[コミュニティー:/ja/node/624]]
 - ''公開コンポーネントを見てみる　&t;：　''[[プロジェクト:/ja/node/123]]
+
 

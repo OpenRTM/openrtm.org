@@ -1,0 +1,120 @@
+// Title: Install
+#ref(windows10-logo.png,60%,margin=30 30 30 30,around,nolink,right)
+#contents
+
+** Installation of software required for development
+
+RTC development requires installation of Python, CMake, Doxygen, and Visual Studio.
+
+*** Visual Studio
+It is necessary not only for developing the C ++ version, but also for building the installer when creating the Python version and Java version of the RTC.
+Install it by downloading from the link, or obtain and install Visual Studio 2019/2022/2026 separately.
+
+- [[Microsoft ''Download Visual Studio 2026'':https://visualstudio.microsoft.com/ja/downloads/?utm_source=mscom&utm_campaign=msdocs]]
+
+The latest version of Visual Studio that has been confirmed to work is 2026.　&br;
+I often forget to include the C ++ development environment. We recommend that you read the following instructions.
+-- [[Installing Visual Studio Community 2026:/en/doc/installation/install_2_1/install_win_2_1/install_2_1/visual_studio_2_1/visual_studio_2026]] 
+
+*** Python
+
+Python is used not only for developing the Python language version of RTC, but also for various tools of OpenRTM-aist, so it must be installed. 
+Python supported by OpenRTM-aist is 3.10, 3.11, 3.12, 3.13, 3.14.
+We recommend that you install the latest version.
+
+- [[Python Releases for Windows:https://www.python.org/downloads/windows/]]
+-- [[python-3.13.13-amd64.exe (64bit):https://www.python.org/ftp/python/3.13.13/python-3.13.13-amd64.exe]]
+
+Please note the following points when installing.
+-- The Python installation destination corresponds to the selection [Customize installation] at the time of installation.
+--  For the procedure to specify the installation destination in [Customize installation], see the explanation on the following page.
+//--- [[Let's start OpenRTM-aist in 10 minutes!・Installation of Python:/en/doc/installation/lets_start#toc1]] 
+--- [[Let's start OpenRTM-aist in 10 minutes!・Installation of Python:/en/node/7350#toc1]] 
+
+*** CMake
+CMake is required to automatically generate the files required for build (Visual Studio project file, Makefile on Linux, etc.) in various environments such as Windows and Linux.  &br;
+Please install the latest version as much as possible.
+
+- [[CMake(3.11以上推奨):https://cmake.org/download/]]
+--  [[cmake-4.3.3-windows-x86_64.msi (64bit):https://github.com/Kitware/CMake/releases/download/v4.3.3/cmake-4.3.3-windows-x86_64.msi]]
+-- During the installation, you will be asked what to do with system PATH as [Install Options], it is recommended that you select Add CMake to the system PATH for all users.
+
+*** Doxygen & Graphviz
+
+
+Doxygen is a tool that automatically generates documents from comments such as source code.  &br;
+Graphviz is a tool required to generate diagrams such as class diagrams when generating documents with Doxygen.   &br;
+In OpenRTM-aist, various design information can be entered in RTCBuilder when designing RTC, and they are output as comments in the source code. By processing this with Doxygen, you can generate a beautiful RTC document.   &br;
+Please install the latest version as much as possible.
+
+- [[Doxygen:https://doxygen.nl/download.html#latestsrc]]
+-- [[doxygen-1.17.0-setup.exe :https://www.doxygen.nl/files/doxygen-1.17.0-setup.exe]]
+-- If you are using Microsoft Edge and cannot download, please see the explanation for OpenRTM-aist.
+--- [[Let's start OpenRTM-aist in 10 minutes!・Download OpenRTM-aist:/en/node/7350#toc2]] 
+
+
+&aname(Graphviz);
+- [[Graphviz:https://graphviz.gitlab.io/download/]]
+-- [[windows_10_cmake_Release_graphviz-install-15.0.0-win64.exe:https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/15.0.0/windows_10_cmake_Release_graphviz-install-15.0.0-win64.exe]]
+
+
+During the installation, you will be asked what to do with the system PATH as the Install Options, but we recommend that you select Add Graphviz to the system PATH for all users.
+Download and execute the Windows version binary executable file from the web page.
+
+After installation, run dot -v at the command prompt and check that the plugin information is displayed.
+ >dot -v
+
+*** JDK8
+
+Required when developing in Java versions of OpenRTM. Please see the explanation on the following page.
+--- [[Install JDK8:/en/doc/appendix/jdk8installtion]] 
+
+
+** Install OpenRTM-aist
+
+After installing the above software, install OpenRTM-aist.
+
+*** Download installer
+
+Download and execute "msi" file.
+
+|[[OpenRTM-aist-2.1.0-RELEASE_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.1/OpenRTM-aist-2.1.0-RELEASE_x86_64.msi]]|MD5:e1804a5aaa4fab85a5cdc777bd9c48c1|719MB|
+
+If you are using Microsoft Edge and cannot download, please see the explanation on the following page.
+- [[Let's start OpenRTM-aist in 10 minutes!・Download OpenRTM-aist:/en/node/7350#toc2]] 
+
+This installer contains the following.
+
+- Development environment for C ++
+-- OpenCV 4.13.0
+-- Past versions of DLLs for C ++ (Required when running the old RTC)
+- Development environment for Python
+- Development environment for Java
+- omniORB 4.3.4
+- OpenRTP (GUI tool, RTCBuilder，RTSystemEditor）
+-- JRE8 environment (Required for OpenRTP）
+- VCVerChanger (GUI tool）
+- rtshell (CUI tool）
+
+
+*** Install
+
+Please see the following page for details on the installation process.
+--- [[Let's start OpenRTM-aist in 10 minutes!・Installing OpenRTM-aist:/en/node/7350#toc3]] 
+
+Try running the sample components to see if they are installed correctly.
+--- [[Let's start OpenRTM-aist in 10 minutes!・Run the sample component:/en/node/7350#toc5]] 
+
+For details on system environment variables set by the installer, files to be installed, etc., see the following page.
+--- [[What the installer does:/en/doc/installation/install_2_1/install_windows_2_1/install_workcontent_2_1]]
+
+*** Checking system environment variables
+
+The system environment variable RTM_VC_VERSION is set to match the installed Visual Studio version. 
+After installation, this environment variable expands to the value vc16, but we have confirmed that in some cases it may not expand due to Windows behavior. 
+Therefore, we recommend checking the system environment variable with VCVerChanger.
+&br;
+
+Enter VCVerChanger in the search bar and launch it. Once launched, press the "確認" button, check the displayed path, and then press "終了".
+
+#ref(vcverchanger.png,center)

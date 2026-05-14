@@ -1,0 +1,76 @@
+// Title: Installing Visual Studio Community 2026
+
+
+#contents
+
+** Obtaining the Installer
+
+Please download the Visual Studio Community 2026 installer from the following page.
+
+- [[Download Visual Studio:https://visualstudio.microsoft.com/ja/downloads/?utm_source=mscom&utm_campaign=msdocs]]
+
+Click the [''Free download''] button under the edition labeled [''Community''] to start downloading the installer. &br;
+The installation procedure will be explained using version 2022 as an example.
+
+#ref(vs2022_install1.png,20%,around,nolink,left)
+#clear
+
+** Running the Installer
+
+After the download is complete, open and run the downloaded file.
+
+Follow the instructions, and when the screen shown below appears, check [''Desktop development with C++''] and click the [''Install''] button.
+
+#ref(vs2022_install2.png,20%,around,nolink,left)
+#clear
+
+** Verifying the Installation
+
+#ref(vs2022_install3.png, 20%,around,nolink, margin=0 20, left)
+#clear
+
+After the installation is complete, a sign-in screen will appear. Sign in with your Microsoft account.
+
+You can use Visual Studio for 30 days without signing in.
+
+For information about creating a Microsoft account, please refer to the following page.
+
+[[How to create a new Microsoft account:https://support.microsoft.com/ja-jp/help/4026324/microsoft-account-how-to-create]]
+
+#clear
+
+** Verifying That the C++ Compiler Is Installed
+
+Be sure to verify that the **Desktop development with C++** workload has been installed.
+
+If you can create a Visual C++ project, the installation is successful.
+
+First, click [''Create a new project''].
+
+#ref(vs2022_install4.png,40%,around,nolink,left)
+#clear
+
+At this point, if options such as the following are available:
+
+&br;
+[''Empty Project''&br;
+Start from scratch with C++ for Windows. No starter files are provided.]&br;
+
+then the installation has been completed successfully.
+
+#ref(new_project2022.png,30%,around,nolink,left)
+#clear
+
+If it has not been installed, click:
+
+&br;
+[Can't find what you're looking for?&br;
+''Install more tools and features'']&br;
+
+This will launch the installer. Install the [''Desktop development with C++'' ] workload.
+
+#ref(vs_install5.png,30%,around,nolink,left)
+#clear
+
+#br
+#br

@@ -1,0 +1,116 @@
+// Title: Install
+#ref(ubuntu_logo2.png,around,right)
+
+OpenRTM-aist is provided with a deb package that can be used on Ubuntu and Debian GNU Linux.
+
+#contents
+
+2.1 is currently compatible with Ubuntu 22.04, 24.04 (amd64, arm64 respectively).
+Please note that the supported version and support for Ubuntu/Debian GNU Linux are subject to change without notice.
+
+** Changes in 2.1 series
+
+[[SSM communication function:/ja/doc/developersguide/advanced_rt_system_programming/ssm_comm_use]]  can now be installed.
+Since the SSM library is statically linked, you do not need to install SSM separately. The following will be installed from the openrtm2-ssm-tp deb package.
+
+ usr/
+ ├── bin
+ │   ├── killssm
+ │   ├── lsssm
+ │   ├── psssm
+ │   ├── ssm-advance-player
+ │   ├── ssm-coordinator
+ │   ├── ssm-date
+ │   ├── ssm-graph
+ │   ├── ssm-logger
+ │   ├── ssm-monitor
+ │   ├── ssm-player
+ │   ├── ssm-proxy
+ │   ├── ssm-transporter
+ │   └── topssm
+ ├── etc
+ │   └── transport
+ │       └── rtc.ssm.conf
+ └── share
+     └── openrtm-2.1
+         └── transport
+             └── SSMTransport.so
+
+This feature will not be installed if you run the "Batch Installation Script" described in the next section without any options. &br;
+You can install it by specifying the option "-l c++ --ssm". You can check this with --help.
+
+** Bulk installation script
+
+To install 2.1 series, paste the following into the shell prompt and execute it.　C ++ version, Python version, Java version, OpenRTP (amd64 only), rtshell, JDK8 will be installed.　Scripts are not saved locally. &br;
+※By executing the script, even if multiple versions of Java are installed, it is switched to using Java8.
+
+ $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh)
+
+This will install the following packages:
+
+ $ dpkg -l | grep openrt
+ ii  openrtm2:arm64                         2.1.0-0                                  arm64        OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm2-dev:arm64                     2.1.0-0                                  arm64        OpenRTM-aist headers for development
+ ii  openrtm2-doc                           2.1.0-0                                  all          Documentation for openrtm2
+ ii  openrtm2-example:arm64                 2.1.0-0                                  arm64        OpenRTM-aist examples
+ ii  openrtm2-idl:arm64                     2.1.0-0                                  arm64        OpenRTM-aist idls for development
+ ii  openrtm2-java:arm64                    2.1.0-0                                  arm64        OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm2-java-example:arm64            2.1.0-0                                  arm64        OpenRTM-aist-Java examples
+ ii  openrtm2-naming:arm64                  2.1.0-0                                  arm64        OpenRTM-aist name server launcher
+ ii  openrtm2-python3                       2.1.0-0                                  arm64        OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm2-python3-example               2.1.0-0                                  arm64        OpenRTM-aist-Python examples
+
+Using the default pip version will cause rtshell installation to fail. &br;
+Follow the instructions in the yellow text displayed by the installation script and add the following to /etc/pip.conf (create a new file if it doesn't exist).
+
+ $ vi /etc/pip.conf
+ [global]
+ break-system-packages = true
+
+After configuring the settings above, you can install rtshell by running the installation script again.
+
+ $ pip3 list | grep aist
+ OpenRTM-aist-Python        2.1.0
+ rtctree-aist                       4.2.5
+ rtshell-aist                       4.2.10
+ rtsprofile-aist                    4.1.6
+
+By specifying the option, it is possible to install the package according to the purpose. help can be found below.
+
+ $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh) --help
+
+For details on the installed packages, see [[What the installer does>/en/doc/installation/install_2_1/install_linux_2_1/install_2_1/install_debpackages_workcontent_2_1]] 
+
+**Installing packages for ROS
+
+In 2.1 series, you can install the package for ROS communication function. &br;
+This section explains how to install packages in an environment where ROS2 is installed.
+
+As mentioned in help, the ROS package installation options are supported below. &br;
+[-e ros2|all] [--ros2]
+
+If you have already executed the installation script without any options and want to install additional packages for ROS and ROS2, you can use "-l c ++ --ros2l".
+
+ $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh) -l c++ --ros2
+
+If you want to install all the packages for ROS and ROS2 from the beginning, you can do it with "-l all --ros2".
+
+ $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh) -l all --ros2
+
+Check the installed packages.
+
+ $ dpkg -l | grep openrt
+ ii  openrtm2:amd64               2.1.0-0   amd64        OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm2-dev:amd64           2.1.0-0   amd64        OpenRTM-aist headers for development
+ ii  openrtm2-doc                 2.1.0-0   all          Documentation for openrtm2
+ ii  openrtm2-example:amd64       2.1.0-0   amd64        OpenRTM-aist examples
+ ii  openrtm2-idl:amd64           2.1.0-0   amd64        OpenRTM-aist idls for development
+ ii  openrtm2-java:amd64          2.1.0-0   amd64        OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm2-java-example:amd64  2.1.0-0   amd64        OpenRTM-aist-Java examples
+ ii  openrtm2-naming:arm64        2.1.0-0   arm64        OpenRTM-aist name server launcher
+ ii  openrtm2-python3             2.1.0-0   amd64        OpenRTM-aist, RT-Middleware distributed by AIST
+ ii  openrtm2-python3-example     2.1.0-0   amd64        OpenRTM-aist-Python examples
+ ii  openrtm2-ros2-tp:amd64       2.1.0-0   amd64        OpenRTM-aist extension ROS2 package
+ ii  openrtp2:amd64               2.1.0-0   amd64        OpenRTP, Open RT Platform distributed by AIST
+
+

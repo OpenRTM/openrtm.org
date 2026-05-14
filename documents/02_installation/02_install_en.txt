@@ -1,11 +1,17 @@
 ﻿// Title: Installation
 #ref(install.png,right,around,80%,url=/ja/node/111)
 ***Let's start OpenRTM-aist in 10 minutes!
--[[Let's start OpenRTM-aist in 10 minutes!:/en/doc/installation/lets_start]]
+-[[Let's start OpenRTM-aist in 10 minutes!:/en/node/7350]]
+
+***OpenRTM-aist-2.1 series installation manual
+-[[Windows:/en/doc/installation/install_2_1/install_win_2_1]]
+-[[Linux:/en/doc/installation/install_2_1/install_linux_2_1]]
+-[[Raspberry Pi OS:/en/doc/installation/install_2_1/install_raspbian_2_1]]
 
 ***OpenRTM-aist-2.0 series installation manual
 -[[Windows:/en/doc/installation/install_2_0/install_win_2_0]]
 -[[Linux:/en/doc/installation/install_2_0/install_linux_2_0]]
+-[[Raspberry Pi OS:/en/doc/installation/install_2_0/install_linux_2_0]]
 
 ***OpenRTM-aist-1.2 series installation manual
 -[[C++:/en/doc/installation/install_1_2/cpp_1_2]]
