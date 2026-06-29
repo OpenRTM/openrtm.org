@@ -1,68 +1,96 @@
-// Title: Download
+*** Current Latest RELEASE Version: 2.1.0-RELEASE
 
-*** Current version: 2.0.2-RELEASE
+The current latest RELEASE version is OpenRTM-aist-2.1.0-RELEASE.
 
-The newest RELEASE version is OpenRTM-aist-2.0.2-RELEASE.
+- '' Release Notes ''
+-- '' [[C++ >https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v2.1.0]]''
+-- '' [[Python >https://github.com/OpenRTM/OpenRTM-aist-Python/releases/tag/v2.1.0]]''
+-- '' [[Java >https://github.com/OpenRTM/OpenRTM-aist-Java/releases/tag/v2.1.0]]''
+-- '' [[Tools (OpenRTP) >https://github.com/OpenRTM/OpenRTP-aist/releases/tag/v2.1.0]]''
 
-- ''Release Note''
--- '' [[C++ >https://github.com/OpenRTM/OpenRTM-aist/releases/tag/v2.0.2]]''
--- '' [[Python >https://github.com/OpenRTM/OpenRTM-aist-Python/releases/tag/v2.0.2]]''
--- '' [[Java >https://github.com/OpenRTM/OpenRTM-aist-Java/releases/tag/v2.0.2]]''
--- '' [[tools (OpenRTP) >https://github.com/OpenRTM/OpenRTP-aist/releases/tag/v2.0.2]]''
+*** Windows Installer
 
-*** Windows installer
+Only the 64-bit version is provided. Running the downloaded MSI installer will install the C++ edition, Python edition, Java edition, OpenRTP, rtshell, OpenCV 4.13.0, omniORB 4.3.4, and JRE 8.
 
-Only 64bit version is available. Download and execute "msi" file, and then C++, Python, Java versions of OpenRTM, and OpenRTP, rtshell, OpenCV4.5.0, omniORB4.3.2 and JRE8 will be also installed.
+|[[OpenRTM-aist-2.1.0-RELEASE_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.1/OpenRTM-aist-2.1.0-RELEASE_x86_64.msi]]|MD5:e1804a5aaa4fab85a5cdc777bd9c48c1|2026/06/02|
 
-|[[OpenRTM-aist-2.0.2-RELEASE_x86_64.msi >https://openrtm.org/pub/Windows/OpenRTM-aist/2.0/OpenRTM-aist-2.0.2-RELEASE_x86_64.msi]]|MD5:a03eebe388dd4d63f4b91bf98afc5884|2024/06/07|
+If you are using Microsoft Edge and cannot download the installer, please refer to the following page:
 
+- [[Getting Started with OpenRTM-aist in 10 Minutes! - Downloading OpenRTM-aist:/en/node/7350#toc2]]
 
-If you are using Microsoft Edge and cannot download, please see the explanation on the following page.
-- [[Let's start OpenRTM-aist in 10 minutes!・Download OpenRTM-aist:/en/doc/installation/lets_start#toc2]] 
+The following versions of Visual Studio and Python are supported:
 
-The supported versions of Visual Studio and Python are the follows.
-- Visual Studio（2015, 2017, 2019, 2022）
-- Python （3.8, 3.9, 3.10, 3.11, 3.12）
+- Visual Studio (2019, 2022, 2026)
+- Python (3.10, 3.11, 3.12, 3.13, 3.14)
 
-For the installation, see [[OpenRTM-aist 2.0 installation to Windows:/en/doc/installation/install_2_0/install_windows_2_0/install_2_0]] &br;
-If this is the first time to use OpenRTM, please visit [[Start OpenRTM-aist in ten minitues!! :/en/doc/installation/lets_start]].
+On Windows, please confirm that the Python version number is displayed when you run Python from the Command Prompt.&br;
 
-*** Linux packages
+If the version number is not displayed, please refer to:
 
-If you are already using 1.2 series, see [[Changes in 2.0 series:/en/doc/installation/install_2_0/install_linux_2_0/install_2_0#toc0]] &br;
+[[Python Version Number Is Not Displayed After Installing Python on Windows:/en/doc/faq/faq_install#toc1]]
 
-On the Ubuntu20.04, 22.04 (amd64, arm64), please copy and paste the following one-liner in your terminal, and then C++, Python, Java versions OpenRTM, OpenRTP (only in amd64), rtshell, JDK8 will be also installed.
+For installation instructions, please refer to:
+
+[[Installing OpenRTM-aist 2.1 on Windows:/en/doc/installation/install_2_1/install_win_2_1]]
+
+&br;
+
+If this is your first installation, please refer to:
+
+[[Getting Started with OpenRTM-aist in 10 Minutes!:/en/node/7350]]
+
+*** Linux Packages
+
+For Ubuntu 22.04 and 24.04 (amd64 and arm64 environments), paste the following command into a shell prompt and execute it. The C++ edition, Python edition, Java edition, OpenRTP (amd64 only), rtshell, and JDK 8 will be installed.
 
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_ubuntu.sh)
 
-See [[Installing to Linux:/en/doc/installation/install_2_0/install_linux_2_0]] for the installation.
+For installation instructions, please refer to:
 
-*** Raspberry Pi OS packages
+[[Installing OpenRTM-aist 2.1 on Linux:/en/doc/installation/install_2_1/install_linux_2_1]]
 
-If you are already using 1.2 series, see [[Changes in 2.0 series:/en/doc/installation/install_2_0/install_raspbian_2_0#toc0]] 　&br;
+*** Raspberry Pi OS Packages
 
-On the Bullseye (32bit, 64bit), Bookworm (32bit, 64bit), please copy and paste the following one-liner in your terminal, and then C++, Python, Java, rtshell  will be also installed.
+For Bookworm (64-bit environments), paste the following command into a shell prompt and execute it. The C++ edition, Python edition, Java edition, and rtshell will be installed.
 
  $ bash <(curl -s https://raw.githubusercontent.com/OpenRTM/OpenRTM-aist/master/scripts/openrtm2_install_raspbian.sh)
 
-See [[Installing to Raspberry Pi OS:/en/doc/installation/install_2_0/install_raspbian_2_0]] for the installation.
+For installation instructions, please refer to:
 
-*** Older versions
+[[Installing OpenRTM-aist 2.1 on Raspberry Pi OS:/en/doc/installation/install_2_1/install_raspbian_2_1]]
+
+*** Mac Package
+
+You can install the C++ edition, Python edition, and OpenRTP on a Mac. Please refer to the README on the page below for instructions.&br;
+https://github.com/OpenRTM/homebrew-openrtm2
+
+*** Previous Versions
+
+**** 2.0.2
+
+- [[OpenRTM 2.0.2:/ja/node/7154]]
+
 **** 1.2.2
+
 - [[OpenRTM-aist C++ 1.2.2-RELEASE:/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_2_release]]
 - [[OpenRTM-aist Python 1.2.2-RELEASE:/en/download/openrtm-aist-python/openrtm-aist-python_1_2_2_release]]
 - [[OpenRTM-aist Java 1.2.2-RELEASE:/en/download/openrtm-aist-java/openrtm-aist-java_1_2_2_release]]
 - [[OpenRTP 1.2.2:/en/download/tools/openrtp_1_2_2]]
 
 **** 1.2.1
+
 - [[OpenRTM-aist C++ 1.2.1-RELEASE:/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_1_release]]
-- [[OpenRTM-aist Python 1.2.1-RELEASE:/en/node/6937]]
-- [[OpenRTM-aist Java 1.2.1-RELEASE:/en/node/6936]]
-- [[OpenRTP 1.2.1:/ja/download/tools/openrtp_1_2_1]]
+- [[OpenRTM-aist Python 1.2.1-RELEASE:/en/download/openrtm-aist-python/openrtm-aist-python_1_2_1_release]]
+- [[OpenRTM-aist Java 1.2.1-RELEASE:/en/download/openrtm-aist-java/openrtm-aist-java_1_2_1_release]]
+- [[OpenRTP 1.2.1:/en/download/tools/openrtp_1_2_1]]
 
 **** 1.1.2
+
 - [[OpenRTM-aist C++ 1.1.2-RELEASE:/en/download/openrtm-aist-cpp/openrtm-aist-cpp_1_1_2_release]]
 - [[OpenRTM-aist Python 1.1.2-RELEASE:/en/download/openrtm-aist-python/openrtm-aist-python_1_1_2_release]]
 - [[OpenRTM-aist Java 1.1.2-RELEASE:/en/download/openrtm-aist-java/openrtm-aist-java_1_1_2_release]]
-- [[OpenRTP 1.1.2:/ja/download/tools/openrtp_1_1_2]]
+- [[OpenRTP 1.1.2:/en/download/tools/openrtp_1_1_2]]
+
+**** [[Specifications:/en/download/various_specs]]
+
 
